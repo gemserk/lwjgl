@@ -1,0 +1,1402 @@
+2006-05-30 12:41  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/AWTGLCanvas.java: Change
+	  AWTGLCanvas paint() to make current and release the context to
+	  avoid problems with different AWT event threads calling paint()
+
+2006-05-30 08:48  elias_naur
+
+	* trunk/LWJGL/src/native/win32/org_lwjgl_input_Mouse.c: Win32:
+	  Track directinput mouse buttons in the windows message state
+	  array. This should avoid some problems when switching from
+	  grabbed to non-grabbed
+
+2006-05-29 19:03  elias_naur
+
+	* trunk/LWJGL/src/native/linux/Makefile,
+	  trunk/LWJGL/src/native/linux/Makefile.amd64: Linux: Added Xfixes
+	  to the list of libraries liblwjgl.so statically links to
+
+2006-05-29 12:30  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/BufferChecks.java: Split out the
+	  exception case in BufferChecks.checkBufferSize() to help the JVM
+	  inline it
+
+2006-05-29 12:24  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/StateTracker.java: Saved
+	  one getClientAttribStack() in StateTracker.pushAttrib()
+
+2006-05-26 12:58  spasi
+
+	* trunk/LWJGL/src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/PostfixTranslator.java:
+	  Fixed i64 suffixes
+
+2006-05-25 13:03  spasi
+
+	* trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBOcclusionQuery.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ATITextFragmentShader.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTTimerQuery.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL15.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVOcclusionQuery.java,
+	  trunk/LWJGL/src/java/org/lwjgl/BufferChecks.java,
+	  trunk/LWJGL/src/java/org/lwjgl/BufferUtils.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLint64EXT.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLuint64EXT.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/NativeTypeTranslator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/PostfixTranslator.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/TypeInfo.java,
+	  trunk/LWJGL/src/native/common/extgl.h,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_EXTTimerQuery.c,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_occlusion_query.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_text_fragment_shader.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_timer_query.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL15.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_occlusion_query.java:
+	  Added EXT_timer_query extension
+	  Added support for long (int64) types
+
+2006-05-18 12:11  elias_naur
+
+	* trunk/LWJGL/src/native/common/common_tools.c,
+	  trunk/LWJGL/src/native/win32/display.c,
+	  trunk/LWJGL/src/native/win32/org_lwjgl_Sys.c: Win32: Updated
+	  various native string handling to use the new _s "secure"
+	  variants.
+
+2006-05-18 11:43  elias_naur
+
+	* trunk/LWJGL/platform_build/win32_ms_cmdline/build.bat: Win32:
+	  Update build.bat to use the free Visual Studio Express 2005
+	  compiler. We can use the /delayload switch for the default build
+	  now.
+
+2006-05-16 18:51  cix_foo
+
+	* trunk/LWJGL/src/java/org/lwjgl/fmod3/FMODException.java: Added
+	  serialVersionUID
+
+2006-05-16 11:32  elias_naur
+
+	* trunk/LWJGL/doc/generator.txt: Update doc/generator.txt
+
+2006-05-15 19:37  elias_naur
+
+	* trunk/LWJGL/src/native/linux/context.c: Linux: Apparently, some
+	  the Mesa GLX 1.3 glxChooseFBConfig don't like the GLX_STEREO
+	  attribute, even when set to False. So we'll only specify
+	  GLX_STEREO in case a stereo context is actually requested
+
+2006-05-15 13:09  spasi
+
+	* trunk/LWJGL/src/generated/org/lwjgl/opengl/ATITextFragmentShader.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_text_fragment_shader.java:
+	  Added ATI_text_fragment_shader extension
+
+2006-05-14 21:55  matzon
+
+	* trunk/LWJGL/build.xml: 1.0beta version string
+	  fixes to optional
+
+2006-05-14 21:54  matzon
+
+	* trunk/LWJGL/src/java/org/lwjgl/Sys.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FMOD.java,
+	  trunk/LWJGL/src/native/common/common_tools.c,
+	  trunk/LWJGL/src/native/common/fmod3/org_lwjgl_fmod3_FMOD.c:
+	  1.0beta version string
+
+2006-05-14 14:18  spasi
+
+	* trunk/LWJGL/src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_shader_texture_lod.java:
+	  Added ATI_shader_texture_lod extension
+
+2006-05-13 10:03  elias_naur
+
+	* trunk/LWJGL/src/native/linux/context.c: Linux: Fixed accum color
+	  bits when accum_bpp = 0
+
+2006-05-07 10:19  elias_naur
+
+	* trunk/LWJGL/libs/jinput.jar: Updated jinput.jar to fix a NPE in
+	  the directinput plugin
+
+2006-05-06 19:45  elias_naur
+
+	* trunk/LWJGL/src/native/macosx/build.xml: Mac OS X: build fixes
+
+2006-05-05 08:14  elias_naur
+
+	* trunk/LWJGL/build.xml: Removed the generator from lwjgl_util.jar
+
+2006-05-03 20:53  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/Display.java: Added
+	  Display.swapBuffers(). Combined with Display.processMessages()
+	  and Mouse/Keyboard/Controllers.poll() this method allows an
+	  application to create a custom policy for the rendering/polling
+	  loop in addition to the static Display.update() policy.
+
+2006-05-03 08:04  elias_naur
+
+	* trunk/LWJGL/libs/macosx/libjinput-osx-legacy.jnilib,
+	  trunk/LWJGL/libs/macosx/libjinput-osx.jnilib: Mac OS X: Updated
+	  the libjinput-osx.jnilib to avoid a separate
+	  libjinput-osx-legacy.jnilib
+
+2006-05-02 15:12  elias_naur
+
+	* trunk/LWJGL/libs/jinput.jar: Updated jinput.jar to fix a windows
+	  issue
+
+2006-05-01 12:24  elias_naur
+
+	* trunk/LWJGL/src/native/macosx/build.xml: Mac OS X: native
+	  build.xml tweak
+
+2006-05-01 12:14  elias_naur
+
+	* trunk/LWJGL/src/native/macosx/build.xml: Mac OS X: native
+	  build.xml tweak
+
+2006-05-01 12:07  elias_naur
+
+	* trunk/LWJGL/src/native/macosx/Makefile,
+	  trunk/LWJGL/src/native/macosx/Makefile.legacy,
+	  trunk/LWJGL/src/native/macosx/build-symbol-list,
+	  trunk/LWJGL/src/native/macosx/build.xml: Mac OS X: Replaced
+	  liblwjgl-legacy.jnilib and liblwjgl.jnilib with one
+	  liblwjgl.jnilib containing gcc 3 compiled ppc code in the ppc
+	  part and gcc 4 compiled intel code in the intel part. That way,
+	  we should be able to support all platforms and architectures
+	  with one library. I've replaced the Makefile.* files with a
+	  single build.xml to do the native building and merging of object
+	  code.
+
+2006-05-01 08:58  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_ARBShaderObjects.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_GL20.c: Fixed
+	  warning from generated native code on mac os x
+
+2006-04-30 21:15  matzon
+
+	* trunk/LWJGL/build.xml: 1.0
+	  base and optional
+
+2006-04-30 21:15  matzon
+
+	* trunk/LWJGL/src/java/org/lwjgl/Sys.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FMOD.java,
+	  trunk/LWJGL/src/native/common/common_tools.c,
+	  trunk/LWJGL/src/native/common/fmod3/org_lwjgl_fmod3_FMOD.c:
+	  updated version to 1.0
+
+2006-04-30 21:09  matzon
+
+	* trunk/LWJGL/src/java/org/lwjgl/input/Cursor.java: changed cursor
+	  support exception to lwjglexception
+
+2006-04-30 19:45  matzon
+
+	* trunk/LWJGL/doc/CREDITS: mo contribs
+
+2006-04-30 19:45  matzon
+
+	* trunk/LWJGL/doc/README: restructure into optional
+
+2006-04-30 19:44  matzon
+
+	* trunk/LWJGL/res/resources.txt: restructure into optional
+
+2006-04-28 15:23  elias_naur
+
+	* trunk/LWJGL/res/lwjgl_16x16.xpm,
+	  trunk/LWJGL/res/lwjgl_32x32.xpm: Removed svn eol markers on
+	  binary files
+
+2006-04-28 15:21  elias_naur
+
+	* trunk/LWJGL/libs/macosx/libjinput-osx-legacy.jnilib,
+	  trunk/LWJGL/libs/macosx/libjinput-osx.jnilib,
+	  trunk/LWJGL/libs/win32/jinput-dx8.dll,
+	  trunk/LWJGL/libs/win32/jinput-raw.dll: Removed svn eol markers
+	  on binary files
+
+2006-04-27 19:34  elias_naur
+
+	* trunk/LWJGL/libs/linux/libopenal.so: Linux: updated libopenal.so
+
+2006-04-25 21:30  matzon
+
+	* trunk/LWJGL/www/_include/header.php: using svn
+
+2006-04-25 21:29  matzon
+
+	* trunk/LWJGL/www/_gfx/projects/diamond_crush_1.jpg,
+	  trunk/LWJGL/www/_gfx/projects/diamond_crush_2.jpg,
+	  trunk/LWJGL/www/_gfx/projects/diamond_crush_3.jpg,
+	  trunk/LWJGL/www/_gfx/projects/diamond_crush_small_1.jpg,
+	  trunk/LWJGL/www/_gfx/projects/diamond_crush_small_2.jpg,
+	  trunk/LWJGL/www/_gfx/projects/diamond_crush_small_3.jpg: added
+	  diamond crush
+
+2006-04-25 21:28  matzon
+
+	* trunk/LWJGL/www/projects.php: added diamond crush
+
+2006-04-25 21:02  matzon
+
+	* trunk/LWJGL/res/logo,
+	  trunk/LWJGL/res/logo/lwjgl_logo-with_jacket.ai,
+	  trunk/LWJGL/res/logo/lwjgl_logo-with_jacket.svg: orig logo
+
+2006-04-21 11:11  cix_foo
+
+	* trunk/LWJGL/src/java/org/lwjgl/LWJGLException.java,
+	  trunk/LWJGL/src/java/org/lwjgl/openal/OpenALException.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/AWTGLCanvas.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Display.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/KeyboardEventQueue.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXFrame.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXGLCanvas.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/OpenGLException.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/glu/MipMap.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/glu/PartialDisk.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/Color.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/Display.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/XPMFile.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/jinput/LWJGLMouse.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Matrix2f.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Matrix3f.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Matrix4f.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Quaternion.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Vector2f.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Vector3f.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Vector4f.java: Tidied
+	  up unused variables, added serialVersionUIDs as appropriate,
+	  removed a few unnecessary casts and brackets and exceptions.
+
+2006-04-13 13:36  matzon
+
+	* trunk/LWJGL/src/native/common/devil/org_lwjgl_devil_IL.c:
+	  removed printf statement
+
+2006-04-06 21:00  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/AWTGLCanvas.java: Made
+	  AWTGLCanvas listen to its own component events
+
+2006-04-05 15:26  matzon
+
+	* trunk/LWJGL/www/projects.php: adding Herzog3D project
+
+2006-04-05 15:22  matzon
+
+	* trunk/LWJGL/www/_gfx/projects/hz_1.jpg,
+	  trunk/LWJGL/www/_gfx/projects/hz_2.jpg,
+	  trunk/LWJGL/www/_gfx/projects/hz_3.jpg,
+	  trunk/LWJGL/www/_gfx/projects/hz_small_1.jpg,
+	  trunk/LWJGL/www/_gfx/projects/hz_small_2.jpg,
+	  trunk/LWJGL/www/_gfx/projects/hz_small_3.jpg: adding Herzog3D
+	  project
+
+2006-04-05 12:42  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/util/jinput/LWJGLKeyboard.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/jinput/LWJGLMouse.java:
+	  Fixed jinput plugins
+
+2006-04-05 11:27  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/util/jinput,
+	  trunk/LWJGL/src/java/org/lwjgl/util/jinput/KeyMap.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/jinput/LWJGLEnvironmentPlugin.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/jinput/LWJGLKeyboard.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/jinput/LWJGLMouse.java:
+	  Added a JInput plugin to interface with the LWJGL mouse and
+	  keyboard from jinput (untested)
+
+2006-04-05 11:25  elias_naur
+
+	* trunk/LWJGL/libs/jinput.jar,
+	  trunk/LWJGL/libs/linux/libjinput-linux.so,
+	  trunk/LWJGL/libs/macosx/libjinput-osx-legacy.jnilib,
+	  trunk/LWJGL/libs/macosx/libjinput-osx.jnilib,
+	  trunk/LWJGL/libs/macosx/libjinput.jnilib,
+	  trunk/LWJGL/libs/win32/jinput-dx8.dll,
+	  trunk/LWJGL/libs/win32/jinput-dxplugin.dll,
+	  trunk/LWJGL/libs/win32/jinput-raw.dll: Upgraded jinput to the
+	  'jinput 2' branch
+
+2006-04-05 11:20  elias_naur
+
+	* trunk/LWJGL/src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL11.java,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_GL11.c,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL11.java: Added
+	  glPrioritizeTextures and glAreTexturesResident
+
+2006-03-30 07:35  elias_naur
+
+	* trunk/LWJGL/platform_build/win32_ms_cmdline/build.bat: Windows:
+	  Fixed building natives with latest directx sdk
+
+2006-03-30 07:12  elias_naur
+
+	* trunk/LWJGL/build.xml: Fix building of jinput wrapper
+
+2006-03-30 06:50  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/LWJGLUtil.java: Linux: Added
+	  SunOS (solaris) as a linux(-like) platform
+
+2006-03-28 17:55  matzon
+
+	* trunk/LWJGL/www/demos.php: updated actually available demos
+
+2006-03-23 19:32  matzon
+
+	* trunk/LWJGL/src/java/org/lwjgl/BufferChecks.java,
+	  trunk/LWJGL/src/java/org/lwjgl/BufferUtils.java,
+	  trunk/LWJGL/src/java/org/lwjgl/DefaultSysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/J2SESysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/LWJGLException.java,
+	  trunk/LWJGL/src/java/org/lwjgl/LWJGLUtil.java,
+	  trunk/LWJGL/src/java/org/lwjgl/LinuxSysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/NativeSysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/Sys.java,
+	  trunk/LWJGL/src/java/org/lwjgl/SysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/Win32SysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/devil/IL.java,
+	  trunk/LWJGL/src/java/org/lwjgl/devil/ILNative.java,
+	  trunk/LWJGL/src/java/org/lwjgl/devil/ILU.java,
+	  trunk/LWJGL/src/java/org/lwjgl/devil/ILUT.java,
+	  trunk/LWJGL/src/java/org/lwjgl/devil/ILinfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/devil/ILpointf.java,
+	  trunk/LWJGL/src/java/org/lwjgl/devil/ILpointi.java,
+	  trunk/LWJGL/src/java/org/lwjgl/examples/Game.java,
+	  trunk/LWJGL/src/java/org/lwjgl/examples/spaceinvaders/SoundManager.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FMOD.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FMODException.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FMusic.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FMusicModule.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FSound.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FSoundDSPUnit.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FSoundReverbChannelProperties.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FSoundReverbProperties.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FSoundSample.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FSoundSampleLock.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FSoundStream.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FSoundSyncPoint.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FSoundTagField.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/FSoundTocTag.java,
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/callbacks/FMusicCallback.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/callbacks/FSoundCloseCallback.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/callbacks/FSoundDSPCallback.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/callbacks/FSoundMetaDataCallback.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/callbacks/FSoundOpenCallback.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/callbacks/FSoundReadCallback.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/callbacks/FSoundSeekCallback.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/callbacks/FSoundStreamCallback.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/fmod3/callbacks/FSoundTellCallback.java,
+	  trunk/LWJGL/src/java/org/lwjgl/input/Cursor.java,
+	  trunk/LWJGL/src/java/org/lwjgl/input/Keyboard.java,
+	  trunk/LWJGL/src/java/org/lwjgl/input/Mouse.java,
+	  trunk/LWJGL/src/java/org/lwjgl/openal/AL.java,
+	  trunk/LWJGL/src/java/org/lwjgl/openal/ALC.java,
+	  trunk/LWJGL/src/java/org/lwjgl/openal/ALCcontext.java,
+	  trunk/LWJGL/src/java/org/lwjgl/openal/ALCdevice.java,
+	  trunk/LWJGL/src/java/org/lwjgl/openal/OpenALException.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/AWTCanvasImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/AWTGLCanvas.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/AWTSurfaceLock.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Context.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/ContextImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/DisplayMode.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/GLChecks.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/GLContext.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/GLUConstants.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxAWTGLCanvasPeerInfo.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxCanvasImplementation.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxContextImplementation.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxDisplayPeerInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxPbufferPeerInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxPeerInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXAWTGLCanvasPeerInfo.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXCanvasImplementation.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXCanvasPeerInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXContextImplementation.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXDisplayPeerInfo.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXPbufferPeerInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXPeerInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/OpenGLException.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Pbuffer.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/PeerInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Win32AWTGLCanvasPeerInfo.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Win32CanvasImplementation.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Win32ContextImplementation.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Win32DisplayPeerInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Win32PbufferPeerInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Win32PeerInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/DisplayTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/SysTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/devil/BasicTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/fmod3/CDDAPlayer.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/fmod3/CDPlayer.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/fmod3/DSPTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/fmod3/MusicPlayer.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/fmod3/NetTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/fmod3/StreamPlayer.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/fmod3/StreamPlayerMemory.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/fmod3/StreamTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/fmod3/SyncTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/fmod3/TagFieldTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/input/HWCursorTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/input/KeyboardTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/input/MouseCreationTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/input/MouseTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/openal/ALCTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/openal/BasicTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/openal/MovingSoundTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/openal/OpenALCreationTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/openal/PlayTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/openal/PlayTestMemory.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/openal/PositionTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/openal/SourceLimitTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/openal/StressTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/opengl/FullScreenWindowedTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/opengl/Gears.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/opengl/PbufferTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/opengl/awt/AWTGears.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/opengl/awt/AWTTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/opengl/awt/DemoBox.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/opengl/pbuffers/PbufferTest.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/Color.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/Dimension.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/Display.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/GL.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/GLImpl.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/IGL.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/Point.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/ReadableColor.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/ReadableDimension.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/ReadablePoint.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/ReadableRectangle.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/Rectangle.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/Renderable.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/Timer.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/WaveData.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/WritableColor.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/WritableDimension.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/WritablePoint.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/WritableRectangle.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/XPMFile.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALTypeMap.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALboolean.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALbyte.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALdouble.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALenum.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALfloat.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALint.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALshort.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALsizei.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALubyte.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALuint.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ALvoid.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Auto.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/AutoResultSize.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/AutoSize.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/AutoType.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/BufferKind.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/BufferObject.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/CachedReference.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/CachedResult.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Check.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Code.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Const.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Constant.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ContextGeneratorProcessorFactory.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Extension.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLbitfield.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLboolean.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLbyte.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLchar.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLcharARB.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLclampd.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLclampf.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLdouble.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLenum.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLfloat.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLhalf.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLhandleARB.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLint.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLintptr.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLintptrARB.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLshort.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLsizei.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLsizeiptr.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLsizeiptrARB.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLubyte.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLuint.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLushort.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLvoid.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GenerateAutos.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GeneratorProcessorFactory.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Indirect.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/JNITypeTranslator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/JavaTypeTranslator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/NativeType.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/NativeTypeTranslator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/NoErrorCheck.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/NullTerminated.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Platform.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/PlatformDependent.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/PostfixTranslator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ReferencesGeneratorProcessorFactory.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/RegisterStubsGenerator.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Result.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/SignatureTranslator.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Signedness.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/StripPostfix.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/TypeInfo.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/TypeMap.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/TypedefsGenerator.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/Utils.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/BoneFrame.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/BonedModel.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/BonedVertex.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/Frame.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/MeshFrame.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/MeshedModel.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/Model.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/Triangle.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/Vertex.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/Weight.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/loaders/XMLLoader.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/renderer/AnimationEventListener.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/renderer/FrameProcessor.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/renderer/ModelRenderer.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/model/renderer/Sprite3D.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Matrix.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Matrix2f.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Matrix3f.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Quaternion.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Vector.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Vector2f.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Vector3f.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/Vector4f.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/WritableVector2f.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/WritableVector3f.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/vector/WritableVector4f.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/openal/AL10.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_imaging.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL11.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL12.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL13.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL14.java: applied
+	  patch to move ID tag
+
+2006-03-10 18:49  matzon
+
+	* trunk/LWJGL/src/java/org/lwjgl/util/XPMFile.java: new, improved
+	  and shiny version, courtesy of Jos Hirth
+
+2006-03-08 23:18  matzon
+
+	* trunk/LWJGL/www/_gfx/projects/titan_attacks_1.jpg,
+	  trunk/LWJGL/www/_gfx/projects/titan_attacks_2.jpg,
+	  trunk/LWJGL/www/_gfx/projects/titan_attacks_3.jpg,
+	  trunk/LWJGL/www/_gfx/projects/titan_attacks_small_1.jpg,
+	  trunk/LWJGL/www/_gfx/projects/titan_attacks_small_2.jpg,
+	  trunk/LWJGL/www/_gfx/projects/titan_attacks_small_3.jpg,
+	  trunk/LWJGL/www/projects.php: added titan attacks
+
+2006-02-28 12:39  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/MacOSXSysImplementation.java:
+	  Fixed typo
+
+2006-02-27 19:55  cix_foo
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/StateTracker.java: Removed
+	  superfluous imports
+
+2006-02-26 11:44  elias_naur
+
+	* trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBBufferObject.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBImaging.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBMatrixPalette.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBTextureCompression.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBVertexBlend.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBVertexProgram.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBVertexShader.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ATIElementArray.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTDrawRangeElements.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTFogCoord.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTSecondaryColor.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTVertexShader.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTVertexWeighting.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL11.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL12.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL13.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL14.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL15.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL20.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVVertexProgram.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/JNITypeTranslator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/JavaTypeTranslator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/TypeInfo.java,
+	  trunk/LWJGL/src/native/common/common_tools.h,
+	  trunk/LWJGL/src/native/common/extgl.h,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_ARBBufferObject.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_ARBImaging.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_ARBMatrixPalette.c,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_ARBTextureCompression.c,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_ARBVertexBlend.c,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_ARBVertexProgram.c,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_ARBVertexShader.c,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_ATIElementArray.c,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_EXTDrawRangeElements.c,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_EXTFogCoord.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_EXTSecondaryColor.c,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_EXTVertexShader.c,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_EXTVertexWeighting.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_GL11.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_GL12.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_GL13.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_GL14.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_GL15.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_GL20.c,
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_NVVertexProgram.c,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL15.java: Widened
+	  VBO/PBO buffer offsets and sizes to long to better match the
+	  GLsizeiptr and GLintptr native types
+
+2006-02-23 19:29  elias_naur
+
+	* trunk/LWJGL/src/native/linux/org_lwjgl_opengl_LinuxContextImplementation.c:
+	  Linux: Removed the glXIsDirect test to determine whether a
+	  context is accelerated or not. This is specifically not the case
+	  for Xgl and friends that accelerates indireect rendering.
+	  Unfortunately, I'm not sure what to replace the test with, so
+	  there is currently no way to know from LWJGL whether we're
+	  software rendered or not (other than measuring FPS). In fact,
+	  I'm not even sure that we can come up with a good test, because
+	  some (DRI) drivers use software MESA rendering for some parts of
+	  GL, while other parts are hardware accelerated
+
+2006-02-23 19:22  elias_naur
+
+	* trunk/LWJGL/src/native/common/org_lwjgl_openal_ALC.c: Fixed a
+	  potentially uninitialized return value in ALC.c
+
+2006-02-22 10:47  elias_naur
+
+	* trunk/LWJGL/src/native/win32/org_lwjgl_opengl_Display.c: Win32:
+	  Made the message processing more friendly to potential foreign
+	  windows created on the same thread (and thus sharing message
+	  queue with LWJGL). Now handleMessages() in Display.c only
+	  processes messages for the current lwjgl window.
+
+2006-02-22 10:30  elias_naur
+
+	* trunk/LWJGL/platform_build/win32_ms_cmdline/build.bat,
+	  trunk/LWJGL/src/native/win32/org_lwjgl_opengl_Display.c: Win32:
+	  Made the window message proc static
+
+2006-02-22 09:51  elias_naur
+
+	* trunk/LWJGL/src/native/win32/org_lwjgl_opengl_Display.c: Made
+	  handleMessages() in Display.c static
+
+2006-02-21 22:11  matzon
+
+	* trunk/LWJGL/build.xml, trunk/LWJGL/doc/README: create single
+	  distribution
+
+2006-02-06 11:11  elias_naur
+
+	* trunk/LWJGL/src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ContextGeneratorProcessorFactory.java:
+	  OpenGL: Made generated ContextCapabilities only try to load
+	  super class symbols if a sub class is supported. This avoids
+	  spurious 'Could not locate symbol' warnings in debug mode
+	  (glLoadProgramNV on ATI hardware)
+
+2006-02-02 22:34  matzon
+
+	* trunk/LWJGL/src/java/org/lwjgl/openal/AL.java,
+	  trunk/LWJGL/src/java/org/lwjgl/openal/ALC.java,
+	  trunk/LWJGL/src/java/org/lwjgl/test/openal/BasicTest.java,
+	  trunk/LWJGL/src/native/common/org_lwjgl_openal_ALC.c: support
+	  for ALC_ENUMERATION_EXT using LWJGL specific method:
+	  AL.getImplementations
+
+2006-01-31 12:48  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxDisplay.java: Linux:
+	  Fixed resetDisplayMode in case XRandr is used and the first
+	  reported mode is not the initial mode
+
+2006-01-31 12:31  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  trunk/LWJGL/src/native/common/common_tools.h,
+	  trunk/LWJGL/src/native/linux/display.c: Linux: Fixed
+	  resetDisplayMode in case XRandr is used and the first reported
+	  mode is not the initial mode
+
+2006-01-20 23:25  cix_foo
+
+	* trunk/LWJGL/src/native/win32/org_lwjgl_input_Mouse.c: *** empty
+	  log message ***
+
+2006-01-17 08:47  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/Sys.java: Mac OS X: Fixed legacy
+	  library loading
+
+2006-01-17 07:18  elias_naur
+
+	* trunk/LWJGL/src/native/win32/org_lwjgl_input_Mouse.c: Win32:
+	  Don't accumulate scroll wheel deltas if Dinput is grabbed
+
+2006-01-16 23:51  elias_naur
+
+	* trunk/LWJGL/src/native/win32/org_lwjgl_input_Mouse.c: Win32:
+	  More experimental directinput stuff
+
+2006-01-16 23:09  elias_naur
+
+	* trunk/LWJGL/src/native/win32/org_lwjgl_input_Mouse.c: Win32:
+	  Quick test to see if we can get more accurate polling data from
+	  the mouse when not grabbed
+
+2006-01-16 21:17  elias_naur
+
+	* trunk/LWJGL/src/native/macosx/macosx_al.c: Mac OS X: Cleanup of
+	  macosx_al.c
+
+2006-01-16 21:06  cix_foo
+
+	* trunk/LWJGL/src/java/org/lwjgl/test/WindowCreationTest.java:
+	  Cleanup of unused imports
+
+2006-01-16 21:04  cix_foo
+
+	* trunk/LWJGL/src/java/org/lwjgl/LWJGLUtil.java,
+	  trunk/LWJGL/src/java/org/lwjgl/LinuxSysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/Sys.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Display.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/GLContext.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxCanvasImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXFrame.java: ***
+	  empty log message ***
+
+2006-01-16 20:37  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/DefaultSysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/LWJGLUtil.java,
+	  trunk/LWJGL/src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/Sys.java,
+	  trunk/LWJGL/src/java/org/lwjgl/SysImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXDisplay.java: Mac OS
+	  X: Added loading of a legacy native lwjgl library to support
+	  applications that need to run on Mac OS X 10.2, 10.3 and 10.4,
+	  including intel mac versions. NOTE: Intel support from the
+	  universal build is not tested, since I don\'t have acces to an
+	  intel mac.
+
+2006-01-16 19:52  elias_naur
+
+	* trunk/LWJGL/src/native/macosx/context.m: Mac OS X: Ported OpenGL
+	  library code to use frameworks instead of accessing libGL.dylib
+	  directly
+
+2006-01-16 19:35  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/openal/AL.java,
+	  trunk/LWJGL/src/native/macosx/Makefile.legacy,
+	  trunk/LWJGL/src/native/macosx/macosx_al.c: Mac OS X: Load the
+	  framework (builtin) version of OpenAL last, after having tried
+	  all possible locations of a private openal.dylib
+
+2006-01-16 18:37  elias_naur
+
+	* trunk/LWJGL/src/native/macosx/Makefile: Mac OS X: Removed
+	  redundant -syslibroot from linker flags
+
+2006-01-16 15:58  elias_naur
+
+	* trunk/LWJGL/src/native/common/extal.c,
+	  trunk/LWJGL/src/native/common/extal.h: OpenAL: Split platform
+	  dependent code from extal.c into platform subdirs. Made nCreate
+	  take a path instead of an array of paths.
+
+2006-01-16 15:54  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/openal/AL.java,
+	  trunk/LWJGL/src/native/common/extal.c,
+	  trunk/LWJGL/src/native/common/extal.h,
+	  trunk/LWJGL/src/native/common/org_lwjgl_openal_AL.c,
+	  trunk/LWJGL/src/native/linux/linux_al.c,
+	  trunk/LWJGL/src/native/macosx/macosx_al.c,
+	  trunk/LWJGL/src/native/win32/win32_al.c: OpenAL: Split platform
+	  dependent code from extal.c into platform subdirs. Made nCreate
+	  take a path instead of an array of paths.
+
+2006-01-16 15:15  elias_naur
+
+	* trunk/LWJGL/src/native/common/extal.c,
+	  trunk/LWJGL/src/native/macosx/Makefile,
+	  trunk/LWJGL/src/native/macosx/Makefile.legacy: Mac OS X: Made
+	  Makefile compile a fat binary under 10.4 as default, and added
+	  Makefile.legacy for 10.3 compiles. Made OpenAL try to load the
+	  builtin OpenAL framework (available on 10.4) if loading
+	  openal.dylib fails
+
+2006-01-13 14:37  elias_naur
+
+	* trunk/LWJGL/src/native/linux/Makefile.amd64: Linux: Made Xxf86vm
+	  dynamically linked when compiling to amd64
+
+2006-01-12 12:25  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/GLContext.java: Linux:
+	  Added workaround to avoid crash on exit with nvidia drivers
+
+2006-01-09 14:37  matzon
+
+	* trunk/LWJGL/www/shop.php: removed 'buy from within..' text -
+	  irrelevant
+
+2006-01-09 14:13  matzon
+
+	* trunk/LWJGL/www/_include/header.php, trunk/LWJGL/www/shop.php:
+	  added shop
+
+2006-01-09 14:12  matzon
+
+	* trunk/LWJGL/www/donations.php: updated status
+	  added latest donators
+
+2006-01-04 12:52  elias_naur
+
+	* trunk/LWJGL/src/native/linux/display.c: Linux: don't throw
+	  exception if Xrandr or XF86VM extension query fails
+
+2006-01-04 07:36  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxDisplay.java:
+	  Converted System.getenv() to Boolean.getBoolean to please the
+	  blackdown VM
+
+2006-01-02 14:15  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/Display.java: Made
+	  Display.releaseContext static (duh)
+
+2006-01-02 14:05  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/Display.java: Fixed
+	  exception messages
+
+2006-01-02 13:49  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/Display.java: Added
+	  Display.releaseContext()
+
+2006-01-02 13:16  elias_naur
+
+	* trunk/LWJGL/src/native/linux/extgl_glx.c: Linux: Re-added
+	  RTLD_GLOBAL to dlopen() with a comment since DRI drivers need it.
+
+2006-01-01 19:50  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/AWTGLCanvas.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Context.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/ContextImplementation.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Display.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/LinuxContextImplementation.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/MacOSXContextImplementation.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Win32ContextImplementation.java,
+	  
+	  trunk/LWJGL/src/native/linux/org_lwjgl_opengl_LinuxContextImplementation.c,
+	  
+	  trunk/LWJGL/src/native/macosx/org_lwjgl_opengl_MacOSXContextImplementation.m,
+	  
+	  trunk/LWJGL/src/native/win32/org_lwjgl_opengl_Win32ContextImplementation.c:
+	  Added setSwapInterval to Display and AWTGLCanvas
+
+2005-12-29 22:31  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/Display.java: Make
+	  Display, Pbuffer and AWTGLCanvas fail on null PixelFormats
+
+2005-12-29 22:30  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/AWTGLCanvas.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Display.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/Pbuffer.java: Make
+	  Display, Pbuffer and AWTGLCanvas fail on null PixelFormats
+
+2005-12-28 22:23  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/AWTGLCanvas.java: Added
+	  initGL to AWTGLCanvas
+
+2005-12-27 14:46  elias_naur
+
+	* trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBBufferObject.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTPackedDepthStencil.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTPixelBufferObject.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTStencilClearTag.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL15.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/GLChecks.java,
+	  trunk/LWJGL/src/java/org/lwjgl/opengl/StateTracker.java,
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  
+	  trunk/LWJGL/src/java/org/lwjgl/util/generator/ContextGeneratorProcessorFactory.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_pixel_buffer_object.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL15.java: PBO/VBO
+	  checks now query OpenGL directly instead of keeping track of the
+	  currently bound buffers
+
+2005-12-27 13:48  elias_naur
+
+	* trunk/LWJGL/src/native/win32/display.h: Win32: Removed stale
+	  declaration from display.h
+
+2005-12-27 13:47  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/Win32Display.java,
+	  trunk/LWJGL/src/native/win32/Window.h,
+	  trunk/LWJGL/src/native/win32/display.c,
+	  trunk/LWJGL/src/native/win32/display.h,
+	  trunk/LWJGL/src/native/win32/org_lwjgl_opengl_Display.c: Win32:
+	  Moved getGammaRampLength to java side
+
+2005-12-27 13:40  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/opengl/Win32Display.java,
+	  trunk/LWJGL/src/native/win32/Window.h,
+	  trunk/LWJGL/src/native/win32/org_lwjgl_input_Keyboard.c,
+	  trunk/LWJGL/src/native/win32/org_lwjgl_input_Mouse.c: Win32:
+	  Moved handleMessages to java side (update())
+
+2005-12-27 12:35  spasi
+
+	* trunk/LWJGL/src/generated/org/lwjgl/opengl/ContextCapabilities.java:
+	  New EXT_framebuffer extensions
+
+2005-12-27 11:21  elias_naur
+
+	* trunk/LWJGL/src/native/win32/display.c: Win32: display.c: Make
+	  initDisplay use the same API as getAvailableDisplayModes
+
+2005-12-27 11:12  elias_naur
+
+	* trunk/LWJGL/src/native/win32/display.c: Win32: Adder
+	  createDisplayMode helper function to display.c
+
+2005-12-27 11:03  elias_naur
+
+	* trunk/LWJGL/src/native/win32/display.c: Win32: Removed unused
+	  cruft from display.c
+
+2005-12-27 08:54  elias_naur
+
+	* trunk/LWJGL/src/native/win32/display.c: Win32: Zero out the
+	  devmode struct in display.c
+
+2005-12-26 21:52  elias_naur
+
+	* trunk/LWJGL/src/native/win32/display.c: Win32: Commented
+	  multi-monitor stuff out from display.c, since we don't really
+	  support multiple monitors anyway. Now we only operate on the
+	  default (DISPLAY_DEVICE_PRIMARY_DEVICE) device, which should
+	  scale to multi monitor setups. Needs thorough testing, of course.
+
+2005-12-26 15:06  elias_naur
+
+	* trunk/LWJGL/src/native/win32/display.c: Win32: Added debug to
+	  dispaly mode switching and removed the DM_DISPLAYFLAGS flag
+
+2005-12-24 19:37  spasi
+
+	* trunk/LWJGL/src/native/generated/org_lwjgl_opengl_EXTFramebufferBlit.c,
+	  
+	  trunk/LWJGL/src/native/generated/org_lwjgl_opengl_EXTFramebufferMultisample.c:
+	  New EXT_framebuffer extensions
+
+2005-12-24 19:30  spasi
+
+	* trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTFramebufferBlit.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTFramebufferMultisample.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_framebuffer_blit.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_framebuffer_multisample.java:
+	  New EXT_framebuffer extensions
+
+2005-12-24 19:28  spasi
+
+	* trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBBufferObject.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBColorBufferFloat.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBDepthTexture.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBDrawBuffers.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBFragmentProgram.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBFragmentShader.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBHalfFloatPixel.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBOcclusionQuery.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBPixelBufferObject.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBPointSprite.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBProgram.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBShaderObjects.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBShadingLanguage100.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBTextureFloat.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBTextureRectangle.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBVertexBufferObject.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBVertexProgram.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ARBVertexShader.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ATIDrawBuffers.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ATIFragmentShader.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ATIMapObjectBuffer.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/ATITextureFloat.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTBlendEquationSeparate.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTDepthBoundsTest.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTPackedDepthStencil.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTPalettedTexture.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTPixelBufferObject.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTStencilClearTag.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTTextureMirrorClamp.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/EXTTextureSRGB.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL15.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/GL20.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/HPOcclusionTest.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/IBMRasterposClip.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVFloatBuffer.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVFragmentProgram.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVFragmentProgram2.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVHalfFloat.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVMultisampleFilterHint.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVPixelDataRange.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVPrimitiveRestart.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVProgram.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVTextureCompressionVTC.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVTextureExpandNormal.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVVertexProgram.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVVertexProgram2Option.java,
+	  
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/NVVertexProgram3.java,
+	  trunk/LWJGL/src/generated/org/lwjgl/opengl/SUNSliceAccum.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_color_buffer_float.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_depth_texture.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_draw_buffers.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_fragment_program.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_fragment_program_shadow.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_fragment_shader.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_half_float_pixel.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_imaging.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_matrix_palette.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_multisample.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_multitexture.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_occlusion_query.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_pixel_buffer_object.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_point_parameters.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_point_sprite.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_program.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_shader_objects.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_shading_language_100.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_texture_compression.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_texture_float.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_texture_rectangle.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_transpose_matrix.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_vertex_blend.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_vertex_buffer_object.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_vertex_program.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ARB_window_pos.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_draw_buffers.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_element_array.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_envmap_bumpmap.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_fragment_shader.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_map_object_buffer.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_texture_compression_3dc.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_texture_float.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_vertex_array_object.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_vertex_attrib_array_object.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/ATI_vertex_streams.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_bgra.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_blend_equation_separate.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_blend_subtract.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_cg_shader.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_depth_bounds_test.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_draw_range_elements.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_fog_coord.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_framebuffer_object.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_multi_draw_arrays.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_packed_depth_stencil.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_paletted_texture.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_pixel_buffer_object.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_point_parameters.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_secondary_color.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_stencil_clear_tag.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_texture_compression_s3tc.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_texture_env_combine.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_texture_lod_bias.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_texture_mirror_clamp.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_texture_sRGB.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_vertex_shader.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/EXT_vertex_weighting.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL11.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL12.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL13.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL14.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL15.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/GL20.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/HP_occlusion_test.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/IBM_rasterpos_clip.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_evaluators.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_fence.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_float_buffer.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_fragment_program.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_fragment_program2.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_half_float.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_multisample_filter_hint.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_occlusion_query.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_pixel_data_range.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_point_sprite.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_primitive_restart.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_program.java,
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_register_combiners.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_register_combiners2.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_texture_compression_vtc.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_texture_expand_normal.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_vertex_array_range.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_vertex_program.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_vertex_program2_option.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/NV_vertex_program3.java,
+	  
+	  trunk/LWJGL/src/templates/org/lwjgl/opengl/SUN_slice_accum.java:
+	  Converted comments to javadoc, code cleanup
+
+2005-12-20 22:37  matzon
+
+	* trunk/LWJGL/www/donations.php: updated to latest donors
+
+2005-12-20 22:35  matzon
+
+	* trunk/LWJGL/build.xml: include generated when doing javadoc
+
+2005-12-20 10:13  elias_naur
+
+	* trunk/LWJGL/src/native/macosx/Makefile: Mac OS X:Added support
+	  for -exported_symbols_list
+
+2005-12-20 09:23  elias_naur
+
+	* trunk/LWJGL/src/native/linux/Makefile,
+	  trunk/LWJGL/src/native/linux/lwjgl.map: Linux: Added lwjgl.map
+	  to specify symbol visibility. Only Java_ symbols will be
+	  exported from the liblwjgl.so library now
+
+2005-12-20 08:47  elias_naur
+
+	* trunk/LWJGL/src/native/linux/extgl_glx.c: Linux: Removed the
+	  unnecessary RTLD_GLOBAL flag from the dynamic loading of libGL.so
+
+2005-12-19 10:57  elias_naur
+
+	* trunk/LWJGL/src/java/org/lwjgl/Sys.java: Added Sys.getVersion()
+	  in place of the compile time constant Sys.VERSION
+
+2005-12-18 21:35  matzon
+
+	* trunk/LWJGL/www/changelog.php, trunk/LWJGL/www/download.php,
+	  trunk/LWJGL/www/index.php: updated to 0.99
+
+2005-12-18 21:02  matzon
+
+	* trunk/LWJGL/www/changelogs/0.99-changelog.txt,
+	  trunk/LWJGL/www/changelogs/full-changelog.txt: updated to
+	  reflect last changes to 0.99

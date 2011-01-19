@@ -1,0 +1,1056 @@
+2004-04-13 14:13  elias_naur
+
+	* src/native/linux/: Window.h, org_lwjgl_input_Keyboard.cpp,
+	  org_lwjgl_input_Mouse.cpp, org_lwjgl_opengl_Window.cpp: LINUX:
+	  Improved input handling
+
+2004-04-12 16:46  matzon
+
+	* src/: java/org/lwjgl/input/Mouse.java,
+	  java/org/lwjgl/test/input/HWCursorTest.java,
+	  java/org/lwjgl/test/input/MouseTest.java,
+	  native/win32/org_lwjgl_input_Mouse.cpp: fixed mouse issues,
+	  setGrabbed & native cursor now works (afaik ;))
+
+2004-04-12 16:37  matzon
+
+	* src/java/org/lwjgl/input/Cursor.java: removed resetAnimation
+
+2004-04-12 16:29  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Window.cpp: LINUX: Turn off
+	  keyboard repeat rate at Window.create too
+
+2004-04-12 14:20  elias_naur
+
+	* src/native/linux/: Window.h, org_lwjgl_input_Mouse.cpp,
+	  org_lwjgl_opengl_Window.cpp: LINUX: Fixed warp ignores
+
+2004-04-12 12:37  matzon
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: removed restriction
+	  about native cursors, and fixed mouse not showing on
+	  setNativeCursor(null);
+
+2004-04-12 12:33  elias_naur
+
+	* src/native/linux/: org_lwjgl_input_Mouse.cpp,
+	  org_lwjgl_opengl_Window.cpp: LINUX:Improved warp event ignore
+
+2004-04-12 12:05  elias_naur
+
+	* src/: java/org/lwjgl/input/Cursor.java, native/linux/Window.h,
+	  native/linux/org_lwjgl_input_Keyboard.cpp,
+	  native/linux/org_lwjgl_input_Mouse.cpp,
+	  native/linux/org_lwjgl_opengl_Window.cpp: LINUX: Implemented
+	  setGrabbed
+
+2004-04-12 09:20  elias_naur
+
+	* src/java/org/lwjgl/input/Cursor.java: Cursor.java:Fixed case
+	  where delays == null
+
+2004-04-12 09:13  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java: Reverted the relative
+	  coordinate 'bug' - that's the required behaviour when
+	  Window.update is calling Mouse.poll. Consider the case where we
+	  call Window.update twice before checking getD*: with the old
+	  behaviour, only the deltas between the updates are reported, not
+	  those before the first update
+
+2004-04-12 02:33  matzon
+
+	* src/: java/org/lwjgl/input/Cursor.java,
+	  java/org/lwjgl/input/Mouse.java,
+	  java/org/lwjgl/test/input/HWCursorTest.java,
+	  java/org/lwjgl/test/input/MouseTest.java,
+	  native/common/org_lwjgl_input_Cursor.h,
+	  native/common/org_lwjgl_input_Mouse.h,
+	  native/linux/org_lwjgl_input_Cursor.cpp,
+	  native/linux/org_lwjgl_input_Mouse.cpp,
+	  native/macosx/org_lwjgl_input_Cursor.cpp,
+	  native/macosx/org_lwjgl_input_Mouse.cpp,
+	  native/win32/org_lwjgl_input_Cursor.cpp,
+	  native/win32/org_lwjgl_input_Mouse.cpp: reworked animated native
+	  cursors, to use X animation when required added initial
+	  setGrabbed(boolean) feature - Work in progress both needs
+	  verification on linux
+
+2004-04-11 18:03  matzon
+
+	* src/java/org/lwjgl/input/Mouse.java: fixed relative coordinate
+	  bug
+
+2004-04-09 23:52  elias_naur
+
+	* src/native/common/: common_tools.cpp, extal.cpp,
+	  arb/org_lwjgl_opengl_ARBProgram.cpp,
+	  nv/org_lwjgl_opengl_NVProgram.cpp: Various fixes
+
+2004-04-09 23:38  elias_naur
+
+	* src/java/org/lwjgl/test/openal/: EAXTest.java,
+	  MovingSoundTest.java, OpenALCreationTest.java,
+	  PlayTestMemory.java, StressTest.java: Fix rest of the openal
+	  examples
+
+2004-04-09 21:26  elias_naur
+
+	* src/native/common/org_lwjgl_openal_AL10.cpp: [no log message]
+
+2004-04-09 17:22  elias_naur
+
+	* src/java/org/lwjgl/: openal/AL10.java,
+	  test/openal/BasicTest.java, test/openal/PlayTest.java,
+	  test/openal/PositionTest.java: removed size argument from
+	  alBufferData and added additional buffer types
+
+2004-04-07 09:55  elias_naur
+
+	* src/java/org/lwjgl/: input/Controller.java, input/Keyboard.java,
+	  input/Mouse.java, opengl/Window.java,
+	  test/input/KeyboardTest.java: Folded read into poll to simplify
+	  interface
+
+2004-04-07 09:48  elias_naur
+
+	* src/: java/org/lwjgl/input/Keyboard.java,
+	  native/common/org_lwjgl_input_Keyboard.h,
+	  native/linux/org_lwjgl_input_Keyboard.cpp,
+	  native/macosx/org_lwjgl_input_Keyboard.cpp,
+	  native/win32/org_lwjgl_input_Keyboard.cpp: Removed
+	  Keyboard.initIDs
+
+2004-04-07 09:46  elias_naur
+
+	* src/native/linux/: Window.h, org_lwjgl_Display.cpp,
+	  org_lwjgl_input_Cursor.cpp, org_lwjgl_input_Keyboard.cpp,
+	  org_lwjgl_input_Mouse.cpp, org_lwjgl_opengl_Pbuffer.cpp,
+	  org_lwjgl_opengl_Window.cpp: LINUX: Implemented reference counted
+	  display connection to let Cursors be created and destroyed
+	  without a window or a mouse
+
+2004-04-06 16:46  elias_naur
+
+	* src/native/common/org_lwjgl_input_Mouse.h: Updated Mouse.h
+
+2004-04-06 16:40  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: win32 fixup
+
+2004-04-06 16:23  elias_naur
+
+	* src/: java/org/lwjgl/input/Mouse.java,
+	  native/common/org_lwjgl_input_Mouse.h,
+	  native/linux/org_lwjgl_input_Mouse.cpp,
+	  native/macosx/org_lwjgl_input_Mouse.cpp,
+	  native/win32/org_lwjgl_input_Mouse.cpp: Make poll deltas
+	  accumulative, and only reset on getD*
+
+2004-04-06 03:32  matzon
+
+	* www/: installation.php, images/installation/netbeans-1.png,
+	  images/installation/netbeans-2.png,
+	  images/installation/netbeans-3.png: Netbeans installation guide
+
+2004-04-05 16:19  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Window.cpp: [no log message]
+
+2004-04-04 16:10  elias_naur
+
+	* src/java/org/lwjgl/opengl/Window.java: Updated docs to reflect
+	  the dirty flag change
+
+2004-04-04 16:09  elias_naur
+
+	* src/native/: linux/org_lwjgl_opengl_Window.cpp,
+	  win32/org_lwjgl_opengl_Window.cpp: Reverted the dirty flag
+	  change, because it might be used as a flag to check if the back
+	  buffer is corrupted when creating textures from the it. You can't
+	  just swap the back buffer in to clear the flag in that case. So
+	  we need the flag to be cleared also when isDirty is called
+
+2004-04-04 15:43  cix_foo
+
+	* src/native/linux/org_lwjgl_opengl_Window.cpp: Tweaking
+
+2004-04-04 15:38  cix_foo
+
+	* src/native/win32/org_lwjgl_opengl_Window.cpp: [no log message]
+
+2004-04-04 15:37  cix_foo
+
+	* src/: java/org/lwjgl/opengl/Window.java,
+	  native/linux/org_lwjgl_opengl_Window.cpp: Tweaking
+
+2004-04-04 15:24  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Window.cpp: Pulled global
+	  isUndecorated into function
+
+2004-04-04 15:19  cix_foo
+
+	* src/java/org/lwjgl/opengl/Window.java: [no log message]
+
+2004-04-04 15:18  elias_naur
+
+	* src/java/org/lwjgl/test/opengl/PbufferTest.java: Fixed a small
+	  glitch in the test conversion
+
+2004-04-04 15:01  cix_foo
+
+	* src/java/org/lwjgl/opengl/Window.java: Rules with mighty fist.
+	  New API killed off before it even sees light of day. Some
+	  refactoring.
+
+2004-04-04 14:51  cix_foo
+
+	* src/: native/linux/org_lwjgl_opengl_Window.cpp,
+	  java/org/lwjgl/opengl/Window.java: Rules with mighty fist. New
+	  API killed off before it even sees light of day. Some
+	  refactoring.
+
+2004-04-04 14:48  cix_foo
+
+	* src/: java/org/lwjgl/test/opengl/shaders/ShadersTest.java,
+	  java/org/lwjgl/test/opengl/BouncingWindowTest.java,
+	  java/org/lwjgl/test/opengl/FullScreenWindowedTest.java,
+	  java/org/lwjgl/test/opengl/Game.java,
+	  java/org/lwjgl/test/opengl/Grass.java,
+	  java/org/lwjgl/test/opengl/PbufferTest.java,
+	  java/org/lwjgl/test/opengl/VBOIndexTest.java,
+	  java/org/lwjgl/test/opengl/VBOTest.java,
+	  java/org/lwjgl/test/input/HWCursorTest.java,
+	  native/common/org_lwjgl_opengl_Window.h,
+	  java/org/lwjgl/test/input/ControllerTest.java,
+	  java/org/lwjgl/test/input/KeyboardTest.java,
+	  java/org/lwjgl/test/input/MouseTest.java,
+	  java/org/lwjgl/test/openal/PositionTest.java,
+	  native/win32/org_lwjgl_opengl_Window.cpp: Rules with mighty fist.
+	  New API killed off before it even sees light of day. Some
+	  refactoring.
+
+2004-04-04 12:24  matzon
+
+	* www/: documentation.php, forum.php, installation.php,
+	  license.php, links.php, about.php, changelog.php, contact.php,
+	  credits.php, demos.php: removed news require
+
+2004-04-04 12:24  matzon
+
+	* www/download.php: added win32 cvs build
+
+2004-04-04 12:23  matzon
+
+	* www/images/projects/: vermins_1.jpg, vermins_2.jpg,
+	  vermins_small_1.jpg, vermins_small_2.jpg: Vermin ExTerminator
+	  screenshots added
+
+2004-04-04 12:22  matzon
+
+	* www/: include/projects.php, projects.php: made projects random
+
+2004-04-04 11:34  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Window.cpp: Implemented the
+	  undecorated flag and reshape on linux
+
+2004-04-04 10:36  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Window.cpp: Fixed compile
+	  problems
+
+2004-04-04 10:10  elias_naur
+
+	* src/java/org/lwjgl/opengl/Window.java: Fixed typo
+
+2004-04-04 09:37  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: Fixed a possible
+	  buffer overflow bug in Mouse
+
+2004-04-04 01:14  cix_foo
+
+	* src/java/org/lwjgl/opengl/Window.java: Added clamping to window
+	  bounds
+
+2004-04-04 01:01  cix_foo
+
+	* src/: java/org/lwjgl/opengl/Window.java,
+	  native/win32/org_lwjgl_opengl_Window.cpp,
+	  java/org/lwjgl/test/opengl/BouncingWindowTest.java,
+	  native/common/org_lwjgl_opengl_Window.h,
+	  native/linux/org_lwjgl_opengl_Window.cpp: New window sizing &
+	  undecorated code
+
+2004-04-03 23:08  cix_foo
+
+	* src/java/org/lwjgl/opengl/BufferChecks.java: Superfluous import
+
+2004-04-03 23:05  cix_foo
+
+	* src/java/org/lwjgl/opengl/Window.java: Added four boolean
+	  properties to alter default behaviour in non-standard apps
+
+2004-04-03 20:18  matzon
+
+	* src/java/org/lwjgl/input/Mouse.java: center mouse as cursor is
+
+2004-03-31 23:03  spasi
+
+	* src/java/org/lwjgl/test/opengl/shaders/: ShadersTest.java,
+	  shaderFSH.fsh: Bugs fixed
+
+2004-03-31 19:43  spasi
+
+	* src/java/org/lwjgl/test/opengl/shaders/: ShadersTest.java,
+	  shaderFSH.fsh, shaderFSH.vsh, shaderVSH.vsh: Fixed bugs
+
+2004-03-31 01:25  spasi
+
+	* src/java/org/lwjgl/test/opengl/shaders/: Shader.java,
+	  ShaderFP.java, ShaderFSH.java, ShaderVP.java, ShaderVSH.java,
+	  ShadersTest.java, shaderFP.fp, shaderFP.vp, shaderFSH.fsh,
+	  shaderFSH.vsh, shaderVP.vp, shaderVSH.vsh: Added shader tests
+
+2004-03-30 19:18  matzon
+
+	* www/: about.php, changelog.php, contact.php, credits.php,
+	  default.css, demos.php, documentation.php, download.php, faq.php,
+	  forum.php, index.php, installation.php, license.php, links.php,
+	  projects.php, changelogs/0.10-changelog.txt,
+	  changelogs/0.20-changelog.txt, changelogs/0.30-changelog.txt,
+	  changelogs/0.40-changelog.txt, changelogs/0.50-changelog.txt,
+	  changelogs/0.60-changelog.txt, changelogs/0.70-changelog.txt,
+	  changelogs/0.80-changelog.txt, changelogs/0.89-changelog.txt,
+	  changelogs/full-changelog.txt, images/installation/eclipse-1.png,
+	  images/installation/eclipse-2.png,
+	  images/installation/eclipse-3.png,
+	  images/installation/eclipse-4.png,
+	  images/projects/alienflux_1.jpg, images/projects/alienflux_2.jpg,
+	  images/projects/alienflux_3.jpg,
+	  images/projects/alienflux_small_1.jpg,
+	  images/projects/alienflux_small_2.jpg,
+	  images/projects/alienflux_small_3.jpg,
+	  images/projects/extorris_1.jpg, images/projects/extorris_2.jpg,
+	  images/projects/extorris_3.jpg,
+	  images/projects/extorris_small_1.jpg,
+	  images/projects/extorris_small_2.jpg,
+	  images/projects/extorris_small_3.jpg,
+	  images/projects/marathon_1.jpg, images/projects/marathon_2.jpg,
+	  images/projects/marathon_3.jpg,
+	  images/projects/marathon_small_1.jpg,
+	  images/projects/marathon_small_2.jpg,
+	  images/projects/marathon_small_3.jpg,
+	  images/projects/tribaltrouble_1.jpg,
+	  images/projects/tribaltrouble_2.jpg,
+	  images/projects/tribaltrouble_3.jpg,
+	  images/projects/tribaltrouble_small_1.jpg,
+	  images/projects/tribaltrouble_small_2.jpg,
+	  images/projects/tribaltrouble_small_3.jpg, include/default.php,
+	  include/faq.php, include/news.php, jnlp/lwjgl-demo.php,
+	  jnlp/lwjgl-media.jar, jnlp/lwjgl-windows.jar, jnlp/lwjgl.jar,
+	  jnlp/lwjgl_test.jar, jnlp/lwjglaudio-windows.jar,
+	  jnlp/source.php: readded site under www
+
+2004-03-30 19:13  spasi
+
+	* src/java/org/lwjgl/opengl/: ARBBufferObject.java,
+	  ARBFragmentProgram.java, ARBProgram.java,
+	  ARBVertexBufferObject.java, ARBVertexProgram.java,
+	  EXTPixelBufferObject.java, NVFragmentProgram.java,
+	  NVProgram.java, NVVertexProgram.java: Restored hierarchies and
+	  completed EXT_pixel_buffer_object
+
+2004-03-30 19:09  matzon
+
+	* .cvsignore: added .project to cvs ignore - keep IDE's out of root
+	  folder
+
+2004-03-29 21:09  elias_naur
+
+	* src/java/org/lwjgl/opengl/BufferChecks.java: Add error message to
+	  the buffer overflow exception
+
+2004-03-29 18:55  spasi
+
+	* src/native/common/ext/: Makefile.am,
+	  org_lwjgl_opengl_EXTDepthBoundsTest.cpp: New extensions and
+	  static import modifications
+
+2004-03-29 18:51  spasi
+
+	* src/native/common/: arb/Makefile.am,
+	  arb/org_lwjgl_opengl_ARBBufferObject.cpp,
+	  arb/org_lwjgl_opengl_ARBVertexBufferObject.cpp,
+	  nv/org_lwjgl_opengl_NVFragmentProgram.cpp: New extensions and
+	  static import modifications
+
+2004-03-29 18:47  spasi
+
+	* src/native/common/: extgl.cpp, extgl.h: New extensions and static
+	  import modifications
+
+2004-03-29 18:44  spasi
+
+	* src/java/org/lwjgl/: opengl/ARBBufferObject.java,
+	  opengl/ARBFragmentProgram.java, opengl/ARBProgram.java,
+	  opengl/ARBVertexBufferObject.java, opengl/ARBVertexProgram.java,
+	  opengl/EXTDepthBoundsTest.java, opengl/EXTPixelBufferObject.java,
+	  opengl/GLContext.java, opengl/NVFragmentProgram.java,
+	  opengl/NVProgram.java, opengl/NVVertexProgram.java,
+	  test/opengl/Grass.java, test/opengl/VBOIndexTest.java,
+	  test/opengl/VBOTest.java: New extensions and static import
+	  modifications
+
+2004-03-29 13:28  elias_naur
+
+	* src/java/org/lwjgl/opengl/VBOTracker.java: The client attrib
+	  stack tracked by VBOTracter is now at least 1
+
+2004-03-29 13:26  elias_naur
+
+	* src/native/linux/: org_lwjgl_opengl_Pbuffer.cpp,
+	  org_lwjgl_opengl_Window.cpp: added missing software flag checks
+	  in linux
+
+2004-03-29 09:53  elias_naur
+
+	* src/java/org/lwjgl/opengl/: ARBFragmentProgram.java,
+	  NVFragmentProgram.java, NVProgram.java: Fixed newlines
+
+2004-03-29 09:32  elias_naur
+
+	* src/java/org/lwjgl/: opengl/GL11.java, opengl/GL15.java,
+	  opengl/glu/Project.java, test/opengl/Grass.java: Fixed naming
+
+2004-03-28 22:29  spasi
+
+	* src/java/org/lwjgl/opengl/Window.java: Fixed vsync bug
+
+2004-03-27 16:05  elias_naur
+
+	* src/: java/org/lwjgl/Display.java,
+	  java/org/lwjgl/LWJGLErrorException.java,
+	  java/org/lwjgl/LWJGLException.java, java/org/lwjgl/Sys.java,
+	  java/org/lwjgl/input/Controller.java,
+	  java/org/lwjgl/input/Cursor.java,
+	  java/org/lwjgl/input/Keyboard.java,
+	  java/org/lwjgl/input/Mouse.java, java/org/lwjgl/openal/AL.java,
+	  java/org/lwjgl/openal/ALC.java,
+	  java/org/lwjgl/openal/eax/EAX.java,
+	  java/org/lwjgl/opengl/Pbuffer.java,
+	  java/org/lwjgl/opengl/Window.java,
+	  native/common/common_tools.cpp: Renamed LWJGLErrorException to
+	  LWJGLException
+
+2004-03-27 15:42  elias_naur
+
+	* src/: java/org/lwjgl/Display.java,
+	  java/org/lwjgl/LWJGLErrorException.java,
+	  java/org/lwjgl/SwingAdapter.java,
+	  java/org/lwjgl/input/Controller.java,
+	  java/org/lwjgl/input/Cursor.java,
+	  java/org/lwjgl/input/Keyboard.java,
+	  java/org/lwjgl/input/Mouse.java, java/org/lwjgl/openal/AL.java,
+	  java/org/lwjgl/openal/ALC.java,
+	  java/org/lwjgl/openal/eax/EAX.java,
+	  java/org/lwjgl/opengl/Pbuffer.java,
+	  java/org/lwjgl/opengl/Window.java,
+	  native/common/common_tools.cpp, native/common/extal.cpp: Added
+	  LWJGLErrorException to replace the too general Exception
+
+2004-03-27 15:09  elias_naur
+
+	* src/: java/org/lwjgl/Sys.java, native/common/checkALerror.h,
+	  native/common/common_tools.cpp, native/common/common_tools.h,
+	  native/common/org_lwjgl_Sys.h, native/linux/org_lwjgl_Sys.cpp,
+	  native/linux/org_lwjgl_opengl_Window.cpp, native/macosx/hid.cpp,
+	  native/macosx/org_lwjgl_Sys.cpp, native/win32/org_lwjgl_Sys.cpp:
+	  Implemented version check to check for incompatible native
+	  libraries
+
+2004-03-27 14:48  elias_naur
+
+	* src/java/org/lwjgl/: Display.java, Sys.java,
+	  input/Controller.java, input/Cursor.java, input/Keyboard.java,
+	  input/Mouse.java, openal/AL.java, openal/ALC.java,
+	  openal/eax/EAX.java, openal/eax/EAXBufferProperties.java,
+	  openal/eax/EAXListenerProperties.java, opengl/GLContext.java,
+	  opengl/Pbuffer.java, opengl/Window.java: All classes use
+	  Sys.initialize now
+
+2004-03-27 12:55  elias_naur
+
+	* src/java/org/lwjgl/: Display.java, input/Controller.java,
+	  input/Cursor.java, input/Keyboard.java, input/Mouse.java,
+	  openal/AL10.java, opengl/ARBVertexBufferObject.java,
+	  opengl/ARBVertexShader.java, opengl/ATIDrawBuffers.java,
+	  opengl/GL15.java, opengl/Window.java: Replaced asserts with
+	  proper runtime exceptions
+
+2004-03-26 22:57  matzon
+
+	* src/java/org/lwjgl/: input/Keyboard.java, input/Mouse.java,
+	  test/WindowCreationTest.java,
+	  test/input/ControllerCreationTest.java,
+	  test/input/ControllerTest.java, test/input/HWCursorTest.java,
+	  test/input/MouseCreationTest.java, test/input/MouseTest.java,
+	  test/openal/ALCTest.java, test/openal/PositionTest.java,
+	  test/opengl/FullScreenWindowedTest.java,
+	  test/opengl/VBOIndexTest.java, test/opengl/VBOTest.java: fixed
+	  tests according to new way cleaned up imports
+
+2004-03-26 22:49  elias_naur
+
+	* src/native/win32/: org_lwjgl_input_Keyboard.cpp,
+	  org_lwjgl_input_Mouse.cpp: Saved input events for win32
+
+2004-03-26 22:11  elias_naur
+
+	* src/: java/org/lwjgl/input/Keyboard.java,
+	  java/org/lwjgl/input/Mouse.java, native/common/common_tools.cpp,
+	  native/common/common_tools.h,
+	  native/common/org_lwjgl_input_Keyboard.h,
+	  native/common/org_lwjgl_input_Mouse.h,
+	  native/linux/org_lwjgl_input_Keyboard.cpp,
+	  native/linux/org_lwjgl_input_Mouse.cpp,
+	  native/macosx/org_lwjgl_input_Keyboard.cpp,
+	  native/macosx/org_lwjgl_input_Mouse.cpp: Save unread buffered
+	  input events between read()s
+
+2004-03-26 17:18  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java: set native cursor to null at
+	  Mouse.destroy()
+
+2004-03-26 16:03  matzon
+
+	* src/java/org/lwjgl/test/: input/ControllerCreationTest.java,
+	  input/ControllerTest.java, input/HWCursorTest.java,
+	  input/KeyboardTest.java, input/MouseCreationTest.java,
+	  input/MouseTest.java, opengl/VBOIndexTest.java,
+	  opengl/VBOTest.java: removed Window.paint() references
+
+2004-03-26 12:26  cix_foo
+
+	* src/java/org/lwjgl/: BufferUtils.java, opengl/ARBImaging.java,
+	  opengl/Util.java, opengl/VBOTracker.java,
+	  test/openal/PositionTest.java, test/opengl/Game.java,
+	  test/opengl/Grass.java, test/opengl/PbufferTest.java,
+	  input/Keyboard.java: Simplification work
+
+2004-03-26 12:09  cix_foo
+
+	* src/java/org/lwjgl/opengl/Window.java: Simplification work
+
+2004-03-26 12:01  cix_foo
+
+	* src/: native/common/org_lwjgl_opengl_Window.h,
+	  native/win32/org_lwjgl_opengl_Window.cpp,
+	  java/org/lwjgl/test/opengl/FullScreenWindowedTest.java,
+	  native/linux/org_lwjgl_opengl_Window.cpp: Simplification work
+
+2004-03-26 12:01  cix_foo
+
+	* src/java/org/lwjgl/opengl/Window.java: [no log message]
+
+2004-03-26 11:58  cix_foo
+
+	* src/java/org/lwjgl/input/: Controller.java, Keyboard.java,
+	  Mouse.java: Simplification work
+
+2004-03-25 23:44  matzon
+
+	* src/java/org/lwjgl/test/openal/: BasicTest.java,
+	  PositionTest.java: cleaned up
+
+2004-03-25 23:38  matzon
+
+	* src/java/org/lwjgl/test/openal/PositionTest.java: fixed minimized
+	  || !focus bug
+
+2004-03-23 22:23  matzon
+
+	* src/native/macosx/org_lwjgl_opengl_Window.cpp: added nMakeCurrent
+
+2004-03-23 11:19  elias_naur
+
+	* src/native/common/common_tools.cpp: Fixed warning in vc++ 6
+
+2004-03-23 08:47  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Keyboard.cpp: Use the actual
+	  buffer size in nPoll
+
+2004-03-22 21:36  matzon
+
+	* CVSROOT/history: enable history
+
+2004-03-22 11:02  elias_naur
+
+	* src/java/org/lwjgl/opengl/glu/Project.java: Fixed glu project bug
+
+2004-03-22 07:30  matzon
+
+	* src/native/common/: org_lwjgl_openal_AL10.cpp,
+	  org_lwjgl_openal_AL10.h: Arise phoenix!
+
+2004-03-22 07:04  elias_naur
+
+	* src/native/common/: org_lwjgl_openal_AL10.cpp,
+	  org_lwjgl_openal_ALC.h: Removed unneeded oal headers again
+
+2004-03-21 22:54  matzon
+
+	* src/: java/org/lwjgl/input/Cursor.java,
+	  java/org/lwjgl/input/Mouse.java,
+	  java/org/lwjgl/opengl/Window.java,
+	  java/org/lwjgl/test/input/HWCursorTest.java,
+	  native/common/org_lwjgl_input_Cursor.h,
+	  native/common/org_lwjgl_opengl_Window.h,
+	  native/linux/org_lwjgl_input_Cursor.cpp,
+	  native/linux/org_lwjgl_opengl_Window.cpp,
+	  native/macosx/org_lwjgl_input_Cursor.cpp,
+	  native/macosx/org_lwjgl_opengl_Window.cpp,
+	  native/win32/org_lwjgl_input_Cursor.cpp,
+	  native/win32/org_lwjgl_opengl_Window.cpp: Cursor animation
+	  support regardless of platform features
+
+2004-03-21 22:53  matzon
+
+	* src/native/common/: org_lwjgl_openal_AL10.h,
+	  org_lwjgl_openal_ALC.h: missing oal headers
+
+2004-03-21 16:48  eduijs
+
+	* src/java/org/lwjgl/opengl/glu/: GLU.java, Project.java: replaced
+	  buffers with arrays
+
+2004-03-21 09:52  elias_naur
+
+	* src/java/org/lwjgl/opengl/glu/: Cylinder.java, Disk.java,
+	  GLU.java, GLUConstants.java, MipMap.java, PartialDisk.java,
+	  PixelStoreState.java, Project.java, Quadric.java, Registry.java,
+	  Sphere.java: Folded GLUConstants into GLU
+
+2004-03-21 09:13  elias_naur
+
+	* src/java/org/lwjgl/opengl/: GL12.java, OpenGLException.java,
+	  glu/GLU.java: Added gluErrorString
+
+2004-03-18 22:58  spasi
+
+	* src/: native/common/extgl.cpp, native/common/extgl.h,
+	  java/org/lwjgl/opengl/GLContext.java: Fixed missing/erroneous
+	  extension queries.
+
+2004-03-15 21:07  spasi
+
+	* src/native/common/extgl.cpp: Fixed typo
+
+2004-03-15 17:31  spasi
+
+	* src/java/org/lwjgl/opengl/: ARBShaderObjects.java,
+	  ARBVertexShader.java: no message
+
+2004-03-12 08:12  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Window.cpp:
+	  org.lwjgl.opengl.Window.allowSoftwareOpenGL flag support for
+	  linux
+
+2004-03-11 22:30  matzon
+
+	* src/native/: common/common_tools.cpp, common/common_tools.h,
+	  win32/org_lwjgl_opengl_Window.cpp: support for
+	  'org.lwjgl.opengl.Window.allowSoftwareOpenGL' added utility
+	  getBooleanProperty method
+
+2004-03-11 20:50  elias_naur
+
+	* src/native/win32/org_lwjgl_Display.cpp: [no log message]
+
+2004-03-11 13:38  elias_naur
+
+	* src/native/: common/common_tools.cpp, common/common_tools.h,
+	  common/extgl.cpp, common/extgl.h, linux/Makefile.am,
+	  linux/Window.h, linux/extgl_glx.cpp, linux/extgl_glx.h,
+	  linux/org_lwjgl_opengl_Window.cpp: Split GLX from extgl into
+	  separate platform specific extgl_glx
+
+2004-03-10 21:54  matzon
+
+	* src/java/org/lwjgl/input/Keyboard.java: removed not needed NPE
+	  check
+
+2004-03-10 17:52  matzon
+
+	* src/native/win32/org_lwjgl_Display.cpp: don't forget 98+!
+
+2004-03-10 17:47  matzon
+
+	* src/native/win32/org_lwjgl_Display.cpp: optimized mode detection
+
+2004-03-10 09:42  elias_naur
+
+	* src/: java/org/lwjgl/test/openal/BasicTest.java,
+	  native/common/extal.cpp, native/common/extal.h,
+	  native/common/extgl.cpp, native/common/extgl.h,
+	  native/common/org_lwjgl_openal_AL10.cpp,
+	  native/common/org_lwjgl_openal_ALC.cpp: Fixed win32 building
+
+2004-03-09 13:20  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Window.cpp: Removed duplicate
+	  exception
+
+2004-03-09 12:09  elias_naur
+
+	* src/native/common/: extgl.cpp, extgl.h: Cleaned up extgl.cpp and
+	  extgl.h
+
+2004-03-09 12:03  elias_naur
+
+	* src/: java/org/lwjgl/openal/AL10.java,
+	  java/org/lwjgl/openal/ALC.java, native/common/common_tools.cpp,
+	  native/common/common_tools.h, native/common/extal.cpp,
+	  native/common/extal.h, native/common/extgl.cpp,
+	  native/common/extgl.h, native/common/org_lwjgl_openal_AL10.cpp,
+	  native/common/org_lwjgl_openal_AL10.h,
+	  native/common/org_lwjgl_openal_ALC.cpp,
+	  native/common/org_lwjgl_openal_ALC.h,
+	  native/common/org_lwjgl_opengl_GL11.cpp: Converted openal to
+	  dynamic java native methods
+
+2004-03-09 10:36  elias_naur
+
+	* src/native/build.sh: Don't let the build script do a make
+	  distclean
+
+2004-03-09 10:25  elias_naur
+
+	* src/native/common/: common_tools.cpp, common_tools.h, extgl.cpp,
+	  extgl.h, org_lwjgl_opengl_GL11.cpp, org_lwjgl_opengl_GL12.cpp,
+	  org_lwjgl_opengl_GL13.cpp, org_lwjgl_opengl_GL14.cpp,
+	  org_lwjgl_opengl_GL15.cpp, arb/org_lwjgl_opengl_ARBImaging.cpp,
+	  arb/org_lwjgl_opengl_ARBMatrixPalette.cpp,
+	  arb/org_lwjgl_opengl_ARBMultisample.cpp,
+	  arb/org_lwjgl_opengl_ARBMultitexture.cpp,
+	  arb/org_lwjgl_opengl_ARBOcclusionQuery.cpp,
+	  arb/org_lwjgl_opengl_ARBPointParameters.cpp,
+	  arb/org_lwjgl_opengl_ARBProgram.cpp,
+	  arb/org_lwjgl_opengl_ARBShaderObjects.cpp,
+	  arb/org_lwjgl_opengl_ARBTextureCompression.cpp,
+	  arb/org_lwjgl_opengl_ARBTransposeMatrix.cpp,
+	  arb/org_lwjgl_opengl_ARBVertexBlend.cpp,
+	  arb/org_lwjgl_opengl_ARBVertexBufferObject.cpp,
+	  arb/org_lwjgl_opengl_ARBVertexProgram.cpp,
+	  arb/org_lwjgl_opengl_ARBVertexShader.cpp,
+	  arb/org_lwjgl_opengl_ARBWindowPos.cpp,
+	  ati/org_lwjgl_opengl_ATIDrawBuffers.cpp,
+	  ati/org_lwjgl_opengl_ATIElementArray.cpp,
+	  ati/org_lwjgl_opengl_ATIEnvmapBumpmap.cpp,
+	  ati/org_lwjgl_opengl_ATIFragmentShader.cpp,
+	  ati/org_lwjgl_opengl_ATIMapObjectBuffer.cpp,
+	  ati/org_lwjgl_opengl_ATIPnTriangles.cpp,
+	  ati/org_lwjgl_opengl_ATISeparateStencil.cpp,
+	  ati/org_lwjgl_opengl_ATIVertexArrayObject.cpp,
+	  ati/org_lwjgl_opengl_ATIVertexAttribArrayObject.cpp,
+	  ati/org_lwjgl_opengl_ATIVertexStreams.cpp,
+	  ext/org_lwjgl_opengl_EXTBlendFuncSeparate.cpp,
+	  ext/org_lwjgl_opengl_EXTCompiledVertexArray.cpp,
+	  ext/org_lwjgl_opengl_EXTDrawRangeElements.cpp,
+	  ext/org_lwjgl_opengl_EXTFogCoord.cpp,
+	  ext/org_lwjgl_opengl_EXTMultiDrawArrays.cpp,
+	  ext/org_lwjgl_opengl_EXTPointParameters.cpp,
+	  ext/org_lwjgl_opengl_EXTSecondaryColor.cpp,
+	  ext/org_lwjgl_opengl_EXTStencilTwoSide.cpp,
+	  ext/org_lwjgl_opengl_EXTVertexShader.cpp,
+	  ext/org_lwjgl_opengl_EXTVertexWeighting.cpp,
+	  nv/org_lwjgl_opengl_NVEvaluators.cpp,
+	  nv/org_lwjgl_opengl_NVFence.cpp,
+	  nv/org_lwjgl_opengl_NVFragmentProgram.cpp,
+	  nv/org_lwjgl_opengl_NVHalfFloat.cpp,
+	  nv/org_lwjgl_opengl_NVOcclusionQuery.cpp,
+	  nv/org_lwjgl_opengl_NVPixelDataRange.cpp,
+	  nv/org_lwjgl_opengl_NVPointSprite.cpp,
+	  nv/org_lwjgl_opengl_NVPrimitiveRestart.cpp,
+	  nv/org_lwjgl_opengl_NVProgram.cpp,
+	  nv/org_lwjgl_opengl_NVRegisterCombiners.cpp,
+	  nv/org_lwjgl_opengl_NVRegisterCombiners2.cpp,
+	  nv/org_lwjgl_opengl_NVVertexArrayRange.cpp,
+	  nv/org_lwjgl_opengl_NVVertexProgram.cpp: Generalized function
+	  pointer initialization
+
+2004-03-08 16:21  elias_naur
+
+	* src/: java/org/lwjgl/openal/AL.java, native/common/extal.cpp: use
+	  vorbis libs from local directory in linux
+
+2004-03-07 17:01  elias_naur
+
+	* src/: java/org/lwjgl/opengl/Pbuffer.java,
+	  java/org/lwjgl/opengl/Util.java,
+	  java/org/lwjgl/opengl/Window.java, native/common/checkGLerror.h,
+	  native/common/org_lwjgl_opengl_GL11.cpp,
+	  native/common/org_lwjgl_opengl_GL12.cpp,
+	  native/common/org_lwjgl_opengl_GL13.cpp,
+	  native/common/org_lwjgl_opengl_GL14.cpp,
+	  native/common/org_lwjgl_opengl_GL15.cpp,
+	  native/common/org_lwjgl_opengl_GLContext.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBImaging.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBMatrixPalette.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBMultisample.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBMultitexture.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBOcclusionQuery.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBPointParameters.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBProgram.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBShaderObjects.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBTextureCompression.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBTransposeMatrix.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexBlend.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexBufferObject.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexProgram.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexShader.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBWindowPos.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIDrawBuffers.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIElementArray.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIEnvmapBumpmap.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIFragmentShader.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIMapObjectBuffer.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIPnTriangles.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATISeparateStencil.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexArrayObject.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexAttribArrayObject.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexStreams.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTBlendFuncSeparate.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTCompiledVertexArray.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTDrawRangeElements.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTFogCoord.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTMultiDrawArrays.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTPointParameters.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTSecondaryColor.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTStencilTwoSide.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTVertexShader.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTVertexWeighting.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVEvaluators.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVFence.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVFragmentProgram.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVHalfFloat.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVOcclusionQuery.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVPixelDataRange.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVPointSprite.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVPrimitiveRestart.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVProgram.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVRegisterCombiners.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVRegisterCombiners2.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVVertexArrayRange.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVVertexProgram.cpp: Removed
+	  GL_CHECK_ERROR
+
+2004-03-07 16:49  elias_naur
+
+	* src/native/common/extgl.cpp: Fixed win32 compile
+
+2004-03-07 16:42  matzon
+
+	* build.xml: updated headers target
+
+2004-03-07 16:41  elias_naur
+
+	* src/native/common/: org_lwjgl_opengl_GL11.cpp,
+	  org_lwjgl_opengl_GL12.cpp, org_lwjgl_opengl_GL13.cpp,
+	  org_lwjgl_opengl_GL14.cpp, org_lwjgl_opengl_GL15.cpp,
+	  arb/org_lwjgl_opengl_ARBImaging.cpp,
+	  arb/org_lwjgl_opengl_ARBMatrixPalette.cpp,
+	  arb/org_lwjgl_opengl_ARBMultisample.cpp,
+	  arb/org_lwjgl_opengl_ARBMultitexture.cpp,
+	  arb/org_lwjgl_opengl_ARBOcclusionQuery.cpp,
+	  arb/org_lwjgl_opengl_ARBPointParameters.cpp,
+	  arb/org_lwjgl_opengl_ARBProgram.cpp,
+	  arb/org_lwjgl_opengl_ARBShaderObjects.cpp,
+	  arb/org_lwjgl_opengl_ARBTextureCompression.cpp,
+	  arb/org_lwjgl_opengl_ARBTransposeMatrix.cpp,
+	  arb/org_lwjgl_opengl_ARBVertexBlend.cpp,
+	  arb/org_lwjgl_opengl_ARBVertexBufferObject.cpp,
+	  arb/org_lwjgl_opengl_ARBVertexProgram.cpp,
+	  arb/org_lwjgl_opengl_ARBVertexShader.cpp,
+	  arb/org_lwjgl_opengl_ARBWindowPos.cpp,
+	  ati/org_lwjgl_opengl_ATIDrawBuffers.cpp,
+	  ati/org_lwjgl_opengl_ATIElementArray.cpp,
+	  ati/org_lwjgl_opengl_ATIEnvmapBumpmap.cpp,
+	  ati/org_lwjgl_opengl_ATIFragmentShader.cpp,
+	  ati/org_lwjgl_opengl_ATIMapObjectBuffer.cpp,
+	  ati/org_lwjgl_opengl_ATIPnTriangles.cpp,
+	  ati/org_lwjgl_opengl_ATISeparateStencil.cpp,
+	  ati/org_lwjgl_opengl_ATIVertexArrayObject.cpp,
+	  ati/org_lwjgl_opengl_ATIVertexAttribArrayObject.cpp,
+	  ati/org_lwjgl_opengl_ATIVertexStreams.cpp,
+	  ext/org_lwjgl_opengl_EXTBlendFuncSeparate.cpp,
+	  ext/org_lwjgl_opengl_EXTCompiledVertexArray.cpp,
+	  ext/org_lwjgl_opengl_EXTDrawRangeElements.cpp,
+	  ext/org_lwjgl_opengl_EXTFogCoord.cpp,
+	  ext/org_lwjgl_opengl_EXTMultiDrawArrays.cpp,
+	  ext/org_lwjgl_opengl_EXTPointParameters.cpp,
+	  ext/org_lwjgl_opengl_EXTSecondaryColor.cpp,
+	  ext/org_lwjgl_opengl_EXTStencilTwoSide.cpp,
+	  ext/org_lwjgl_opengl_EXTVertexShader.cpp,
+	  ext/org_lwjgl_opengl_EXTVertexWeighting.cpp,
+	  nv/org_lwjgl_opengl_NVEvaluators.cpp,
+	  nv/org_lwjgl_opengl_NVFence.cpp,
+	  nv/org_lwjgl_opengl_NVFragmentProgram.cpp,
+	  nv/org_lwjgl_opengl_NVHalfFloat.cpp,
+	  nv/org_lwjgl_opengl_NVOcclusionQuery.cpp,
+	  nv/org_lwjgl_opengl_NVPixelDataRange.cpp,
+	  nv/org_lwjgl_opengl_NVPointSprite.cpp,
+	  nv/org_lwjgl_opengl_NVPrimitiveRestart.cpp,
+	  nv/org_lwjgl_opengl_NVProgram.cpp,
+	  nv/org_lwjgl_opengl_NVRegisterCombiners.cpp,
+	  nv/org_lwjgl_opengl_NVRegisterCombiners2.cpp,
+	  nv/org_lwjgl_opengl_NVVertexArrayRange.cpp,
+	  nv/org_lwjgl_opengl_NVVertexProgram.cpp: Fixed win32 compile
+
+2004-03-07 16:26  matzon
+
+	* build.xml: updated headers target
+
+2004-03-07 16:20  matzon
+
+	* src/java/org/lwjgl/: AWTAdapter.java, Adapter.java,
+	  PlatformAdapter.java, SwingAdapter.java, Sys.java: PLATFORM now
+	  specifiable from properties AWTAdapter renamed to SwingAdapter
+	  Adapter renamed to PlatformAdapter
+
+2004-03-07 16:18  elias_naur
+
+	* src/: java/org/lwjgl/opengl/GL11.java,
+	  java/org/lwjgl/opengl/NVVertexProgram.java,
+	  native/common/checkGLerror.h, native/common/extgl.cpp,
+	  native/common/extgl.h, native/common/org_lwjgl_opengl_GL11.cpp,
+	  native/common/org_lwjgl_opengl_GL11.h,
+	  native/common/org_lwjgl_opengl_GL12.cpp,
+	  native/common/org_lwjgl_opengl_GL12.h,
+	  native/common/org_lwjgl_opengl_GL13.cpp,
+	  native/common/org_lwjgl_opengl_GL13.h,
+	  native/common/org_lwjgl_opengl_GL14.cpp,
+	  native/common/org_lwjgl_opengl_GL14.h,
+	  native/common/org_lwjgl_opengl_GL15.cpp,
+	  native/common/org_lwjgl_opengl_GL15.h,
+	  native/common/arb/org_lwjgl_opengl_ARBImaging.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBImaging.h,
+	  native/common/arb/org_lwjgl_opengl_ARBMatrixPalette.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBMatrixPalette.h,
+	  native/common/arb/org_lwjgl_opengl_ARBMultisample.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBMultisample.h,
+	  native/common/arb/org_lwjgl_opengl_ARBMultitexture.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBMultitexture.h,
+	  native/common/arb/org_lwjgl_opengl_ARBOcclusionQuery.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBOcclusionQuery.h,
+	  native/common/arb/org_lwjgl_opengl_ARBPointParameters.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBPointParameters.h,
+	  native/common/arb/org_lwjgl_opengl_ARBProgram.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBProgram.h,
+	  native/common/arb/org_lwjgl_opengl_ARBShaderObjects.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBShaderObjects.h,
+	  native/common/arb/org_lwjgl_opengl_ARBTextureCompression.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBTextureCompression.h,
+	  native/common/arb/org_lwjgl_opengl_ARBTransposeMatrix.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBTransposeMatrix.h,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexBlend.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexBlend.h,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexBufferObject.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexBufferObject.h,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexProgram.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexProgram.h,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexShader.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexShader.h,
+	  native/common/arb/org_lwjgl_opengl_ARBWindowPos.cpp,
+	  native/common/arb/org_lwjgl_opengl_ARBWindowPos.h,
+	  native/common/ati/org_lwjgl_opengl_ATIDrawBuffers.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIDrawBuffers.h,
+	  native/common/ati/org_lwjgl_opengl_ATIElementArray.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIElementArray.h,
+	  native/common/ati/org_lwjgl_opengl_ATIEnvmapBumpmap.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIEnvmapBumpmap.h,
+	  native/common/ati/org_lwjgl_opengl_ATIFragmentShader.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIFragmentShader.h,
+	  native/common/ati/org_lwjgl_opengl_ATIMapObjectBuffer.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIMapObjectBuffer.h,
+	  native/common/ati/org_lwjgl_opengl_ATIPnTriangles.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIPnTriangles.h,
+	  native/common/ati/org_lwjgl_opengl_ATISeparateStencil.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATISeparateStencil.h,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexArrayObject.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexArrayObject.h,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexAttribArrayObject.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexAttribArrayObject.h,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexStreams.cpp,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexStreams.h,
+	  native/common/ext/org_lwjgl_opengl_EXTBlendFuncSeparate.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTBlendFuncSeparate.h,
+	  native/common/ext/org_lwjgl_opengl_EXTCompiledVertexArray.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTCompiledVertexArray.h,
+	  native/common/ext/org_lwjgl_opengl_EXTDrawRangeElements.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTDrawRangeElements.h,
+	  native/common/ext/org_lwjgl_opengl_EXTFogCoord.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTFogCoord.h,
+	  native/common/ext/org_lwjgl_opengl_EXTMultiDrawArrays.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTMultiDrawArrays.h,
+	  native/common/ext/org_lwjgl_opengl_EXTPointParameters.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTPointParameters.h,
+	  native/common/ext/org_lwjgl_opengl_EXTSecondaryColor.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTSecondaryColor.h,
+	  native/common/ext/org_lwjgl_opengl_EXTStencilTwoSide.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTStencilTwoSide.h,
+	  native/common/ext/org_lwjgl_opengl_EXTVertexShader.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTVertexShader.h,
+	  native/common/ext/org_lwjgl_opengl_EXTVertexWeighting.cpp,
+	  native/common/ext/org_lwjgl_opengl_EXTVertexWeighting.h,
+	  native/common/nv/org_lwjgl_opengl_NVEvaluators.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVEvaluators.h,
+	  native/common/nv/org_lwjgl_opengl_NVFence.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVFence.h,
+	  native/common/nv/org_lwjgl_opengl_NVFragmentProgram.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVFragmentProgram.h,
+	  native/common/nv/org_lwjgl_opengl_NVHalfFloat.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVHalfFloat.h,
+	  native/common/nv/org_lwjgl_opengl_NVOcclusionQuery.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVOcclusionQuery.h,
+	  native/common/nv/org_lwjgl_opengl_NVPixelDataRange.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVPixelDataRange.h,
+	  native/common/nv/org_lwjgl_opengl_NVPointSprite.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVPointSprite.h,
+	  native/common/nv/org_lwjgl_opengl_NVPrimitiveRestart.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVPrimitiveRestart.h,
+	  native/common/nv/org_lwjgl_opengl_NVProgram.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVProgram.h,
+	  native/common/nv/org_lwjgl_opengl_NVRegisterCombiners.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVRegisterCombiners.h,
+	  native/common/nv/org_lwjgl_opengl_NVRegisterCombiners2.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVRegisterCombiners2.h,
+	  native/common/nv/org_lwjgl_opengl_NVVertexArrayRange.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVVertexArrayRange.h,
+	  native/common/nv/org_lwjgl_opengl_NVVertexProgram.cpp,
+	  native/common/nv/org_lwjgl_opengl_NVVertexProgram.h,
+	  native/linux/org_lwjgl_opengl_Pbuffer.cpp: Replaced CHECK_EXISTS
+	  with one time check at symbol load time
+
+2004-03-05 23:57  elias_naur
+
+	* src/native/: common/extgl.cpp,
+	  macosx/org_lwjgl_opengl_Window.cpp: Fixed up macosx
+
+2004-03-05 23:20  matzon
+
+	* src/native/: common/extgl.cpp,
+	  macosx/org_lwjgl_opengl_Pbuffer.cpp,
+	  macosx/org_lwjgl_opengl_Window.cpp: osx fixes - needs
+	  verification
+
+2004-03-05 07:23  matzon
+
+	* src/java/org/lwjgl/input/Mouse.java: doh, clamping to width
+	  instead of height

@@ -1,0 +1,109 @@
+2008-11-26 20:05  matzon
+
+	* build.xml, platform_build/build-applet.xml: create and include
+	  non-pack200, lzma jars - for those 1.4 only macs
+
+2008-11-26 19:41  matzon
+
+	* libs/lzma.jar: compiled for 1.4 instead of 1.5
+
+2008-11-25 20:00  matzon
+
+	* libs/win32/OpenAL32.dll: openal-soft 1.6.372
+
+2008-11-24 10:06  elias_naur
+
+	* platform_build/mingw_ant/build.xml: Removed dinput references
+	  from mingw build.xml
+
+2008-11-23 13:08  matzon
+
+	* libs/linux/libopenal64.so: openal-soft 1.6.372
+
+2008-11-23 12:51  matzon
+
+	* libs/linux/libopenal.so: openal-soft 1.6.372
+
+2008-11-23 12:21  matzon
+
+	* libs/solaris/libopenal.so: openal-soft 1.6.372
+
+2008-11-22 15:05  elias_naur
+
+	* src/native/windows/extgl_wgl.c: Windows: Fixed type punning
+	  compiler warnings
+
+2008-11-22 15:00  elias_naur
+
+	* src/native/windows/org_lwjgl_opengl_Display.c: Windows: Fixed
+	  pointer size compiler warning
+
+2008-11-22 14:54  elias_naur
+
+	* src/native/windows/org_lwjgl_opengl_Pbuffer.c: Windows: Removed
+	  unused variable
+
+2008-11-22 14:51  elias_naur
+
+	* src/native/windows/org_lwjgl_opengl_WindowsPeerInfo.c: Windows:
+	  Removed unused variable
+
+2008-11-10 20:38  matzon
+
+	* src/native/common/extgl.h: windows compile fixes
+
+2008-11-10 20:07  elias_naur
+
+	* src/native/common/extgl.h: extgl.h should use definitions from
+	  the BSD licensed Mesa gl.h and glext.h instead of the original
+	  SGI gl.h/glext.h to avoid the SGI license
+
+2008-11-09 19:20  matzon
+
+	* platform_build/build-definitions.xml: include 64bit openal-soft
+
+2008-11-05 19:01  matzon
+
+	* libs/linux/libopenal64.so: fresh release build
+
+2008-11-03 19:46  matzon
+
+	* libs/win32/OpenAL32.dll: yum yum, freshly build...
+
+2008-11-03 19:39  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: 2.0.1 version string
+
+2008-10-28 10:05  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/DisplayImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java: Removed redundant
+	  fullscreen argument from DisplayImplementation.createWindow
+
+2008-10-28 09:54  elias_naur
+
+	* src/java/org/lwjgl/WindowsSysImplementation.java: Windows: Bumped
+	  JNI_VERSION
+
+2008-10-28 09:53  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/context.c, src/native/windows/context.h,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Merged
+	  native handling of undecorated and fullscreen window property
+
+2008-10-27 14:04  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Only clip
+	  mouse to window borders if the lwjgl window is the foreground
+	  window
+
+2008-10-13 19:51  matzon
+
+	* platform_build/build-definitions.xml: release 2.0
+

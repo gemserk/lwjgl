@@ -1,0 +1,639 @@
+2003-04-30 17:38  matzon
+
+	* src/java/org/lwjgl/vector/: Matrix.java, Matrix2f.java,
+	  Matrix3f.java, Matrix4f.java, Vector.java, Vector2f.java,
+	  Vector3f.java, Vector4f.java: fix: added Serializable interface
+	  to allow serialization
+
+2003-04-29 00:43  matzon
+
+	* src/java/org/lwjgl/openal/AL.java: fix: call base destroy fix:
+	  null references
+
+2003-04-28 23:50  cix_foo
+
+	* src/java/org/lwjgl/openal/AL.java: Added destroy() method to
+	  prevent a crash
+
+2003-04-28 18:41  elias_naur
+
+	* src/java/org/lwjgl/opengl/CoreGLConstants.java: Fixed a typo
+
+2003-04-28 14:10  elias_naur
+
+	* src/java/org/lwjgl/vector/Matrix4f.java: Added scale to Matrix4f
+
+2003-04-28 13:20  elias_naur
+
+	* src/native/common/extgl.c: Reverted the glu loading
+
+2003-04-28 13:12  elias_naur
+
+	* src/java/org/lwjgl/vector/Matrix4f.java: [no log message]
+
+2003-04-28 13:04  cix_foo
+
+	* src/native/common/extgl.c: [no log message]
+
+2003-04-27 23:46  matzon
+
+	* doc/tutorial/openal_basics.html: updated to reflect version in
+	  website folder
+
+2003-04-27 23:25  matzon
+
+	* website/documents/tutorials/openal/openal_basics.html,
+	  src/java/org/lwjgl/openal/AL.java,
+	  src/java/org/lwjgl/test/openal/BasicTest.java,
+	  src/java/org/lwjgl/test/openal/OpenALCreationTest.java: add:
+	  default constructor for OpenAL
+
+2003-04-27 20:39  matzon
+
+	* src/java/org/lwjgl/test/openal/BasicTest.java: only do 10 updates
+	  / sec
+
+2003-04-27 20:37  matzon
+
+	* src/java/org/lwjgl/openal/AL.java,
+	  src/java/org/lwjgl/openal/ALC.java,
+	  src/java/org/lwjgl/openal/ALCcontext.java,
+	  src/java/org/lwjgl/openal/ALCdevice.java,
+	  src/java/org/lwjgl/openal/BaseAL.java,
+	  src/java/org/lwjgl/openal/BaseALConstants.java,
+	  src/java/org/lwjgl/openal/CoreAL.java,
+	  src/java/org/lwjgl/test/openal/ALCTest.java,
+	  src/java/org/lwjgl/test/openal/ALTest.java,
+	  src/java/org/lwjgl/test/openal/BasicTest.java,
+	  src/java/org/lwjgl/test/openal/EAXTest.java,
+	  src/java/org/lwjgl/test/openal/MovingSoundTest.java,
+	  src/java/org/lwjgl/test/openal/OpenALCreationTest.java,
+	  src/java/org/lwjgl/test/openal/PlayTest.java,
+	  src/java/org/lwjgl/test/openal/PlayTestMemory.java,
+	  src/java/org/lwjgl/test/openal/SourceLimitTest.java,
+	  src/java/org/lwjgl/test/openal/StressTest.java,
+	  src/native/common/org_lwjgl_openal_ALC.cpp,
+	  src/native/common/org_lwjgl_openal_ALC.h,
+	  src/native/common/org_lwjgl_openal_BaseAL.h,
+	  src/native/common/org_lwjgl_openal_CoreAL.h,
+	  website/documents/tutorials/openal/openal_basics.html: New OpenAL
+	  programming model:  no context/device fiddling  easier
+	  initialization
+
+2003-04-26 08:54  elias_naur
+
+	* src/: java/org/lwjgl/opengl/BaseGL.java,
+	  native/common/org_lwjgl_opengl_BaseGL.h,
+	  native/linux/org_lwjgl_opengl_BaseGL.cpp,
+	  native/win32/org_lwjgl_opengl_BaseGL.cpp: Removed
+	  makeContexCurrent and releaseContext
+
+2003-04-16 22:28  elias_naur
+
+	* src/java/org/lwjgl/opengl/GL.java: Merged cfmdobbie's gl version
+	  checking
+
+2003-04-14 20:17  matzon
+
+	* src/native/win32/org_lwjgl_Display.cpp: Using
+	  EnumDisplaySettingsEx now, to force monitor comparing
+
+2003-04-13 11:28  elias_naur
+
+	* src/native/common/extgl.c: Corrected a linux gl lib loading bug
+
+2003-04-09 17:24  elias_naur
+
+	* src/java/org/lwjgl/vector/Vector3f.java: Removed superflous
+	  Vector3f.magnitude()
+
+2003-04-07 19:49  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Controller.cpp: Fixed missing
+	  header include
+
+2003-04-07 19:30  elias_naur
+
+	* src/native/linux/org_lwjgl_Sys.cpp: [no log message]
+
+2003-04-07 19:04  elias_naur
+
+	* src/native/linux/: org_lwjgl_Display.cpp, org_lwjgl_Sys.cpp:
+	  Added dummy gamma controls to linux
+
+2003-04-07 17:21  cix_foo
+
+	* src/java/org/lwjgl/: input/Controller.java, input/Mouse.java,
+	  input/Keyboard.java, openal/BaseAL.java: Added some isCreated()
+	  methods to input classes and keyboard key name mapping
+
+2003-04-03 23:02  elias_naur
+
+	* src/java/org/lwjgl/Sys.java: Don't call nGetNULLValue before
+	  loading the library
+
+2003-04-03 22:58  elias_naur
+
+	* src/java/org/lwjgl/opengl/GLConstants.java: Added
+	  ARBVertexBufferObject to list of implemented interfaces in
+	  GLConstants.java
+
+2003-04-03 22:20  elias_naur
+
+	* src/: java/org/lwjgl/Sys.java, native/common/org_lwjgl_Sys.h,
+	  native/linux/org_lwjgl_Sys.cpp, native/win32/org_lwjgl_Sys.cpp:
+	  Added Sys.NULL constant
+
+2003-04-03 13:32  elias_naur
+
+	* src/: java/org/lwjgl/opengl/GL.java, native/common/extgl.c,
+	  native/common/extgl.h, native/common/org_lwjgl_opengl_GL.cpp,
+	  native/common/org_lwjgl_opengl_GL.h: Added support for
+	  ARB_vertex_buffer_object
+
+2003-03-31 12:56  elias_naur
+
+	* src/native/linux/org_lwjgl_Window.cpp: Minor linux fix
+
+2003-03-30 21:53  elias_naur
+
+	* src/native/win32/org_lwjgl_Window.cpp: Minor win32 fix
+
+2003-03-30 21:40  elias_naur
+
+	* src/: java/org/lwjgl/opengl/BaseGL.java,
+	  native/common/org_lwjgl_opengl_BaseGL.h,
+	  native/linux/org_lwjgl_opengl_BaseGL.cpp,
+	  native/win32/org_lwjgl_opengl_BaseGL.cpp: I like those
+	  makeContextCurrent/releaseContext...
+
+2003-03-30 21:26  elias_naur
+
+	* src/: java/org/lwjgl/Window.java,
+	  java/org/lwjgl/opengl/BaseGL.java, native/config.h.in,
+	  native/configure.in, native/common/extgl.c,
+	  native/common/extgl.h, native/common/org_lwjgl_Window.h,
+	  native/common/org_lwjgl_opengl_BaseGL.h,
+	  native/linux/Makefile.am, native/linux/Window.h,
+	  native/linux/org_lwjgl_Display.cpp,
+	  native/linux/org_lwjgl_Window.cpp,
+	  native/linux/org_lwjgl_input_Keyboard.cpp,
+	  native/linux/org_lwjgl_input_Mouse.cpp,
+	  native/linux/org_lwjgl_opengl_BaseGL.cpp,
+	  native/win32/org_lwjgl_Window.cpp,
+	  native/win32/org_lwjgl_opengl_BaseGL.cpp: Linux/win32 changes for
+	  0.6
+
+2003-03-30 15:30  matzon
+
+	* doc/tutorial/intro.html, website/documents/tutorials/intro.html:
+	  fix: remove platform specific wording
+
+2003-03-29 22:51  cix_foo
+
+	* src/: java/org/lwjgl/Display.java,
+	  native/common/org_lwjgl_Display.h,
+	  native/win32/org_lwjgl_Display.cpp, native/win32/Window.h,
+	  native/win32/org_lwjgl_Window.cpp: Stuff for 0.6
+
+2003-03-29 00:58  matzon
+
+	* src/java/org/lwjgl/test/: WindowCreationTest.java,
+	  input/ControllerCreationTest.java, input/MouseTest.java: fix: go
+	  for 16 bit mode instead of 32
+
+2003-03-29 00:47  matzon
+
+	* src/java/org/lwjgl/test/input/MouseCreationTest.java: fix:
+	  rewritten windowed/fullscreen selection
+
+2003-03-29 00:46  matzon
+
+	* src/java/org/lwjgl/test/input/MouseTest.java: fix: make certain
+	  that gl.tick is always called
+
+2003-03-29 00:40  matzon
+
+	* src/java/org/lwjgl/test/opengl/Game.java: fix: removed double
+	  Keyboard.read
+
+2003-03-29 00:15  cix_foo
+
+	* src/: java/org/lwjgl/Display.java, java/org/lwjgl/Window.java,
+	  native/win32/org_lwjgl_opengl_BaseGL.cpp,
+	  native/win32/org_lwjgl_Display.cpp,
+	  native/win32/org_lwjgl_Window.cpp: Big changes for the new 0.6
+	  LWJGL release
+
+2003-03-28 23:12  matzon
+
+	* src/java/org/lwjgl/: opengl/GL.java,
+	  test/WindowCreationTest.java,
+	  test/input/ControllerCreationTest.java,
+	  test/input/MouseCreationTest.java, test/input/MouseTest.java,
+	  test/openal/MovingSoundTest.java, test/opengl/Grass.java: fix:
+	  make it all compile
+
+2003-03-28 22:03  cix_foo
+
+	* src/: java/org/lwjgl/opengl/BaseGL.java,
+	  java/org/lwjgl/opengl/GL.java,
+	  native/common/org_lwjgl_opengl_BaseGL.h,
+	  native/win32/org_lwjgl_Window.cpp,
+	  native/win32/org_lwjgl_opengl_BaseGL.h: Fixed
+
+2003-03-28 20:17  cix_foo
+
+	* src/java/org/lwjgl/: test/opengl/Game.java, opengl/CoreGL.java,
+	  opengl/GL.java: Fixed
+
+2003-03-28 20:07  cix_foo
+
+	* src/java/org/lwjgl/opengl/BaseGL.java: Removed Exception from
+	  constructor
+
+2003-03-28 20:00  cix_foo
+
+	* src/: java/org/lwjgl/input/Mouse.java,
+	  java/org/lwjgl/input/Keyboard.java, java/org/lwjgl/Display.java,
+	  java/org/lwjgl/Window.java, java/org/lwjgl/opengl/BaseGL.java,
+	  java/org/lwjgl/opengl/GL.java,
+	  native/win32/org_lwjgl_opengl_BaseGL.cpp,
+	  native/win32/org_lwjgl_Display.cpp, native/win32/Window.h,
+	  native/win32/org_lwjgl_Window.cpp,
+	  native/common/org_lwjgl_opengl_BaseGL.h: [no log message]
+
+2003-03-28 02:27  cix_foo
+
+	* src/native/: win32/org_lwjgl_opengl_BaseGL.h,
+	  win32/org_lwjgl_Display.cpp,
+	  win32/org_lwjgl_input_Controller.cpp,
+	  win32/org_lwjgl_input_Keyboard.cpp,
+	  win32/org_lwjgl_input_Mouse.cpp,
+	  win32/org_lwjgl_opengl_BaseGL.cpp,
+	  common/org_lwjgl_opengl_BaseGL.h, common/org_lwjgl_Display.h,
+	  common/org_lwjgl_Window.h, win32/Window.h,
+	  win32/org_lwjgl_Window.cpp: New Window class, and major changes
+	  to Display
+
+2003-03-28 02:24  cix_foo
+
+	* src/java/org/lwjgl/: opengl/CoreGL.java, opengl/GL.java,
+	  opengl/BaseGL.java, Window.java: New Window class, and major
+	  changes to Display
+
+2003-03-28 00:01  cix_foo
+
+	* src/java/org/lwjgl/Window.java: New Window class, and major
+	  changes to Display
+
+2003-03-27 23:54  cix_foo
+
+	* src/java/org/lwjgl/input/: Keyboard.java, Mouse.java: New Window
+	  class, and major changes to Display
+
+2003-03-27 23:46  cix_foo
+
+	* src/java/org/lwjgl/Window.java: New Window class, and major
+	  changes to Display
+
+2003-03-27 23:35  cix_foo
+
+	* src/java/org/lwjgl/Display.java: New Window class, and major
+	  changes to Display
+
+2003-03-27 23:32  cix_foo
+
+	* src/java/org/lwjgl/: test/opengl/Grass.java,
+	  test/opengl/Game.java, opengl/BaseGL.java,
+	  test/input/MouseCreationTest.java, test/input/MouseTest.java,
+	  test/WindowCreationTest.java,
+	  test/input/ControllerCreationTest.java, Display.java,
+	  Window.java: New Window class, and major changes to Display
+
+2003-03-27 19:27  elias_naur
+
+	* src/native/linux/: org_lwjgl_Display.cpp,
+	  org_lwjgl_opengl_BaseGL.cpp: Various linux fixes(alot)
+
+2003-03-27 18:27  elias_naur
+
+	* doc/TODO: [no log message]
+
+2003-03-27 18:22  elias_naur
+
+	* src/native/linux/org_lwjgl_Display.cpp: Linux various (5)
+
+2003-03-27 17:25  matzon
+
+	* doc/TODO: initial commit
+
+2003-03-27 16:42  elias_naur
+
+	* src/native/linux/org_lwjgl_Display.cpp: Various linux fixes(4)
+
+2003-03-27 16:38  elias_naur
+
+	* src/native/linux/org_lwjgl_Display.cpp: Various linux fixes(3)
+
+2003-03-27 16:28  elias_naur
+
+	* src/native/common/extgl.c: Various linux fixes(2)
+
+2003-03-27 16:16  elias_naur
+
+	* src/native/: config.h.in, configure.in, common/extgl.c,
+	  linux/org_lwjgl_Display.cpp, linux/org_lwjgl_input_Keyboard.cpp,
+	  linux/org_lwjgl_opengl_BaseGL.cpp: Various linux fixes
+
+2003-03-24 23:15  cix_foo
+
+	* src/java/org/lwjgl/Sys.java: [no log message]
+
+2003-03-24 23:12  cix_foo
+
+	* src/java/org/lwjgl/Sys.java: [no log message]
+
+2003-03-24 23:08  cix_foo
+
+	* src/java/org/lwjgl/opengl/: BaseGL.java, CoreGL.java, GL.java:
+	  [no log message]
+
+2003-03-24 22:42  cix_foo
+
+	* src/java/org/lwjgl/: input/Controller.java, input/Keyboard.java,
+	  input/Mouse.java, Display.java: [no log message]
+
+2003-03-24 22:38  cix_foo
+
+	* src/java/org/lwjgl/: Game.java, Display.java, Sys.java: [no log
+	  message]
+
+2003-03-24 19:10  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Mouse.cpp: Updated linux Mouse
+
+2003-03-24 18:16  matzon
+
+	* src/java/org/lwjgl/test/WindowCreationTest.java: add: small
+	  window test - wanted to test how fast a display is created
+
+2003-03-24 18:07  matzon
+
+	* src/java/org/lwjgl/test/input/: MouseCreationTest.java,
+	  MouseTest.java: mod: making it possible to see color differences
+	  by clicking mouse buttons
+
+2003-03-24 17:58  matzon
+
+	* src/java/org/lwjgl/input/Mouse.java: fix: creation of buttons
+	  array now occurs in java side
+
+2003-03-24 12:56  elias_naur
+
+	* src/: java/org/lwjgl/openal/BaseAL.java,
+	  java/org/lwjgl/test/openal/ALTest.java, native/common/extal.cpp,
+	  native/common/org_lwjgl_openal_ALC.cpp: Fixed Brian's bugs
+
+2003-03-23 21:08  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: Fixed mouse clamping
+
+2003-03-23 21:00  matzon
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: fix: VM crash when
+	  using > 4 button mouse
+
+2003-03-23 13:52  elias_naur
+
+	* src/native/common/: Makefile.am, extal.c, extal.cpp: Renamed
+	  extal.c->extal.cpp
+
+2003-03-23 02:13  exocet
+
+	* src/java/org/lwjgl/Math.java: Fixed some bugs that were not
+	  allowing bulk adds and some binary incompatibilities.  Fixed
+	  error involving incorrectly setting strides when the stride is 0.
+
+2003-03-23 00:22  matzon
+
+	* src/native/common/extal.c: beautyfication
+
+2003-03-23 00:16  matzon
+
+	* src/: java/org/lwjgl/openal/BaseAL.java, native/common/extal.c,
+	  native/common/extal.h, native/common/org_lwjgl_openal_BaseAL.cpp,
+	  native/common/org_lwjgl_openal_BaseAL.h: fix: load OpenAL based
+	  on java.library.path
+
+2003-03-22 22:39  cix_foo
+
+	* src/native/win32/org_lwjgl_Display.cpp: Fixed nasty bug in Win9x
+	  display mode enumeration
+
+2003-03-22 00:28  elias_naur
+
+	* src/native/linux/: org_lwjgl_Display.cpp,
+	  org_lwjgl_input_Controller.cpp, org_lwjgl_input_Keyboard.cpp,
+	  org_lwjgl_input_Mouse.cpp, org_lwjgl_opengl_BaseGL.cpp: Various
+	  linux fixes
+
+2003-03-21 18:55  matzon
+
+	* src/native/common/: extal.c, extal.h,
+	  org_lwjgl_openal_BaseAL.cpp: wip: load oal based on
+	  java.library.path
+
+2003-03-21 18:37  elias_naur
+
+	* src/native/linux/org_lwjgl_Display.cpp: Added getPlatform() to
+	  linux
+
+2003-03-21 18:05  cix_foo
+
+	* src/: java/org/lwjgl/Display.java,
+	  java/org/lwjgl/opengl/BaseGL.java, java/org/lwjgl/Math.java,
+	  java/org/lwjgl/Sys.java, native/win32/org_lwjgl_Display.cpp,
+	  native/win32/org_lwjgl_Sys.cpp,
+	  native/common/org_lwjgl_Display.h, native/common/org_lwjgl_Sys.h:
+	  New getPlatform() method added
+
+2003-03-21 17:57  cix_foo
+
+	* src/: java/org/lwjgl/Sys.java, native/win32/org_lwjgl_Sys.cpp:
+	  New getPlatform() method added
+
+2003-03-21 17:51  cix_foo
+
+	* src/: java/org/lwjgl/Sys.java, native/common/org_lwjgl_Sys.h,
+	  native/win32/org_lwjgl_Sys.cpp: New getPlatform() method added
+
+2003-03-19 13:41  elias_naur
+
+	* src/: java/org/lwjgl/Display.java,
+	  java/org/lwjgl/DisplayMode.java,
+	  java/org/lwjgl/test/input/ControllerCreationTest.java,
+	  java/org/lwjgl/test/input/MouseCreationTest.java,
+	  java/org/lwjgl/test/input/MouseTest.java,
+	  java/org/lwjgl/test/openal/MovingSoundTest.java,
+	  java/org/lwjgl/test/opengl/Game.java,
+	  java/org/lwjgl/test/opengl/Grass.java,
+	  native/common/org_lwjgl_Display.h,
+	  native/linux/org_lwjgl_Display.cpp,
+	  native/win32/org_lwjgl_Display.cpp: Reverted display mode
+	  selection
+
+2003-03-18 17:38  cix_foo
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: Fixed JNI error
+
+2003-03-17 19:57  cix_foo
+
+	* src/java/org/lwjgl/input/Mouse.java: Fixed some JNI errors. One
+	  remains.
+
+2003-03-17 19:40  matzon
+
+	* src/native/win32/org_lwjgl_Display.cpp: fix: dragging of window
+	  doesn't work, when returning directly from unhandled
+	  WM_SYSCOMMAND - so let's not do that!
+
+2003-03-17 19:34  cix_foo
+
+	* src/native/common/: extal.c, org_lwjgl_openal_ALC.cpp: Fix Brians
+	  bugs
+
+2003-03-17 00:30  matzon
+
+	* doc/changelogs/full-changeLog.text: changelog
+
+2003-03-17 00:29  matzon
+
+	* doc/changelogs/0.4-0.5-changelog.text: 0.4 -> 0.5 changelog
+
+2003-03-16 23:52  matzon
+
+	* src/java/org/lwjgl/test/openal/OpenALCreationTest.java: initial
+	  commit of OpenAL create/destroy test
+
+2003-03-16 22:55  elias_naur
+
+	* src/native/: configure.in, common/org_lwjgl_opengl_GL.cpp: Fixed
+	  runtime breakage on linux
+
+2003-03-16 21:31  matzon
+
+	* src/java/org/lwjgl/test/input/MouseCreationTest.java: fix: stop
+	  checking Hz
+
+2003-03-16 21:13  matzon
+
+	* src/java/org/lwjgl/test/input/MouseTest.java: fix: destroy
+	  keyboard upon exit
+
+2003-03-16 21:12  matzon
+
+	* src/java/org/lwjgl/test/input/MouseTest.java: fix: escape testing
+
+2003-03-16 21:09  matzon
+
+	* src/java/org/lwjgl/test/input/MouseCreationTest.java: fix: get
+	  60Hz fix: keep polygon within window
+
+2003-03-16 18:37  cix_foo
+
+	* src/native/common/: extal.c, org_lwjgl_opengl_CoreGL.cpp: [no log
+	  message]
+
+2003-03-14 00:11  cix_foo
+
+	* src/native/common/org_lwjgl_opengl_GL.cpp: [no log message]
+
+2003-03-13 20:54  matzon
+
+	* src/native/common/org_lwjgl_opengl_GL.cpp: fix: compile bug,
+	  since glx* didn't return value
+
+2003-03-13 20:48  cix_foo
+
+	* src/native/common/org_lwjgl_opengl_GL.cpp: [no log message]
+
+2003-03-13 20:31  cix_foo
+
+	* src/native/common/checkGLerror.h: [no log message]
+
+2003-03-08 23:14  elias_naur
+
+	* src/native/linux/: org_lwjgl_Display.cpp,
+	  org_lwjgl_input_Keyboard.cpp: Moved disabling of repeat rate to
+	  Display
+
+2003-03-08 19:47  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.cpp: Disable linux key
+	  repeat while Keyboard is created - match win32 behavior
+
+2003-03-07 17:01  cix_foo
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: Tweaked but little
+	  else
+
+2003-03-07 16:23  matzon
+
+	* src/native/win32/org_lwjgl_input_Controller.cpp: fix: removed
+	  GlobalRef fix: now sets fields to JNI_TRUE/JNI_FALSE respectively
+
+2003-03-07 16:04  cix_foo
+
+	* src/native/common/org_lwjgl_opengl_CoreGL.cpp: [no log message]
+
+2003-03-06 23:55  cix_foo
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: [no log message]
+
+2003-03-06 21:55  matzon
+
+	* src/native/win32/: org_lwjgl_input_Controller.cpp,
+	  org_lwjgl_input_Mouse.cpp: wip fix: buttons array now being
+	  ref'ed from native side to avoid GC'ing
+
+2003-03-06 21:54  elias_naur
+
+	* src/: java/org/lwjgl/opengl/GL.java,
+	  native/common/org_lwjgl_opengl_GL.cpp,
+	  native/common/org_lwjgl_opengl_GL.h,
+	  native/win32/org_lwjgl_Display.cpp: added
+	  glXAllocateMemoryNV/glXFreeMemoryNV
+
+2003-03-06 18:52  elias_naur
+
+	* src/native/common/org_lwjgl_opengl_CoreGL.cpp: [no log message]
+
+2003-03-04 07:08  matzon
+
+	* src/native/win32/org_lwjgl_Display.cpp: fix: won't be needing
+	  hashmaps from native side
+
+2003-03-03 23:12  cix_foo
+
+	* src/java/org/lwjgl/DisplayMode.java: [no log message]
+
+2003-03-03 22:58  matzon
+
+	* src/java/org/lwjgl/Display.java: fix: possible NPE evaded
+
+2003-03-03 22:50  matzon
+
+	* src/native/: common/org_lwjgl_Display.h,
+	  win32/org_lwjgl_Display.cpp: fix: small beautification
+
+2003-03-03 22:49  matzon
+
+	* src/native/linux/org_lwjgl_Display.cpp: fix: now enumerates
+	  multiple displaydevices, if available
+
+2003-03-03 22:46  matzon
+
+	* src/: native/common/org_lwjgl_Display.h,
+	  native/win32/org_lwjgl_Display.cpp, java/org/lwjgl/Display.java:
+	  fix: now enumerates multiple displaydevices, if available

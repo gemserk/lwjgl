@@ -1,0 +1,572 @@
+2005-01-25 22:26  matzon
+
+	* src/java/org/lwjgl/opengl/EXTFramebufferObject.java: fixed "html"
+	  tags causing bug 5082928 in 1.5
+
+2005-01-25 22:26  matzon
+
+	* build.xml: it's 2005! :)
+
+2005-01-25 21:58  matzon
+
+	* doc/README: removed entry about media distribution
+
+2005-01-25 21:56  matzon
+
+	* doc/: openal_c-to-java.html, tutorial/intro.html,
+	  tutorial/openal_basics.html, tutorial/skeleton_code.html: removed
+	  more obsolete stuff
+
+2005-01-25 21:53  matzon
+
+	* doc/LICENSE: it's 2005! :)
+
+2005-01-25 21:53  matzon
+
+	* doc/TODO: nuke todo list - waaaaay old
+
+2005-01-25 21:51  matzon
+
+	* doc/lwjgl_hidden_switches.text: removed controller switch
+
+2005-01-25 21:50  matzon
+
+	* build.xml: proper mac check
+
+2005-01-25 10:17  elias_naur
+
+	* src/native/macosx/Makefile: Mac OS X:Fix Makefile indentation
+
+2005-01-25 07:30  matzon
+
+	* build.xml, src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java,
+	  src/native/common/common_tools.c,
+	  src/native/common/fmod3/org_lwjgl_fmod3_FMOD.c: incrementing to
+	  0.95
+
+2005-01-24 00:07  matzon
+
+	* src/native/macosx/Makefile, build.xml: mac fix as per:
+	  http://lwjgl.org/forum/viewtopic.php?t=903
+
+2005-01-22 01:35  cix_foo
+
+	* src/native/win32/.cvsignore: [no log message]
+
+2005-01-22 01:34  cix_foo
+
+	* src/java/org/lwjgl/: opengl/MacOSXDisplay.java,
+	  opengl/MacOSXFrame.java, NativeSysImplementation.java,
+	  opengl/Pbuffer.java: Fixing Mac problems.
+
+2005-01-21 23:07  elias_naur
+
+	* src/java/org/lwjgl/opengl/: MacOSXDisplay.java, MacOSXFrame.java,
+	  MacOSXGLCanvas.java: Mac OS X: Remove invokeAndWait stuff since
+	  AWT, unlike swing, is thread safe
+
+2005-01-21 09:35  elias_naur
+
+	* src/java/org/lwjgl/opengl/: MacOSXFrame.java,
+	  MacOSXGLCanvas.java: Mac OS X: Move GLCanvas init() from paint to
+	  immediately after being displayable to avoid deadlocks
+
+2005-01-21 08:41  elias_naur
+
+	* build.xml: Added org.lwjgl.DefaultSysImplementation to javah
+	  build target again.
+
+2005-01-20 23:51  cix_foo
+
+	* src/java/org/lwjgl/J2SESysImplementation.java,
+	  src/java/org/lwjgl/LWJGLException.java,
+	  src/java/org/lwjgl/LinuxSysImplementation.java,
+	  src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  src/java/org/lwjgl/NativeSysImplementation.java,
+	  src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/Win32SysImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java, build.xml,
+	  src/java/org/lwjgl/DefaultSysImplementation.java,
+	  src/native/common/.cvsignore, src/native/win32/org_lwjgl_Sys.c:
+	  Fixed AWT dependency.
+
+2005-01-20 22:30  elias_naur
+
+	* src/native/common/common_tools.h: Compilation fix
+
+2005-01-19 14:15  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Pbuffer.c: Win32 compile fix
+
+2005-01-19 14:05  elias_naur
+
+	* src/: java/org/lwjgl/opengl/Pbuffer.java,
+	  native/linux/org_lwjgl_opengl_Pbuffer.c,
+	  native/win32/org_lwjgl_opengl_Pbuffer.c: Moved pbuffer supported
+	  check into native code to fix the case of no current context when
+	  creating the pbuffer
+
+2005-01-19 10:10  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXFrame.java: Mac OS X: Don't use
+	  invokeAndWait() if called from dispatch thread
+
+2005-01-19 03:10  cix_foo
+
+	* src/native/win32/org_lwjgl_Sys.c: Fixed return type in native
+	  openURL
+
+2005-01-19 03:10  cix_foo
+
+	* src/native/: common/devil/.cvsignore, macosx/.cvsignore,
+	  win32/.cvsignore: [no log message]
+
+2005-01-18 22:27  matzon
+
+	* www/links.php: updated links
+
+2005-01-18 22:11  elias_naur
+
+	* src/native/win32/org_lwjgl_Sys.c: Win32 compile fix
+
+2005-01-18 21:55  spasi
+
+	* src/: native/common/ext/org_lwjgl_opengl_EXTFramebufferObject.c,
+	  java/org/lwjgl/opengl/EXTFramebufferObject.java,
+	  java/org/lwjgl/opengl/GLContext.java: Added
+	  EXT_framebuffer_object
+
+2005-01-18 21:22  elias_naur
+
+	* build.xml, src/java/org/lwjgl/DefaultSysImplementation.java,
+	  src/java/org/lwjgl/LinuxSysImplementation.java,
+	  src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  src/java/org/lwjgl/PlatformAdapter.java,
+	  src/java/org/lwjgl/SwingAdapter.java,
+	  src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/SysImplementation.java,
+	  src/java/org/lwjgl/Win32SysImplementation.java,
+	  src/java/org/lwjgl/opengl/DisplayImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/native/common/common_tools.c,
+	  src/native/linux/org_lwjgl_Sys.c,
+	  src/native/macosx/org_lwjgl_Sys.c,
+	  src/native/win32/org_lwjgl_Sys.c: Delegate Sys platform dependent
+	  methods into SysImplementation instances
+
+2005-01-18 20:22  elias_naur
+
+	* src/java/org/lwjgl/test/: SysTest.java, fmod3/SyncTest.java: Fix
+	  tests
+
+2005-01-18 20:05  elias_naur
+
+	* src/: java/org/lwjgl/Sys.java, native/linux/org_lwjgl_Sys.c,
+	  native/macosx/org_lwjgl_Sys.c, native/win32/org_lwjgl_Sys.c:
+	  Removed Sys.setProcessPriority
+
+2005-01-18 18:25  elias_naur
+
+	* src/: java/org/lwjgl/opengl/LinuxDisplay.java,
+	  native/linux/org_lwjgl_input_Mouse.c: Linux:Moved NUM_BUTTONS up
+	  into java
+
+2005-01-18 17:50  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Keyboard.c: Win32 compile fix
+
+2005-01-18 17:42  elias_naur
+
+	* src/: java/org/lwjgl/input/Keyboard.java,
+	  java/org/lwjgl/input/Mouse.java,
+	  java/org/lwjgl/opengl/DisplayImplementation.java,
+	  java/org/lwjgl/opengl/LinuxDisplay.java,
+	  java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  java/org/lwjgl/opengl/Win32Display.java,
+	  native/linux/org_lwjgl_input_Keyboard.c,
+	  native/linux/org_lwjgl_input_Mouse.c,
+	  native/win32/org_lwjgl_input_Cursor.c,
+	  native/win32/org_lwjgl_input_Keyboard.c,
+	  native/win32/org_lwjgl_input_Mouse.c: Cleaned up Mouse and
+	  Keyboard now that buffering and translation are always enabled
+
+2005-01-18 16:31  elias_naur
+
+	* build.xml, doc/README,
+	  src/java/org/lwjgl/examples/spaceinvaders/Game.java,
+	  src/java/org/lwjgl/input/Controller.java,
+	  src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/test/input/ControllerCreationTest.java,
+	  src/java/org/lwjgl/test/input/ControllerFieldTest.java,
+	  src/java/org/lwjgl/test/input/ControllerTest.java,
+	  src/native/common/.cvsignore,
+	  src/native/win32/org_lwjgl_input_Controller.c: Removed Controller
+
+2005-01-18 16:22  elias_naur
+
+	* build.xml, doc/README, doc/tutorial/intro.html,
+	  platform_build/win32_ms_cmdline/build.bat,
+	  src/java/org/lwjgl/test/openal/EAXTest.java,
+	  src/java/org/lwjgl/test/openal/MovingSoundTest.java,
+	  src/native/common/extal.c, src/native/common/extal.h,
+	  src/native/common/org_lwjgl_openal_eax_EAX.c,
+	  src/native/common/org_lwjgl_openal_eax_EAX20.c,
+	  src/native/common/org_lwjgl_openal_eax_EAXBufferProperties.c,
+	  src/native/common/org_lwjgl_openal_eax_EAXListenerProperties.c:
+	  Removed EAX
+
+2005-01-18 15:27  cix_foo
+
+	* src/java/org/lwjgl/util/Timer.java: [no log message]
+
+2005-01-18 15:09  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Controller.c: Linux: removed
+	  org_lwjgl_input_Controller.c, since the methods were empty anyway
+
+2005-01-18 13:53  elias_naur
+
+	* src/java/org/lwjgl/Sys.java: Made Sys.getLibraryName() private
+
+2005-01-18 13:49  elias_naur
+
+	* src/java/org/lwjgl/test/input/HWCursorTest.java: Fixed tests
+
+2005-01-18 13:34  elias_naur
+
+	* src/: java/org/lwjgl/input/Cursor.java,
+	  java/org/lwjgl/input/Mouse.java,
+	  java/org/lwjgl/opengl/DisplayImplementation.java,
+	  java/org/lwjgl/opengl/LinuxDisplay.java,
+	  java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  java/org/lwjgl/opengl/Pbuffer.java,
+	  java/org/lwjgl/opengl/Win32Display.java,
+	  java/org/lwjgl/test/input/HWCursorTest.java,
+	  java/org/lwjgl/test/opengl/PbufferTest.java,
+	  java/org/lwjgl/test/opengl/pbuffers/PbufferTest.java,
+	  native/linux/org_lwjgl_input_Cursor.c,
+	  native/linux/org_lwjgl_input_Mouse.c,
+	  native/linux/org_lwjgl_opengl_Pbuffer.c,
+	  native/win32/org_lwjgl_input_Cursor.c,
+	  native/win32/org_lwjgl_input_Mouse.c,
+	  native/win32/org_lwjgl_opengl_Pbuffer.c: Moved
+	  Mouse.getNativeCursorCaps() to Cursor.getCapabilities() Renamed
+	  Pbuffer.getPbufferCaps() to Pbuffer.getCapabilities()
+
+2005-01-18 12:58  elias_naur
+
+	* src/java/org/lwjgl/opengl/Pbuffer.java: Added supported check to
+	  Pbuffer constructor
+
+2005-01-16 12:12  elias_naur
+
+	* platform_build/win32_ms_cmdline/build.bat,
+	  src/native/win32/display.c: Win32: hardened
+	  getAvailableDisplayModes
+
+2005-01-16 11:43  elias_naur
+
+	* src/native/linux/: Makefile, display.c: Linux: Hardened
+	  getAvailableDisplayModes so that it won't be confused by a
+	  changing number of display modes while it is executing
+
+2005-01-16 00:52  spasi
+
+	* src/native/win32/org_lwjgl_opengl_Display.c:
+	  createARBContextAndPixelFormat didn't return true when ok
+
+2005-01-16 00:49  spasi
+
+	* src/: java/org/lwjgl/opengl/GL14.java,
+	  java/org/lwjgl/opengl/GL20.java,
+	  native/common/org_lwjgl_opengl_GL14.c,
+	  native/common/org_lwjgl_opengl_GL20.c: Completed GL 2.0
+
+2005-01-15 17:30  elias_naur
+
+	* src/java/org/lwjgl/Sys.java: Don't allow null strings in
+	  Sys.alert()
+
+2005-01-15 16:45  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Win32: Fix
+	  Pbuffer.getPbufferCaps()
+
+2005-01-14 14:56  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Pbuffer.c: Win32: Fix pbuffer
+	  context sharing
+
+2005-01-14 14:30  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Pbuffer.c: Linux: Don't free
+	  Pbuffer when it is not created
+
+2005-01-14 13:29  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Don't set the window
+	  location twice in Display.createWindow()
+
+2005-01-14 12:20  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Win32: Fix native
+	  crash when no suitable pixel format is found.
+
+2005-01-14 11:01  elias_naur
+
+	* platform_build/win32_ms_cmdline/build.bat: Win32 build: Removed
+	  redundant libraries from linker option
+
+2005-01-14 10:39  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Removed redundant
+	  makeCurrent from Display.java
+
+2005-01-14 10:24  elias_naur
+
+	* src/: java/org/lwjgl/opengl/Display.java,
+	  native/win32/org_lwjgl_opengl_Display.c: Don't make context
+	  current in DisplayImplementation.createWindow(), but let Display
+	  do it explicitly to increase native call granularity
+
+2005-01-13 21:34  spasi
+
+	* src/java/org/lwjgl/opengl/VBOTracker.java: VBOTracker renamed to
+	  BufferObjectTracker
+
+2005-01-13 21:32  spasi
+
+	* src/java/org/lwjgl/opengl/: ARBBufferObject.java,
+	  ARBImaging.java, ARBTextureCompression.java,
+	  BufferObjectTracker.java, GL11.java, GL12.java, GL13.java,
+	  GL15.java, GLBufferChecks.java, GLContext.java: Finished PBO
+	  support implementation
+
+2005-01-13 21:30  spasi
+
+	* src/native/common/arb/org_lwjgl_opengl_ARBTextureCompression.c:
+	  Implemented PBO support
+
+2005-01-13 13:14  elias_naur
+
+	* src/native/common/common_tools.h: remove const from
+	  offsetToPointer in common_tools.h since PBO functions take
+	  non-const pointers
+
+2005-01-13 03:14  spasi
+
+	* src/: java/org/lwjgl/opengl/ARBBufferObject.java,
+	  java/org/lwjgl/opengl/ARBImaging.java,
+	  java/org/lwjgl/opengl/GL11.java, java/org/lwjgl/opengl/GL12.java,
+	  java/org/lwjgl/opengl/GL13.java,
+	  java/org/lwjgl/opengl/GLBufferChecks.java,
+	  java/org/lwjgl/opengl/VBOTracker.java,
+	  java/org/lwjgl/util/GL.java, java/org/lwjgl/util/GLImpl.java,
+	  java/org/lwjgl/util/IGL.java,
+	  native/common/org_lwjgl_opengl_GL11.c,
+	  native/common/org_lwjgl_opengl_GL12.c,
+	  native/common/org_lwjgl_opengl_GL13.c,
+	  native/common/arb/org_lwjgl_opengl_ARBImaging.c: Implemented PBO
+	  support
+
+2005-01-12 13:32  captainjester
+
+	* src/native/common/devil/org_lwjgl_devil_ILUT.c: Should be ASCII
+
+2005-01-12 13:30  captainjester
+
+	* src/native/common/devil/extil.h,
+	  src/native/common/devil/org_lwjgl_devil_ILU.c,
+	  src/native/common/devil/org_lwjgl_devil_ILUT.c, .cvsignore,
+	  build.xml, platform_build/win32_ms_cmdline/build-devil.bat,
+	  src/java/org/lwjgl/devil/ILUT.java: Add files for ILUT portion of
+	  DevIL.
+
+2005-01-12 13:20  elias_naur
+
+	* src/native/linux/: Window.h, org_lwjgl_opengl_Display.c,
+	  org_lwjgl_opengl_Pbuffer.c: Linux: Release context before
+	  destroying it
+
+2005-01-12 09:58  elias_naur
+
+	* src/java/org/lwjgl/opengl/GLContext.java: Added sanity check to
+	  GLContext.java
+
+2005-01-11 16:22  elias_naur
+
+	* src/: java/org/lwjgl/opengl/LinuxDisplay.java,
+	  native/common/common_tools.c, native/common/common_tools.h,
+	  native/linux/Makefile, native/linux/org_lwjgl_input_Cursor.c,
+	  native/linux/org_lwjgl_input_Keyboard.c,
+	  native/linux/org_lwjgl_input_Mouse.c,
+	  native/linux/org_lwjgl_opengl_Display.c,
+	  native/linux/org_lwjgl_opengl_Pbuffer.c: Linux: Implemented AWT
+	  synchronization through JAWT. Needed because Xlib is not
+	  guaranteed thread safe
+
+2005-01-11 15:05  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Pbuffer.c: Win32: Compile fixes
+
+2005-01-11 15:03  elias_naur
+
+	* src/native/macosx/org_lwjgl_opengl_Pbuffer.m: macosx compile fix
+
+2005-01-11 14:53  elias_naur
+
+	* src/: java/org/lwjgl/opengl/DisplayImplementation.java,
+	  java/org/lwjgl/opengl/LinuxDisplay.java,
+	  java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  java/org/lwjgl/opengl/Pbuffer.java,
+	  java/org/lwjgl/opengl/Win32Display.java,
+	  java/org/lwjgl/test/opengl/PbufferTest.java,
+	  java/org/lwjgl/test/opengl/pbuffers/UniqueRenderer.java,
+	  java/org/lwjgl/test/opengl/pbuffers/UniqueRendererRTT.java,
+	  native/linux/org_lwjgl_opengl_Pbuffer.c,
+	  native/macosx/org_lwjgl_opengl_Pbuffer.m,
+	  native/win32/org_lwjgl_opengl_Pbuffer.c: Added a Pbuffer argument
+	  to the Pbuffer constructor to enable sharing between pbuffers
+	  when the display is not created. Moved Pbuffer native methods
+	  into DisplayImplementation.
+
+2005-01-10 20:03  matzon
+
+	* www/: _gfx/projects/puppytron_1.jpg,
+	  _gfx/projects/puppytron_2.jpg, _gfx/projects/puppytron_3.jpg,
+	  _gfx/projects/puppytron_small_1.jpg,
+	  _gfx/projects/puppytron_small_2.jpg,
+	  _gfx/projects/puppytron_small_3.jpg, projects.php: added
+	  puppytron
+
+2005-01-10 10:21  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.c: Win32: Fixes for
+	  previous commit
+
+2005-01-10 09:48  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.c: I've discovered that at
+	  least one Win XP configuration doesn't support the DirectInput
+	  cooperative level NONEXCLUSIVE | FOREGROUND for mouse devices.
+	  Fortunately, we don't really need that coop level anyway, so I
+	  have replaced it with Unacquire/Acquire.
+
+2005-01-10 09:19  elias_naur
+
+	* src/java/org/lwjgl/: input/Keyboard.java, input/Mouse.java,
+	  opengl/Display.java, test/input/KeyboardTest.java: Removed
+	  enableBuffer() and enableTranslation() from the public API.
+
+2005-01-10 00:59  captainjester
+
+	* src/java/org/lwjgl/: devil/ILinfo.java, devil/ILU.java,
+	  devil/ILpointf.java, devil/ILpointi.java,
+	  test/devil/BasicTest.java: iluGetImageInfo now working.
+
+2005-01-09 05:59  captainjester
+
+	* res/ILtest.bmp, res/ILtest.gif, res/ILtest.jpg, res/ILtest.tga,
+	  platform_build/win32_ms_cmdline/build-devil.bat,
+	  src/native/common/devil/.cvsignore,
+	  src/native/common/devil/extil.h,
+	  src/native/common/devil/org_lwjgl_devil_ILU.c, build.xml,
+	  src/java/org/lwjgl/devil/ILU.java,
+	  src/java/org/lwjgl/devil/ILinfo.java,
+	  src/java/org/lwjgl/devil/ILpointf.java,
+	  src/java/org/lwjgl/devil/ILpointi.java,
+	  src/java/org/lwjgl/test/devil/BasicTest.java: First pass at ILU
+	  portion of DevIL.  Only basic testing is one.  No dynamic loading
+	  yet.	3 methods not implemented yet.
+
+2005-01-06 15:22  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: call setLocation _after_
+	  window has been created
+
+2005-01-06 15:03  elias_naur
+
+	* src/: java/org/lwjgl/opengl/LinuxDisplay.java,
+	  native/linux/org_lwjgl_input_Mouse.c,
+	  native/linux/org_lwjgl_opengl_Display.c: Linux: Moved trivial
+	  methods from native to java
+
+2005-01-06 14:06  elias_naur
+
+	* src/native/win32/: org_lwjgl_input_Mouse.c: Win32: Clean up mouse
+	  error handling
+
+2005-01-06 12:41  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.c: More debug output
+
+2005-01-06 10:18  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.c: Added debugging
+
+2005-01-06 09:56  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.c: Added debugging
+
+2005-01-03 07:34  matzon
+
+	* www/installation.php: fixed output
+
+2005-01-03 07:32  matzon
+
+	* www/installation.php: lwjgl_util.jar needed on classpath too
+
+2004-12-28 21:21  spasi
+
+	* src/java/org/lwjgl/opengl/: ARBPixelBufferObject.java,
+	  GLContext.java: Added PBO extension
+
+2004-12-27 22:39  matzon
+
+	* src/java/org/lwjgl/test/WindowCreationTest.java: move before
+	  creation
+
+2004-12-27 22:38  matzon
+
+	* src/java/org/lwjgl/opengl/Display.java: respect display location
+
+2004-12-27 22:32  matzon
+
+	* src/java/org/lwjgl/test/WindowCreationTest.java: move window
+	  after centering updated output
+
+2004-12-17 18:28  matzon
+
+	* www/: projects.php, _gfx/projects/gravitybattle_1.jpg,
+	  _gfx/projects/gravitybattle_2.jpg,
+	  _gfx/projects/gravitybattle_3.jpg,
+	  _gfx/projects/gravitybattle_small_1.jpg,
+	  _gfx/projects/gravitybattle_small_2.jpg,
+	  _gfx/projects/gravitybattle_small_3.jpg,
+	  _gfx/projects/superdudester_1.jpg,
+	  _gfx/projects/superdudester_2.jpg,
+	  _gfx/projects/superdudester_3.jpg,
+	  _gfx/projects/superdudester_small_1.jpg,
+	  _gfx/projects/superdudester_small_2.jpg,
+	  _gfx/projects/superdudester_small_3.jpg: added Super Dudester &
+	  Gravity Battle to projects page
+
+2004-12-14 22:31  matzon
+
+	* www/faq.php: fixed anchors
+
+2004-12-14 22:27  matzon
+
+	* www/: download.php, index.php: updated to 0.94
+
+2004-12-14 22:12  matzon
+
+	* www/changelog.php: updated changelogs to 0.94
+
+2004-12-14 22:05  matzon
+
+	* www/changelogs/: 0.94-changelog.txt, full-changelog.txt: updated
+	  changelogs to 0.94

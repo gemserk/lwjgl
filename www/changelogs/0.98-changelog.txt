@@ -1,0 +1,541 @@
+2005-08-18 15:55  matzon
+
+	* src/java/org/lwjgl/: test/WindowCreationTest.java,
+	  util/XPMFile.java: fixed XPMFile to use InputStream load method
+	  too
+
+2005-08-18 15:48  matzon
+
+	* doc/README: updated readme to include jinput
+
+2005-08-18 15:48  matzon
+
+	* build.xml: include jinput in release target
+
+2005-08-18 13:27  matzon
+
+	* src/java/org/lwjgl/util/WaveData.java: added everything but the
+	  kitchen sink
+
+2005-08-18 00:05  matzon
+
+	* build.xml, src/native/common/common_tools.c,
+	  src/java/org/lwjgl/Sys.java, src/java/org/lwjgl/fmod3/FMOD.java:
+	  0.98 version string
+
+2005-08-08 18:00  elias_naur
+
+	* src/native/win32/: extgl_wgl.c,
+	  org_lwjgl_opengl_Win32ContextImplementation.c: Win32: Fixed
+	  SIS/VIA crashes
+
+2005-08-07 14:19  elias_naur
+
+	* src/java/org/lwjgl/opengl/: Context.java, GLContext.java: Added
+	  fast path to GLContext.getCapabilities() optimized for single
+	  threaded applications
+
+2005-07-22 17:28  matzon
+
+	* www/projects.php: make elias stop whine
+
+2005-07-22 00:17  matzon
+
+	* www/: projects.php, _gfx/projects/cultris_1.jpg,
+	  _gfx/projects/cultris_2.jpg, _gfx/projects/cultris_3.jpg,
+	  _gfx/projects/cultris_small_1.jpg,
+	  _gfx/projects/cultris_small_2.jpg,
+	  _gfx/projects/cultris_small_3.jpg,
+	  _gfx/projects/keith_goes_painting_1.jpg,
+	  _gfx/projects/keith_goes_painting_2.jpg,
+	  _gfx/projects/keith_goes_painting_3.jpg,
+	  _gfx/projects/keith_goes_painting_small_1.jpg,
+	  _gfx/projects/keith_goes_painting_small_2.jpg,
+	  _gfx/projects/keith_goes_painting_small_3.jpg: added Cultris
+	  added Keith Goes Painting fixed StarShip2D path
+
+2005-07-20 09:30  matzon
+
+	* src/java/org/lwjgl/opengl/Pbuffer.java: fix for matrox parhelia,
+	  they wont accept NULL buffer, despite the specs saying it's
+	  legit. Bugfinding: Javazoid
+
+2005-07-19 21:32  matzon
+
+	* build.xml: add jinput to classpath when building org.lwjgl.*
+	  instead, since input is dragged into the compile via Sys.java
+
+2005-07-16 13:27  kevglass
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Fix for alpha based
+	  icons under win32.
+
+2005-07-16 13:15  matzon
+
+	* src/java/org/lwjgl/opengl/Display.java: caching of window icon
+
+2005-07-16 12:37  kevglass
+
+	* src/java/org/lwjgl/test/WindowCreationTest.java: LWJGL icon used
+	  as window icon in test.
+
+2005-07-16 12:36  kevglass
+
+	* src/java/org/lwjgl/util/XPMFile.java: Fix for compilation on 1.4,
+	  remove autoboxing
+
+2005-07-16 12:30  kevglass
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Fix win32 icon alpha
+	  mask
+
+2005-07-16 11:13  matzon
+
+	* res/: lwjgl_16x16.xpm, lwjgl_32x32.xpm: temp XPM logo files
+
+2005-07-16 11:11  matzon
+
+	* src/java/org/lwjgl/util/XPMFile.java: XPM File reader
+
+2005-07-11 19:05  matzon
+
+	* src/java/org/lwjgl/test/WindowCreationTest.java: way simple icon
+	  test
+
+2005-07-10 22:16  kevglass
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Fix native code to
+	  work with RGBA rather than RBGR.
+
+2005-07-10 22:15  kevglass
+
+	* src/java/org/lwjgl/opengl/: LinuxDisplay.java, Win32Display.java:
+	  Fix size check bug in icon setting. Divide by four to get the
+	  size of the buffer in pixels.
+
+2005-07-06 21:46  kevglass
+
+	* src/native/linux/org_lwjgl_opengl_Display.c: Added Linux native
+	  code for window icon setting.
+
+2005-07-06 00:09  kevglass
+
+	* src/java/org/lwjgl/opengl/Win32Display.java: Updated Win32 native
+	  interface to use IntBuffers rather than ByteBuffers
+
+2005-07-06 00:08  kevglass
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Updated to actually
+	  convert the passed int buffer
+
+2005-07-05 23:54  kevglass
+
+	* src/java/org/lwjgl/opengl/: Display.java,
+	  DisplayImplementation.java, LinuxDisplay.java,
+	  MacOSXDisplay.java, Win32Display.java: Added methods to set the
+	  window icon. MacOS implementation added using AWT images.
+
+2005-07-05 23:46  kevglass
+
+	* src/native/linux/org_lwjgl_opengl_Display.c: Added empty
+	  implementation of the window icon setting code in preperation for
+	  adding the Linux version.
+
+2005-07-05 23:45  kevglass
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Added function to
+	  set the window icon on win32
+
+2005-06-29 22:48  matzon
+
+	* src/java/org/lwjgl/opengl/Display.java: automatic polling via
+	  Display.update();
+
+2005-06-29 22:47  matzon
+
+	* src/java/org/lwjgl/input/Controllers.java: support isCreated and
+	  destroy (destroy currently ignored)
+
+2005-06-29 22:38  matzon
+
+	* src/java/org/lwjgl/input/: JInputController.java,
+	  ControllerEvent.java: decrease visibility of classes
+
+2005-06-29 22:32  matzon
+
+	* libs/: linux/libIL.so, linux/libILU.so, linux/libILUT.so,
+	  linux/libopenal.so, macosx/libIL.dylib, macosx/libILU.dylib,
+	  macosx/libILUT.dylib, macosx/openal.dylib, win32/DevIL.dll,
+	  win32/ILU.dll, win32/ILUT.dll, win32/lwjglaudio.dll: added 3rd
+	  party native libs
+
+2005-06-29 22:16  matzon
+
+	* doc/3rdparty/: jinput_license.txt, openal_license.txt,
+	  openil_license.txt: added licenses
+
+2005-06-29 22:16  matzon
+
+	* doc/CREDITS: added comment about 3rd party library usage and
+	  dependency
+
+2005-06-29 22:13  kevglass
+
+	* build.xml: Initial controller input checkin. Updates to add
+	  classpath to javac task for building input.
+
+2005-06-29 22:11  kevglass
+
+	* src/java/org/lwjgl/: input/Controller.java,
+	  input/ControllerEvent.java, input/Controllers.java,
+	  input/JInputController.java, test/input/TestControllers.java:
+	  Initial controller input checkin. Source for the wrapper round
+	  JInput including the test tool.
+
+2005-06-29 22:08  kevglass
+
+	* libs/linux/libjinput-linux.so: Initial controller input checkin.
+	  JInput native for linux.
+
+2005-06-29 22:04  kevglass
+
+	* libs/win32/jinput-dxplugin.dll: Initial controller input checkin.
+	  JInput native for win32
+
+2005-06-29 22:03  kevglass
+
+	* libs/macosx/libjinput.jnilib: Initial controller input checkin.
+	  JInput native for macosx
+
+2005-06-29 22:00  kevglass
+
+	* libs/jinput.jar: Initial controller input checkin. Jar for
+	  jinput.
+
+2005-06-29 09:39  elias_naur
+
+	* src/: java/org/lwjgl/openal/AL10.java,
+	  java/org/lwjgl/opengl/ARBBufferObject.java,
+	  java/org/lwjgl/opengl/ARBColorBufferFloat.java,
+	  java/org/lwjgl/opengl/ARBDepthTexture.java,
+	  java/org/lwjgl/opengl/ARBDrawBuffers.java,
+	  java/org/lwjgl/opengl/ARBFragmentProgram.java,
+	  java/org/lwjgl/opengl/ARBFragmentShader.java,
+	  java/org/lwjgl/opengl/ARBHalfFloatPixel.java,
+	  java/org/lwjgl/opengl/ARBImaging.java,
+	  java/org/lwjgl/opengl/ARBMatrixPalette.java,
+	  java/org/lwjgl/opengl/ARBMultisample.java,
+	  java/org/lwjgl/opengl/ARBMultitexture.java,
+	  java/org/lwjgl/opengl/ARBOcclusionQuery.java,
+	  java/org/lwjgl/opengl/ARBPixelBufferObject.java,
+	  java/org/lwjgl/opengl/ARBPointParameters.java,
+	  java/org/lwjgl/opengl/ARBPointSprite.java,
+	  java/org/lwjgl/opengl/ARBProgram.java,
+	  java/org/lwjgl/opengl/ARBShaderObjects.java,
+	  java/org/lwjgl/opengl/ARBShadow.java,
+	  java/org/lwjgl/opengl/ARBTextureCompression.java,
+	  java/org/lwjgl/opengl/ARBTextureCubeMap.java,
+	  java/org/lwjgl/opengl/ARBTextureEnvCombine.java,
+	  java/org/lwjgl/opengl/ARBTextureEnvDot3.java,
+	  java/org/lwjgl/opengl/ARBTextureFloat.java,
+	  java/org/lwjgl/opengl/ARBTextureRectangle.java,
+	  java/org/lwjgl/opengl/ARBTransposeMatrix.java,
+	  java/org/lwjgl/opengl/ARBVertexBlend.java,
+	  java/org/lwjgl/opengl/ARBVertexBufferObject.java,
+	  java/org/lwjgl/opengl/ARBVertexProgram.java,
+	  java/org/lwjgl/opengl/ARBVertexShader.java,
+	  java/org/lwjgl/opengl/ARBWindowPos.java,
+	  java/org/lwjgl/opengl/ATIDrawBuffers.java,
+	  java/org/lwjgl/opengl/ATIElementArray.java,
+	  java/org/lwjgl/opengl/ATIEnvmapBumpmap.java,
+	  java/org/lwjgl/opengl/ATIFragmentShader.java,
+	  java/org/lwjgl/opengl/ATIMapObjectBuffer.java,
+	  java/org/lwjgl/opengl/ATIPnTriangles.java,
+	  java/org/lwjgl/opengl/ATISeparateStencil.java,
+	  java/org/lwjgl/opengl/ATITextureFloat.java,
+	  java/org/lwjgl/opengl/ATITextureMirrorOnce.java,
+	  java/org/lwjgl/opengl/ATIVertexArrayObject.java,
+	  java/org/lwjgl/opengl/ATIVertexAttribArrayObject.java,
+	  java/org/lwjgl/opengl/ATIVertexStreams.java,
+	  java/org/lwjgl/opengl/ContextCapabilities.java,
+	  java/org/lwjgl/opengl/EXTBgra.java,
+	  java/org/lwjgl/opengl/EXTBlendEquationSeparate.java,
+	  java/org/lwjgl/opengl/EXTBlendFuncSeparate.java,
+	  java/org/lwjgl/opengl/EXTBlendSubtract.java,
+	  java/org/lwjgl/opengl/EXTCgShader.java,
+	  java/org/lwjgl/opengl/EXTCompiledVertexArray.java,
+	  java/org/lwjgl/opengl/EXTDepthBoundsTest.java,
+	  java/org/lwjgl/opengl/EXTDrawRangeElements.java,
+	  java/org/lwjgl/opengl/EXTFogCoord.java,
+	  java/org/lwjgl/opengl/EXTFramebufferObject.java,
+	  java/org/lwjgl/opengl/EXTPackedPixels.java,
+	  java/org/lwjgl/opengl/EXTPalettedTexture.java,
+	  java/org/lwjgl/opengl/EXTPixelBufferObject.java,
+	  java/org/lwjgl/opengl/EXTPointParameters.java,
+	  java/org/lwjgl/opengl/EXTSecondaryColor.java,
+	  java/org/lwjgl/opengl/EXTSeparateSpecularColor.java,
+	  java/org/lwjgl/opengl/EXTStencilTwoSide.java,
+	  java/org/lwjgl/opengl/EXTStencilWrap.java,
+	  java/org/lwjgl/opengl/EXTTextureCompressionS3TC.java,
+	  java/org/lwjgl/opengl/EXTTextureEnvCombine.java,
+	  java/org/lwjgl/opengl/EXTTextureEnvDot3.java,
+	  java/org/lwjgl/opengl/EXTTextureFilterAnisotropic.java,
+	  java/org/lwjgl/opengl/EXTTextureLODBias.java,
+	  java/org/lwjgl/opengl/EXTTextureMirrorClamp.java,
+	  java/org/lwjgl/opengl/EXTTextureRectangle.java,
+	  java/org/lwjgl/opengl/EXTVertexShader.java,
+	  java/org/lwjgl/opengl/EXTVertexWeighting.java,
+	  java/org/lwjgl/opengl/GL11.java, java/org/lwjgl/opengl/GL12.java,
+	  java/org/lwjgl/opengl/GL13.java, java/org/lwjgl/opengl/GL14.java,
+	  java/org/lwjgl/opengl/GL15.java, java/org/lwjgl/opengl/GL20.java,
+	  java/org/lwjgl/opengl/HPOcclusionTest.java,
+	  java/org/lwjgl/opengl/MouseEventQueue.java,
+	  java/org/lwjgl/opengl/NVCopyDepthToColor.java,
+	  java/org/lwjgl/opengl/NVEvaluators.java,
+	  java/org/lwjgl/opengl/NVFence.java,
+	  java/org/lwjgl/opengl/NVFloatBuffer.java,
+	  java/org/lwjgl/opengl/NVFogDistance.java,
+	  java/org/lwjgl/opengl/NVFragmentProgram.java,
+	  java/org/lwjgl/opengl/NVFragmentProgram2.java,
+	  java/org/lwjgl/opengl/NVHalfFloat.java,
+	  java/org/lwjgl/opengl/NVLightMaxExponent.java,
+	  java/org/lwjgl/opengl/NVOcclusionQuery.java,
+	  java/org/lwjgl/opengl/NVPackedDepthStencil.java,
+	  java/org/lwjgl/opengl/NVPixelDataRange.java,
+	  java/org/lwjgl/opengl/NVPointSprite.java,
+	  java/org/lwjgl/opengl/NVPrimitiveRestart.java,
+	  java/org/lwjgl/opengl/NVProgram.java,
+	  java/org/lwjgl/opengl/NVRegisterCombiners.java,
+	  java/org/lwjgl/opengl/NVRegisterCombiners2.java,
+	  java/org/lwjgl/opengl/NVTexgenReflection.java,
+	  java/org/lwjgl/opengl/NVTextureCompressionVTC.java,
+	  java/org/lwjgl/opengl/NVTextureEnvCombine4.java,
+	  java/org/lwjgl/opengl/NVTextureRectangle.java,
+	  java/org/lwjgl/opengl/NVTextureShader.java,
+	  java/org/lwjgl/opengl/NVTextureShader2.java,
+	  java/org/lwjgl/opengl/NVTextureShader3.java,
+	  java/org/lwjgl/opengl/NVVertexArrayRange.java,
+	  java/org/lwjgl/opengl/NVVertexProgram.java,
+	  java/org/lwjgl/opengl/NVVertexProgram2Option.java,
+	  java/org/lwjgl/opengl/References.java,
+	  native/common/org_lwjgl_openal_AL10.c,
+	  native/common/org_lwjgl_opengl_GL11.c,
+	  native/common/org_lwjgl_opengl_GL12.c,
+	  native/common/org_lwjgl_opengl_GL13.c,
+	  native/common/org_lwjgl_opengl_GL14.c,
+	  native/common/org_lwjgl_opengl_GL15.c,
+	  native/common/org_lwjgl_opengl_GL20.c,
+	  native/common/arb/org_lwjgl_opengl_ARBBufferObject.c,
+	  native/common/arb/org_lwjgl_opengl_ARBImaging.c,
+	  native/common/arb/org_lwjgl_opengl_ARBMatrixPalette.c,
+	  native/common/arb/org_lwjgl_opengl_ARBMultitexture.c,
+	  native/common/arb/org_lwjgl_opengl_ARBOcclusionQuery.c,
+	  native/common/arb/org_lwjgl_opengl_ARBPointParameters.c,
+	  native/common/arb/org_lwjgl_opengl_ARBProgram.c,
+	  native/common/arb/org_lwjgl_opengl_ARBShaderObjects.c,
+	  native/common/arb/org_lwjgl_opengl_ARBTextureCompression.c,
+	  native/common/arb/org_lwjgl_opengl_ARBTransposeMatrix.c,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexBlend.c,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexProgram.c,
+	  native/common/arb/org_lwjgl_opengl_ARBVertexShader.c,
+	  native/common/arb/org_lwjgl_opengl_ARBWindowPos.c,
+	  native/common/ati/org_lwjgl_opengl_ATIElementArray.c,
+	  native/common/ati/org_lwjgl_opengl_ATIEnvmapBumpmap.c,
+	  native/common/ati/org_lwjgl_opengl_ATIFragmentShader.c,
+	  native/common/ati/org_lwjgl_opengl_ATIMapObjectBuffer.c,
+	  native/common/ati/org_lwjgl_opengl_ATIPnTriangles.c,
+	  native/common/ati/org_lwjgl_opengl_ATISeparateStencil.c,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexArrayObject.c,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexAttribArrayObject.c,
+	  native/common/ati/org_lwjgl_opengl_ATIVertexStreams.c,
+	  native/common/ext/org_lwjgl_opengl_EXTCompiledVertexArray.c,
+	  native/common/ext/org_lwjgl_opengl_EXTFogCoord.c,
+	  native/common/ext/org_lwjgl_opengl_EXTFramebufferObject.c,
+	  native/common/ext/org_lwjgl_opengl_EXTPalettedTexture.c,
+	  native/common/ext/org_lwjgl_opengl_EXTPointParameters.c,
+	  native/common/ext/org_lwjgl_opengl_EXTSecondaryColor.c,
+	  native/common/ext/org_lwjgl_opengl_EXTVertexShader.c,
+	  native/common/ext/org_lwjgl_opengl_EXTVertexWeighting.c,
+	  native/common/nv/org_lwjgl_opengl_NVEvaluators.c,
+	  native/common/nv/org_lwjgl_opengl_NVFence.c,
+	  native/common/nv/org_lwjgl_opengl_NVFragmentProgram.c,
+	  native/common/nv/org_lwjgl_opengl_NVHalfFloat.c,
+	  native/common/nv/org_lwjgl_opengl_NVOcclusionQuery.c,
+	  native/common/nv/org_lwjgl_opengl_NVPixelDataRange.c,
+	  native/common/nv/org_lwjgl_opengl_NVPointSprite.c,
+	  native/common/nv/org_lwjgl_opengl_NVPrimitiveRestart.c,
+	  native/common/nv/org_lwjgl_opengl_NVProgram.c,
+	  native/common/nv/org_lwjgl_opengl_NVRegisterCombiners.c,
+	  native/common/nv/org_lwjgl_opengl_NVRegisterCombiners2.c,
+	  native/common/nv/org_lwjgl_opengl_NVVertexArrayRange.c,
+	  native/common/nv/org_lwjgl_opengl_NVVertexProgram.c: Mac OS X:
+	  Handle MouseEvent.NOBUTTON case
+
+2005-06-28 17:19  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Display.c: Linux: Added library
+	  unload destructor that resets keyboard repeat mode
+
+2005-06-17 11:59  matzon
+
+	* www/faq.php: fixed path to forum
+
+2005-06-16 22:59  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Check for null pixel
+	  format in Display.create
+
+2005-06-16 16:39  matzon
+
+	* www/_include/header.php: fixed overflow added channel id
+
+2005-06-16 16:03  matzon
+
+	* www/: index.php, _include/header.php: now displaying adsense
+
+2005-06-16 13:18  matzon
+
+	* src/java/org/lwjgl/opengl/glu/MipMap.java: patch as per:
+	  http://lwjgl.org/forum/viewtopic.php?t=1130
+
+2005-06-09 20:08  spasi
+
+	* src/templates/org/lwjgl/opengl/: ARB_half_float_pixel.java,
+	  ARB_pixel_buffer_object.java, ARB_texture_float.java: Added
+	  missing GL_ prefixes
+
+2005-06-07 12:33  spasi
+
+	* src/java/org/lwjgl/test/opengl/pbuffers/PbufferTest.java: Fixed
+	  mode parameter
+
+2005-06-07 11:27  spasi
+
+	* src/templates/org/lwjgl/opengl/EXT_framebuffer_object.java: Added
+	  missing GL_ prefixes
+
+2005-06-06 22:51  spasi
+
+	* src/templates/org/lwjgl/opengl/EXT_framebuffer_object.java:
+	  EXT_fbo spec changes
+
+2005-06-05 14:12  matzon
+
+	* build.xml: added missing shaders to lwjgl_test.jar added
+	  changelog target
+
+2005-06-05 13:50  matzon
+
+	* src/java/org/lwjgl/test/opengl/shaders/ShadersTest.java: set
+	  displaymode when it isn't null!
+
+2005-06-04 23:14  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Pbuffer.c: Linux: Added missing
+	  NULL check
+
+2005-06-03 10:26  elias_naur
+
+	* src/native/macosx/context.m: Mac OS X: Use
+	  NSOpenGLPFAMinimumPolicy when selecting pixel formats
+
+2005-06-01 09:18  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: Added doPrivileged
+	  to MacOSXDisplay.setCursorPosition()
+
+2005-05-30 18:21  elias_naur
+
+	* src/: java/org/lwjgl/LWJGLUtil.java,
+	  java/org/lwjgl/LinuxSysImplementation.java,
+	  java/org/lwjgl/MacOSXSysImplementation.java,
+	  java/org/lwjgl/Sys.java, java/org/lwjgl/opengl/Display.java,
+	  java/org/lwjgl/opengl/GLContext.java,
+	  java/org/lwjgl/opengl/LinuxCanvasImplementation.java,
+	  java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  java/org/lwjgl/opengl/MacOSXFrame.java,
+	  native/common/common_tools.c: Added AccessController.doPrivileged
+	  where needed
+
+2005-05-30 00:16  matzon
+
+	* src/java/org/lwjgl/devil/IL.java: javadoc
+
+2005-05-30 00:14  matzon
+
+	* src/java/org/lwjgl/devil/IL.java: added getILType(filename)
+
+2005-05-29 23:53  matzon
+
+	* build.xml: fixed lib includes for mac os x on release
+
+2005-05-29 23:24  matzon
+
+	* src/native/common/devil/: extil.c, extilu.c, extilut.c: use
+	  dlopen to load dynamic libraries
+
+2005-05-28 10:48  matzon
+
+	* src/java/org/lwjgl/opengl/glu/MipMap.java: added UlfJacks
+	  GL_FLOAT patch for gluScaleImage
+
+2005-05-27 13:50  elias_naur
+
+	* src/: java/org/lwjgl/opengl/LinuxAWTGLCanvasPeerInfo.java,
+	  java/org/lwjgl/opengl/LinuxCanvasImplementation.java,
+	  java/org/lwjgl/opengl/Win32CanvasImplementation.java,
+	  native/linux/org_lwjgl_opengl_LinuxAWTGLCanvasPeerInfo.c: Linux
+	  AWT: in case we're not on a SUN jdk, try to determine values
+	  instead of bombing out. This should help us compile and run on
+	  gcj
+
+2005-05-22 14:12  matzon
+
+	* src/java/org/lwjgl/: examples/Game.java,
+	  examples/spaceinvaders/Game.java, test/DisplayTest.java,
+	  test/SysTest.java, test/WindowCreationTest.java,
+	  test/devil/BasicTest.java, test/fmod3/CDDAPlayer.java,
+	  test/fmod3/CDPlayer.java, test/fmod3/DSPTest.java,
+	  test/fmod3/MusicPlayer.java, test/fmod3/NetTest.java,
+	  test/fmod3/StreamPlayer.java, test/fmod3/StreamPlayerMemory.java,
+	  test/fmod3/StreamTest.java, test/fmod3/SyncTest.java,
+	  test/fmod3/TagFieldTest.java, test/input/HWCursorTest.java,
+	  test/input/KeyboardTest.java, test/input/MouseCreationTest.java,
+	  test/input/MouseTest.java, test/openal/ALCTest.java,
+	  test/openal/MovingSoundTest.java,
+	  test/openal/OpenALCreationTest.java, test/openal/PlayTest.java,
+	  test/openal/PlayTestMemory.java, test/openal/PositionTest.java,
+	  test/openal/SourceLimitTest.java, test/openal/StressTest.java,
+	  test/opengl/FullScreenWindowedTest.java, test/opengl/Gears.java,
+	  test/opengl/PbufferTest.java, test/opengl/VBOIndexTest.java,
+	  test/opengl/VBOTest.java, test/opengl/awt/AWTGears.java,
+	  test/opengl/awt/AWTTest.java, test/opengl/awt/DemoBox.java,
+	  test/opengl/pbuffers/PbufferTest.java,
+	  test/opengl/shaders/ShadersTest.java: added System.exit so that
+	  vm instances gets nuked in webstart
+
+2005-05-22 13:14  matzon
+
+	* src/native/common/devil/: extilu.c, extilut.c: using .dylibs for
+	  devil on mac
+
+2005-05-22 13:09  matzon
+
+	* src/java/org/lwjgl/devil/: IL.java, ILU.java, ILUT.java: using
+	  .dylibs for devil on mac
+
+2005-05-20 00:31  matzon
+
+	* src/: java/org/lwjgl/fmod3/FMOD.java,
+	  native/common/fmod3/org_lwjgl_fmod3_FMOD.c: fixed fmod webstart
+	  loading
+
+2005-05-20 00:30  matzon
+
+	* build.xml: sign target
+
+2005-05-19 18:18  matzon
+
+	* www/: changelog.php, download.php, index.php,
+	  changelogs/0.97-changelog.txt, changelogs/full-changelog.txt:
+	  0.97 updates

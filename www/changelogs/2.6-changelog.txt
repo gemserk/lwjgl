@@ -1,0 +1,1049 @@
+2010-10-14 19:58  matzon
+
+	* src/native/common/common_tools.c: update default size of buffer
+	  for sprintfJavaString. Failed to upgrade size on second run since
+	  do_vsnprintf was returning -1 on windows at least
+
+2010-10-13 21:26  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: fix null pointer
+	  exception when creating Display on linux.
+
+2010-10-13 21:16  matzon
+
+	* www/changelog.php, www/changelogs/2.2.2-changelog.txt,
+	  www/changelogs/2.3-changelog.txt,
+	  www/changelogs/2.4-changelog.txt,
+	  www/changelogs/2.4.1-changelog.txt,
+	  www/changelogs/2.4.2-changelog.txt,
+	  www/changelogs/2.5-changelog.txt,
+	  www/changelogs/full-changelog.txt, www/credits.php,
+	  www/demos.php, www/documentation.php, www/donations.php,
+	  www/download.php, www/favicon.gif, www/index.php: sync with live
+
+2010-10-13 21:07  matzon
+
+	* src/java/org/lwjgl/test/openal/EFX10Test.java: fixed resource
+	  path issue
+
+2010-10-13 20:57  matzon
+
+	* platform_build/build-definitions.xml: actually include 64bit
+	  openal for solaris
+
+2010-10-13 20:19  matzon
+
+	* src/java/org/lwjgl/test/opencl/gl/DemoFractal.java: fixed
+	  resource path issue
+
+2010-10-12 21:13  spasi
+
+	* src/java/org/lwjgl/util/generator/SignatureTranslator.java,
+	  src/java/org/lwjgl/util/generator/Utils.java: Fixed Strings,
+	  seriously now.
+
+2010-10-12 20:49  spasi
+
+	* src/java/org/lwjgl/util/generator/Utils.java: Another String
+	  signature fix.
+
+2010-10-12 20:25  spasi
+
+	* src/java/org/lwjgl/util/generator/SignatureTranslator.java: Fixed
+	  String signatures.
+
+2010-10-12 19:21  matzon
+
+	* platform_build/build-definitions.xml,
+	  platform_build/build-webstart.xml, www/webstart,
+	  www/webstart/demo.php, www/webstart/extension.jnlp,
+	  www/webstart/logo.png, www/webstart/source.php: updates to
+	  webstart to streamline process
+
+2010-10-12 17:44  matzon
+
+	* platform_build/build-webstart.xml: updates to jnlp to work as
+	  installable unit
+
+2010-10-12 15:34  matzon
+
+	* src/java/org/lwjgl/examples/spaceinvaders/TextureLoader.java,
+	  src/java/org/lwjgl/util/WaveData.java: fixed issue with
+	  signed/unsigned code dialog popping up
+
+2010-10-12 09:32  spasi
+
+	* src/native/common/extcl.h: Calling convention is ignored on x64.
+
+2010-10-12 01:35  spasi
+
+	* src/java/org/lwjgl/opencl/APIUtil.java,
+	  src/java/org/lwjgl/opencl/CLContext.java,
+	  src/java/org/lwjgl/opencl/CLObjectRegistry.java,
+	  src/java/org/lwjgl/opencl/CLObjectRegistryGlobal.java,
+	  src/java/org/lwjgl/opencl/CLPlatform.java,
+	  src/java/org/lwjgl/opencl/FastLongMap.java,
+	  src/java/org/lwjgl/opengl/APIUtil.java,
+	  src/native/common/org_lwjgl_opencl_CallbackUtil.c,
+	  src/templates/org/lwjgl/opencl/CL10.java: Replaced HashMap<Long,
+	  T> with FastLongMap in the OpenCL package.
+	  Replaced CharsetEncoder with simple ASCII encoding in APIUtil.
+	  Attempt to fix CL native kernels on x64.
+
+2010-10-08 20:57  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  use the tmp directory on Windows to store cache.
+
+2010-10-08 20:19  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: fix for focus issues
+	  with Display.setParent on linux when using it as a non applet.
+	  Thx to MatthiasM for finding this and providing a small test
+	  case.
+
+2010-10-07 20:38  kappa1
+
+	* src/java/org/lwjgl/opengl/AWTUtil.java: catch null pointer
+	  exception that can be thrown on mac, app shouldn't explode now.
+
+2010-10-07 20:33  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  move cache directory to a better location, as the current
+	  location is periodically purged on mac and linux.
+
+2010-10-04 22:51  spasi
+
+	* src/java/org/lwjgl/Sys.java,
+	  src/native/common/org_lwjgl_opencl_CL.h,
+	  src/native/common/org_lwjgl_opencl_CallbackUtil.h,
+	  src/native/common/org_lwjgl_opengl_CallbackUtil.h: Fixed 64bit
+	  loading.
+
+2010-10-04 17:04  spasi
+
+	* src/java/org/lwjgl/util/generator/GeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/JavaTypeTranslator.java,
+	  src/native/common/org_lwjgl_opencl_CallbackUtil.c: Minor
+	  clean-up.
+
+2010-10-02 13:07  spasi
+
+	* src/templates/org/lwjgl/opencl/KHR_select_fprounding_mode.java:
+	  Added cl_khr_select_fprounding_mode.
+
+2010-10-02 12:19  spasi
+
+	* build.xml, platform_build/build-generator.xml: Attempt to fix
+	  build issues.
+
+2010-10-01 22:37  spasi
+
+	* src/java/org/lwjgl/opencl/CallbackUtil.java:
+
+2010-10-01 22:20  spasi
+
+	* src/java/org/lwjgl/DefaultSysImplementation.java,
+	  src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/SysImplementation.java,
+	  src/java/org/lwjgl/opencl/APIUtil.java,
+	  src/java/org/lwjgl/opencl/CallbackUtil.java,
+	  src/java/org/lwjgl/test/opencl/HelloOpenCL.java,
+	  src/native/common/common_tools.c: OpenCL bug fixes on MacOS.
+	  Improved 64bit pointer detection.
+
+2010-10-01 17:00  spasi
+
+	* src/java/org/lwjgl/test/opencl/gl/DemoFractal.java,
+	  src/java/org/lwjgl/test/opencl/gl/Mandelbrot.cl,
+	  src/templates/org/lwjgl/opengl/ARB_viewport_array.java: Fixed
+	  Mandelbrot.cl to not crash on Cuda.
+
+2010-10-01 03:48  spasi
+
+	* src/java/org/lwjgl/test/opencl/gl/DemoFractal.java,
+	  src/java/org/lwjgl/test/opencl/gl/Mandelbrot.cl: OpenCL C 1.0
+	  didn't support 3-component vectors.
+
+2010-10-01 00:18  spasi
+
+	* src/templates/org/lwjgl/opencl/AMD_event_callback.java,
+	  src/templates/org/lwjgl/opencl/APPLE_gl_sharing.java,
+	  src/templates/org/lwjgl/opencl/KHR_gl_sharing.java: More CL
+	  fixes.
+
+2010-09-30 23:36  spasi
+
+	* src/java/org/lwjgl/PointerBuffer.java,
+	  src/java/org/lwjgl/PointerWrapperAbstract.java,
+	  src/java/org/lwjgl/opencl/APIUtil.java,
+	  src/java/org/lwjgl/opencl/CLPlatform.java,
+	  src/java/org/lwjgl/opencl/InfoUtilFactory.java,
+	  src/java/org/lwjgl/test/opencl/HelloOpenCL.java,
+	  src/templates/org/lwjgl/opencl/APPLE_gl_sharing.java,
+	  src/templates/org/lwjgl/opencl/CL10.java,
+	  src/templates/org/lwjgl/opencl/KHR_gl_sharing.java: Misc CL
+	  fixes.
+
+2010-09-30 19:04  spasi
+
+	* src/java/org/lwjgl/test/opencl/HelloOpenCL.java,
+	  src/templates/org/lwjgl/opencl/KHR_fp16.java,
+	  src/templates/org/lwjgl/opencl/NV_compiler_options.java,
+	  src/templates/org/lwjgl/opencl/NV_device_attribute_query.java,
+	  src/templates/org/lwjgl/opencl/NV_pragma_unroll.java: Added NV
+	  OpenCL extensions.
+
+2010-09-30 17:52  spasi
+
+	* src/java/org/lwjgl/test/opencl/HelloOpenCL.java: Added checks for
+	  CL 1.1 stuff.
+
+2010-09-30 17:21  spasi
+
+	* src/java/org/lwjgl/BufferChecks.java,
+	  src/java/org/lwjgl/LWJGLUtil.java,
+	  src/java/org/lwjgl/PointerWrapperAbstract.java,
+	  src/java/org/lwjgl/opencl/APIUtil.java,
+	  src/java/org/lwjgl/opencl/CLChecks.java,
+	  src/java/org/lwjgl/opencl/CLContext.java,
+	  src/java/org/lwjgl/opencl/CLMem.java,
+	  src/java/org/lwjgl/opencl/CLProgram.java,
+	  src/java/org/lwjgl/opencl/InfoUtilAbstract.java,
+	  src/java/org/lwjgl/opencl/InfoUtilFactory.java,
+	  src/java/org/lwjgl/opencl/Util.java,
+	  src/java/org/lwjgl/opencl/api/CLBufferRegion.java,
+	  src/java/org/lwjgl/opencl/api/CLImageFormat.java,
+	  src/java/org/lwjgl/test/opencl/gl/DemoFractal.java,
+	  src/java/org/lwjgl/test/opencl/gl/Mandelbrot.cl,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/templates/org/lwjgl/opengl/EXT_direct_state_access.java,
+	  src/templates/org/lwjgl/opengl/GL40.java,
+	  src/templates/org/lwjgl/opengl/NV_half_float.java: Misc GL/CL
+	  fixes and additions.
+	  Made native calls package private, we can now use them from the
+	  high-level API.
+	  Added support for "render-to-texture" in the fractal demo.
+
+2010-09-28 21:11  spasi
+
+	* build.xml, platform_build/build-generator.xml,
+	  src/java/org/lwjgl/BufferChecks.java,
+	  src/java/org/lwjgl/LWJGLUtil.java,
+	  src/java/org/lwjgl/LinuxSysImplementation.java,
+	  src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  src/java/org/lwjgl/NondirectBufferWrapper.java,
+	  src/java/org/lwjgl/PointerBuffer.java,
+	  src/java/org/lwjgl/PointerWrapperAbstract.java,
+	  src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/WindowsSysImplementation.java,
+	  src/java/org/lwjgl/examples/Game.java,
+	  src/java/org/lwjgl/examples/spaceinvaders/Entity.java,
+	  src/java/org/lwjgl/examples/spaceinvaders/Game.java,
+	  src/java/org/lwjgl/examples/spaceinvaders/GameApplet.java,
+	  src/java/org/lwjgl/examples/spaceinvaders/ShotEntity.java,
+	  src/java/org/lwjgl/examples/spaceinvaders/SoundManager.java,
+	  src/java/org/lwjgl/examples/spaceinvaders/Sprite.java,
+	  src/java/org/lwjgl/examples/spaceinvaders/Texture.java,
+	  src/java/org/lwjgl/examples/spaceinvaders/TextureLoader.java,
+	  src/java/org/lwjgl/input/Controller.java,
+	  src/java/org/lwjgl/input/ControllerEvent.java,
+	  src/java/org/lwjgl/input/Controllers.java,
+	  src/java/org/lwjgl/input/Cursor.java,
+	  src/java/org/lwjgl/input/JInputController.java,
+	  src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/input/Mouse.java,
+	  src/java/org/lwjgl/input/OpenGLPackageAccess.java,
+	  src/java/org/lwjgl/openal/AL.java,
+	  src/java/org/lwjgl/openal/ALC10.java,
+	  src/java/org/lwjgl/openal/ALC11.java,
+	  src/java/org/lwjgl/openal/ALCcontext.java,
+	  src/java/org/lwjgl/openal/ALCdevice.java,
+	  src/java/org/lwjgl/openal/EFXUtil.java,
+	  src/java/org/lwjgl/opencl/APIUtil.java,
+	  src/java/org/lwjgl/opencl/APPLEContextLoggingUtil.java,
+	  src/java/org/lwjgl/opencl/CL.java,
+	  src/java/org/lwjgl/opencl/CLBuildProgramCallback.java,
+	  src/java/org/lwjgl/opencl/CLChecks.java,
+	  src/java/org/lwjgl/opencl/CLCommandQueue.java,
+	  src/java/org/lwjgl/opencl/CLContext.java,
+	  src/java/org/lwjgl/opencl/CLDevice.java,
+	  src/java/org/lwjgl/opencl/CLDeviceImpl.java,
+	  src/java/org/lwjgl/opencl/CLEvent.java,
+	  src/java/org/lwjgl/opencl/CLKernel.java,
+	  src/java/org/lwjgl/opencl/CLKernelImpl.java,
+	  src/java/org/lwjgl/opencl/CLMem.java,
+	  src/java/org/lwjgl/opencl/CLObject.java,
+	  src/java/org/lwjgl/opencl/CLObjectChild.java,
+	  src/java/org/lwjgl/opencl/CLObjectRegistry.java,
+	  src/java/org/lwjgl/opencl/CLObjectRetainable.java,
+	  src/java/org/lwjgl/opencl/CLPlatform.java,
+	  src/java/org/lwjgl/opencl/CLPlatformImpl.java,
+	  src/java/org/lwjgl/opencl/CLProgram.java,
+	  src/java/org/lwjgl/opencl/CLSampler.java,
+	  src/java/org/lwjgl/opencl/InfoUtil.java,
+	  src/java/org/lwjgl/opencl/InfoUtilAbstract.java,
+	  src/java/org/lwjgl/opencl/InfoUtilFactory.java,
+	  src/java/org/lwjgl/opencl/Util.java,
+	  src/java/org/lwjgl/opengl/AMDDebugOutputCallback.java,
+	  src/java/org/lwjgl/opengl/APIUtil.java,
+	  src/java/org/lwjgl/opengl/ARBDebugOutputCallback.java,
+	  src/java/org/lwjgl/opengl/AWTGLCanvas.java,
+	  src/java/org/lwjgl/opengl/AWTSurfaceLock.java,
+	  src/java/org/lwjgl/opengl/AWTUtil.java,
+	  src/java/org/lwjgl/opengl/BaseReferences.java,
+	  src/java/org/lwjgl/opengl/CallbackUtil.java,
+	  src/java/org/lwjgl/opengl/Context.java,
+	  src/java/org/lwjgl/opengl/ContextAttribs.java,
+	  src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/DisplayMode.java,
+	  src/java/org/lwjgl/opengl/GLChecks.java,
+	  src/java/org/lwjgl/opengl/GLContext.java,
+	  src/java/org/lwjgl/opengl/GLUConstants.java,
+	  src/java/org/lwjgl/opengl/GlobalLock.java,
+	  src/java/org/lwjgl/opengl/LinuxCanvasImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxEvent.java,
+	  src/java/org/lwjgl/opengl/LinuxKeycodes.java,
+	  src/java/org/lwjgl/opengl/LinuxMouse.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplayPeerInfo.java,
+	  src/java/org/lwjgl/opengl/MacOSXFrame.java,
+	  src/java/org/lwjgl/opengl/PeerInfo.java,
+	  src/java/org/lwjgl/opengl/ReferencesStack.java,
+	  src/java/org/lwjgl/opengl/RenderTexture.java,
+	  src/java/org/lwjgl/opengl/StateTracker.java,
+	  src/java/org/lwjgl/opengl/Util.java,
+	  src/java/org/lwjgl/opengl/WindowsAWTGLCanvasPeerInfo.java,
+	  src/java/org/lwjgl/opengl/WindowsCanvasImplementation.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/opengl/WindowsKeycodes.java,
+	  src/java/org/lwjgl/opengl/WindowsRegistry.java,
+	  src/java/org/lwjgl/opengl/XRandR.java,
+	  src/java/org/lwjgl/test/DisplayTest.java,
+	  src/java/org/lwjgl/test/WindowCreationTest.java,
+	  src/java/org/lwjgl/test/applet/AppletLoaderTest.java,
+	  src/java/org/lwjgl/test/applet/GearsApplet.java,
+	  src/java/org/lwjgl/test/applet/OpenAL.java,
+	  src/java/org/lwjgl/test/applet/OpenGL.java,
+	  src/java/org/lwjgl/test/applet/Speed.java,
+	  src/java/org/lwjgl/test/applet/Test.java,
+	  src/java/org/lwjgl/test/glu/tessellation/TessCallback.java,
+	  src/java/org/lwjgl/test/glu/tessellation/TessellationTest.java,
+	  src/java/org/lwjgl/test/input/HWCursorTest.java,
+	  src/java/org/lwjgl/test/input/KeyboardTest.java,
+	  src/java/org/lwjgl/test/input/MouseCreationTest.java,
+	  src/java/org/lwjgl/test/input/MouseTest.java,
+	  src/java/org/lwjgl/test/input/TestControllers.java,
+	  src/java/org/lwjgl/test/openal/BasicTest.java,
+	  src/java/org/lwjgl/test/openal/OpenALInfo.java,
+	  src/java/org/lwjgl/test/openal/PositionTest.java,
+	  src/java/org/lwjgl/test/opencl/HelloOpenCL.java,
+	  src/java/org/lwjgl/test/opencl/gl/DemoFractal.java,
+	  src/java/org/lwjgl/test/opengl/FullScreenWindowedTest.java,
+	  src/java/org/lwjgl/test/opengl/Gears.java,
+	  src/java/org/lwjgl/test/opengl/PbufferTest.java,
+	  src/java/org/lwjgl/test/opengl/SyncTest.java,
+	  src/java/org/lwjgl/test/opengl/VBOIndexTest.java,
+	  src/java/org/lwjgl/test/opengl/VBOTest.java,
+	  src/java/org/lwjgl/test/opengl/VersionTest.java,
+	  src/java/org/lwjgl/test/opengl/awt/AWTGears.java,
+	  src/java/org/lwjgl/test/opengl/awt/AWTGearsCanvas.java,
+	  src/java/org/lwjgl/test/opengl/awt/AWTTest.java,
+	  src/java/org/lwjgl/test/opengl/awt/DemoBox.java,
+	  src/java/org/lwjgl/test/opengl/awt/DisplayParentTest.java,
+	  src/java/org/lwjgl/test/opengl/multithread/BackgroundLoadTest.java,
+	  src/java/org/lwjgl/test/opengl/multithread/BackgroundLoader.java,
+	  src/java/org/lwjgl/test/opengl/pbuffers/PbufferTest.java,
+	  src/java/org/lwjgl/test/opengl/pbuffers/UniqueRenderer.java,
+	  src/java/org/lwjgl/test/opengl/pbuffers/UniqueRendererRTT.java,
+	  src/java/org/lwjgl/test/opengl/shaders/Shader.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderFP.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderFSH.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderUNI.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderVP.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderVSH.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShadersTest.java,
+	  src/java/org/lwjgl/util/Display.java,
+	  src/java/org/lwjgl/util/ReadableColor.java,
+	  src/java/org/lwjgl/util/ReadableDimension.java,
+	  src/java/org/lwjgl/util/ReadablePoint.java,
+	  src/java/org/lwjgl/util/ReadableRectangle.java,
+	  src/java/org/lwjgl/util/Renderable.java,
+	  src/java/org/lwjgl/util/Timer.java,
+	  src/java/org/lwjgl/util/WritableColor.java,
+	  src/java/org/lwjgl/util/WritableDimension.java,
+	  src/java/org/lwjgl/util/WritablePoint.java,
+	  src/java/org/lwjgl/util/WritableRectangle.java,
+	  src/java/org/lwjgl/util/XPMFile.java,
+	  src/java/org/lwjgl/util/applet/AppletLoader.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/Helper.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  src/java/org/lwjgl/util/generator/RegisterStubsGenerator.java,
+	  src/java/org/lwjgl/util/generator/Utils.java,
+	  src/java/org/lwjgl/util/generator/opencl/CLCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/opencl/CLGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/opencl/CLPDCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLReferencesGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/glu/Cylinder.java,
+	  src/java/org/lwjgl/util/glu/Disk.java,
+	  src/java/org/lwjgl/util/glu/GLU.java,
+	  src/java/org/lwjgl/util/glu/GLUtessellator.java,
+	  src/java/org/lwjgl/util/glu/GLUtessellatorCallback.java,
+	  src/java/org/lwjgl/util/glu/MipMap.java,
+	  src/java/org/lwjgl/util/glu/PartialDisk.java,
+	  src/java/org/lwjgl/util/glu/PixelStoreState.java,
+	  src/java/org/lwjgl/util/glu/Project.java,
+	  src/java/org/lwjgl/util/glu/Quadric.java,
+	  src/java/org/lwjgl/util/glu/Registry.java,
+	  src/java/org/lwjgl/util/glu/Sphere.java,
+	  src/java/org/lwjgl/util/glu/Util.java,
+	  src/java/org/lwjgl/util/glu/tessellation/GLUhalfEdge.java,
+	  src/java/org/lwjgl/util/glu/tessellation/GLUtessellatorImpl.java,
+	  src/java/org/lwjgl/util/glu/tessellation/Normal.java,
+	  src/java/org/lwjgl/util/glu/tessellation/PriorityQ.java,
+	  src/java/org/lwjgl/util/glu/tessellation/PriorityQHeap.java,
+	  src/java/org/lwjgl/util/glu/tessellation/PriorityQSort.java,
+	  src/java/org/lwjgl/util/glu/tessellation/Render.java,
+	  src/java/org/lwjgl/util/glu/tessellation/Sweep.java,
+	  src/java/org/lwjgl/util/jinput/KeyMap.java,
+	  src/java/org/lwjgl/util/jinput/LWJGLKeyboard.java,
+	  src/java/org/lwjgl/util/jinput/LWJGLMouse.java,
+	  src/java/org/lwjgl/util/vector/Matrix.java,
+	  src/java/org/lwjgl/util/vector/Matrix2f.java,
+	  src/java/org/lwjgl/util/vector/Matrix3f.java,
+	  src/java/org/lwjgl/util/vector/Matrix4f.java,
+	  src/java/org/lwjgl/util/vector/Quaternion.java,
+	  src/java/org/lwjgl/util/vector/ReadableVector.java,
+	  src/java/org/lwjgl/util/vector/ReadableVector2f.java,
+	  src/java/org/lwjgl/util/vector/ReadableVector3f.java,
+	  src/java/org/lwjgl/util/vector/ReadableVector4f.java,
+	  src/java/org/lwjgl/util/vector/Vector.java,
+	  src/java/org/lwjgl/util/vector/Vector2f.java,
+	  src/java/org/lwjgl/util/vector/Vector3f.java,
+	  src/java/org/lwjgl/util/vector/WritableVector2f.java,
+	  src/java/org/lwjgl/util/vector/WritableVector3f.java,
+	  src/java/org/lwjgl/util/vector/WritableVector4f.java,
+	  src/native/common/extcl_types.h,
+	  src/native/common/org_lwjgl_opencl_CL.c,
+	  src/native/common/org_lwjgl_opencl_CL.h,
+	  src/templates/org/lwjgl/opencl/AMD_event_callback.java,
+	  src/templates/org/lwjgl/opencl/CL10.java,
+	  src/templates/org/lwjgl/opencl/KHR_d3d10_sharing.java,
+	  src/templates/org/lwjgl/opencl/KHR_icd.java,
+	  src/templates/org/lwjgl/opengl/ARB_sync.java,
+	  src/templates/org/lwjgl/opengl/GL32.java: Ported codebase to Java
+	  1.5.
+	  Misc OpenCL fixes and API improvements.
+	  Changed fractal demo to use events/sync objects instead of
+	  cl/glFinish for synchronization. (untested)
+
+2010-09-27 00:25  spasi
+
+	* src/native/macosx/macosx_al.c, src/native/macosx/macosx_cl.c:
+	  Added AL/CL NativeGetFunctionPointer prefixes.
+
+2010-09-27 00:13  spasi
+
+	* src/native/common/extcl.h: Apple's cl_platform.h is missing
+	  CL_CALLBACK.
+
+2010-09-26 23:49  spasi
+
+	* platform_build/build-definitions.xml: Typo fix.
+
+2010-09-26 23:44  spasi
+
+	* src/native/common/OpenCL, src/native/common/OpenCL/cl_platform.h:
+	  Added APPLE's cl_platform.h
+
+2010-09-26 23:43  spasi
+
+	* build.xml, platform_build/build-definitions.xml,
+	  platform_build/build-generator.xml,
+	  platform_build/linux_ant/build.xml,
+	  src/java/org/lwjgl/BufferChecks.java,
+	  src/java/org/lwjgl/BufferUtils.java,
+	  src/java/org/lwjgl/LWJGLUtil.java,
+	  src/java/org/lwjgl/PointerBuffer.java,
+	  src/java/org/lwjgl/PointerWrapper.java,
+	  src/java/org/lwjgl/PointerWrapperAbstract.java,
+	  src/java/org/lwjgl/Sys.java, src/java/org/lwjgl/opencl,
+	  src/java/org/lwjgl/opencl/APIUtil.java,
+	  src/java/org/lwjgl/opencl/APPLEContextLoggingUtil.java,
+	  src/java/org/lwjgl/opencl/CL.java,
+	  src/java/org/lwjgl/opencl/CLBuildProgramCallback.java,
+	  src/java/org/lwjgl/opencl/CLCallback.java,
+	  src/java/org/lwjgl/opencl/CLChecks.java,
+	  src/java/org/lwjgl/opencl/CLCommandQueue.java,
+	  src/java/org/lwjgl/opencl/CLContext.java,
+	  src/java/org/lwjgl/opencl/CLContextCallback.java,
+	  src/java/org/lwjgl/opencl/CLDevice.java,
+	  src/java/org/lwjgl/opencl/CLDeviceImpl.java,
+	  src/java/org/lwjgl/opencl/CLEvent.java,
+	  src/java/org/lwjgl/opencl/CLEventCallback.java,
+	  src/java/org/lwjgl/opencl/CLFunctionAddress.java,
+	  src/java/org/lwjgl/opencl/CLKernel.java,
+	  src/java/org/lwjgl/opencl/CLKernelImpl.java,
+	  src/java/org/lwjgl/opencl/CLMem.java,
+	  src/java/org/lwjgl/opencl/CLMemObjectDestructorCallback.java,
+	  src/java/org/lwjgl/opencl/CLNativeKernel.java,
+	  src/java/org/lwjgl/opencl/CLObject.java,
+	  src/java/org/lwjgl/opencl/CLObjectChild.java,
+	  src/java/org/lwjgl/opencl/CLObjectRegistry.java,
+	  src/java/org/lwjgl/opencl/CLObjectRegistryGlobal.java,
+	  src/java/org/lwjgl/opencl/CLPlatform.java,
+	  src/java/org/lwjgl/opencl/CLPlatformImpl.java,
+	  src/java/org/lwjgl/opencl/CLProgram.java,
+	  src/java/org/lwjgl/opencl/CLSampler.java,
+	  src/java/org/lwjgl/opencl/CallbackUtil.java,
+	  src/java/org/lwjgl/opencl/OpenCLException.java,
+	  src/java/org/lwjgl/opencl/Util.java,
+	  src/java/org/lwjgl/opencl/api,
+	  src/java/org/lwjgl/opencl/api/Filter.java,
+	  src/java/org/lwjgl/opengl/AMDDebugOutputCallback.java,
+	  src/java/org/lwjgl/opengl/AMDDebugOutputUtil.java,
+	  src/java/org/lwjgl/opengl/APIUtil.java,
+	  src/java/org/lwjgl/opengl/APIUtils.java,
+	  src/java/org/lwjgl/opengl/ARBDebugOutputCallback.java,
+	  src/java/org/lwjgl/opengl/ARBDebugOutputUtil.java,
+	  src/java/org/lwjgl/opengl/AWTGLCanvas.java,
+	  src/java/org/lwjgl/opengl/AbstractDrawable.java,
+	  src/java/org/lwjgl/opengl/CallbackUtil.java,
+	  src/java/org/lwjgl/opengl/Context.java,
+	  src/java/org/lwjgl/opengl/ContextAttribs.java,
+	  src/java/org/lwjgl/opengl/Drawable.java,
+	  src/java/org/lwjgl/opengl/GLSync.java,
+	  src/java/org/lwjgl/opengl/LinuxContextImplementation.java,
+	  src/java/org/lwjgl/opengl/PointerWrapper.java,
+	  src/java/org/lwjgl/opengl/WindowsContextImplementation.java,
+	  src/java/org/lwjgl/test/opencl,
+	  src/java/org/lwjgl/test/opencl/HelloOpenCL.java,
+	  src/java/org/lwjgl/test/opencl/gl,
+	  src/java/org/lwjgl/test/opencl/gl/DemoFractal.java,
+	  src/java/org/lwjgl/test/opencl/gl/Mandelbrot.cl,
+	  src/java/org/lwjgl/test/opengl/VersionTest.java,
+	  src/java/org/lwjgl/util/generator/ALTypeMap.java,
+	  src/java/org/lwjgl/util/generator/ALboolean.java,
+	  src/java/org/lwjgl/util/generator/ALbyte.java,
+	  src/java/org/lwjgl/util/generator/ALdouble.java,
+	  src/java/org/lwjgl/util/generator/ALenum.java,
+	  src/java/org/lwjgl/util/generator/ALfloat.java,
+	  src/java/org/lwjgl/util/generator/ALint.java,
+	  src/java/org/lwjgl/util/generator/ALshort.java,
+	  src/java/org/lwjgl/util/generator/ALsizei.java,
+	  src/java/org/lwjgl/util/generator/ALubyte.java,
+	  src/java/org/lwjgl/util/generator/ALuint.java,
+	  src/java/org/lwjgl/util/generator/ALvoid.java,
+	  src/java/org/lwjgl/util/generator/Alternate.java,
+	  src/java/org/lwjgl/util/generator/AutoResultSize.java,
+	  src/java/org/lwjgl/util/generator/AutoSize.java,
+	  src/java/org/lwjgl/util/generator/Check.java,
+	  src/java/org/lwjgl/util/generator/Code.java,
+	  src/java/org/lwjgl/util/generator/Constant.java,
+	  src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/ContextGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/Extern.java,
+	  src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  src/java/org/lwjgl/util/generator/GLbitfield.java,
+	  src/java/org/lwjgl/util/generator/GLboolean.java,
+	  src/java/org/lwjgl/util/generator/GLbyte.java,
+	  src/java/org/lwjgl/util/generator/GLchar.java,
+	  src/java/org/lwjgl/util/generator/GLcharARB.java,
+	  src/java/org/lwjgl/util/generator/GLclampd.java,
+	  src/java/org/lwjgl/util/generator/GLclampf.java,
+	  src/java/org/lwjgl/util/generator/GLdouble.java,
+	  src/java/org/lwjgl/util/generator/GLenum.java,
+	  src/java/org/lwjgl/util/generator/GLfloat.java,
+	  src/java/org/lwjgl/util/generator/GLhalf.java,
+	  src/java/org/lwjgl/util/generator/GLhandleARB.java,
+	  src/java/org/lwjgl/util/generator/GLint.java,
+	  src/java/org/lwjgl/util/generator/GLint64.java,
+	  src/java/org/lwjgl/util/generator/GLint64EXT.java,
+	  src/java/org/lwjgl/util/generator/GLintptr.java,
+	  src/java/org/lwjgl/util/generator/GLintptrARB.java,
+	  src/java/org/lwjgl/util/generator/GLpointer.java,
+	  src/java/org/lwjgl/util/generator/GLreturn.java,
+	  src/java/org/lwjgl/util/generator/GLshort.java,
+	  src/java/org/lwjgl/util/generator/GLsizei.java,
+	  src/java/org/lwjgl/util/generator/GLsizeiptr.java,
+	  src/java/org/lwjgl/util/generator/GLsizeiptrARB.java,
+	  src/java/org/lwjgl/util/generator/GLtime.java,
+	  src/java/org/lwjgl/util/generator/GLubyte.java,
+	  src/java/org/lwjgl/util/generator/GLuint.java,
+	  src/java/org/lwjgl/util/generator/GLuint64.java,
+	  src/java/org/lwjgl/util/generator/GLuint64EXT.java,
+	  src/java/org/lwjgl/util/generator/GLushort.java,
+	  src/java/org/lwjgl/util/generator/GLvoid.java,
+	  src/java/org/lwjgl/util/generator/GenerateAutos.java,
+	  src/java/org/lwjgl/util/generator/GeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/Helper.java,
+	  src/java/org/lwjgl/util/generator/Imports.java,
+	  src/java/org/lwjgl/util/generator/JNITypeTranslator.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/JavaTypeTranslator.java,
+	  src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  src/java/org/lwjgl/util/generator/NativeType.java,
+	  src/java/org/lwjgl/util/generator/NativeTypeTranslator.java,
+	  src/java/org/lwjgl/util/generator/PointerArray.java,
+	  src/java/org/lwjgl/util/generator/PointerWrapper.java,
+	  src/java/org/lwjgl/util/generator/PostfixTranslator.java,
+	  src/java/org/lwjgl/util/generator/Private.java,
+	  src/java/org/lwjgl/util/generator/ReferencesGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/RegisterStubsGenerator.java,
+	  src/java/org/lwjgl/util/generator/Reuse.java,
+	  src/java/org/lwjgl/util/generator/SignatureTranslator.java,
+	  src/java/org/lwjgl/util/generator/StringList.java,
+	  src/java/org/lwjgl/util/generator/TypeInfo.java,
+	  src/java/org/lwjgl/util/generator/TypeMap.java,
+	  src/java/org/lwjgl/util/generator/TypedefsGenerator.java,
+	  src/java/org/lwjgl/util/generator/Utils.java,
+	  src/java/org/lwjgl/util/generator/openal,
+	  src/java/org/lwjgl/util/generator/openal/ALTypeMap.java,
+	  src/java/org/lwjgl/util/generator/openal/ALboolean.java,
+	  src/java/org/lwjgl/util/generator/openal/ALbyte.java,
+	  src/java/org/lwjgl/util/generator/openal/ALdouble.java,
+	  src/java/org/lwjgl/util/generator/openal/ALenum.java,
+	  src/java/org/lwjgl/util/generator/openal/ALfloat.java,
+	  src/java/org/lwjgl/util/generator/openal/ALint.java,
+	  src/java/org/lwjgl/util/generator/openal/ALshort.java,
+	  src/java/org/lwjgl/util/generator/openal/ALsizei.java,
+	  src/java/org/lwjgl/util/generator/openal/ALubyte.java,
+	  src/java/org/lwjgl/util/generator/openal/ALuint.java,
+	  src/java/org/lwjgl/util/generator/openal/ALvoid.java,
+	  src/java/org/lwjgl/util/generator/opencl,
+	  src/java/org/lwjgl/util/generator/opencl/CLCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/opencl/CLDeviceExtension.java,
+	  src/java/org/lwjgl/util/generator/opencl/CLGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/opencl/CLPDCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/opencl/CLPlatformExtension.java,
+	  src/java/org/lwjgl/util/generator/opencl/CLTypeMap.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_bitfield.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_bool.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_byte.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_char.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_double.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_float.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_int.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_long.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_short.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_uchar.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_uint.java,
+	  src/java/org/lwjgl/util/generator/opencl/cl_void.java,
+	  src/java/org/lwjgl/util/generator/opencl/size_t.java,
+	  src/java/org/lwjgl/util/generator/opengl,
+	  src/java/org/lwjgl/util/generator/opengl/GLCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLReferencesGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLTypeMap.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLbitfield.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLboolean.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLbyte.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLchar.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLcharARB.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLclampd.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLclampf.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLdouble.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLenum.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLfloat.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLhalf.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLhandleARB.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLint.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLint64.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLint64EXT.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLintptr.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLintptrARB.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLreturn.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLshort.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLsizei.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLsizeiptr.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLsizeiptrARB.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLtime.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLubyte.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLuint.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLuint64.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLuint64EXT.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLushort.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLvoid.java,
+	  src/native/common/CL, src/native/common/CL/cl.h,
+	  src/native/common/CL/cl_d3d10.h, src/native/common/CL/cl_ext.h,
+	  src/native/common/CL/cl_gl.h, src/native/common/CL/cl_gl_ext.h,
+	  src/native/common/CL/cl_platform.h,
+	  src/native/common/common_tools.c,
+	  src/native/common/common_tools.h, src/native/common/extal.c,
+	  src/native/common/extal.h, src/native/common/extcl.c,
+	  src/native/common/extcl.h, src/native/common/extcl_types.h,
+	  src/native/common/extgl.h, src/native/common/extgl_types.h,
+	  src/native/common/opencl.h,
+	  src/native/common/org_lwjgl_openal_AL.c,
+	  src/native/common/org_lwjgl_opencl_CL.c,
+	  src/native/common/org_lwjgl_opencl_CL.h,
+	  src/native/common/org_lwjgl_opencl_CallbackUtil.c,
+	  src/native/common/org_lwjgl_opencl_CallbackUtil.h,
+	  src/native/common/org_lwjgl_opengl_AMDDebugOutputCallback.c,
+	  src/native/common/org_lwjgl_opengl_ARBDebugOutputCallback.c,
+	  src/native/common/org_lwjgl_opengl_CallbackUtil.c,
+	  src/native/common/org_lwjgl_opengl_CallbackUtil.h,
+	  src/native/linux/linux_al.c, src/native/linux/linux_cl.c,
+	  src/native/linux/org_lwjgl_opengl_LinuxContextImplementation.c,
+	  src/native/macosx/macosx_al.c, src/native/macosx/macosx_cl.c,
+	  src/native/windows/org_lwjgl_opengl_WindowsContextImplementation.c,
+	  src/native/windows/windows_al.c, src/native/windows/windows_cl.c,
+	  src/templates/org/lwjgl/openal/AL10.java,
+	  src/templates/org/lwjgl/openal/AL11.java,
+	  src/templates/org/lwjgl/openal/EFX10.java,
+	  src/templates/org/lwjgl/opencl,
+	  src/templates/org/lwjgl/opencl/AMD_device_attribute_query.java,
+	  src/templates/org/lwjgl/opencl/AMD_fp64.java,
+	  src/templates/org/lwjgl/opencl/AMD_media_ops.java,
+	  src/templates/org/lwjgl/opencl/AMD_printf.java,
+	  src/templates/org/lwjgl/opencl/APPLE_ContextLoggingFunctions.java,
+	  src/templates/org/lwjgl/opencl/APPLE_SetMemObjectDestructor.java,
+	  src/templates/org/lwjgl/opencl/APPLE_gl_sharing.java,
+	  src/templates/org/lwjgl/opencl/CL10.java,
+	  src/templates/org/lwjgl/opencl/CL10GL.java,
+	  src/templates/org/lwjgl/opencl/CL11.java,
+	  src/templates/org/lwjgl/opencl/EXT_device_fission.java,
+	  src/templates/org/lwjgl/opencl/EXT_migrate_memobject.java,
+	  src/templates/org/lwjgl/opencl/KHR_3d_image_writes.java,
+	  src/templates/org/lwjgl/opencl/KHR_byte_addressable_store.java,
+	  src/templates/org/lwjgl/opencl/KHR_fp16.java,
+	  src/templates/org/lwjgl/opencl/KHR_fp64.java,
+	  src/templates/org/lwjgl/opencl/KHR_gl_event.java,
+	  src/templates/org/lwjgl/opencl/KHR_gl_sharing.java,
+	  src/templates/org/lwjgl/opencl/KHR_global_int32_base_atomics.java,
+	  src/templates/org/lwjgl/opencl/KHR_global_int32_extended_atomics.java,
+	  src/templates/org/lwjgl/opencl/KHR_icd.java,
+	  src/templates/org/lwjgl/opencl/KHR_int64_base_atomics.java,
+	  src/templates/org/lwjgl/opencl/KHR_int64_extended_atomics.java,
+	  src/templates/org/lwjgl/opencl/KHR_local_int32_base_atomics.java,
+	  src/templates/org/lwjgl/opencl/KHR_local_int32_extended_atomics.java,
+	  src/templates/org/lwjgl/opengl/AMD_debug_output.java,
+	  src/templates/org/lwjgl/opengl/AMD_draw_buffers_blend.java,
+	  src/templates/org/lwjgl/opengl/AMD_name_gen_delete.java,
+	  src/templates/org/lwjgl/opengl/AMD_performance_monitor.java,
+	  src/templates/org/lwjgl/opengl/AMD_vertex_shader_tessellator.java,
+	  src/templates/org/lwjgl/opengl/APPLE_element_array.java,
+	  src/templates/org/lwjgl/opengl/APPLE_fence.java,
+	  src/templates/org/lwjgl/opengl/APPLE_flush_buffer_range.java,
+	  src/templates/org/lwjgl/opengl/APPLE_object_purgeable.java,
+	  src/templates/org/lwjgl/opengl/APPLE_texture_range.java,
+	  src/templates/org/lwjgl/opengl/APPLE_vertex_array_object.java,
+	  src/templates/org/lwjgl/opengl/APPLE_vertex_array_range.java,
+	  src/templates/org/lwjgl/opengl/APPLE_vertex_program_evaluators.java,
+	  src/templates/org/lwjgl/opengl/ARB_ES2_compatibility.java,
+	  src/templates/org/lwjgl/opengl/ARB_blend_func_extended.java,
+	  src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_cl_event.java,
+	  src/templates/org/lwjgl/opengl/ARB_color_buffer_float.java,
+	  src/templates/org/lwjgl/opengl/ARB_copy_buffer.java,
+	  src/templates/org/lwjgl/opengl/ARB_debug_output.java,
+	  src/templates/org/lwjgl/opengl/ARB_draw_buffers.java,
+	  src/templates/org/lwjgl/opengl/ARB_draw_buffers_blend.java,
+	  src/templates/org/lwjgl/opengl/ARB_draw_elements_base_vertex.java,
+	  src/templates/org/lwjgl/opengl/ARB_draw_indirect.java,
+	  src/templates/org/lwjgl/opengl/ARB_draw_instanced.java,
+	  src/templates/org/lwjgl/opengl/ARB_framebuffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_geometry_shader4.java,
+	  src/templates/org/lwjgl/opengl/ARB_get_program_binary.java,
+	  src/templates/org/lwjgl/opengl/ARB_gpu_shader_fp64.java,
+	  src/templates/org/lwjgl/opengl/ARB_imaging.java,
+	  src/templates/org/lwjgl/opengl/ARB_instanced_arrays.java,
+	  src/templates/org/lwjgl/opengl/ARB_map_buffer_range.java,
+	  src/templates/org/lwjgl/opengl/ARB_matrix_palette.java,
+	  src/templates/org/lwjgl/opengl/ARB_multisample.java,
+	  src/templates/org/lwjgl/opengl/ARB_multitexture.java,
+	  src/templates/org/lwjgl/opengl/ARB_occlusion_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_point_parameters.java,
+	  src/templates/org/lwjgl/opengl/ARB_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_provoking_vertex.java,
+	  src/templates/org/lwjgl/opengl/ARB_robustness.java,
+	  src/templates/org/lwjgl/opengl/ARB_sample_shading.java,
+	  src/templates/org/lwjgl/opengl/ARB_sampler_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_separate_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_subroutine.java,
+	  src/templates/org/lwjgl/opengl/ARB_shading_language_include.java,
+	  src/templates/org/lwjgl/opengl/ARB_sync.java,
+	  src/templates/org/lwjgl/opengl/ARB_tessellation_shader.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_compression.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_multisample.java,
+	  src/templates/org/lwjgl/opengl/ARB_timer_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_transform_feedback2.java,
+	  src/templates/org/lwjgl/opengl/ARB_transform_feedback3.java,
+	  src/templates/org/lwjgl/opengl/ARB_uniform_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_array_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_attrib_64bit.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_blend.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_type_2_10_10_10_rev.java,
+	  src/templates/org/lwjgl/opengl/ARB_viewport_array.java,
+	  src/templates/org/lwjgl/opengl/ATI_draw_buffers.java,
+	  src/templates/org/lwjgl/opengl/ATI_element_array.java,
+	  src/templates/org/lwjgl/opengl/ATI_envmap_bumpmap.java,
+	  src/templates/org/lwjgl/opengl/ATI_fragment_shader.java,
+	  src/templates/org/lwjgl/opengl/ATI_map_object_buffer.java,
+	  src/templates/org/lwjgl/opengl/ATI_pn_triangles.java,
+	  src/templates/org/lwjgl/opengl/ATI_separate_stencil.java,
+	  src/templates/org/lwjgl/opengl/ATI_vertex_array_object.java,
+	  src/templates/org/lwjgl/opengl/ATI_vertex_attrib_array_object.java,
+	  src/templates/org/lwjgl/opengl/ATI_vertex_streams.java,
+	  src/templates/org/lwjgl/opengl/EXT_bindable_uniform.java,
+	  src/templates/org/lwjgl/opengl/EXT_blend_color.java,
+	  src/templates/org/lwjgl/opengl/EXT_blend_equation_separate.java,
+	  src/templates/org/lwjgl/opengl/EXT_blend_func_separate.java,
+	  src/templates/org/lwjgl/opengl/EXT_blend_minmax.java,
+	  src/templates/org/lwjgl/opengl/EXT_compiled_vertex_array.java,
+	  src/templates/org/lwjgl/opengl/EXT_depth_bounds_test.java,
+	  src/templates/org/lwjgl/opengl/EXT_direct_state_access.java,
+	  src/templates/org/lwjgl/opengl/EXT_draw_buffers2.java,
+	  src/templates/org/lwjgl/opengl/EXT_draw_instanced.java,
+	  src/templates/org/lwjgl/opengl/EXT_draw_range_elements.java,
+	  src/templates/org/lwjgl/opengl/EXT_fog_coord.java,
+	  src/templates/org/lwjgl/opengl/EXT_framebuffer_blit.java,
+	  src/templates/org/lwjgl/opengl/EXT_framebuffer_multisample.java,
+	  src/templates/org/lwjgl/opengl/EXT_framebuffer_object.java,
+	  src/templates/org/lwjgl/opengl/EXT_geometry_shader4.java,
+	  src/templates/org/lwjgl/opengl/EXT_gpu_program_parameters.java,
+	  src/templates/org/lwjgl/opengl/EXT_gpu_shader4.java,
+	  src/templates/org/lwjgl/opengl/EXT_multi_draw_arrays.java,
+	  src/templates/org/lwjgl/opengl/EXT_paletted_texture.java,
+	  src/templates/org/lwjgl/opengl/EXT_point_parameters.java,
+	  src/templates/org/lwjgl/opengl/EXT_provoking_vertex.java,
+	  src/templates/org/lwjgl/opengl/EXT_secondary_color.java,
+	  src/templates/org/lwjgl/opengl/EXT_separate_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/EXT_shader_image_load_store.java,
+	  src/templates/org/lwjgl/opengl/EXT_stencil_clear_tag.java,
+	  src/templates/org/lwjgl/opengl/EXT_stencil_two_side.java,
+	  src/templates/org/lwjgl/opengl/EXT_texture_array.java,
+	  src/templates/org/lwjgl/opengl/EXT_texture_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/EXT_texture_integer.java,
+	  src/templates/org/lwjgl/opengl/EXT_timer_query.java,
+	  src/templates/org/lwjgl/opengl/EXT_transform_feedback.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_attrib_64bit.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_weighting.java,
+	  src/templates/org/lwjgl/opengl/GL11.java,
+	  src/templates/org/lwjgl/opengl/GL12.java,
+	  src/templates/org/lwjgl/opengl/GL13.java,
+	  src/templates/org/lwjgl/opengl/GL14.java,
+	  src/templates/org/lwjgl/opengl/GL15.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/GL21.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL31.java,
+	  src/templates/org/lwjgl/opengl/GL32.java,
+	  src/templates/org/lwjgl/opengl/GL33.java,
+	  src/templates/org/lwjgl/opengl/GL40.java,
+	  src/templates/org/lwjgl/opengl/GL41.java,
+	  src/templates/org/lwjgl/opengl/GREMEDY_string_marker.java,
+	  src/templates/org/lwjgl/opengl/NV_conditional_render.java,
+	  src/templates/org/lwjgl/opengl/NV_copy_image.java,
+	  src/templates/org/lwjgl/opengl/NV_evaluators.java,
+	  src/templates/org/lwjgl/opengl/NV_explicit_multisample.java,
+	  src/templates/org/lwjgl/opengl/NV_fence.java,
+	  src/templates/org/lwjgl/opengl/NV_fragment_program.java,
+	  src/templates/org/lwjgl/opengl/NV_framebuffer_multisample_coverage.java,
+	  src/templates/org/lwjgl/opengl/NV_geometry_program4.java,
+	  src/templates/org/lwjgl/opengl/NV_gpu_program4.java,
+	  src/templates/org/lwjgl/opengl/NV_gpu_shader5.java,
+	  src/templates/org/lwjgl/opengl/NV_half_float.java,
+	  src/templates/org/lwjgl/opengl/NV_occlusion_query.java,
+	  src/templates/org/lwjgl/opengl/NV_parameter_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/NV_pixel_data_range.java,
+	  src/templates/org/lwjgl/opengl/NV_point_sprite.java,
+	  src/templates/org/lwjgl/opengl/NV_primitive_restart.java,
+	  src/templates/org/lwjgl/opengl/NV_program.java,
+	  src/templates/org/lwjgl/opengl/NV_register_combiners.java,
+	  src/templates/org/lwjgl/opengl/NV_register_combiners2.java,
+	  src/templates/org/lwjgl/opengl/NV_shader_buffer_load.java,
+	  src/templates/org/lwjgl/opengl/NV_transform_feedback.java,
+	  src/templates/org/lwjgl/opengl/NV_transform_feedback2.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_array_range.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_attrib_integer_64bit.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_buffer_unified_memory.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_program.java: Added
+	  support for OpenCL & CL/GL interop + minor improvements. [WIP]
+
+2010-09-15 22:51  spasi
+
+	* src/templates/org/lwjgl/opengl/GL30.java: Fixed
+	  ARB_framebuffer_object tokens.
+
+2010-09-01 18:12  kappa1
+
+	* platform_build/build-applet.xml: Applet package in nightly builds
+	  now cleaned of unused files so extra code to build file can be
+	  removed.
+
+2010-08-31 20:10  kappa1
+
+	* platform_build/build-applet.xml: second attempt to clean applet
+	  package of unused files
+
+2010-08-31 19:30  kappa1
+
+	* platform_build/build-applet.xml: attempt to clean nightly builds
+	  of unused files
+
+2010-08-28 16:39  kappa1
+
+	* applet/advance, applet/advance/appletloader.html,
+	  applet/appletloader.html, applet/basic,
+	  applet/basic/basicapplet.html, build.xml,
+	  platform_build/build-applet.xml: Applet Package: clean up and
+	  split the applet download package, it should be much easier for
+	  noobs to pick it up now and less confusing.
+
+2010-08-28 13:47  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  slight tweak to the behaviour of al_version
+
+2010-08-28 12:04  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  set java.library.path to the folder containing natives, this
+	  should make it easier when using extra custom native files.
+
+2010-08-23 18:12  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  slight tweak to use classloader the way Oracle recommend.
+
+2010-08-23 18:02  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  fix mixed mode message when using custom logo images.
+
+2010-08-16 22:18  spasi
+
+	* src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java:
+
+2010-08-16 22:09  spasi
+
+	* src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java:
+	  Fixed NPE when safeNewBuffer returns NULL.
+
+2010-07-31 16:14  spasi
+
+	* src/templates/org/lwjgl/opengl/NV_framebuffer_multisample_coverage.java:
+	  Typo fix.
+
+2010-07-28 21:12  kappa1
+
+	* src/java/org/lwjgl/opengl/MacOSXMouseEventQueue.java: clean
+	  unneeded check
+
+2010-07-28 21:07  kappa1
+
+	* src/java/org/lwjgl/opengl/MacOSXMouseEventQueue.java: Fix Mac
+	  Mouse behaviour where mouse is centred everytime
+	  Mouse.setGrabbed(boolean) is called.
+
+2010-07-27 19:18  matzon
+
+	* src/java/org/lwjgl/LinuxSysImplementation.java,
+	  src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  src/java/org/lwjgl/WindowsSysImplementation.java: bumping native
+	  version
+
+2010-07-27 19:17  matzon
+
+	* src/java/org/lwjgl/test/applet/GearsApplet.java,
+	  src/java/org/lwjgl/test/opengl/Gears.java,
+	  src/java/org/lwjgl/test/opengl/awt/AWTGears.java: Adding lwjgl
+	  version string to debug output
+
+2010-07-27 19:08  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: incrementing version to 2.6
+
+2010-07-27 16:20  spasi
+
+	* build.xml: ARBDebugOutputCallback header.
+
+2010-07-27 15:33  spasi
+
+	* platform_build/build-generator.xml,
+	  src/java/org/lwjgl/opengl/AMDDebugOutputCallback.java,
+	  src/java/org/lwjgl/opengl/AMDDebugOutputUtil.java,
+	  src/java/org/lwjgl/opengl/ARBDebugOutputCallback.java,
+	  src/java/org/lwjgl/opengl/ARBDebugOutputUtil.java,
+	  src/java/org/lwjgl/opengl/ContextAttribs.java,
+	  src/java/org/lwjgl/opengl/GLContext.java,
+	  src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  src/native/common/extgl.h,
+	  src/native/common/org_lwjgl_opengl_AMDDebugOutputCallback.c,
+	  src/native/common/org_lwjgl_opengl_ARBDebugOutputCallback.c,
+	  src/templates/org/lwjgl/opengl/ARB_ES2_compatibility.java,
+	  src/templates/org/lwjgl/opengl/ARB_debug_output.java,
+	  src/templates/org/lwjgl/opengl/ARB_get_program_binary.java,
+	  src/templates/org/lwjgl/opengl/ARB_robustness.java,
+	  src/templates/org/lwjgl/opengl/ARB_separate_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_precision.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_stencil_export.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_attrib_64bit.java,
+	  src/templates/org/lwjgl/opengl/ARB_viewport_array.java,
+	  src/templates/org/lwjgl/opengl/EXT_direct_state_access.java,
+	  src/templates/org/lwjgl/opengl/GL40.java,
+	  src/templates/org/lwjgl/opengl/GL41.java: Added support for
+	  OpenGL 4.1 and new extensions.
+
+2010-07-25 14:22  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  slight tweak to make code more readable
+
+2010-07-25 13:35  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  removed dead code.
+
+2010-07-25 13:31  kappa1
+
+	* res/appletprogress.gif,
+	  src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  addded ability to use appletloader with no images, just the logo,
+	  just the progressbar or both. To set no image for either image
+	  you must set the parameter value to "". Both images are now
+	  centred independently allowing variable size logo and progressbar
+	  images. Resized appletprogress.gif to match appletlogo.png size.
+
+2010-07-25 12:18  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  actually fail with error message if logo images are not found or
+	  an error occurs when they are loaded, added missing MediaTracker
+	  step. Also prevent paint thread from null pointer exception when
+	  this happens.
+
+2010-07-25 11:40  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  fix error message so that it actually uses the error message
+	  string.
+
+2010-07-24 20:00  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  clean up resources (images) when switching to the LWJGL Applet as
+	  opposed to when applet is destroyed
+
+2010-07-21 18:53  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  fix bug with LWJGL 2.5 where appletloader crashed if the
+	  al_version parameter was used.

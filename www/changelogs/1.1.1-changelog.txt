@@ -1,0 +1,315 @@
+2007-07-30 05:22  elias_naur
+
+	* platform_build/macosx_ant/build.xml: Mac OS X: Added the -Wunused
+	  gcc flag
+
+2007-07-30 05:15  elias_naur
+
+	* platform_build/linux_ant/build.xml: Linux: Add -Wunused to native
+	  compilation
+
+2007-07-29 19:55  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsKeycodes.java: Windows: Mapped
+	  VK_OEM_8 to KEY_GRAVE to match lwjgl 1.0 behaviour
+
+2007-07-29 19:43  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/opengl/WindowsKeycodes.java: Windows: Mapped
+	  VK_SNAPSHOT to KEY_SYSRQ and added workaround to a windows bug
+	  where WM_KEYDOWN is never generated for VK_SNAPSHOT
+
+2007-07-29 19:24  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsKeycodes.java: Windows: Added
+	  key mapping to KEY_EQUALS for VK_OEM_PLUS to match lwjgl1.0 with
+	  US keyboard layout
+
+2007-07-28 21:28  elias_naur
+
+	* src/java/org/lwjgl/Sys.java: Bumped Sys.JNI_VERSION
+
+2007-07-28 21:19  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Windows: Don't be
+	  too aggressive in clipping the cursor. Fixes a problem where the
+	  window is moved out of the screen when clicking the title bar
+	  while having the mouse grabbed
+
+2007-07-28 20:46  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Removed
+	  an unused parameter from WindowsDisplay.clipCursor
+
+2007-07-20 21:24  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: Disable
+	  MacOSXDisplay.setIcon since there are no window icons on Mac OS X
+
+2007-06-29 22:11  elias_naur
+
+	* src/java/org/lwjgl/LWJGLUtil.java,
+	  src/java/org/lwjgl/LinuxSysImplementation.java,
+	  src/java/org/lwjgl/WindowsSysImplementation.java: Merge Windows
+	  and Linux privileged Runtime.exec usage into a method in
+	  LWJGLUtil. Linux: Added the recent freedesktop.org standard
+	  xdg-open script to the list of possible URL handlers.
+
+2007-06-20 08:58  elias_naur
+
+	* build.xml: Reverted accidental build.xml change
+
+2007-06-20 08:57  elias_naur
+
+	* build.xml, src/java/org/lwjgl/MacOSXSysImplementation.java: Mac
+	  OS X: Add a Toolkit.getDefaultToolkit() incantation to
+	  MacOSXSysImplementation to avoid hangs on Mac OS X 10.3
+
+2007-06-15 06:58  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Linux: Don't use
+	  seperate Display connections to switch display modes
+
+2007-06-11 18:43  matzon
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: no longer
+	  null'ing SecurityManager
+
+2007-06-11 18:10  matzon
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: applied
+	  kappaOne's Permision denied handling
+	  made some minor cleanup
+
+2007-06-10 20:31  matzon
+
+	* applet/appletloader.html: appletloader sample
+
+2007-06-10 20:31  matzon
+
+	* build.xml: support for AppletLoader
+
+2007-06-10 20:30  matzon
+
+	* res/appletlogo.png, res/appletprogress.gif,
+	  src/java/org/lwjgl/test/applet/AppletLoaderTest.java,
+	  src/java/org/lwjgl/util/applet/AppletLoader.java: initial
+	  checking on AppletLoader
+
+2007-06-10 20:28  matzon
+
+	* src/java/org/lwjgl/test/opengl/awt/AWTGears.java,
+	  src/java/org/lwjgl/test/opengl/awt/AWTGearsCanvas.java: split
+	  gears implementation into own canvas, to be reused
+
+2007-06-06 13:56  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Removed unused, private
+	  Display.getContext()
+
+2007-06-06 12:27  elias_naur
+
+	* src/java/org/lwjgl/opengl/BaseReferences.java: Added gl
+	  extension/core aliases in BaseReferences
+
+2007-06-06 12:18  elias_naur
+
+	* src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java:
+	  Missing change to ContextCapabilitiesGenerator from last commit
+
+2007-06-06 12:07  elias_naur
+
+	* src/java/org/lwjgl/opengl/BaseReferences.java,
+	  src/java/org/lwjgl/util/generator/ContextGeneratorProcessorFactory.java:
+	  Don't use GL13 and ARB_vertex_shader constants in BaseReferences
+	  if they're not supported
+
+2007-06-06 09:01  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsKeyboard.java: Removed dead code
+	  from WindowsKeyboard
+
+2007-06-06 08:38  elias_naur
+
+	* src/java/org/lwjgl/test/input/KeyboardTest.java: Tweaked
+	  KeyboardTest
+
+2007-06-05 16:52  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsKeycodes.java: Fixed svn
+	  properties on WindowsKeycodes.java
+
+2007-06-05 16:33  elias_naur
+
+	* src/java/org/lwjgl/util/IGL.java: Removed unused
+	  org.lwjgl.util.IGL
+
+2007-05-31 22:09  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXMouseEventQueue.java: Mac OS X:
+	  When grabbing the mouse, skip the next event to avoid bogus
+	  deltas
+
+2007-05-31 21:11  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXMouseEventQueue.java: Mac OS X:
+	  Synchronized access to grabbed state
+
+2007-05-31 21:04  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXMouseEventQueue.java: Mac OS X:
+	  Track grabbed state in MacOSXMouseEventQueue
+
+2007-05-31 21:00  elias_naur
+
+	* src/native/macosx/org_lwjgl_input_Mouse.c: Mac OS X: Don't use
+	  global is_grabbed variable in MacOSXMouseEventQueue.nWarpCursor
+
+2007-05-31 08:52  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java: Windows: Fix
+	  repeated character codes
+
+2007-05-30 20:33  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/input/Mouse.java: Removed unnecessary (and
+	  deadlock prone) synchronized modifiers from methods in Keyboard
+	  and Mouse
+
+2007-05-27 15:32  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsContextImplementation.java,
+	  src/native/windows/org_lwjgl_opengl_WindowsContextImplementation.c:
+	  Windows: Fix up WindowsContextImplementation.nSetSwapInterval
+
+2007-05-27 13:17  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Linux: Move input
+	  grab update from createWindow to when MapNotify is received. This
+	  avoid any input grabbing being ignored because the window is not
+	  yet mapped
+
+2007-05-27 13:09  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Display: Add GL error
+	  check after initial makeCurrent() (for real this time)
+
+2007-05-27 07:48  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Display: Add GL error
+	  check after initial makeCurrent()
+
+2007-05-27 05:19  elias_naur
+
+	* src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/opengl/WindowsContextImplementation.java,
+	  src/native/windows/org_lwjgl_opengl_WindowsContextImplementation.c:
+	  Windows: Check for gl errors after setting swap interval
+
+2007-05-22 22:30  elias_naur
+
+	* src/java/org/lwjgl/opengl/BaseReferences.java,
+	  src/java/org/lwjgl/opengl/ReferencesStack.java,
+	  src/java/org/lwjgl/util/generator/CachedReference.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/ReferencesGeneratorProcessorFactory.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/GL11.java,
+	  src/templates/org/lwjgl/opengl/GL13.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_program.java:
+	  Implemented proper buffer reference retaining for complicated
+	  functions like glVertexAttribPointer and glTexCoordPointer. Patch
+	  by MatthiasM.
+
+2007-05-20 17:51  matzon
+
+	* src/native/common/org_lwjgl_openal_ALC11.c: reworked typecasting
+	  with a dash of insanity to look more like nalBufferData - lisp
+	  anyone?
+
+2007-05-20 17:47  matzon
+
+	* src/java/org/lwjgl/openal/ALC10.java: reordered context
+	  destruction - fixing some invalidation issues
+
+2007-05-20 17:44  matzon
+
+	* src/native/common/org_lwjgl_openal_ALC11.c: fixed issues with
+	  typecasting of buffer type
+
+2007-05-19 20:47  matzon
+
+	* src/java/org/lwjgl/openal/ALC10.java,
+	  src/java/org/lwjgl/openal/ALCdevice.java: remove context from the
+	  devices list of context on context destroy
+
+2007-05-19 20:40  matzon
+
+	* src/java/org/lwjgl/openal/ALC10.java,
+	  src/java/org/lwjgl/openal/ALC11.java: moved invalidation into
+	  sycnhronized block
+
+2007-05-19 20:39  matzon
+
+	* src/java/org/lwjgl/openal/ALCcontext.java,
+	  src/java/org/lwjgl/openal/ALCdevice.java: dont compare validity
+	  on equals
+
+2007-05-19 19:37  matzon
+
+	* src/java/org/lwjgl/openal/AL.java,
+	  src/java/org/lwjgl/openal/ALC10.java,
+	  src/java/org/lwjgl/openal/ALC11.java,
+	  src/java/org/lwjgl/openal/ALCcontext.java,
+	  src/java/org/lwjgl/openal/ALCdevice.java,
+	  src/java/org/lwjgl/openal/Util.java: fixed address checking issue
+	  fixed issue with ALC error checking not taking a device into
+	  account
+	  now tracking device and context create and destroy
+	  made the create with open default device option public
+	  misc cleaning up and commenting
+
+2007-05-18 07:15  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Linux: Removed GCJ
+	  workaround since current GCJ versions support re-entrant AWT
+	  locking
+
+2007-05-13 22:01  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/opengl/KeyboardEventQueue.java,
+	  src/java/org/lwjgl/opengl/LinuxKeyboard.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/test/input/KeyboardTest.java: Implemented
+	  Keyboard.enableRepeatEvents(), Keyboard.areRepeatEventsEnabled()
+	  and Keyboard.isEventRepeat() to control repeat event reporting.
+	  Added repeat key test to KeyboardTest
+
+2007-05-13 21:11  elias_naur
+
+	* src/java/org/lwjgl/opengl/KeyboardEventQueue.java,
+	  src/java/org/lwjgl/opengl/LinuxAWTInput.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/native/linux/org_lwjgl_opengl_Display.c: Use event timestamp
+	  to detect key repeat events in KeyboardEventQueue
+
+2007-05-13 20:13  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxKeyboard.java: use timestamp
+	  matching hack to detect key repeat events instead of globally
+	  disabling keyboard repeating
+
+2007-05-01 18:13  elias_naur
+
+	* src/java/org/lwjgl/test/applet/AppletTest.java: AppletTest:
+	  Destroy AWTInputAdapter on destroy()

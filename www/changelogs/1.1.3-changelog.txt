@@ -1,0 +1,342 @@
+2007-10-28 21:47  matzon
+
+	* libs/win32/OpenAL32.dll: using updated OpenAL
+
+2007-10-28 21:42  matzon
+
+	* build.xml, src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/devil/ILNative.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java: updating version string to
+	  1.1.3
+
+2007-10-24 21:55  matzon
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: miscellaneous
+	  minor fixes to improve the loading and displaying of the applet
+
+2007-10-24 21:25  matzon
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: reworked
+	  urlconnection.getInputStream to threaded usage, to avoid Opera
+	  issue (detective work: kappaOne)
+
+2007-10-24 21:23  matzon
+
+	* src/java/org/lwjgl/util/jinput/LWJGLEnvironmentPlugin.java:
+	  removed annotation
+
+2007-10-22 20:54  matzon
+
+	* src/java/org/lwjgl/util/jinput/LWJGLEnvironmentPlugin.java: added
+	  required isSupported
+
+2007-10-22 20:20  matzon
+
+	* libs/jinput.jar, libs/linux/libjinput-linux.so,
+	  libs/linux/libjinput-linux64.so,
+	  libs/macosx/libjinput-osx.jnilib, libs/win32/jinput-dx8.dll,
+	  libs/win32/jinput-raw.dll: latest jinput
+
+2007-10-20 21:31  matzon
+
+	* src/java/org/lwjgl/LinuxSysImplementation.java,
+	  src/java/org/lwjgl/WindowsSysImplementation.java,
+	  src/java/org/lwjgl/fmod3/FMusicModule.java,
+	  src/java/org/lwjgl/input/Cursor.java,
+	  src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/opengl/AWTCanvasInputImplementation.java,
+	  src/java/org/lwjgl/opengl/AWTInputAdapter.java,
+	  src/java/org/lwjgl/opengl/AWTUtil.java,
+	  src/java/org/lwjgl/opengl/AbstractAWTInput.java,
+	  src/java/org/lwjgl/opengl/EventQueue.java,
+	  src/java/org/lwjgl/opengl/InputImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxKeyboard.java,
+	  src/java/org/lwjgl/opengl/LinuxMouse.java,
+	  src/java/org/lwjgl/opengl/MacOSXAWTInput.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXMouseEventQueue.java,
+	  src/java/org/lwjgl/opengl/MouseEventQueue.java,
+	  src/java/org/lwjgl/opengl/Util.java,
+	  src/java/org/lwjgl/opengl/WindowsAWTInput.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice3.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice8.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputMouse.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/opengl/WindowsMouse.java,
+	  src/java/org/lwjgl/opengl/glu/GLU.java,
+	  src/java/org/lwjgl/test/applet/OpenGL.java,
+	  src/java/org/lwjgl/test/input/KeyboardTest.java,
+	  src/java/org/lwjgl/test/opengl/shaders/Shader.java,
+	  src/java/org/lwjgl/util/applet/AppletLoader.java,
+	  src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/ContextGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/ReferencesGeneratorProcessorFactory.java:
+	  cleaning imports
+
+2007-10-20 21:20  matzon
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: applied
+	  kappaOnes latest fixes
+
+2007-10-20 19:02  matzon
+
+	* build.xml, platform_build/windows_ant/build.xml,
+	  src/java/org/lwjgl/d3d, src/java/org/lwjgl/test/d3d,
+	  src/native/windows/org_lwjgl_d3d_D3DUtil.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3D9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3D9Ex.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DBaseTexture9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DCubeTexture9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DDevice9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DDevice9Ex.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DIndexBuffer9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DPixelShader9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DQuery9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DResource9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DStateBlock9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DSurface9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DSwapChain9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DSwapChain9Ex.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DTexture9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DVertexBuffer9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DVertexDeclaration9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DVertexShader9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DVolume9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DVolumeTexture9.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsContextImplementation.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDirectInput3.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDirectInput8.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDirectInputDevice3.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDirectInputDevice8.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDisplay.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDisplayPeerInfo.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsKeyboard.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsPeerInfo.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsRegistry.c: removing
+	  direct x, can be picked up in the lwjgl-directx tag
+
+2007-10-20 14:48  matzon
+
+	* src/java/org/lwjgl/input/Cursor.java: make sure that any windows
+	  cursor image pixel is either 0xffxxxxxx or 0x00000000
+
+2007-10-17 08:24  elias_naur
+
+	* src/java/org/lwjgl/opengl/glu/GLU.java: Fixed GLU compile error
+
+2007-10-13 07:37  matzon
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: fix: generic
+	  error message placeholder String text was not being replace by
+	  the error message - kappaOne
+
+2007-09-19 14:10  spasi
+
+	* src/templates/org/lwjgl/opengl/ARB_imaging.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_compression.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_env_combine.java,
+	  src/templates/org/lwjgl/opengl/EXT_framebuffer_multisample.java,
+	  src/templates/org/lwjgl/opengl/GL12.java,
+	  src/templates/org/lwjgl/opengl/GL14.java,
+	  src/templates/org/lwjgl/opengl/GL15.java,
+	  src/templates/org/lwjgl/opengl/GL21.java,
+	  src/templates/org/lwjgl/opengl/NV_framebuffer_multisample_coverage.java,
+	  src/templates/org/lwjgl/opengl/NV_texture_shader.java: Extension
+	  updates and fixes.
+
+2007-08-30 18:27  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Mac OS X: Release and
+	  clear the context from the drawable in the correct order
+
+2007-08-30 12:34  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Don't let Display.sync*
+	  sleep with the global lock held
+
+2007-08-30 12:19  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Made Display.timeNow
+	  local
+
+2007-08-28 08:02  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java: Added KEY_LMETA and
+	  KEY_RMETA to Keyboard to replace the windows centric KEY_LWIN and
+	  KEY_RWIN, which are now deprecated
+
+2007-08-28 07:43  elias_naur
+
+	* build.xml: Don't include d3d stuff in lwjgl.jar
+
+2007-08-28 07:38  elias_naur
+
+	* src/java/org/lwjgl/opengl/KeyboardEventQueue.java: Mac OS X:
+	  Mapped the option key to Keyboard.KEY_LWIN and Keyboard.KEY_RWIN
+	  instead of KEY_*META like the alt key
+
+2007-08-27 20:57  matzon
+
+	* platform_build/windows_ant/build.xml: added missing libraries
+
+2007-08-27 20:56  matzon
+
+	* build.xml: added missing headers
+
+2007-08-26 22:07  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Linux: Don't close
+	  the static Display connection, to avoid crashes with some dri
+	  drivers
+
+2007-08-26 20:47  elias_naur
+
+	* build.xml: build.xml target 'applet' depends on 'all', not just
+	  'jars'
+
+2007-08-25 14:47  elias_naur
+
+	* build.xml, src/java/org/lwjgl/d3d/DisplayImplementation.java:
+	  tweaked build.xml to get compile working again
+
+2007-08-25 12:57  captainjester
+
+	* build.xml: Changes to include Direct3D headers.
+
+2007-08-22 23:11  captainjester
+
+	* src/native/windows/org_lwjgl_d3d_D3DUtil.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3D9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3D9Ex.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DBaseTexture9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DCubeTexture9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DDevice9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DDevice9Ex.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DIndexBuffer9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DPixelShader9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DQuery9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DResource9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DStateBlock9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DSurface9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DSwapChain9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DSwapChain9Ex.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DTexture9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DVertexBuffer9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DVertexDeclaration9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DVertexShader9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DVolume9.c,
+	  src/native/windows/org_lwjgl_d3d_IDirect3DVolumeTexture9.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsContextImplementation.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDirectInput3.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDirectInput8.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDirectInputDevice3.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDirectInputDevice8.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDisplay.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsDisplayPeerInfo.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsKeyboard.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsPeerInfo.c,
+	  src/native/windows/org_lwjgl_d3d_WindowsRegistry.c:
+
+2007-08-22 23:11  captainjester
+
+	* src/java/org/lwjgl/test/d3d,
+	  src/java/org/lwjgl/test/d3d/DrunkenHyenaLines.java,
+	  src/java/org/lwjgl/test/d3d/DrunkenHyenaPoints.java,
+	  src/java/org/lwjgl/test/d3d/DrunkenHyenaTriangles.java,
+	  src/java/org/lwjgl/test/d3d/DrunkenHyenaWorldTransform.java,
+	  src/java/org/lwjgl/test/d3d/IDirect3D9Test.java: First commit of
+	  Direct3D extension.
+
+2007-08-22 23:11  captainjester
+
+	* src/java/org/lwjgl/d3d, src/java/org/lwjgl/d3d/Context.java,
+	  src/java/org/lwjgl/d3d/ContextImplementation.java,
+	  src/java/org/lwjgl/d3d/D3DAdapterIdentifier9.java,
+	  src/java/org/lwjgl/d3d/D3DBox.java,
+	  src/java/org/lwjgl/d3d/D3DCaps9.java,
+	  src/java/org/lwjgl/d3d/D3DClipStatus9.java,
+	  src/java/org/lwjgl/d3d/D3DColorValue.java,
+	  src/java/org/lwjgl/d3d/D3DDeviceCreationParameters.java,
+	  src/java/org/lwjgl/d3d/D3DDisplaymode.java,
+	  src/java/org/lwjgl/d3d/D3DDisplaymodeEx.java,
+	  src/java/org/lwjgl/d3d/D3DDisplaymodeFilter.java,
+	  src/java/org/lwjgl/d3d/D3DGammaRamp.java,
+	  src/java/org/lwjgl/d3d/D3DIndexBufferDesc.java,
+	  src/java/org/lwjgl/d3d/D3DLight9.java,
+	  src/java/org/lwjgl/d3d/D3DLockedBox.java,
+	  src/java/org/lwjgl/d3d/D3DLockedRect.java,
+	  src/java/org/lwjgl/d3d/D3DMaterial9.java,
+	  src/java/org/lwjgl/d3d/D3DMatrix.java,
+	  src/java/org/lwjgl/d3d/D3DPShaderCaps2_0.java,
+	  src/java/org/lwjgl/d3d/D3DPresentParameters.java,
+	  src/java/org/lwjgl/d3d/D3DPresentStats.java,
+	  src/java/org/lwjgl/d3d/D3DRasterStatus.java,
+	  src/java/org/lwjgl/d3d/D3DRectPatchInfo.java,
+	  src/java/org/lwjgl/d3d/D3DRegionData.java,
+	  src/java/org/lwjgl/d3d/D3DRegionDataHeader.java,
+	  src/java/org/lwjgl/d3d/D3DSsurfaceDesc.java,
+	  src/java/org/lwjgl/d3d/D3DSurfaceDesc.java,
+	  src/java/org/lwjgl/d3d/D3DTriPatchInfo.java,
+	  src/java/org/lwjgl/d3d/D3DUtil.java,
+	  src/java/org/lwjgl/d3d/D3DVShaderCaps2_0.java,
+	  src/java/org/lwjgl/d3d/D3DVector.java,
+	  src/java/org/lwjgl/d3d/D3DVertexBufferDesc.java,
+	  src/java/org/lwjgl/d3d/D3DVertexElement9.java,
+	  src/java/org/lwjgl/d3d/D3DViewport9.java,
+	  src/java/org/lwjgl/d3d/D3DVolumeDesc.java,
+	  src/java/org/lwjgl/d3d/Direct3DConstants.java,
+	  src/java/org/lwjgl/d3d/Display.java,
+	  src/java/org/lwjgl/d3d/DisplayImplementation.java,
+	  src/java/org/lwjgl/d3d/DisplayMode.java,
+	  src/java/org/lwjgl/d3d/Drawable.java,
+	  src/java/org/lwjgl/d3d/EventQueue.java,
+	  src/java/org/lwjgl/d3d/GUID.java,
+	  src/java/org/lwjgl/d3d/GlobalLock.java,
+	  src/java/org/lwjgl/d3d/IDirect3D9.java,
+	  src/java/org/lwjgl/d3d/IDirect3D9Ex.java,
+	  src/java/org/lwjgl/d3d/IDirect3DBaseTexture9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DCubeTexture9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DDevice9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DDevice9Ex.java,
+	  src/java/org/lwjgl/d3d/IDirect3DIndexBuffer9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DPixelShader9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DQuery9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DResource9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DStateBlock9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DSurface9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DSwapChain9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DSwapChain9Ex.java,
+	  src/java/org/lwjgl/d3d/IDirect3DTexture9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DVertexBuffer9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DVertexDeclaration9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DVertexShader9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DVolume9.java,
+	  src/java/org/lwjgl/d3d/IDirect3DVolumeTexture9.java,
+	  src/java/org/lwjgl/d3d/InputImplementation.java,
+	  src/java/org/lwjgl/d3d/LUID.java,
+	  src/java/org/lwjgl/d3d/NewDisplay.java,
+	  src/java/org/lwjgl/d3d/PaletteEntry.java,
+	  src/java/org/lwjgl/d3d/PeerInfo.java,
+	  src/java/org/lwjgl/d3d/PixelFormat.java,
+	  src/java/org/lwjgl/d3d/Point.java,
+	  src/java/org/lwjgl/d3d/Rectangle.java,
+	  src/java/org/lwjgl/d3d/RegionData.java,
+	  src/java/org/lwjgl/d3d/RegionDataHeader.java,
+	  src/java/org/lwjgl/d3d/WindowsContextImplementation.java,
+	  src/java/org/lwjgl/d3d/WindowsDirectInput.java,
+	  src/java/org/lwjgl/d3d/WindowsDirectInput3.java,
+	  src/java/org/lwjgl/d3d/WindowsDirectInput8.java,
+	  src/java/org/lwjgl/d3d/WindowsDirectInputDevice.java,
+	  src/java/org/lwjgl/d3d/WindowsDirectInputDevice3.java,
+	  src/java/org/lwjgl/d3d/WindowsDirectInputDevice8.java,
+	  src/java/org/lwjgl/d3d/WindowsDirectInputDeviceObjectCallback.java,
+	  src/java/org/lwjgl/d3d/WindowsDisplay.java,
+	  src/java/org/lwjgl/d3d/WindowsDisplayPeerInfo.java,
+	  src/java/org/lwjgl/d3d/WindowsFileVersion.java,
+	  src/java/org/lwjgl/d3d/WindowsKeyboard.java,
+	  src/java/org/lwjgl/d3d/WindowsKeycodes.java,
+	  src/java/org/lwjgl/d3d/WindowsMouse.java,
+	  src/java/org/lwjgl/d3d/WindowsPeerInfo.java,
+	  src/java/org/lwjgl/d3d/WindowsRegistry.java: First commit of
+	  Direct3D extension.

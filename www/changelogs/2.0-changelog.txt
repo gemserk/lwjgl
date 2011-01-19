@@ -1,0 +1,31 @@
+2008-10-11 20:35  elias_naur
+
+	* platform_build/build-generator.xml: really enable openal checks
+
+2008-10-11 20:12  elias_naur
+
+	* platform_build/build-generator.xml: enabled openal checks
+
+2008-10-02 08:10  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Properly handle
+	  non-fullscreen DisplayModes
+
+2008-10-02 07:34  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Added
+	  Display.getDesktopDisplayMode()
+
+2008-09-24 18:02  matzon
+
+	* libs/win32/OpenAL32.dll: statically linked (against vc runtime 8)
+	  1.5.304
+
+2008-09-23 11:49  spasi
+
+	* src/native/windows/context.c: Fixed missing braces
+
+2008-09-17 11:27  spasi
+
+	* src/native/windows/context.c: Potential fix for PixelFormat
+	  choice on ATI cards.

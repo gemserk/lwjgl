@@ -1,0 +1,222 @@
+2009-03-19 21:50  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Display.c: Linux: Fixed failure
+	  to create window on newer ATI mesa drivers
+
+2009-03-19 19:50  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Bugfix for
+	  incorrect speed calculation, thanks to Dashiva for spotting it.
+
+2009-03-19 19:12  matzon
+
+	* platform_build/build-generator.xml: default to generatechecks for
+	  openal. This is needed since initNativeStub expects methods to be
+	  indirect (nalEnable instead of alEnable).
+
+2009-03-17 21:50  matzon
+
+	* build.xml, platform_build/build-applet.xml,
+	  platform_build/build-definitions.xml,
+	  platform_build/build-webstart.xml: using windows dir instead of
+	  win32/win64
+
+2009-03-17 21:49  matzon
+
+	* platform_build/build-generator.xml: default to not generate
+	  checks
+
+2009-03-17 21:46  matzon
+
+	* libs/win32, libs/windows: moving win32 to generic windows dir
+
+2009-03-17 21:36  matzon
+
+	* src/java/org/lwjgl/openal/AL.java: support for OpenAL 64bit on
+	  windows
+
+2009-03-15 21:44  matzon
+
+	* libs/win32/OpenAL32.dll, libs/win32/OpenAL64.dll: oal-soft
+	  1.7.411
+
+2009-03-15 19:43  matzon
+
+	* libs/linux/libopenal64.so: oal-soft 1.7.411
+
+2009-03-15 19:36  matzon
+
+	* libs/linux/libopenal.so: oal-soft 1.7.411
+
+2009-03-15 18:32  matzon
+
+	* libs/solaris/libopenal.so: oal-soft 1.7.411
+
+2009-03-11 21:05  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Improved focus
+	  handling for Display.setParent() on linux. Focus is now released
+	  from Display when X fires a focus change event.
+
+2009-03-10 15:34  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: When an applet
+	  is run in debug mode, output in console that a cached version of
+	  the applet is being loaded.
+	  
+	  A number of people were having problems with applets not
+	  updating, this was due to them leaving the cache tag on by
+	  mistake, hopefully this should alert them earlier and avoid time
+	  being wasted in tracking the issue.
+
+2009-03-09 21:53  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: fixed focus loop
+	  when using Display.setParent() on linux, this caused input keys
+	  to be missed as the focus shifted from parent to Display and back
+	  again.
+
+2009-03-09 21:07  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: updating version to 2.1.0
+
+2009-02-05 16:18  spasi
+
+	* src/templates/org/lwjgl/opengl/EXT_direct_state_access.java:
+	  Added support for glNamedBufferDataEXT(int buffer, long size, int
+	  usage).
+
+2008-12-28 19:30  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/test/opengl/FullScreenWindowedTest.java: Added
+	  Display.setDisplayModeAndFullscreen(mode) to switch mode and set
+	  fullscreen in one call (idea stolen from MatthiasM). Tweaked
+	  FullScreenWindowedTest to use the new method.
+
+2008-12-28 17:50  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/DisplayMode.java: Renamed
+	  DisplayMode.isFullscreen() to DisplayMode.isFullscreenCapable and
+	  made it public
+
+2008-12-22 16:51  elias_naur
+
+	* platform_build/mingw_ant/build.xml: jdkhome should be a jdk path,
+	  not a jre path
+
+2008-12-22 16:50  elias_naur
+
+	* platform_build/mingw_ant/build.xml: mingw_ant/build.xml
+	  improvements
+
+2008-12-22 16:47  elias_naur
+
+	* platform_build/mingw_ant/build.xml: Support win64 build from
+	  mingw_ant/build.xml
+
+2008-12-22 16:38  elias_naur
+
+	* src/native/common/common_tools.c: Windows: Handle missing va_copy
+	  macro in MSVC
+
+2008-12-22 16:27  elias_naur
+
+	* src/native/common/common_tools.c: Made sprintfJavaString handle
+	  arbitrary length strings and reduce stack usage
+
+2008-12-22 11:55  elias_naur
+
+	* src/java/org/lwjgl/WindowsSysImplementation.java,
+	  src/native/common/common_tools.c: Windows 64: Enabled lwjgl64.dll
+	  and fixed crash
+
+2008-12-14 19:10  matzon
+
+	* eclipse-update/org.lwjgl.eclipseplugins,
+	  eclipse-update/org.lwjgl.eclipseplugins/build.xml: updated local
+	  path, ignore builds
+
+2008-12-14 19:00  matzon
+
+	* eclipse-update, eclipse-update/org.lwjgl.eclipseplugins,
+	  eclipse-update/org.lwjgl.eclipseplugins/.project,
+	  eclipse-update/org.lwjgl.eclipseplugins/about.html,
+	  eclipse-update/org.lwjgl.eclipseplugins/anttasks,
+	  eclipse-update/org.lwjgl.eclipseplugins/anttasks/ant4eclipse-0.5.0.rc1.jar,
+	  eclipse-update/org.lwjgl.eclipseplugins/anttasks/ecj.jar,
+	  eclipse-update/org.lwjgl.eclipseplugins/anttasks/org.eclipse.osgi_3.2.0.v20060601.jar,
+	  eclipse-update/org.lwjgl.eclipseplugins/anttasks/packagelist.jar,
+	  eclipse-update/org.lwjgl.eclipseplugins/build.xml,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.doc,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.doc/.project,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.doc/META-INF,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.doc/about.html,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.doc/build.properties,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.doc/lwjgl_logo.png,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.doc/plugin.xml,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.doc/toc.xml,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.feature,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.feature/.project,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.feature/about.html,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.feature/build.properties,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.feature/feature.xml,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.feature/lwjgl_logo.png,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.source,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.source/.project,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.source/META-INF,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.source/about.html,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.source/build.properties,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.source/lwjgl_logo.png,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.source/plugin.xml,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/.classpath,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/.project,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/.settings,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/.settings/org.eclipse.jdt.core.prefs,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/META-INF,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/about.html,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/build.properties,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/icons,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/icons/lwjgl_logo_16.gif,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/lwjgl_logo.png,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/plugin.xml,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/src,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/src/java,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/src/java/org,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/src/java/org/lwjgl,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/src/java/org/lwjgl/testview,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/src/java/org/lwjgl/testview/FpsStatusLineItem.java,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.test/src/java/org/lwjgl/testview/LWJGLTestView.java,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.updatesite,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.updatesite/.project,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.updatesite/about.html,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.updatesite/index.html,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.updatesite/site.xml,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.updatesite/web,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.updatesite/web/site.css,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl.updatesite/web/site.xsl,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/.classpath,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/.project,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/.settings,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/.settings/org.eclipse.jdt.core.prefs,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/META-INF,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/about.html,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/build.properties,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/lwjgl_logo.png,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/src,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/src/java,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/src/java/org,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/src/java/org/lwjgl,
+	  eclipse-update/org.lwjgl.eclipseplugins/plugin-skeletons/org.lwjgl/src/java/org/lwjgl/Activator.java,
+	  eclipse-update/org.lwjgl.eclipseplugins/readme.txt: support for
+	  eclipse update site (donated by Jens von Pilgrim)
+
+2008-12-03 19:22  matzon
+
+	* src/templates/org/lwjgl/openal/AL10.java: missing @OutParameter
+	  on alSourceUnqueueBuffers

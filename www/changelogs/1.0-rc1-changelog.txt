@@ -1,0 +1,520 @@
+2007-01-07 20:41  matzon
+
+        * src/java/org/lwjgl/test/devil/BasicTest.java: added
+          Display.create/destroy. Fixes an error on mac, since OpenGL has
+          to be initialized before creating ILUT
+
+2007-01-07 08:41  elias_naur
+
+	* platform_build/linux_ant/build_devil.xml,
+	  platform_build/linux_ant/build_fmod3.xml: Linux: Devil and FMOD:
+	  Add alternative paths to JNI header files
+
+2007-01-04 23:28  matzon
+
+	* src/java/org/lwjgl/input/Mouse.java: osx cursor animation
+	  emulation enabled
+
+2007-01-04 14:12  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Windows: Clear the window
+	  with OpenGL to replace UpdateWindow(HWND) and run message loop
+	  once in Display.create().
+
+2007-01-04 14:00  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/context.c,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Don't use
+	  UpdateWindow after all. Instead, don't use a background brush at
+	  all to avoid windows clearing windows with non OpenGL drawing
+	  commands. Hopefully this will improve compatibility (The NeHe
+	  tutorials also don't specify a background brush).
+
+2007-01-04 13:44  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Re-add
+	  UpdateWindow to make sure fullscreen windows are cleared faster
+
+2007-01-03 09:16  elias_naur
+
+	* src/java/org/lwjgl/opengl/AWTGLCanvas.java: AWTGLCanvas: Release
+	  the lock before calling exceptionOccurred
+
+2007-01-03 09:13  elias_naur
+
+	* src/java/org/lwjgl/opengl/AWTGLCanvas.java: AWTGLCanvas: Added
+	  exceptionOccurred to allow users to be notified of unhandled
+	  LWJGLExceptions in paint()
+
+2007-01-02 19:02  matzon
+
+	* src/java/org/lwjgl/test/input/HWCursorTest.java: use
+	  precalculated widths and heights, else we crash in cursor
+	  constructor because of buffer underflow
+
+2007-01-02 11:12  elias_naur
+
+	* src/java/org/lwjgl/test/input/HWCursorTest.java: HWCursorTest:
+	  Cap cursor size
+
+2007-01-02 11:09  elias_naur
+
+	* src/java/org/lwjgl/test/input/HWCursorTest.java: Fix HWCursorTest
+
+2007-01-02 10:55  elias_naur
+
+	* src/java/org/lwjgl/opengl/AWTUtil.java: Mac OS X: Add support for
+	  fake cursor animation
+
+2006-12-26 09:19  elias_naur
+
+	* libs/jinput.jar: Refreshed jinput.jar
+
+2006-12-23 07:52  elias_naur
+
+	* libs/jinput.jar: Updated jinput.jar
+
+2006-12-22 11:23  elias_naur
+
+	* src/native/windows/context.c: Windows: Don't use WS_EX_TOPMOST
+	  for fullscreen windows.
+
+2006-12-22 10:45  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Make
+	  window visible after pixel format selection and move code from
+	  native WindowsDisplay.nCreate to java side.
+
+2006-12-22 10:36  elias_naur
+
+	* src/native/windows/org_lwjgl_opengl_WindowsContextImplementation.c:
+	  Windows: Simplify context creation and don't cache the extensions
+	  information struct in native code. Just reload it at each use
+	  (only at setSwapInterval currently).
+
+2006-12-21 08:11  elias_naur
+
+	* src/generated/org/lwjgl/opengl/ARBBufferObject.java,
+	  src/generated/org/lwjgl/opengl/GL15.java: Commit changes in
+	  automatically generated files
+
+2006-12-21 08:10  elias_naur
+
+	* src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/GL15.java: Update javadoc for
+	  glMapBuffer
+
+2006-12-20 19:24  elias_naur
+
+	* src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/test/opengl/VBOIndexTest.java,
+	  src/java/org/lwjgl/test/opengl/VBOTest.java: Fix VBO tests and
+	  bump Sys native JNI library version
+
+2006-12-20 19:23  elias_naur
+
+	* src/generated/org/lwjgl/opengl/ARBBufferObject.java,
+	  src/generated/org/lwjgl/opengl/ARBVertexProgram.java,
+	  src/generated/org/lwjgl/opengl/ARBVertexShader.java,
+	  src/generated/org/lwjgl/opengl/ATIMapObjectBuffer.java,
+	  src/generated/org/lwjgl/opengl/EXTVertexShader.java,
+	  src/generated/org/lwjgl/opengl/GL11.java,
+	  src/generated/org/lwjgl/opengl/GL15.java,
+	  src/generated/org/lwjgl/opengl/GL20.java,
+	  src/generated/org/lwjgl/opengl/NVTransformFeedback.java,
+	  src/generated/org/lwjgl/opengl/NVVertexArrayRange.java,
+	  src/generated/org/lwjgl/opengl/NVVertexProgram.java,
+	  src/native/generated/org_lwjgl_opengl_ARBBufferObject.c,
+	  src/native/generated/org_lwjgl_opengl_ARBVertexProgram.c,
+	  src/native/generated/org_lwjgl_opengl_ARBVertexShader.c,
+	  src/native/generated/org_lwjgl_opengl_ATIMapObjectBuffer.c,
+	  src/native/generated/org_lwjgl_opengl_EXTVertexShader.c,
+	  src/native/generated/org_lwjgl_opengl_GL11.c,
+	  src/native/generated/org_lwjgl_opengl_GL15.c,
+	  src/native/generated/org_lwjgl_opengl_GL20.c,
+	  src/native/generated/org_lwjgl_opengl_NVTransformFeedback.c,
+	  src/native/generated/org_lwjgl_opengl_NVVertexArrayRange.c,
+	  src/native/generated/org_lwjgl_opengl_NVVertexProgram.c: Commit
+	  changes in automatically generated files
+
+2006-12-20 19:22  elias_naur
+
+	* src/java/org/lwjgl/opengl/GLChecks.java: Add GLChecks support
+	  methods for GL15 and ARB_buffer_object
+
+2006-12-20 19:21  elias_naur
+
+	* src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/GL15.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_array_range.java: Make
+	  glGetBufferPointer and glMapBuffer in GL15 and ARB_buffer_object
+	  compute result_size automatically. Change NV_vertes_array_range
+	  to use the new AutoResultSize syntax.
+
+2006-12-20 19:19  elias_naur
+
+	* src/java/org/lwjgl/util/generator/AutoResultSize.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  src/java/org/lwjgl/util/generator/Utils.java: Generator: Support
+	  arbitrary @AutoResultSize expressions. Make Buffer result sizes
+	  long instead of int
+
+2006-12-20 17:55  elias_naur
+
+	* src/native/common/common_tools.h,
+	  src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ATI_map_object_buffer.java,
+	  src/templates/org/lwjgl/opengl/GL15.java: Check cached buffer
+	  results in OpenGL functions for matching capacity
+
+2006-12-18 18:27  matzon
+
+	* build.xml, src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/devil/ILNative.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java: 1.0-rc1 version string
+
+2006-12-12 21:44  matzon
+
+	* src/java/org/lwjgl/devil/IL.java,
+	  src/java/org/lwjgl/devil/ILNative.java: version screw-up
+
+2006-12-12 21:30  matzon
+
+	* src/java/org/lwjgl/devil/IL.java,
+	  src/java/org/lwjgl/devil/ILNative.java: added getVersion like
+	  lwjgl
+	  bumped native version
+
+2006-12-12 21:30  matzon
+
+	* src/java/org/lwjgl/fmod3/FMOD.java: fixed comment for getVersion
+
+2006-12-12 21:29  matzon
+
+	* src/java/org/lwjgl/fmod3/FMOD.java: added getVersion like lwjgl
+
+2006-12-11 20:38  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Display.c: Linux: Make sure a
+	  newly created window get the focus, if possible, to avoid a
+	  fullscreen window immediately getting minimized
+
+2006-12-11 11:26  elias_naur
+
+	* platform_build/linux_ant/build.xml: Linux: Add more include paths
+	  to the build script to handle distros with a different JRE layout
+
+2006-12-06 14:01  elias_naur
+
+	* src/java/org/lwjgl/Sys.java: Bumped Sys.JNI_VERSION because of
+	  earlier OpenGL function changes
+
+2006-12-04 21:58  matzon
+
+	* src/native/common/devil/extil.c,
+	  src/native/common/devil/extilu.c,
+	  src/native/common/devil/extilut.c: fix loading issues on
+	  linux/mac
+
+2006-12-02 22:21  elias_naur
+
+	* src/native/linux/display.c: Linux: Don't double free the Display
+	  connection in the switchDisplayMode error path
+
+2006-11-27 23:04  elias_naur
+
+	* src/generated/org/lwjgl/opengl/ARBTextureCompression.java,
+	  src/generated/org/lwjgl/opengl/GL13.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_compression.java,
+	  src/templates/org/lwjgl/opengl/GL13.java: ARBTextureCompression,
+	  GL13: Only allow ByteBuffer for glCompressedTex*Image*D since the
+	  spec defines that the image data is interpreted as (unsigned)
+	  bytes anyway. Also let the imageSize parameter be automatically
+	  determined
+
+2006-11-27 23:01  elias_naur
+
+	* src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  src/java/org/lwjgl/util/generator/NativeTypeTranslator.java:
+	  Generator: Make sure that @GLvoid types result in proper address
+	  calculations at the native side, even though the parameter java
+	  type is not java.nio.Buffer
+
+2006-11-27 22:45  elias_naur
+
+	* src/java/org/lwjgl/util/GL.java,
+	  src/java/org/lwjgl/util/GLImpl.java: Remove GL.java and
+	  GLImpl.java as they're not updated automatically anyway
+
+2006-11-24 15:30  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxAWTInput.java: Linux: Tweak
+	  LinuxAWTInput
+
+2006-11-24 15:21  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsAWTInput.java: Windows: Make
+	  sure that the cursor position doesn't jump when switching grab
+	  mode
+
+2006-11-24 15:10  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Windows: Fix
+	  potential NPE
+
+2006-11-24 15:03  elias_naur
+
+	* src/java/org/lwjgl/opengl/AWTUtil.java: Compile fix
+
+2006-11-24 14:53  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java,
+	  src/java/org/lwjgl/opengl/AWTUtil.java,
+	  src/java/org/lwjgl/opengl/LinuxMouse.java,
+	  src/java/org/lwjgl/opengl/MouseEventQueue.java,
+	  src/java/org/lwjgl/test/input/MouseTest.java: Make sure that the
+	  cursor position doesn't jump when switching grab mode
+
+2006-11-24 12:05  elias_naur
+
+	* src/java/org/lwjgl/opengl/MouseEventQueue.java: Fix locking in
+	  MouseEventQueue
+
+2006-11-24 10:18  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/input/Mouse.java: Synchronize Keyboard and
+	  Mouse to avoid problems with AWTInputAdapter based usage
+
+2006-11-20 20:07  elias_naur
+
+	* src/java/org/lwjgl/LWJGLUtil.java,
+	  src/java/org/lwjgl/devil/ILNative.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java,
+	  src/java/org/lwjgl/openal/AL.java: Made LWJGLUtil.getLibraryPaths
+	  support multiple library names. Now AL.create on linux tries both
+	  libopenal.so and libopenal.so.0, which is the name of the system
+	  library
+
+2006-11-20 19:28  elias_naur
+
+	* src/java/org/lwjgl/LWJGLUtil.java,
+	  src/java/org/lwjgl/openal/AL.java: Made
+	  LWJGLUtil.getPathFromClassLoader private
+
+2006-11-20 09:26  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsAWTInput.java: Windows: Dont use
+	  DirectInput for keyboard input. This fixes shifted typing.
+
+2006-11-20 08:39  elias_naur
+
+	* src/java/org/lwjgl/test/applet/OpenGL.java: Added AWTInputAdapter
+	  testing to applet/OpenGL.java
+
+2006-11-20 08:14  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsAWTInput.java: Windows: Destroy
+	  the keyboard when we create a new one
+
+2006-11-20 08:04  elias_naur
+
+	* src/java/org/lwjgl/test/input/KeyboardTest.java,
+	  src/java/org/lwjgl/test/opengl/awt/AWTInputAdapterTest.java:
+	  Twekaed tests
+
+2006-11-19 23:02  elias_naur
+
+	* src/java/org/lwjgl/opengl/AbstractAWTInput.java,
+	  src/java/org/lwjgl/opengl/WindowsAWTInput.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/opengl/WindowsMouse.java: Windows: Make sure
+	  AWTInputAdapter is not reporting events twice after a grab change
+
+2006-11-19 22:06  elias_naur
+
+	* src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  src/generated/org/lwjgl/opengl/NVTransformFeeback.java,
+	  src/generated/org/lwjgl/opengl/NVTransformFeedback.java,
+	  src/native/generated/org_lwjgl_opengl_NVTransformFeeback.c,
+	  src/native/generated/org_lwjgl_opengl_NVTransformFeedback.c:
+	  Autogen changes from previous commit
+
+2006-11-19 22:01  elias_naur
+
+	* src/templates/org/lwjgl/opengl/NV_transform_feeback.java,
+	  src/templates/org/lwjgl/opengl/NV_transform_feedback.java:
+	  Renamed NV_transform_feeback.java to NV_transform_feedback.java
+
+2006-11-19 21:49  elias_naur
+
+	* src/java/org/lwjgl/opengl/AWTInputAdapter.java: AWTInputAdapter:
+	  Destroy Keyboard/Mouse before destroying the adapter
+
+2006-11-19 21:41  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java,
+	  src/java/org/lwjgl/opengl/AbstractAWTInput.java,
+	  src/java/org/lwjgl/opengl/LinuxAWTInput.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxMouse.java,
+	  src/java/org/lwjgl/opengl/MacOSXAWTInput.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsAWTInput.java: Make sure that
+	  Mouse.destroy ungrabs the cursor
+
+2006-11-19 21:15  elias_naur
+
+	* src/java/org/lwjgl/opengl/AbstractAWTInput.java,
+	  src/java/org/lwjgl/opengl/MacOSXAWTInput.java: AWTInputAdapter:
+	  unregister event listeners on destroy()
+
+2006-11-19 16:24  elias_naur
+
+	* src/java/org/lwjgl/opengl/AWTInputAdapter.java,
+	  src/java/org/lwjgl/test/opengl/awt/AWTInputAdapterTest.java:
+	  AWTInputAdapter.destroy() now destroys the Keyboard and Mouse to
+	  mimic the behaviour of Display.destroy() more closely.
+
+2006-11-19 13:33  elias_naur
+
+	* src/generated/org/lwjgl/opengl/ARBBufferObject.java,
+	  src/generated/org/lwjgl/opengl/ARBColorBufferFloat.java,
+	  src/generated/org/lwjgl/opengl/ARBDrawBuffers.java,
+	  src/generated/org/lwjgl/opengl/ARBImaging.java,
+	  src/generated/org/lwjgl/opengl/ARBMatrixPalette.java,
+	  src/generated/org/lwjgl/opengl/ARBMultisample.java,
+	  src/generated/org/lwjgl/opengl/ARBMultitexture.java,
+	  src/generated/org/lwjgl/opengl/ARBOcclusionQuery.java,
+	  src/generated/org/lwjgl/opengl/ARBPointParameters.java,
+	  src/generated/org/lwjgl/opengl/ARBProgram.java,
+	  src/generated/org/lwjgl/opengl/ARBShaderObjects.java,
+	  src/generated/org/lwjgl/opengl/ARBTextureCompression.java,
+	  src/generated/org/lwjgl/opengl/ARBTransposeMatrix.java,
+	  src/generated/org/lwjgl/opengl/ARBVertexBlend.java,
+	  src/generated/org/lwjgl/opengl/ARBVertexProgram.java,
+	  src/generated/org/lwjgl/opengl/ARBVertexShader.java,
+	  src/generated/org/lwjgl/opengl/ARBWindowPos.java,
+	  src/generated/org/lwjgl/opengl/ATIDrawBuffers.java,
+	  src/generated/org/lwjgl/opengl/ATIElementArray.java,
+	  src/generated/org/lwjgl/opengl/ATIEnvmapBumpmap.java,
+	  src/generated/org/lwjgl/opengl/ATIFragmentShader.java,
+	  src/generated/org/lwjgl/opengl/ATIMapObjectBuffer.java,
+	  src/generated/org/lwjgl/opengl/ATIPnTriangles.java,
+	  src/generated/org/lwjgl/opengl/ATISeparateStencil.java,
+	  src/generated/org/lwjgl/opengl/ATITextFragmentShader.java,
+	  src/generated/org/lwjgl/opengl/ATIVertexArrayObject.java,
+	  src/generated/org/lwjgl/opengl/ATIVertexAttribArrayObject.java,
+	  src/generated/org/lwjgl/opengl/ATIVertexStreams.java,
+	  src/generated/org/lwjgl/opengl/EXTBindableUniform.java,
+	  src/generated/org/lwjgl/opengl/EXTBlendColor.java,
+	  src/generated/org/lwjgl/opengl/EXTBlendEquationSeparate.java,
+	  src/generated/org/lwjgl/opengl/EXTBlendFuncSeparate.java,
+	  src/generated/org/lwjgl/opengl/EXTBlendMinmax.java,
+	  src/generated/org/lwjgl/opengl/EXTCompiledVertexArray.java,
+	  src/generated/org/lwjgl/opengl/EXTDepthBoundsTest.java,
+	  src/generated/org/lwjgl/opengl/EXTDrawBuffers2.java,
+	  src/generated/org/lwjgl/opengl/EXTDrawInstanced.java,
+	  src/generated/org/lwjgl/opengl/EXTDrawRangeElements.java,
+	  src/generated/org/lwjgl/opengl/EXTFogCoord.java,
+	  src/generated/org/lwjgl/opengl/EXTFramebufferBlit.java,
+	  src/generated/org/lwjgl/opengl/EXTFramebufferMultisample.java,
+	  src/generated/org/lwjgl/opengl/EXTFramebufferObject.java,
+	  src/generated/org/lwjgl/opengl/EXTFramebufferSRGB.java,
+	  src/generated/org/lwjgl/opengl/EXTGeometryShader4.java,
+	  src/generated/org/lwjgl/opengl/EXTGpuProgramParameters.java,
+	  src/generated/org/lwjgl/opengl/EXTGpuShader4.java,
+	  src/generated/org/lwjgl/opengl/EXTMultiDrawArrays.java,
+	  src/generated/org/lwjgl/opengl/EXTPackedFloat.java,
+	  src/generated/org/lwjgl/opengl/EXTPalettedTexture.java,
+	  src/generated/org/lwjgl/opengl/EXTPointParameters.java,
+	  src/generated/org/lwjgl/opengl/EXTSecondaryColor.java,
+	  src/generated/org/lwjgl/opengl/EXTStencilClearTag.java,
+	  src/generated/org/lwjgl/opengl/EXTStencilTwoSide.java,
+	  src/generated/org/lwjgl/opengl/EXTTextureArray.java,
+	  src/generated/org/lwjgl/opengl/EXTTextureBufferObject.java,
+	  src/generated/org/lwjgl/opengl/EXTTextureCompressionLATC.java,
+	  src/generated/org/lwjgl/opengl/EXTTextureCompressionRGTC.java,
+	  src/generated/org/lwjgl/opengl/EXTTextureInteger.java,
+	  src/generated/org/lwjgl/opengl/EXTTextureSharedExponent.java,
+	  src/generated/org/lwjgl/opengl/EXTTimerQuery.java,
+	  src/generated/org/lwjgl/opengl/EXTVertexShader.java,
+	  src/generated/org/lwjgl/opengl/EXTVertexWeighting.java,
+	  src/generated/org/lwjgl/opengl/GL11.java,
+	  src/generated/org/lwjgl/opengl/GL12.java,
+	  src/generated/org/lwjgl/opengl/GL13.java,
+	  src/generated/org/lwjgl/opengl/GL14.java,
+	  src/generated/org/lwjgl/opengl/GL15.java,
+	  src/generated/org/lwjgl/opengl/GL20.java,
+	  src/generated/org/lwjgl/opengl/GL21.java,
+	  src/generated/org/lwjgl/opengl/NVDepthBufferFloat.java,
+	  src/generated/org/lwjgl/opengl/NVEvaluators.java,
+	  src/generated/org/lwjgl/opengl/NVFence.java,
+	  src/generated/org/lwjgl/opengl/NVFragmentProgram.java,
+	  src/generated/org/lwjgl/opengl/NVFramebufferMultisampleCoverage.java,
+	  src/generated/org/lwjgl/opengl/NVGeometryProgram4.java,
+	  src/generated/org/lwjgl/opengl/NVGpuProgram4.java,
+	  src/generated/org/lwjgl/opengl/NVHalfFloat.java,
+	  src/generated/org/lwjgl/opengl/NVOcclusionQuery.java,
+	  src/generated/org/lwjgl/opengl/NVParameterBufferObject.java,
+	  src/generated/org/lwjgl/opengl/NVPixelDataRange.java,
+	  src/generated/org/lwjgl/opengl/NVPointSprite.java,
+	  src/generated/org/lwjgl/opengl/NVPrimitiveRestart.java,
+	  src/generated/org/lwjgl/opengl/NVProgram.java,
+	  src/generated/org/lwjgl/opengl/NVRegisterCombiners.java,
+	  src/generated/org/lwjgl/opengl/NVRegisterCombiners2.java,
+	  src/generated/org/lwjgl/opengl/NVTransformFeeback.java,
+	  src/generated/org/lwjgl/opengl/NVVertexArrayRange.java,
+	  src/generated/org/lwjgl/opengl/NVVertexProgram.java,
+	  src/generated/org/lwjgl/opengl/SGISGenerateMipmap.java,
+	  src/generated/org/lwjgl/opengl/SGISTextureLOD.java,
+	  src/java/org/lwjgl/opengl/GLChecks.java,
+	  src/java/org/lwjgl/opengl/StateTracker.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/native/generated/org_lwjgl_opengl_EXTBindableUniform.c,
+	  src/native/generated/org_lwjgl_opengl_EXTBlendColor.c,
+	  src/native/generated/org_lwjgl_opengl_EXTBlendMinmax.c,
+	  src/native/generated/org_lwjgl_opengl_EXTDrawBuffers2.c,
+	  src/native/generated/org_lwjgl_opengl_EXTDrawInstanced.c,
+	  src/native/generated/org_lwjgl_opengl_EXTGeometryShader4.c,
+	  src/native/generated/org_lwjgl_opengl_EXTGpuProgramParameters.c,
+	  src/native/generated/org_lwjgl_opengl_EXTGpuShader4.c,
+	  src/native/generated/org_lwjgl_opengl_EXTTextureArray.c,
+	  src/native/generated/org_lwjgl_opengl_EXTTextureBufferObject.c,
+	  src/native/generated/org_lwjgl_opengl_EXTTextureInteger.c,
+	  src/native/generated/org_lwjgl_opengl_EXTTimerQuery.c,
+	  src/native/generated/org_lwjgl_opengl_GL21.c,
+	  src/native/generated/org_lwjgl_opengl_NVDepthBufferFloat.c,
+	  src/native/generated/org_lwjgl_opengl_NVFramebufferMultisampleCoverage.c,
+	  src/native/generated/org_lwjgl_opengl_NVGeometryProgram4.c,
+	  src/native/generated/org_lwjgl_opengl_NVGpuProgram4.c,
+	  src/native/generated/org_lwjgl_opengl_NVParameterBufferObject.c,
+	  src/native/generated/org_lwjgl_opengl_NVTransformFeeback.c,
+	  src/templates/org/lwjgl/opengl/GL11.java: Made all GL functions
+	  only query ContextCapabilities.getCapabilities() once. Now all
+	  GLCheck checks will take the ContextCapabilities instance as an
+	  argument instead of querying for it. Inspired by MatthiasM, who
+	  just don't seem to be content with LWJGL performance, ever ;)
+
+2006-11-19 12:48  elias_naur
+
+	* src/java/org/lwjgl/opengl/StateTracker.java: Shave off one
+	  ThreadLocal access in StateTracker.push/popAttrib()
+
+2006-11-19 11:43  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Display: Don't add the
+	  shutdown hook twice when a previous create() call has failed
+
+2006-11-19 09:04  matzon
+
+	* build.xml: signing jars in distribution
+	  added source package
+	  added applet package
+	  macosx compile_native_optional now using ant build scripts
+	  instead of makefiles
+	  cleanup

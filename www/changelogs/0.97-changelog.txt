@@ -1,0 +1,611 @@
+2005-05-19 17:50  matzon
+
+	* build.xml: jars target for elias
+
+2005-05-18 23:13  matzon
+
+	* www/: documentation_openal_01.php, documentation_openal_02.php,
+	  documentation_openal_03.php, documentation_openal_05.php,
+	  _files/tutorials/openal_devmaster_lesson1.zip,
+	  _files/tutorials/openal_devmaster_lesson2.zip,
+	  _files/tutorials/openal_devmaster_lesson3.zip,
+	  _files/tutorials/openal_devmaster_lesson5.zip: updated tutorial,
+	  wavedata class now in util
+
+2005-05-18 23:01  matzon
+
+	* src/: java/org/lwjgl/Sys.java, java/org/lwjgl/fmod3/FMOD.java,
+	  native/common/common_tools.c,
+	  native/common/fmod3/org_lwjgl_fmod3_FMOD.c: 0.97 version string
+
+2005-05-18 22:57  matzon
+
+	* build.xml: fixed mac make file args
+
+2005-05-18 22:41  matzon
+
+	* build.xml: fixed linux make args
+
+2005-05-18 22:27  matzon
+
+	* build.xml: mangled and changed build file, works for me, ymmv now
+	  has proper support  (sans bugs) for ant building of native libs
+	  new release target to make it much easier to release a version
+
+2005-05-18 21:46  matzon
+
+	* src/native/common/fmod3/Makefile.linux: missing fmod include
+
+2005-05-18 21:38  matzon
+
+	* src/native/build.sh: nuking, never used
+
+2005-05-18 19:36  matzon
+
+	* src/native/common/devil/: extil.c, extilu.c, extilut.c:
+	  reorganize headers so that compilers stop whining
+
+2005-05-17 10:04  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java: Mouse: Allow delta queries
+	  when not grabbed.
+
+2005-05-17 09:43  elias_naur
+
+	* src/native/common/devil/: extil.c, extilu.c, extilut.c: Mac OS X
+	  Devil: Make sure we include our own header files last so that our
+	  definition of bool is used
+
+2005-05-12 17:45  matzon
+
+	* src/java/org/lwjgl/opengl/AWTGLCanvas.java: use internal lock
+	  mechanism instead of own instance
+
+2005-05-12 17:44  matzon
+
+	* src/java/org/lwjgl/test/opengl/awt/DemoBox.java: Threading 101:
+	  dont sleep while holding a lock
+
+2005-05-12 17:44  matzon
+
+	* src/java/org/lwjgl/test/openal/SourceLimitTest.java: updated test
+	  to expect exceptions
+
+2005-05-12 09:47  elias_naur
+
+	* src/: java/org/lwjgl/LWJGLUtil.java,
+	  java/org/lwjgl/openal/AL.java, native/common/extal.c,
+	  native/macosx/org_lwjgl_input_Mouse.c, native/win32/display.c,
+	  native/win32/org_lwjgl_Sys.c,
+	  native/win32/org_lwjgl_input_Keyboard.c,
+	  native/win32/org_lwjgl_input_Mouse.c,
+	  native/win32/org_lwjgl_opengl_Pbuffer.c,
+	  native/win32/org_lwjgl_opengl_Win32ContextImplementation.c:
+	  OpenAL: Made the openal library path returned by the current
+	  ClassLoader and cwd more override java.library.path. Converted
+	  some printfDebug to printfDebugJava
+
+2005-05-11 13:44  elias_naur
+
+	* build.xml: Linux: applied the build.xml patch allowing
+	  compile_native to work
+
+2005-05-11 00:31  matzon
+
+	* src/java/org/lwjgl/fmod3/FSound.java: added missing enums
+
+2005-05-06 11:40  elias_naur
+
+	* src/: java/org/lwjgl/opengl/Display.java, native/win32/context.c:
+	  Removed update() from Display.createWindow() as it caused garbage
+	  to appear as the first frame. Added a black background brush t
+	  win32 window class
+
+2005-05-05 13:04  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: Mac OS X: Enable
+	  native cursor in Mac OS X 10.4 and later because Apple fixed the
+	  outstanding bugs
+
+2005-05-05 12:16  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java: Properly reset Keyboard
+	  on destroy()
+
+2005-05-05 12:02  elias_naur
+
+	* src/java/org/lwjgl/: openal/AL10.java,
+	  opengl/ARBBufferObject.java, opengl/ARBColorBufferFloat.java,
+	  opengl/ARBDepthTexture.java, opengl/ARBDrawBuffers.java,
+	  opengl/ARBFragmentProgram.java, opengl/ARBFragmentShader.java,
+	  opengl/ARBHalfFloatPixel.java, opengl/ARBImaging.java,
+	  opengl/ARBMatrixPalette.java, opengl/ARBMultisample.java,
+	  opengl/ARBMultitexture.java, opengl/ARBOcclusionQuery.java,
+	  opengl/ARBPixelBufferObject.java, opengl/ARBPointParameters.java,
+	  opengl/ARBPointSprite.java, opengl/ARBProgram.java,
+	  opengl/ARBShaderObjects.java, opengl/ARBShadingLanguage100.java,
+	  opengl/ARBShadow.java, opengl/ARBShadowAmbient.java,
+	  opengl/ARBTextureBorderClamp.java,
+	  opengl/ARBTextureCompression.java, opengl/ARBTextureCubeMap.java,
+	  opengl/ARBTextureEnvCombine.java, opengl/ARBTextureEnvDot3.java,
+	  opengl/ARBTextureFloat.java,
+	  opengl/ARBTextureMirroredRepeat.java,
+	  opengl/ARBTextureRectangle.java, opengl/ARBTransposeMatrix.java,
+	  opengl/ARBVertexBlend.java, opengl/ARBVertexBufferObject.java,
+	  opengl/ARBVertexProgram.java, opengl/ARBVertexShader.java,
+	  opengl/ARBWindowPos.java, opengl/ATIDrawBuffers.java,
+	  opengl/ATIElementArray.java, opengl/ATIEnvmapBumpmap.java,
+	  opengl/ATIFragmentShader.java, opengl/ATIMapObjectBuffer.java,
+	  opengl/ATIPnTriangles.java, opengl/ATISeparateStencil.java,
+	  opengl/ATITextureCompression3DC.java,
+	  opengl/ATITextureFloat.java, opengl/ATITextureMirrorOnce.java,
+	  opengl/ATIVertexArrayObject.java,
+	  opengl/ATIVertexAttribArrayObject.java,
+	  opengl/ATIVertexStreams.java, opengl/ContextCapabilities.java,
+	  opengl/EXTAbgr.java, opengl/EXTBgra.java,
+	  opengl/EXTBlendEquationSeparate.java,
+	  opengl/EXTBlendFuncSeparate.java, opengl/EXTBlendSubtract.java,
+	  opengl/EXTCgShader.java, opengl/EXTCompiledVertexArray.java,
+	  opengl/EXTDepthBoundsTest.java, opengl/EXTDrawRangeElements.java,
+	  opengl/EXTFogCoord.java, opengl/EXTFramebufferObject.java,
+	  opengl/EXTMultiDrawArrays.java, opengl/EXTPackedPixels.java,
+	  opengl/EXTPalettedTexture.java, opengl/EXTPixelBufferObject.java,
+	  opengl/EXTPointParameters.java, opengl/EXTRescaleNormal.java,
+	  opengl/EXTSecondaryColor.java,
+	  opengl/EXTSeparateSpecularColor.java,
+	  opengl/EXTSharedTexturePalette.java,
+	  opengl/EXTStencilTwoSide.java, opengl/EXTStencilWrap.java,
+	  opengl/EXTTextureCompressionS3TC.java,
+	  opengl/EXTTextureEnvCombine.java, opengl/EXTTextureEnvDot3.java,
+	  opengl/EXTTextureFilterAnisotropic.java,
+	  opengl/EXTTextureLODBias.java, opengl/EXTTextureMirrorClamp.java,
+	  opengl/EXTTextureRectangle.java, opengl/EXTVertexShader.java,
+	  opengl/EXTVertexWeighting.java, opengl/GL11.java,
+	  opengl/GL12.java, opengl/GL13.java, opengl/GL14.java,
+	  opengl/GL15.java, opengl/GL20.java, opengl/HPOcclusionTest.java,
+	  opengl/IBMRasterposClip.java, opengl/NVCopyDepthToColor.java,
+	  opengl/NVDepthClamp.java, opengl/NVEvaluators.java,
+	  opengl/NVFence.java, opengl/NVFloatBuffer.java,
+	  opengl/NVFogDistance.java, opengl/NVFragmentProgram.java,
+	  opengl/NVFragmentProgram2.java, opengl/NVHalfFloat.java,
+	  opengl/NVLightMaxExponent.java,
+	  opengl/NVMultisampleFilterHint.java,
+	  opengl/NVOcclusionQuery.java, opengl/NVPackedDepthStencil.java,
+	  opengl/NVPixelDataRange.java, opengl/NVPointSprite.java,
+	  opengl/NVPrimitiveRestart.java, opengl/NVProgram.java,
+	  opengl/NVRegisterCombiners.java,
+	  opengl/NVRegisterCombiners2.java, opengl/NVTexgenReflection.java,
+	  opengl/NVTextureCompressionVTC.java,
+	  opengl/NVTextureEnvCombine4.java,
+	  opengl/NVTextureExpandNormal.java,
+	  opengl/NVTextureRectangle.java, opengl/NVTextureShader.java,
+	  opengl/NVTextureShader2.java, opengl/NVTextureShader3.java,
+	  opengl/NVVertexArrayRange.java, opengl/NVVertexArrayRange2.java,
+	  opengl/NVVertexProgram.java, opengl/NVVertexProgram2Option.java,
+	  opengl/NVVertexProgram3.java, opengl/SUNSliceAccum.java,
+	  util/generator/ALTypeMap.java: Fixed generator to not include
+	  checkALerror.h
+
+2005-05-04 22:59  cix_foo
+
+	* src/java/org/lwjgl/: opengl/ARBImaging.java,
+	  opengl/ARBMatrixPalette.java, opengl/ARBPointSprite.java,
+	  opengl/ARBProgram.java, opengl/ARBShaderObjects.java,
+	  opengl/ARBShadowAmbient.java, opengl/ARBTextureCubeMap.java,
+	  opengl/ARBTextureEnvCombine.java, opengl/ARBTransposeMatrix.java,
+	  opengl/ARBVertexShader.java, opengl/ATIFragmentShader.java,
+	  opengl/ATIVertexArrayObject.java, opengl/ATIVertexStreams.java,
+	  opengl/EXTAbgr.java, opengl/EXTBlendFuncSeparate.java,
+	  opengl/EXTBlendSubtract.java, opengl/EXTCgShader.java,
+	  opengl/EXTFramebufferObject.java, opengl/EXTMultiDrawArrays.java,
+	  opengl/EXTPointParameters.java, opengl/EXTSecondaryColor.java,
+	  opengl/EXTStencilTwoSide.java, opengl/GL20.java,
+	  opengl/LinuxCanvasImplementation.java, opengl/LinuxPeerInfo.java,
+	  opengl/MacOSXDisplay.java, opengl/MacOSXDisplayPeerInfo.java,
+	  opengl/NVPixelDataRange.java, opengl/NVRegisterCombiners.java,
+	  opengl/NVTexgenReflection.java, opengl/NVTextureShader2.java,
+	  opengl/NVTextureShader3.java, opengl/NVVertexProgram2Option.java,
+	  opengl/Win32AWTGLCanvasPeerInfo.java, opengl/Win32PeerInfo.java,
+	  opengl/ARBMultisample.java, opengl/ARBTextureCompression.java,
+	  opengl/ARBWindowPos.java, opengl/ATITextureMirrorOnce.java,
+	  opengl/AWTSurfaceLock.java, opengl/EXTPixelBufferObject.java,
+	  opengl/EXTRescaleNormal.java,
+	  opengl/EXTTextureFilterAnisotropic.java,
+	  opengl/MacOSXPbufferPeerInfo.java,
+	  opengl/NVFragmentProgram2.java, opengl/NVTextureRectangle.java,
+	  opengl/ATIDrawBuffers.java, opengl/ATIPnTriangles.java,
+	  opengl/EXTBgra.java, opengl/EXTTextureLODBias.java,
+	  opengl/EXTTextureRectangle.java, opengl/EXTVertexShader.java,
+	  opengl/MacOSXContextImplementation.java,
+	  opengl/NVPrimitiveRestart.java, opengl/NVProgram.java,
+	  opengl/NVVertexProgram3.java, opengl/StateTracker.java,
+	  opengl/ARBBufferObject.java, opengl/ARBColorBufferFloat.java,
+	  opengl/ARBFragmentProgram.java, opengl/ARBFragmentShader.java,
+	  opengl/ARBMultitexture.java, opengl/ARBOcclusionQuery.java,
+	  opengl/ARBPointParameters.java,
+	  opengl/ARBShadingLanguage100.java, opengl/ARBShadow.java,
+	  opengl/ARBTextureEnvDot3.java,
+	  opengl/ARBTextureMirroredRepeat.java,
+	  opengl/ARBTextureRectangle.java, opengl/ARBVertexBlend.java,
+	  opengl/ARBVertexBufferObject.java, opengl/ATIEnvmapBumpmap.java,
+	  opengl/ATISeparateStencil.java,
+	  opengl/ATITextureCompression3DC.java,
+	  opengl/ATITextureFloat.java,
+	  opengl/ATIVertexAttribArrayObject.java,
+	  opengl/AWTCanvasImplementation.java,
+	  opengl/ContextCapabilities.java,
+	  opengl/DisplayImplementation.java,
+	  opengl/EXTBlendEquationSeparate.java,
+	  opengl/EXTCompiledVertexArray.java,
+	  opengl/EXTDrawRangeElements.java, opengl/EXTFogCoord.java,
+	  opengl/EXTPalettedTexture.java,
+	  opengl/EXTSharedTexturePalette.java,
+	  opengl/EXTTextureCompressionS3TC.java,
+	  opengl/EXTTextureEnvDot3.java, opengl/GL11.java,
+	  opengl/GL12.java, opengl/GL13.java, opengl/GLContext.java,
+	  opengl/HPOcclusionTest.java, opengl/IBMRasterposClip.java,
+	  opengl/LinuxAWTGLCanvasPeerInfo.java,
+	  opengl/LinuxContextImplementation.java, opengl/LinuxDisplay.java,
+	  opengl/MacOSXCanvasImplementation.java,
+	  opengl/MacOSXCanvasPeerInfo.java, opengl/MacOSXPeerInfo.java,
+	  opengl/NVDepthClamp.java, opengl/NVFence.java,
+	  opengl/NVFogDistance.java, opengl/NVHalfFloat.java,
+	  opengl/NVLightMaxExponent.java, opengl/NVPackedDepthStencil.java,
+	  opengl/NVPointSprite.java, opengl/NVRegisterCombiners2.java,
+	  opengl/NVTextureCompressionVTC.java,
+	  opengl/NVTextureEnvCombine4.java, opengl/NVTextureShader.java,
+	  opengl/NVVertexArrayRange.java, opengl/NVVertexArrayRange2.java,
+	  opengl/NVVertexProgram.java, opengl/Pbuffer.java,
+	  opengl/PeerInfo.java, opengl/Util.java,
+	  opengl/Win32CanvasImplementation.java,
+	  opengl/Win32ContextImplementation.java, opengl/Win32Display.java,
+	  opengl/Win32DisplayPeerInfo.java, opengl/ARBDepthTexture.java,
+	  opengl/ARBDrawBuffers.java, opengl/ARBHalfFloatPixel.java,
+	  opengl/ARBPixelBufferObject.java,
+	  opengl/ARBTextureBorderClamp.java, opengl/ARBTextureFloat.java,
+	  opengl/ARBVertexProgram.java, opengl/ATIElementArray.java,
+	  opengl/ATIMapObjectBuffer.java, opengl/AWTGLCanvas.java,
+	  opengl/EXTDepthBoundsTest.java, opengl/EXTPackedPixels.java,
+	  opengl/EXTSeparateSpecularColor.java, opengl/EXTStencilWrap.java,
+	  opengl/EXTTextureEnvCombine.java,
+	  opengl/EXTTextureMirrorClamp.java,
+	  opengl/EXTVertexWeighting.java, opengl/GLChecks.java,
+	  opengl/LinuxDisplayPeerInfo.java, opengl/MouseEventQueue.java,
+	  opengl/NVCopyDepthToColor.java,
+	  opengl/NVMultisampleFilterHint.java, opengl/RenderTexture.java,
+	  opengl/SUNSliceAccum.java, opengl/Win32PbufferPeerInfo.java,
+	  opengl/GL14.java, opengl/GL15.java,
+	  opengl/LinuxPbufferPeerInfo.java,
+	  opengl/MacOSXAWTGLCanvasPeerInfo.java, opengl/NVEvaluators.java,
+	  opengl/NVFloatBuffer.java, opengl/NVFragmentProgram.java,
+	  opengl/NVOcclusionQuery.java, opengl/NVTextureExpandNormal.java,
+	  opengl/glu/Util.java, opengl/glu/MipMap.java,
+	  opengl/glu/Project.java, test/opengl/pbuffers/PbufferTest.java,
+	  test/opengl/pbuffers/UniqueRenderer.java,
+	  test/opengl/pbuffers/UniqueRendererRTT.java,
+	  test/opengl/shaders/Shader.java,
+	  test/opengl/shaders/ShaderFP.java,
+	  test/opengl/shaders/ShaderFSH.java,
+	  test/opengl/shaders/ShaderVP.java,
+	  test/opengl/shaders/ShaderVSH.java,
+	  test/opengl/shaders/ShadersTest.java, devil/IL.java,
+	  util/model/loaders/XMLLoader.java, devil/ILU.java,
+	  devil/ILUT.java, openal/AL.java, openal/AL10.java,
+	  openal/ALC.java, openal/Util.java, util/Display.java,
+	  util/GL.java, util/GLImpl.java, util/IGL.java, test/SysTest.java,
+	  test/WindowCreationTest.java, test/opengl/awt/AWTTest.java,
+	  test/opengl/awt/DemoBox.java, BufferChecks.java,
+	  BufferUtils.java, LWJGLUtil.java, input/Keyboard.java,
+	  test/devil/BasicTest.java: Cleanup of unused imports
+
+2005-05-04 22:41  cix_foo
+
+	* src/java/org/lwjgl/opengl/Display.java: Internal tweaks to allow
+	  certain display mode changes
+
+2005-05-04 22:38  cix_foo
+
+	* src/java/org/lwjgl/input/Keyboard.java: Clean state after destroy
+
+2005-05-03 11:08  elias_naur
+
+	* src/: java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  native/macosx/org_lwjgl_opengl_Display.m: Mac OS X: Only use
+	  SetSystemUIMode workaround on 10.3 and lower
+
+2005-04-30 17:37  elias_naur
+
+	* src/java/org/lwjgl/opengl/AWTGLCanvas.java: Corrected AWTGLCanvas
+	  documentation
+
+2005-04-29 17:20  elias_naur
+
+	* src/native/win32/: Window.h, context.c, org_lwjgl_input_Mouse.c,
+	  org_lwjgl_opengl_Display.c: Win32: Compile fixes
+
+2005-04-29 17:08  elias_naur
+
+	* src/native/win32/: context.c, context.h, org_lwjgl_input_Mouse.c,
+	  org_lwjgl_opengl_Display.c: Win32: Fix Mouse.setCursorLocation()
+
+2005-04-28 14:55  elias_naur
+
+	* src/java/org/lwjgl/opengl/: MacOSXContextImplementation.java,
+	  MacOSXDisplay.java, MacOSXGLCanvas.java: Mac OS X: Added a
+	  workaround for the 'white screen' problem
+
+2005-04-28 13:57  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java: Removed cached width and
+	  height from Mouse
+
+2005-04-28 12:52  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java: Remove unused code
+
+2005-04-28 12:36  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java: Fon't reset the cursor
+	  position in resetMouse()
+
+2005-04-28 12:31  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java: Allow setCursorPosition when
+	  mouse is grabbed
+
+2005-04-28 11:57  elias_naur
+
+	* src/: java/org/lwjgl/input/Mouse.java,
+	  native/linux/org_lwjgl_input_Mouse.c: Fix cursor jumping after
+	  Mouse.setGrabbed()
+
+2005-04-27 22:30  elias_naur
+
+	* src/: java/org/lwjgl/opengl/AWTSurfaceLock.java,
+	  native/common/org_lwjgl_opengl_AWTSurfaceLock.c: Moved
+	  AWTSurfaceLock retry-loop to java to avoid non-standard sleep
+	  functions
+
+2005-04-25 09:47  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Linux: try to work
+	  around crash on opengl library unload
+
+2005-04-25 09:26  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Linux: Fixed crash
+
+2005-04-19 09:18  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.c: Linux: If a keysym
+	  has no LWJGL mapping, try the unshifted keysym instead
+
+2005-04-18 09:31  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Win32: Ignore
+	  SC_*MENU messages (triggered on ALT and F10 and made LWJGL apps
+	  appear to hang)
+
+2005-04-18 08:47  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXFrame.java: Mac OS X: Fix
+	  potential NPE
+
+2005-04-17 10:01  matzon
+
+	* www/installation.php: fixed typo
+
+2005-04-14 12:10  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Display.c: Linux: Added support
+	  for LWJGL_DISABLE_NETWM environment which will override the NetWM
+	  detection
+
+2005-04-13 14:55  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.c: Linux: Added
+	  XK_ISO_Left_Tab as an alias for KEY_TAB
+
+2005-04-13 14:21  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.c: Linux: ignore
+	  vendor-specific keysyms
+
+2005-04-12 21:13  matzon
+
+	* src/native/common/fmod3/org_lwjgl_fmod3_FMOD.c: removed debug
+
+2005-04-12 20:57  matzon
+
+	* src/native/common/fmod3/org_lwjgl_fmod3_FMOD.c: ignore fmod load
+	  path
+
+2005-04-12 20:54  matzon
+
+	* src/native/common/fmod3/extfmod3.c: please mac compilation
+
+2005-04-12 20:53  matzon
+
+	* src/native/common/fmod3/extfmod3.h: use "dynamic" header on mac
+
+2005-04-12 20:52  matzon
+
+	* src/native/common/fmod3/fmoddyn_mac.h: fake "dynamic" header for
+	  MacOSX, which uses a static lib *grumble*
+
+2005-04-12 20:49  matzon
+
+	* src/native/common/fmod3/Makefile.macosx: Makefile for mac fmod
+
+2005-04-12 20:48  matzon
+
+	* src/native/common/fmod3/org_lwjgl_fmod3_FSound.c: don't call
+	  OpenTray on mac
+
+2005-04-12 14:04  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.c: Win32: Implemented
+	  Mouse.setCursorPosition()
+
+2005-04-12 13:56  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java: [no log message]
+
+2005-04-12 13:45  elias_naur
+
+	* src/: java/org/lwjgl/input/Mouse.java,
+	  java/org/lwjgl/opengl/DisplayImplementation.java,
+	  java/org/lwjgl/opengl/LinuxDisplay.java,
+	  java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  java/org/lwjgl/opengl/Win32Display.java,
+	  native/linux/org_lwjgl_input_Mouse.c: Added
+	  Mouse.setCursorPosition(x, y)
+
+2005-04-12 12:55  elias_naur
+
+	* src/: java/org/lwjgl/openal/ALC.java,
+	  java/org/lwjgl/openal/Util.java, native/common/checkALerror.h,
+	  native/common/org_lwjgl_openal_AL.c,
+	  native/common/org_lwjgl_openal_AL10.c,
+	  native/common/org_lwjgl_openal_ALC.c: Moved ALC error check to
+	  java. Fix linux type cast warnings
+
+2005-04-12 12:30  elias_naur
+
+	* src/: java/org/lwjgl/openal/ALC.java,
+	  java/org/lwjgl/openal/ALCcontext.java,
+	  java/org/lwjgl/openal/ALCdevice.java,
+	  native/common/org_lwjgl_openal_ALC.c: Converted ALC pointers from
+	  int to long
+
+2005-04-12 11:53  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.c: Win32: Fixed 64 bit
+	  warnings in Mouse.c
+
+2005-04-12 11:11  elias_naur
+
+	* platform_build/win32_ms_cmdline/build.bat: Win32: Added /Wp64
+	  flag to the cmd line build.bat. It enables 64 bit specific
+	  warnings which should be fixed to be ready for 64 bit platforms.
+
+2005-04-11 14:54  elias_naur
+
+	* src/native/common/extal.c: Fixed compile warnings
+
+2005-04-11 14:38  elias_naur
+
+	* src/native/common/extal.c: Mac OS X: Use GetStringUTFChars
+	  instead of GetNativeChars to get the openal path
+
+2005-04-11 12:00  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.c: Linux: Improved
+	  keyboard mapping support
+
+2005-04-11 09:58  elias_naur
+
+	* src/native/common/common_tools.c: Removed event buffer overflow
+	  message
+
+2005-04-10 01:26  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.c: Linux: Use KeySyms
+	  instead of raw key codes to take the keyboard mapping in account
+
+2005-04-09 19:35  elias_naur
+
+	* src/java/org/lwjgl/: LWJGLUtil.java, Sys.java, devil/IL.java,
+	  devil/ILU.java, devil/ILUT.java, fmod3/FMOD.java,
+	  input/Cursor.java, input/Mouse.java, opengl/AWTGLCanvas.java,
+	  opengl/Context.java, opengl/Display.java: Added
+	  LWJGLUtil.getPlatform to encapsulate platform detection. Added
+	  FreeBSD as an alias to Linux.
+
+2005-04-09 18:45  cix_foo
+
+	* src/java/org/lwjgl/opengl/Display.java: Replaced sync() with a
+	  method that works, based on sync2() and Thread.sleep(1)
+
+2005-04-09 11:51  matzon
+
+	* www/irclog.php: updated irc log to format better
+
+2005-04-09 11:13  matzon
+
+	* www/irclog.php: no longer using PRE - broke layout on long lines
+
+2005-04-09 10:51  matzon
+
+	* www/_include/header.php: added irc-stats
+
+2005-04-09 10:36  matzon
+
+	* www/_include/header.php: added irc log added cia stats link
+
+2005-04-09 10:35  matzon
+
+	* www/irclog.php: added last 100 lines irc log
+
+2005-04-04 14:24  elias_naur
+
+	* src/native/linux/extgl_glx.c: Linux: Load libGL.so with the
+	  RTLD_GLOBAL flag. It seems that some drivers need it
+
+2005-04-04 13:19  elias_naur
+
+	* src/java/org/lwjgl/: opengl/ARBBufferObject.java,
+	  opengl/ARBColorBufferFloat.java, opengl/ARBDrawBuffers.java,
+	  opengl/ARBImaging.java, opengl/ARBMatrixPalette.java,
+	  opengl/ARBMultisample.java, opengl/ARBMultitexture.java,
+	  opengl/ARBOcclusionQuery.java, opengl/ARBPointParameters.java,
+	  opengl/ARBProgram.java, opengl/ARBShaderObjects.java,
+	  opengl/ARBTextureCompression.java,
+	  opengl/ARBTransposeMatrix.java, opengl/ARBVertexBlend.java,
+	  opengl/ARBVertexProgram.java, opengl/ARBVertexShader.java,
+	  opengl/ARBWindowPos.java, opengl/ATIDrawBuffers.java,
+	  opengl/ATIElementArray.java, opengl/ATIEnvmapBumpmap.java,
+	  opengl/ATIFragmentShader.java, opengl/ATIMapObjectBuffer.java,
+	  opengl/ATIPnTriangles.java, opengl/ATISeparateStencil.java,
+	  opengl/ATIVertexArrayObject.java,
+	  opengl/ATIVertexAttribArrayObject.java,
+	  opengl/ATIVertexStreams.java,
+	  opengl/EXTBlendEquationSeparate.java,
+	  opengl/EXTBlendFuncSeparate.java,
+	  opengl/EXTCompiledVertexArray.java,
+	  opengl/EXTDepthBoundsTest.java, opengl/EXTDrawRangeElements.java,
+	  opengl/EXTFogCoord.java, opengl/EXTFramebufferObject.java,
+	  opengl/EXTMultiDrawArrays.java, opengl/EXTPalettedTexture.java,
+	  opengl/EXTPointParameters.java, opengl/EXTSecondaryColor.java,
+	  opengl/EXTStencilTwoSide.java, opengl/EXTVertexShader.java,
+	  opengl/EXTVertexWeighting.java, opengl/GL11.java,
+	  opengl/GL12.java, opengl/GL13.java, opengl/GL14.java,
+	  opengl/GL15.java, opengl/GL20.java, opengl/NVEvaluators.java,
+	  opengl/NVFence.java, opengl/NVFragmentProgram.java,
+	  opengl/NVHalfFloat.java, opengl/NVOcclusionQuery.java,
+	  opengl/NVPixelDataRange.java, opengl/NVPointSprite.java,
+	  opengl/NVPrimitiveRestart.java, opengl/NVProgram.java,
+	  opengl/NVRegisterCombiners.java,
+	  opengl/NVRegisterCombiners2.java, opengl/NVVertexArrayRange.java,
+	  opengl/NVVertexProgram.java,
+	  util/generator/ContextCapabilitiesGenerator.java,
+	  util/generator/GeneratorVisitor.java: Don't emit initNativeStub()
+	  when generating context-specific OpenGL java classes
+
+2005-04-01 11:51  elias_naur
+
+	* src/native/linux/Makefile: Linux: Statically link libXxf86vm
+
+2005-03-31 11:32  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplayPeerInfo.java: Linux: Fix
+	  crash on exit on NVIDIA
+
+2005-03-30 22:02  matzon
+
+	* www/: download.php, index.php: 0.96 specific files
+
+2005-03-30 21:46  matzon
+
+	* www/: changelog.php, changelogs/0.96-changelog.txt,
+	  changelogs/full-changelog.txt: 0.96 specific files

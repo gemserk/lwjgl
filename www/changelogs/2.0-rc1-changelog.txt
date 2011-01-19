@@ -1,0 +1,377 @@
+2008-06-06 17:18  matzon
+
+	* libs/linux/libopenal.so: updated to openal-soft-1.4.272 - with
+	  oss and alsa backend
+
+2008-06-06 17:11  matzon
+
+	* libs/win32/OpenAL32.dll: now using openal-soft-1.4.272
+
+2008-06-05 13:36  matzon
+
+	* src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  src/java/org/lwjgl/opengl/AWTUtil.java,
+	  src/java/org/lwjgl/opengl/MacOSXCanvasListener.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXGLCanvas.java,
+	  src/java/org/lwjgl/test/opengl/awt/DisplayParentTest.java,
+	  src/java/org/lwjgl/util/glu/GLU.java: cleanup of imports
+
+2008-06-05 13:35  matzon
+
+	* src/java/org/lwjgl/opengl/KeyboardEventQueue.java,
+	  src/java/org/lwjgl/opengl/WindowsKeycodes.java,
+	  src/java/org/lwjgl/util/jinput/KeyMap.java: fixed internal use of
+	  deprecated keys
+
+2008-06-05 13:12  matzon
+
+	* platform_build/windows_ant/build.xml: removed references to
+	  directx
+
+2008-06-05 13:11  elias_naur
+
+	* src/native/windows/dinputhelper.c,
+	  src/native/windows/dinputhelper.h: Windows: Removed unused
+	  dinputhelper.c/h
+
+2008-06-05 08:12  matzon
+
+	* src/native/common/org_lwjgl_openal_ALC10.c: missing special
+	  handler for ALC_ALL_DEVICES_SPECIFIER
+
+2008-06-05 08:11  matzon
+
+	* src/java/org/lwjgl/test/openal/OpenALInfo.java: missing destroy
+
+2008-06-04 21:36  matzon
+
+	* src/java/org/lwjgl/test/openal/OpenALInfo.java: dont use
+	  String.format *grumble*
+
+2008-06-04 21:31  matzon
+
+	* src/java/org/lwjgl/test/openal/OpenALInfo.java: OpenAL info
+	  program a la openal-soft's openal-info
+
+2008-06-04 21:31  matzon
+
+	* src/java/org/lwjgl/openal/ALC11.java: support for
+	  ALC_ENUMERATE_ALL_EXT
+
+2008-06-04 19:40  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: rc1 identifier string
+
+2008-05-30 07:08  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Removed dead code from
+	  Display
+
+2008-05-30 06:53  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Removed Display.sync2 and
+	  Display.sync3
+
+2008-05-28 18:09  matzon
+
+	* doc/README: updated, removing references to devil & fmod
+
+2008-05-28 18:06  matzon
+
+	* www/_gfx/projects/night_squad_2_1.jpg,
+	  www/_gfx/projects/night_squad_2_2.jpg,
+	  www/_gfx/projects/night_squad_2_3.jpg,
+	  www/_gfx/projects/night_squad_2_small_1.jpg,
+	  www/_gfx/projects/night_squad_2_small_2.jpg,
+	  www/_gfx/projects/night_squad_2_small_3.jpg: night squad2 added
+
+2008-05-28 18:05  matzon
+
+	* www/index.php, www/installation.php, www/license.php,
+	  www/projects.php: syncing with online
+
+2008-05-28 18:04  matzon
+
+	* www/faq.php: syncing with online
+
+2008-05-28 18:04  matzon
+
+	* www/download.php: syncing with online
+
+2008-05-28 18:04  matzon
+
+	* www/donations.php: syncing with online
+
+2008-05-28 18:03  matzon
+
+	* www/demos.php: added applet demo
+
+2008-05-28 18:03  matzon
+
+	* www/credits.php: updated
+
+2008-05-28 18:02  matzon
+
+	* www/changelog.php: syncing with online
+
+2008-05-28 18:01  matzon
+
+	* www/about.php: spelling
+
+2008-05-28 18:00  matzon
+
+	* www/changelogs/1.1.2-changelog.txt,
+	  www/changelogs/1.1.3-changelog.txt,
+	  www/changelogs/1.1.4-changelog.txt,
+	  www/changelogs/2.0beta1-changelog.txt,
+	  www/changelogs/full-changelog.txt: syncing with online
+
+2008-05-28 17:59  matzon
+
+	* www/_gfx/projects/cotwl2_1.jpg, www/_gfx/projects/cotwl2_2.jpg,
+	  www/_gfx/projects/cotwl2_3.jpg,
+	  www/_gfx/projects/cotwl2_small_1.jpg,
+	  www/_gfx/projects/cotwl2_small_2.jpg,
+	  www/_gfx/projects/cotwl2_small_3.jpg,
+	  www/_gfx/projects/jmugen_1.jpg, www/_gfx/projects/jmugen_2.jpg,
+	  www/_gfx/projects/jmugen_3.jpg,
+	  www/_gfx/projects/jmugen_small_1.jpg,
+	  www/_gfx/projects/jmugen_small_2.jpg,
+	  www/_gfx/projects/jmugen_small_3.jpg,
+	  www/_gfx/projects/joge_1.jpg, www/_gfx/projects/joge_2.jpg,
+	  www/_gfx/projects/joge_3.jpg, www/_gfx/projects/joge_small_1.jpg,
+	  www/_gfx/projects/joge_small_2.jpg,
+	  www/_gfx/projects/joge_small_3.jpg,
+	  www/_gfx/projects/jscrabble_1.jpg,
+	  www/_gfx/projects/jscrabble_2.jpg,
+	  www/_gfx/projects/jscrabble_3.jpg,
+	  www/_gfx/projects/jscrabble_small_1.jpg,
+	  www/_gfx/projects/jscrabble_small_2.jpg,
+	  www/_gfx/projects/jscrabble_small_3.jpg: syncing
+
+2008-05-28 08:40  elias_naur
+
+	* platform_build/macosx_ant/build.xml: Mac OS X: Restore Mac OS X
+	  10.3 compatibility
+
+2008-05-23 11:03  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXFrame.java: Mac OS X: Call
+	  setFocusTraversalKeysEnabled(false) on LWJGL created
+	  MacOSXGLCanvases
+
+2008-05-22 00:04  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: added support
+	  for displaying the current download speed
+
+2008-05-11 14:41  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: removed
+	  repaint() which had no effect.
+
+2008-05-06 21:47  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: workaround no
+	  longer needed for paint() and switchApplet(), removes blank
+	  screen delay between java2d and lwjgl switch.
+
+2008-05-05 17:24  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Split
+	  WindowsDisplay.nDestroyWindow into nReleaseDC and nDestroyWindow
+
+2008-05-05 16:46  elias_naur
+
+	* src/java/org/lwjgl/WindowsSysImplementation.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows:
+	  Generalized WindowsDispaly.nCreateWindow
+
+2008-05-02 11:05  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Windows: Clean up
+	  window in case of exception thrown from
+	  WindowsDisplay.createWindow
+
+2008-05-01 09:55  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplayPeerInfo.java: Windows:
+	  Moved pixel format logic from WindowsDisplayPeerInfo.initDC to
+	  WindowsDisplay.createWindow
+
+2008-05-01 09:44  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsAWTGLCanvasPeerInfo.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplayPeerInfo.java,
+	  src/java/org/lwjgl/opengl/WindowsPeerInfo.java: Windows: Made
+	  WindowsPeerInfo.choosePixelFormat static and let
+	  WindowsPeerInfo.setPixelFormat be called seperately
+
+2008-05-01 09:37  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsPeerInfo.java,
+	  src/native/windows/org_lwjgl_opengl_WindowsPeerInfo.c: Windows:
+	  Split nChoosePixelFormat's applyPixelFormat() out in a seperate
+	  function
+
+2008-05-01 09:20  elias_naur
+
+	* src/java/org/lwjgl/WindowsSysImplementation.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Moved
+	  icon handles to java
+
+2008-04-30 19:00  elias_naur
+
+	* src/java/org/lwjgl/WindowsSysImplementation.java: Windows: Check
+	  for Display.isCreated in Sys.getHwnd()
+
+2008-04-30 16:40  elias_naur
+
+	* src/java/org/lwjgl/WindowsSysImplementation.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/Window.h, src/native/windows/org_lwjgl_Sys.c,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Moved
+	  hwnd and hdc to java
+
+2008-04-30 16:01  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplayPeerInfo.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c,
+	  src/native/windows/org_lwjgl_opengl_WindowsDisplayPeerInfo.c:
+	  Windows: Made WindowsDisplayPeerInfo take hwnd and hdc arguments
+
+2008-04-30 15:29  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/context.c, src/native/windows/context.h,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Moved
+	  child window style selection to java
+
+2008-04-30 14:58  elias_naur
+
+	* build.xml, src/java/org/lwjgl/DefaultSysImplementation.java,
+	  src/java/org/lwjgl/LinuxSysImplementation.java,
+	  src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  src/java/org/lwjgl/WindowsSysImplementation.java,
+	  src/native/common/common_tools.c,
+	  src/native/linux/org_lwjgl_opengl_Display.c,
+	  src/native/macosx/org_lwjgl_opengl_Display.m,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Added platform
+	  specific getJNIVersion implementations
+
+2008-04-30 14:34  elias_naur
+
+	* src/java/org/lwjgl/LinuxSysImplementation.java,
+	  src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/SysImplementation.java,
+	  src/java/org/lwjgl/WindowsSysImplementation.java: Moved
+	  Sys.JNI_VERSION to SysImplementation.getRequiredJNIVersion() to
+	  enable platform specific native library versions.
+
+2008-04-30 13:47  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXCanvasListener.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java: Mac OS X: Worked
+	  around another Display.destroy hang when parented to an applet
+
+2008-04-30 13:16  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXMouseEventQueue.java: Mac OS X:
+	  Fixed a hang on Display.destroy in applets
+
+2008-04-30 12:46  elias_naur
+
+	* src/java/org/lwjgl/opengl/AWTUtil.java: Don't use reflection for
+	  AWTUtil.getPointerLocation
+
+2008-04-29 18:56  elias_naur
+
+	* src/native/windows/context.c: Windows: Improved error messages
+	  for nChoosePixelFormat
+
+2008-04-29 18:37  elias_naur
+
+	* src/native/windows/org_lwjgl_opengl_Display.c: Windows: Fixed
+	  compile error
+
+2008-04-29 18:32  elias_naur
+
+	* src/native/windows/org_lwjgl_opengl_Display.c: Windows: Added
+	  error handling to nCreateWindow
+
+2008-04-27 13:37  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: switch caching
+	  off globally instead of on a per connection bases.
+
+2008-04-25 17:21  elias_naur
+
+	* src/native/common/common_tools.c: NewStringNativeUnsigned should
+	  return NULL if argument string is NULL
+
+2008-04-25 02:18  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Fix for caching
+	  problem, now ensures latest jars are downloaded when using the
+	  appletloader caching tag, also no longer fails on receiving
+	  incorrect content-type from server.
+
+2008-04-24 20:43  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Firefox
+	  workaround no longer needed to get applet going.
+
+2008-04-24 17:45  elias_naur
+
+	* platform_build/macosx_ant/build-symbol-list: Mac OS X: Added
+	  JNI_* methods to exported symbol list
+
+2008-04-22 21:26  elias_naur
+
+	* src/java/org/lwjgl/test/input/KeyboardTest.java: Fixed
+	  KeyboardTest
+
+2008-04-22 20:32  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: added check to
+	  prevent multiple applet instances starting.
+
+2008-04-22 19:59  elias_naur
+
+	* src/java/org/lwjgl/MacOSXSysImplementation.java: Mac OS X:
+	  Removed reflection from MacOSXSysImplementation
+
+2008-04-22 18:09  elias_naur
+
+	* applet/appletloader.html,
+	  src/java/org/lwjgl/test/applet/GearsApplet.java: Added
+	  GearsApplet test
+
+2008-04-22 17:56  spasi
+
+	* src/templates/org/lwjgl/opengl/NV_transform_feedback.java: Added
+	  GL_LAYER_NV
+
+2008-04-22 16:52  elias_naur
+
+	* build.xml, libs/AppleJavaExtensions.jar,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java: Added
+	  ApplejavaExtensions.jar to be able to use apple extensions
+	  without reflection
+
+2008-04-21 20:53  matzon
+
+	* applet/appletloader.html: correct mac native
+
+2008-04-21 20:51  matzon
+
+	* libs/lzma.jar: compiled using target 1.5

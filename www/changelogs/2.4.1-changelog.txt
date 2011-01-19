@@ -1,0 +1,41 @@
+2010-04-14 14:58  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_conservative_depth.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/EXT_gpu_shader4.java,
+	  src/templates/org/lwjgl/opengl/EXT_shader_image_load_store.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_attrib_64bit.java,
+	  src/templates/org/lwjgl/opengl/NV_gpu_program5.java,
+	  src/templates/org/lwjgl/opengl/NV_gpu_shader5.java,
+	  src/templates/org/lwjgl/opengl/NV_shader_buffer_load.java,
+	  src/templates/org/lwjgl/opengl/NV_shader_buffer_store.java,
+	  src/templates/org/lwjgl/opengl/NV_tessellation_program5.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_attrib_integer_64bit.java:
+	  New extensions: AMD_conservative_depth,
+	  EXT_shader_image_load_store, EXT_vertex_attrib_64bit,
+	  NV_gpu_program5, NV_gpu_shader5, NV_shader_buffer_store,
+	  NV_tessellation_program5, NV_vertex_attrib_integer_64bit
+
+2010-04-13 20:28  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: prepare for 2.4.1
+
+2010-04-13 20:25  matzon
+
+	* build.xml: disable version check for linux - headless issues
+
+2010-04-13 07:14  matzon
+
+	* src/java/org/lwjgl/test/NativeTest.java: (possible) fix for
+	  headless environment issue with awt on linux
+
+2010-04-12 23:22  matzon
+
+	* build.xml, src/java/org/lwjgl/test/NativeTest.java: forcefull
+	  check of version match when building
+
+2010-04-12 19:04  matzon
+
+	* build.xml: always build the native file with the latest version

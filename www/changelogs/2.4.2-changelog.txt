@@ -1,0 +1,13 @@
+2010-04-15 18:03  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: 2.4.2 release
+
+2010-04-14 22:34  kappa1
+
+	* src/java/org/lwjgl/opengl/XRandR.java: fix: When using unsigned
+	  jars with signed lwjgl jars it fails when creating a Display on
+	  linux with an AccessController error. This is due to the new
+	  XRandR class missing a AccessController.doPriviledged method when
+	  it requires out of sandbox access. (LWJGL Applet Distribution is
+	  borken on linux without this fix)

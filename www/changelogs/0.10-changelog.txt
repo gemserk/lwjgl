@@ -1,0 +1,462 @@
+2002-08-19 16:29  cix_foo
+
+	* src/java/org/lwjgl/Sys.java: Encapsulated LIBRARY_NAME
+	  (properly!)
+
+2002-08-19 16:02  matzon
+
+	* src/java/org/lwjgl/openal/: ALUT.java, BaseAL.java: fix: now uses
+	  getLibraryName() for determening lib to load
+
+2002-08-19 15:59  cix_foo
+
+	* src/java/org/lwjgl/: Display.java, Sys.java, opengl/BaseGL.java,
+	  opengl/CoreGL.java, opengl/GL.java, opengl/GLU.java,
+	  input/GamePad.java, input/Joystick.java, input/Keyboard.java,
+	  input/Mouse.java: Encapsulated LIBRARY_NAME
+
+2002-08-19 15:55  matzon
+
+	* src/java/org/lwjgl/openal/CoreAL.java: fix: wrong prototypes for
+	  some methods, while switching to ByteBuffer
+
+2002-08-19 15:54  matzon
+
+	* src/native/: common/org_lwjgl_openal_CoreAL.h,
+	  win32/org_lwjgl_openal_CoreAL.cpp: basic al support complete
+
+2002-08-19 14:02  matzon
+
+	* src/native/common/org_lwjgl_openal_CoreAL.h: add: rest of al
+	  methods
+
+2002-08-19 13:59  matzon
+
+	* src/java/org/lwjgl/openal/CoreAL.java: mod: now use ByteBuffer
+	  addresses instead of arrays - this way we reduce object creation
+
+2002-08-19 13:30  cix_foo
+
+	* src/native/common/org_lwjgl_Sys.h: Tweakage
+
+2002-08-19 13:29  cix_foo
+
+	* src/java/org/lwjgl/: Math.java, Sys.java: Matrix code started
+
+2002-08-19 04:37  matzon
+
+	* src/java/org/lwjgl/openal/CoreAL.java: add: last al methods added
+
+2002-08-19 03:10  matzon
+
+	* src/java/org/lwjgl/openal/CoreAL.java: add: more al methods (work
+	  in progress)
+
+2002-08-18 15:56  matzon
+
+	* src/: native/win32/org_lwjgl_openal_ALUT.cpp,
+	  java/org/lwjgl/openal/ALUT.java,
+	  java/org/lwjgl/openal/ALUTLoadWAVData.java,
+	  java/org/lwjgl/openal/ALUTLoadWAVFile.java,
+	  java/org/lwjgl/openal/OpenALTest.java: change: ALUTLoadWAVFile ->
+	  ALUTLoadWAVData
+
+2002-08-18 15:47  matzon
+
+	* src/native/win32/org_lwjgl_openal_ALUT.cpp: fix: memory leak
+
+2002-08-18 15:42  matzon
+
+	* src/native/win32/org_lwjgl_openal_ALUT.cpp: add: loadWAVMemory
+	  implemented fix: wrong comments on alutInit
+
+2002-08-18 15:41  matzon
+
+	* src/native/common/org_lwjgl_openal_ALUT.h: loadWAVMemory
+	  implemented
+
+2002-08-17 16:13  cix_foo
+
+	* src/native/: win32/LWJGL.cpp, win32/org_lwjgl_input_Keyboard.cpp,
+	  win32/org_lwjgl_opengl_BaseGL.cpp, win32/org_lwjgl_opengl_GL.cpp,
+	  win32/org_lwjgl_opengl_GLU.cpp, common/org_lwjgl_Audio.h,
+	  common/org_lwjgl_opengl_GL.h, common/org_lwjgl_opengl_GLU.h,
+	  common/org_lwjgl_opengl_GLUT.h, win32/extgl.c,
+	  win32/org_lwjgl_Display.cpp: Working
+
+2002-08-17 16:10  cix_foo
+
+	* src/java/org/lwjgl/: opengl/GL.java, Sys.java: Working
+
+2002-08-16 23:53  cix_foo
+
+	* src/java/org/lwjgl/: StructBuffer.java, Sys.java, opengl/GL.java,
+	  opengl/GLConstants.java, opengl/GLU.java, opengl/GLUT.java,
+	  opengl/GLUTConstants.java: Removed StructBuffer
+
+2002-08-16 23:52  cix_foo
+
+	* src/java/org/lwjgl/vector/: Matrix2f.java, Matrix3f.java,
+	  Matrix4f.java, Vector2f.java, Vector3f.java, Vector4f.java: Added
+	  licenses.
+
+2002-08-15 23:41  matzon
+
+	* doc/manifest.txt: well someone has to be the victim...
+
+2002-08-15 23:38  matzon
+
+	* CVSROOT/loginfo: now posting to
+	  java-game-lib-cvs@lists.sourceforge.net
+
+2002-08-15 22:33  matzon
+
+	* doc/manifest.txt: uhm.. needed to find a file to modify - testing
+	  syncmail ;)
+
+2002-08-15 22:30  matzon
+
+	* CVSROOT/: checkoutlist, loginfo: enabled syncmail again
+
+2002-08-15 18:27  cix_foo
+
+	* src/java/org/lwjgl/Audio.java: Removed audio class
+
+2002-08-15 18:18  cix_foo
+
+	* src/java/org/lwjgl/: opengl/BaseGL.java, opengl/CoreGL.java,
+	  opengl/CoreGLConstants.java, opengl/GL.java,
+	  opengl/GLConstants.java, opengl/GLU.java,
+	  opengl/GLUConstants.java, opengl/OpenGLException.java,
+	  input/GamePad.java, input/Joystick.java, input/Keyboard.java:
+	  Copyright added
+
+2002-08-15 18:11  matzon
+
+	* src/native/common/: checkGLerror.h, org_lwjgl_opengl_CoreGL.h:
+	  fixed: removed -kb switch - changed to default kkv
+
+2002-08-15 18:08  matzon
+
+	* src/native/win32/org_lwjgl_opengl_CoreGL.cpp: fixed: removed -kb
+	  switch - changed to default kkv
+
+2002-08-15 17:46  cix_foo
+
+	* src/java/org/lwjgl/: Display.java, DisplayMode.java, Math.java,
+	  StructBuffer.java, Sys.java: Copyright added
+
+2002-08-15 17:45  matzon
+
+	* CVSROOT/checkoutlist: changed: removed syncmail until SF changes
+	  execute bits
+
+2002-08-15 17:42  cix_foo
+
+	* src/: java/org/lwjgl/input/Mouse.java, native/win32/LWJGL.cpp,
+	  native/win32/org_lwjgl_Audio.cpp,
+	  native/win32/org_lwjgl_Math.cpp, native/win32/org_lwjgl_Sys.cpp,
+	  native/win32/org_lwjgl_input_Keyboard.cpp,
+	  native/win32/org_lwjgl_input_Mouse.cpp,
+	  native/win32/org_lwjgl_opengl_BaseGL.cpp,
+	  native/win32/org_lwjgl_opengl_CoreGL.cpp,
+	  native/win32/org_lwjgl_opengl_GL.cpp,
+	  native/win32/org_lwjgl_opengl_GLU.cpp,
+	  native/win32/org_lwjgl_opengl_GLUT.cpp: Copyright added
+
+2002-08-15 17:41  matzon
+
+	* src/native/win32/: org_lwjgl_openal_ALUT.c,
+	  org_lwjgl_openal_ALUT.cpp, org_lwjgl_openal_CoreAL.c,
+	  org_lwjgl_openal_CoreAL.cpp: change: old JNI Cimplementaion
+	  upgraded to C++
+
+2002-08-15 17:38  cix_foo
+
+	* src/native/win32/org_lwjgl_Display.cpp: Copyright added
+
+2002-08-15 17:14  matzon
+
+	* src/java/org/lwjgl/openal/: AL.java, ALConstants.java, ALUT.java,
+	  ALUTLoadWAVFile.java, BaseAL.java, BaseALConstants.java,
+	  CoreAL.java, EAXALConstants.java, OpenALTest.java: add: copyright
+	  header
+
+2002-08-15 17:10  matzon
+
+	* src/native/: common/org_lwjgl_openal_ALUT.h,
+	  common/org_lwjgl_openal_CoreAL.h, win32/org_lwjgl_openal_ALUT.c,
+	  win32/org_lwjgl_openal_CoreAL.c: add: copyright header
+
+2002-08-15 16:53  matzon
+
+	* src/native/win32/org_lwjgl_Display.cpp: changed: now defines
+	  using dx7
+
+2002-08-15 16:34  matzon
+
+	* src/native/win32/: org_lwjgl_openal_ALUT.c,
+	  org_lwjgl_openal_CoreAL.c: changed: AL_ and al prefix removed
+	  (this included lowercasing first letter in method)
+
+2002-08-15 16:29  matzon
+
+	* src/: java/org/lwjgl/openal/ALUT.java,
+	  java/org/lwjgl/openal/BaseALConstants.java,
+	  java/org/lwjgl/openal/CoreAL.java,
+	  java/org/lwjgl/openal/OpenALTest.java,
+	  native/common/org_lwjgl_openal_ALUT.h,
+	  native/common/org_lwjgl_openal_CoreAL.h: changed: AL_ and al
+	  prefix removed (this included lowercasing first letter in method)
+
+2002-08-15 16:10  matzon
+
+	* CVSROOT/loginfo: remove syncmail stuff untill execute bits are
+	  set bt SF
+
+2002-08-15 16:08  matzon
+
+	* src/java/org/lwjgl/input/Mouse.java: fixed: joystick javadoc
+	  changed to mouse
+
+2002-08-15 15:25  cix_foo
+
+	* src/: native/common/org_lwjgl_opengl_CoreGL.h,
+	  native/win32/org_lwjgl_opengl_CoreGL.cpp,
+	  java/org/lwjgl/opengl/GLUConstants.java: Removed GL_ prefixes
+
+2002-08-15 15:20  cix_foo
+
+	* src/java/org/lwjgl/opengl/CoreGLConstants.java: Removed GL_
+	  prefixes
+
+2002-08-15 15:19  cix_foo
+
+	* src/java/org/lwjgl/opengl/CoreGL.java: Removed gl prefixes
+
+2002-08-15 13:17  matzon
+
+	* CVSROOT/modules: added lwjgl as module
+
+2002-08-14 16:32  cix_foo
+
+	* src/java/org/lwjgl/Display.java: Renamed setDisplayMode to create
+	  for consistency with other classes
+
+2002-08-14 16:31  cix_foo
+
+	* src/java/org/lwjgl/input/: GamePad.java, Joystick.java,
+	  Keyboard.java, Mouse.java: Added GamePad and Joystick and some
+	  query methods
+
+2002-08-14 12:55  matzon
+
+	* src/native/win32/: org_lwjgl_openal_CoreAL.c,
+	  org_lwjgl_openal_CoreAL10.c: CoreAL10 -> CoreAL
+
+2002-08-14 12:52  matzon
+
+	* src/: java/org/lwjgl/openal/AL.java,
+	  java/org/lwjgl/openal/CoreAL.java,
+	  java/org/lwjgl/openal/CoreAL10.java,
+	  native/common/org_lwjgl_openal_CoreAL.h,
+	  native/common/org_lwjgl_openal_CoreAL10.h: CoreAL10 -> CoreAL
+
+2002-08-14 03:31  cix_foo
+
+	* src/native/win32/org_lwjgl_opengl_CoreGL.cpp: Added automatic
+	  error checking to debug build
+
+2002-08-14 03:30  cix_foo
+
+	* src/native/common/checkGLerror.h: Fixed a few things
+
+2002-08-14 03:27  cix_foo
+
+	* src/native/common/checkGLerror.h: GL error checking macro for
+	  debug builds
+
+2002-08-14 03:08  cix_foo
+
+	* src/: java/org/lwjgl/opengl/CoreGL.java,
+	  java/org/lwjgl/opengl/CoreGL11.java,
+	  java/org/lwjgl/opengl/CoreGL11Constants.java,
+	  java/org/lwjgl/opengl/CoreGL12.java,
+	  java/org/lwjgl/opengl/CoreGL12Constants.java,
+	  java/org/lwjgl/opengl/CoreGL13.java,
+	  java/org/lwjgl/opengl/CoreGL13Constants.java,
+	  java/org/lwjgl/opengl/CoreGL14.java,
+	  java/org/lwjgl/opengl/CoreGL14Constants.java,
+	  java/org/lwjgl/opengl/CoreGLConstants.java,
+	  java/org/lwjgl/opengl/GL.java,
+	  java/org/lwjgl/opengl/GLConstants.java,
+	  java/org/lwjgl/opengl/GLUConstants.java,
+	  native/common/org_lwjgl_opengl_CoreGL.h,
+	  native/common/org_lwjgl_opengl_CoreGL11.h,
+	  native/common/org_lwjgl_opengl_CoreGL12.h,
+	  native/common/org_lwjgl_opengl_CoreGL13.h,
+	  native/common/org_lwjgl_opengl_CoreGL14.h,
+	  native/win32/org_lwjgl_opengl_CoreGL.cpp,
+	  native/win32/org_lwjgl_opengl_CoreGL11.cpp,
+	  native/win32/org_lwjgl_opengl_CoreGL12.cpp,
+	  native/win32/org_lwjgl_opengl_CoreGL13.cpp,
+	  native/win32/org_lwjgl_opengl_CoreGL14.cpp: Removed redundant
+	  class heirarchy
+
+2002-08-14 02:09  matzon
+
+	* CVSROOT/syncmail: added obos version of syncmail
+
+2002-08-14 01:49  matzon
+
+	* CVSROOT/syncmail: readding syncmail with correct bits
+
+2002-08-14 01:47  matzon
+
+	* CVSROOT/syncmail: removing file. need to set executable bit
+
+2002-08-14 01:13  matzon
+
+	* src/java/org/lwjgl/openal/: AL.java, ALConstants.java, ALUT.java,
+	  ALUTLoadWAVFile.java, BaseAL.java, BaseALConstants.java,
+	  CoreAL10.java, EAXALConstants.java: initial commit of OpenAL code
+
+2002-08-14 01:01  matzon
+
+	* src/java/org/lwjgl/openal/OpenALTest.java: initial commit of test
+	  class for OpenAL
+
+2002-08-14 00:58  matzon
+
+	* CVSROOT/: checkoutlist, loginfo, syncmail: added syncmail script
+
+2002-08-12 01:38  mpcooke3
+
+	* .project, build.xml, content/about.xml, content/contact.xml,
+	  content/credits.xml, content/download.xml, content/license.xml,
+	  content/navbar.xml, content/simple.xsl, content/source.xml,
+	  website/about.html, website/contact.html, website/credits.html,
+	  website/download.html, website/license.html, website/navbar.html,
+	  website/simple.css, website/source.html, website/title.png: Some
+	  initial stuff for the website. Not ready to go live yet - Matt
+
+2002-08-11 18:27  matzon
+
+	* src/native/common/: org_lwjgl_openal_ALUT.h,
+	  org_lwjgl_openal_CoreAL10.h: initial import of OpenAL native
+	  implementation
+
+2002-08-11 17:59  matzon
+
+	* src/native/win32/: org_lwjgl_openal_ALUT.c,
+	  org_lwjgl_openal_CoreAL10.c: corrected Id keyword substitution
+
+2002-08-11 17:56  matzon
+
+	* src/native/win32/: org_lwjgl_openal_ALUT.c,
+	  org_lwjgl_openal_CoreAL10.c: initial import of OpenAL native
+	  implementation
+
+2002-08-11 13:52  cix_foo
+
+	* src/native/win32/: org_lwjgl_opengl_CoreGL11.cpp,
+	  org_lwjgl_opengl_CoreGL12.cpp, org_lwjgl_opengl_CoreGL13.cpp,
+	  org_lwjgl_opengl_CoreGL14.cpp, org_lwjgl_opengl_GL.cpp,
+	  org_lwjgl_opengl_GLU.cpp, org_lwjgl_opengl_GLUT.cpp,
+	  org_lwjgl_Sys.cpp: Initial import
+
+2002-08-11 13:52  cix_foo
+
+	* src/native/win32/: org_lwjgl_opengl_CoreGL11.cpp,
+	  org_lwjgl_opengl_CoreGL12.cpp, org_lwjgl_opengl_CoreGL13.cpp,
+	  org_lwjgl_opengl_CoreGL14.cpp, org_lwjgl_opengl_GL.cpp,
+	  org_lwjgl_opengl_GLU.cpp, org_lwjgl_opengl_GLUT.cpp,
+	  org_lwjgl_Sys.cpp: Initial revision
+
+2002-08-11 13:49  cix_foo
+
+	* src/native/: common/org_lwjgl_Audio.h,
+	  common/org_lwjgl_Display.h, common/org_lwjgl_input_Keyboard.h,
+	  common/org_lwjgl_Math.h, common/org_lwjgl_input_Mouse.h,
+	  common/org_lwjgl_opengl_BaseGL.h,
+	  common/org_lwjgl_opengl_CoreGL11.h,
+	  common/org_lwjgl_opengl_CoreGL12.h,
+	  common/org_lwjgl_opengl_CoreGL13.h,
+	  common/org_lwjgl_opengl_CoreGL14.h, common/org_lwjgl_opengl_GL.h,
+	  common/org_lwjgl_opengl_GLU.h, common/org_lwjgl_opengl_GLUT.h,
+	  common/org_lwjgl_Sys.h, win32/extgl.c, win32/LWJGL.cpp,
+	  win32/extgl.h, win32/org_lwjgl_Audio.cpp,
+	  win32/org_lwjgl_Display.cpp, win32/org_lwjgl_input_Keyboard.cpp,
+	  win32/org_lwjgl_input_Mouse.cpp, win32/org_lwjgl_Math.cpp,
+	  win32/org_lwjgl_opengl_BaseGL.cpp: Initial import
+
+2002-08-11 13:49  cix_foo
+
+	* src/native/: common/org_lwjgl_Audio.h,
+	  common/org_lwjgl_Display.h, common/org_lwjgl_input_Keyboard.h,
+	  common/org_lwjgl_Math.h, common/org_lwjgl_input_Mouse.h,
+	  common/org_lwjgl_opengl_BaseGL.h,
+	  common/org_lwjgl_opengl_CoreGL11.h,
+	  common/org_lwjgl_opengl_CoreGL12.h,
+	  common/org_lwjgl_opengl_CoreGL13.h,
+	  common/org_lwjgl_opengl_CoreGL14.h, common/org_lwjgl_opengl_GL.h,
+	  common/org_lwjgl_opengl_GLU.h, common/org_lwjgl_opengl_GLUT.h,
+	  common/org_lwjgl_Sys.h, win32/extgl.c, win32/LWJGL.cpp,
+	  win32/extgl.h, win32/org_lwjgl_Audio.cpp,
+	  win32/org_lwjgl_Display.cpp, win32/org_lwjgl_input_Keyboard.cpp,
+	  win32/org_lwjgl_input_Mouse.cpp, win32/org_lwjgl_Math.cpp,
+	  win32/org_lwjgl_opengl_BaseGL.cpp: Initial revision
+
+2002-08-11 13:36  cix_foo
+
+	* src/java/org/lwjgl/: Math.java, StructBuffer.java, Sys.java,
+	  input/Keyboard.java, opengl/BaseGL.java, opengl/CoreGL11.java,
+	  opengl/GLUConstants.java: StructBuffer added. Numerous changes to
+	  timing code in Sys.
+
+2002-08-09 21:42  cix_foo
+
+	* src/java/org/lwjgl/opengl/: CoreGL11.java,
+	  CoreGL11Constants.java, CoreGL12.java, CoreGL12Constants.java,
+	  CoreGL13.java, CoreGL13Constants.java, CoreGL14.java,
+	  CoreGL14Constants.java, GLU.java, GLUT.java: Added GL constants
+	  and GLs 1.1, 1.2, 1.3
+
+2002-08-09 20:50  cix_foo
+
+	* src/java/org/lwjgl/: Display.java, Sys.java, input/Keyboard.java,
+	  opengl/CoreGL14.java, opengl/GLU.java, opengl/GLUConstants.java,
+	  opengl/GLUT.java, opengl/GLUTConstants.java: Added GLU and GLUT,
+	  and core GL commands
+
+2002-08-09 12:56  cix_foo
+
+	* src/java/org/lwjgl/: Audio.java, Display.java, DisplayMode.java,
+	  Math.java, Sys.java, input/Keyboard.java, input/Mouse.java,
+	  opengl/BaseGL.java, opengl/CoreGL14.java,
+	  opengl/CoreGL14Constants.java, opengl/GL.java,
+	  opengl/GLConstants.java, opengl/OpenGLException.java,
+	  vector/Matrix2f.java, vector/Matrix3f.java, vector/Matrix4f.java,
+	  vector/Vector2f.java, vector/Vector3f.java, vector/Vector4f.java:
+	  First code import.
+
+2002-08-06 17:10  cix_foo
+
+	* manifest.txt, doc/manifest.txt, src/manifest.txt,
+	  src/java/manifest.txt, src/native/manifest.txt,
+	  src/native/common/manifest.txt, src/native/win32/manifest.txt:
+	  Initial import
+
+2002-08-06 17:10  cix_foo
+
+	* manifest.txt, doc/manifest.txt, src/manifest.txt,
+	  src/java/manifest.txt, src/native/manifest.txt,
+	  src/native/common/manifest.txt, src/native/win32/manifest.txt:
+	  Initial revision
+
+2002-07-23 22:11  root
+
+	* CVSROOT/: checkoutlist, commitinfo, config, cvswrappers,
+	  editinfo, loginfo, modules, notify, rcsinfo, taginfo, verifymsg:
+	  initial checkin
+

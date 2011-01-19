@@ -1,0 +1,1171 @@
+2002-12-23 22:50  gregorypierce
+
+	* src/native/macosx/org_lwjgl_input_Keyboard.cpp: Started trimming
+	  the OSX keyboard interface to what OSX supports in Carbon. Won't
+	  use InputSprocket because there appears to be no support plan
+	  from Apple.
+
+2002-12-23 14:23  cix_foo
+
+	* src/native/win32/org_lwjgl_Display.cpp: Fixed?
+
+2002-12-23 12:31  elias_naur
+
+	* src/native/: common/extgl.c, common/extgl.h,
+	  linux/org_lwjgl_Display.cpp: Added more intelligent pixel format
+	  chooser in linux
+
+2002-12-22 23:42  matzon
+
+	* src/java/org/lwjgl/test/: openal/MovingSoundTest.java,
+	  opengl/Game.java, opengl/Grass.java: fix: selection of display
+	  mode made "better"
+
+2002-12-22 22:44  matzon
+
+	* src/native/common/org_lwjgl_openal_BaseAL.cpp: fix: more verbose
+	  when failing in creating oal
+
+2002-12-22 22:44  matzon
+
+	* src/native/common/extal.c: fix: using JNI_TRUE/FALSE
+
+2002-12-22 22:43  matzon
+
+	* src/java/org/lwjgl/test/openal/StressTest.java: fix: now using
+	  ding.wav 10 times, instead of 10 different wave files
+
+2002-12-22 21:58  elias_naur
+
+	* src/native/linux/org_lwjgl_Display.cpp: Updated linux to new
+	  display mode behavior
+
+2002-12-22 21:49  matzon
+
+	* src/java/org/lwjgl/test/: openal/MovingSoundTest.java,
+	  opengl/Game.java, opengl/Grass.java: fix: updated to new display
+	  creation
+
+2002-12-22 21:31  elias_naur
+
+	* src/native/win32/org_lwjgl_Display.cpp: Fixed win32 display bug
+
+2002-12-22 21:19  elias_naur
+
+	* src/native/linux/org_lwjgl_Sys.cpp: Added Sys.alert to linux
+
+2002-12-22 20:53  cix_foo
+
+	* src/java/org/lwjgl/vector/Vector.java: Now throws an assertion
+	  error if you try to normalise a zero length vector
+
+2002-12-22 20:52  cix_foo
+
+	* src/native/win32/: org_lwjgl_Display.cpp, org_lwjgl_Sys.cpp:
+	  Alert code & new displaymode code
+
+2002-12-22 20:52  cix_foo
+
+	* src/native/common/org_lwjgl_Sys.h: Alert code
+
+2002-12-22 20:52  cix_foo
+
+	* src/java/org/lwjgl/: Display.java, DisplayMode.java: New
+	  DisplayMode code
+
+2002-12-22 20:25  lholden
+
+	* src/native/: AUTHORS, COPYING, ChangeLog, INSTALL, NEWS, README:
+	  standard autoconf stuff... we dont need
+
+2002-12-22 01:54  matzon
+
+	* build.xml: add: cvs build target
+
+2002-12-22 00:25  elias_naur
+
+	* build.xml: Fixed .so file entries in build.xml
+
+2002-12-22 00:00  matzon
+
+	* doc/manifest.txt: die die DIE!!!
+
+2002-12-21 23:55  matzon
+
+	* manifest.txt, src/native/manifest.txt,
+	  src/native/common/manifest.txt, src/native/win32/manifest.txt:
+	  die die DIE!!!
+
+2002-12-21 23:52  matzon
+
+	* build.xml: initial stab at ant build script
+
+2002-12-21 13:59  matzon
+
+	* src/java/org/lwjgl/test/opengl/Grass.java: cr/lf fix
+
+2002-12-21 13:49  elias_naur
+
+	* src/java/org/lwjgl/test/opengl/Grass.java: Cleaned up Grass.java
+
+2002-12-21 13:39  matzon
+
+	* src/java/org/lwjgl/test/input/JoystickTest.java: beautification
+
+2002-12-21 13:37  matzon
+
+	* src/java/org/lwjgl/: Display.java, DisplayMode.java, Math.java,
+	  Sys.java, input/GamePad.java, input/Joystick.java,
+	  input/Keyboard.java, input/Mouse.java, openal/AL.java,
+	  openal/ALC.java, openal/ALCcontext.java, openal/ALCdevice.java,
+	  openal/ALConstants.java, openal/BaseAL.java,
+	  openal/BaseALConstants.java, openal/CoreAL.java,
+	  openal/OpenALException.java, openal/eax/BaseEAX.java,
+	  openal/eax/BaseEAXConstants.java, openal/eax/CoreEAX.java,
+	  openal/eax/EAX.java, openal/eax/EAXBufferProperties.java,
+	  openal/eax/EAXListenerProperties.java, opengl/BaseGL.java,
+	  opengl/CoreGL.java, opengl/CoreGLConstants.java, opengl/GL.java,
+	  opengl/GLConstants.java, opengl/GLU.java,
+	  opengl/GLUConstants.java, opengl/OpenGLException.java,
+	  test/openal/ALCTest.java, test/openal/ALTest.java,
+	  test/openal/BasicTest.java, test/openal/EAXTest.java,
+	  test/openal/MovingSoundTest.java, test/openal/PlayTest.java,
+	  test/openal/PlayTestMemory.java,
+	  test/openal/SourceLimitTest.java, test/openal/StressTest.java,
+	  test/openal/WaveData.java, test/opengl/Game.java,
+	  vector/Matrix.java, vector/Matrix2f.java, vector/Matrix3f.java,
+	  vector/Matrix4f.java, vector/Vector.java, vector/Vector2f.java,
+	  vector/Vector3f.java, vector/Vector4f.java: Lightweight actually
+	  spelled right!
+
+2002-12-21 13:10  matzon
+
+	* doc/tutorial/openal_basics.html,
+	  website/documents/tutorials/openal/openal_basics.html: up to date
+	  version
+
+2002-12-21 13:09  matzon
+
+	* doc/CREDITS, website/documents/credits.html: credit due, where
+	  credit is due
+
+2002-12-21 13:08  matzon
+
+	* doc/LICENSE: Lightweight actually spelled right!
+
+2002-12-21 13:07  matzon
+
+	* src/java/org/lwjgl/: input/Joystick.java,
+	  openal/eax/BaseEAX.java, opengl/GLU.java: javadoc fixes
+
+2002-12-21 12:35  matzon
+
+	* src/: manifest.txt, java/manifest.txt: die die DIE!!!
+
+2002-12-21 00:00  gregorypierce
+
+	* src/: java/org/lwjgl/vector/Vector2f.java,
+	  java/org/lwjgl/vector/Vector3f.java,
+	  java/org/lwjgl/vector/Vector4f.java,
+	  native/macosx/org_lwjgl_Display.cpp,
+	  native/macosx/org_lwjgl_input_GamePad.cpp: no message
+
+2002-12-20 22:20  matzon
+
+	* content/bullet.psd, content/linkbar.psd, content/logo.psd,
+	  content/miscellaneous.psd, content/tutorialsbar.psd,
+	  website/index.html, website/documents/credits.html,
+	  website/documents/index.html, website/documents/license.html,
+	  website/documents/links.html,
+	  website/documents/openal_c-to-java.html,
+	  website/documents/readme.html,
+	  website/documents/tutorials/intro.html,
+	  website/documents/tutorials/openal/openal_basics.html,
+	  website/documents/tutorials/opengl/skeleton_code.html,
+	  website/images/bullet.png, website/images/cvs.png,
+	  website/images/cvs_selected.png, website/images/discussion.png,
+	  website/images/discussion_selected.png,
+	  website/images/documents.png,
+	  website/images/documents_selected.png,
+	  website/images/download.png,
+	  website/images/download_selected.png, website/images/input.png,
+	  website/images/links.png, website/images/links_selected.png,
+	  website/images/logo.png, website/images/lwjgl.png,
+	  website/images/miscellaneous.png, website/images/openal.png,
+	  website/images/opengl.png, website/images/sourceforge.png,
+	  website/images/sourceforge_selected.png,
+	  website/images/vector.png: website files
+
+2002-12-20 22:19  matzon
+
+	* content/about.xml, content/contact.xml, content/credits.xml,
+	  content/download.xml, content/license.xml, content/navbar.xml,
+	  content/simple.xsl, content/source.xml, website/about.html,
+	  website/contact.html, website/credits.html,
+	  website/download.html, website/license.html, website/navbar.html,
+	  website/simple.css, website/source.html, website/title.png:
+	  removing not used files
+
+2002-12-20 21:47  matzon
+
+	* src/java/org/lwjgl/test/opengl/Grass.java: fix: package statment
+	  was fucked
+
+2002-12-20 21:44  matzon
+
+	* src/java/org/lwjgl/test/openal/MovingSoundTest.java: fix: new
+	  display creation
+
+2002-12-19 23:18  matzon
+
+	* src/java/org/lwjgl/test/openal/MovingSoundTest.java: yet another
+	  test
+
+2002-12-19 17:35  elias_naur
+
+	* src/: java/org/lwjgl/Display.java,
+	  java/org/lwjgl/opengl/BaseGL.java,
+	  java/org/lwjgl/opengl/CoreGL.java, java/org/lwjgl/opengl/GL.java,
+	  java/org/lwjgl/test/opengl/Game.java,
+	  java/org/lwjgl/test/opengl/Grass.java,
+	  native/common/org_lwjgl_Display.h,
+	  native/common/org_lwjgl_opengl_BaseGL.h,
+	  native/linux/org_lwjgl_Display.cpp,
+	  native/linux/org_lwjgl_opengl_BaseGL.cpp,
+	  native/win32/org_lwjgl_Display.cpp,
+	  native/win32/org_lwjgl_input_Keyboard.cpp,
+	  native/win32/org_lwjgl_input_Mouse.cpp,
+	  native/win32/org_lwjgl_opengl_BaseGL.cpp: Moved BaseGL
+	  constructor parameters to Display
+
+2002-12-18 22:57  lholden
+
+	* src/java/org/lwjgl/input/Mouse.java:
+	  Commented out the enableBuffer methods. Looks like these methods
+	  wont be implemented in the JNI side, so they should not exist in
+	  the API.
+
+2002-12-18 21:32  elias_naur
+
+	* src/native/common/Makefile.am: Removed ALUT from automake
+
+2002-12-18 18:09  matzon
+
+	* src/native/common/extal.h: fix: removed alut related stuff
+
+2002-12-18 17:53  matzon
+
+	* src/: java/org/lwjgl/test/openal/ALTest.java,
+	  java/org/lwjgl/test/openal/ALUTTest.java,
+	  java/org/lwjgl/test/openal/BasicTest.java,
+	  java/org/lwjgl/test/openal/PlayTest.java,
+	  java/org/lwjgl/test/openal/PlayTestMemory.java,
+	  java/org/lwjgl/openal/ALUT.java,
+	  java/org/lwjgl/openal/ALUTLoadWAVData.java,
+	  native/common/org_lwjgl_openal_ALUT.cpp,
+	  native/common/org_lwjgl_openal_ALUT.h: mod: ALUT removed, caused
+	  waaay to many headaches
+
+2002-12-18 17:51  matzon
+
+	* src/java/org/lwjgl/test/openal/StressTest.java: add: simple
+	  stress test for oal
+
+2002-12-18 17:51  matzon
+
+	* src/java/org/lwjgl/test/openal/WaveData.java: add: new class for
+	  loading wave files, in preperation of removing ALUT
+
+2002-12-18 17:40  elias_naur
+
+	* src/native/win32/: LWJGL.cpp, org_lwjgl_Display.cpp: Fixed the
+	  RegisterClass call
+
+2002-12-18 04:38  gregorypierce
+
+	* src/native/macosx/: org_lwjgl_Sys.cpp,
+	  org_lwjgl_input_Joystick.cpp, org_lwjgl_input_Keyboard.cpp,
+	  org_lwjgl_input_Mouse.cpp, org_lwjgl_opengl_BaseGL.cpp: no
+	  message
+
+2002-12-18 04:20  gregorypierce
+
+	* src/native/macosx/org_lwjgl_input_GamePad.cpp: no message
+
+2002-12-17 20:07  cix_foo
+
+	* src/native/common/org_lwjgl_openal_ALUT.cpp: Changed quotes to
+	  angle brackets for alut.h inclusion
+
+2002-12-15 23:24  matzon
+
+	* src/java/org/lwjgl/input/Joystick.java: beautification
+
+2002-12-15 23:12  cix_foo
+
+	* src/java/org/lwjgl/Sys.java: Added DEBUG constant
+
+2002-12-15 23:09  matzon
+
+	* src/java/org/lwjgl/test/openal/SourceLimitTest.java: fix: even
+	  more beautification!
+
+2002-12-15 23:05  matzon
+
+	* src/java/org/lwjgl/test/openal/SourceLimitTest.java: fix: small
+	  beautification
+
+2002-12-15 23:01  matzon
+
+	* src/java/org/lwjgl/test/openal/SourceLimitTest.java: simple test
+	  for testing the number of available sources
+
+2002-12-14 16:23  elias_naur
+
+	* src/native/win32/org_lwjgl_Display.cpp: Added a standard system
+	  error output
+
+2002-12-14 14:52  elias_naur
+
+	* src/native/common/extal.h: Even more linux oal fixes
+
+2002-12-14 14:44  elias_naur
+
+	* src/native/common/: extal.c, extal.h: More oal linux fixes
+
+2002-12-14 14:37  elias_naur
+
+	* src/native/common/: extal.c, extal.h, org_lwjgl_openal_ALUT.cpp:
+	  Fixed oal dynamic loading on linux
+
+2002-12-14 13:54  matzon
+
+	* src/native/common/: org_lwjgl_openal_ALUT.cpp,
+	  org_lwjgl_openal_ALUT.h: removed dynamic loading, since alut is
+	  statically linked (doh!)
+
+2002-12-14 13:49  matzon
+
+	* src/native/common/: checkALerror.h, extal.c, extal.h,
+	  org_lwjgl_openal_ALC.cpp, org_lwjgl_openal_ALUT.cpp,
+	  org_lwjgl_openal_ALUT.h, org_lwjgl_openal_BaseAL.cpp,
+	  org_lwjgl_openal_CoreAL.cpp, org_lwjgl_openal_eax_CoreEAX.cpp:
+	  dynamic loading of openal
+
+2002-12-14 13:44  matzon
+
+	* src/java/org/lwjgl/test/openal/: ALCTest.java, ALUTTest.java,
+	  EAXTest.java, PlayTest.java, PlayTestMemory.java: fix: no more
+	  using alutInit or alutExit
+
+2002-12-14 13:43  matzon
+
+	* src/java/org/lwjgl/test/openal/BasicTest.java: add: new alExit
+	  method alutExit, which has been removed
+
+2002-12-14 13:42  matzon
+
+	* src/java/org/lwjgl/openal/ALUT.java: rem: alutInit and exit gone
+
+2002-12-14 13:38  matzon
+
+	* src/java/org/lwjgl/openal/ALUT.java: no message
+
+2002-12-12 23:04  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_BaseGL.cpp: Added more
+	  pixelformat tests to win32
+
+2002-12-12 21:06  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_BaseGL.cpp: Moved print of
+	  extensions to debug version
+
+2002-12-12 21:04  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: Removed a printf
+
+2002-12-12 20:51  elias_naur
+
+	* src/native/: linux/org_lwjgl_input_Mouse.cpp,
+	  win32/org_lwjgl_input_Mouse.cpp: Fixed a mouse button state array
+	  bug
+
+2002-12-11 11:14  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_BaseGL.cpp: Added
+	  ReleaseContext to win32
+
+2002-12-11 08:26  elias_naur
+
+	* src/native/linux/org_lwjgl_Display.cpp: Minor fix to Display.cpp
+
+2002-12-11 08:16  elias_naur
+
+	* src/native/: config.h.in, configure.in, common/checkGLerror.h,
+	  common/extgl.c, common/extgl.h, common/org_lwjgl_opengl_GLU.cpp,
+	  linux/org_lwjgl_Display.cpp, win32/org_lwjgl_opengl_BaseGL.cpp:
+	  Switched to dynamic loading of gl functions and libs
+
+2002-12-04 16:17  elias_naur
+
+	* src/native/linux/org_lwjgl_Display.cpp: Fixed a GL context
+	  creation bug
+
+2002-11-30 22:43  elias_naur
+
+	* src/native/linux/Makefile.elias_naur: Removed Makefile.elias_naur
+
+2002-11-30 22:36  lholden
+
+	* src/native/: autogen.sh, configure.in:
+	  ac*.m4 files are no longer in cvs
+
+2002-11-30 22:35  lholden
+
+	* src/native/: acinclude.m4, aclocal.m4, stamp-h.in:
+	  Files are automatically generated
+
+2002-11-30 22:25  elias_naur
+
+	* src/native/: acinclude.m4, aclocal.m4,
+	  linux/org_lwjgl_input_Mouse.cpp: Added the XWarpointer call again
+	  - this time centering the pointer
+
+2002-11-30 04:40  lholden
+
+	* src/native/common/org_lwjgl_opengl_GLU.cpp:
+	  added GLUQuadricCallbacks::clear(); to quadricDelete
+
+2002-11-30 04:28  lholden
+
+	* src/: java/org/lwjgl/opengl/GLU.java, native/acinclude.m4,
+	  native/aclocal.m4, native/common/org_lwjgl_opengl_GLU.cpp,
+	  native/common/org_lwjgl_opengl_GLU.h:
+	  GLU: added quadricCallback(...) methods
+
+	  GLUQuadricCallbacks: Should now be fully implemented
+
+	  removed files: See the README.txt file for more information.
+
+2002-11-30 01:19  lholden
+
+	* src/native/: acinclude.m4, aclocal.m4, configure.in,
+	  common/Makefile.am:
+	  the callback classes now compile and link with the library.
+	  However it still is not usable =/
+
+2002-11-29 12:51  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Mouse.cpp: Reverted Luke's
+	  XWarpPointer change
+
+2002-11-29 09:33  lholden
+
+	* src/native/: aclocal.m4, dummy.c, dummy.cpp: [no log message]
+
+2002-11-29 09:29  lholden
+
+	* src/native/: Makefile.am, acinclude.m4, aclocal.m4, autogen.sh,
+	  configure.in, linux/org_lwjgl_input_Mouse.cpp:
+	  BaseWindow: We are now grabbing the mouse. Doing this because on
+	  linux, you need to grab and move the pointer or else you can
+	  scroll away from your full screen program.
+
+	  org_lwjgl_input_Mouse.cpp: When in full screen, the pointer
+	  should warp to the corner of the display. This fixes a few
+	  issues.
+
+	  Also added a stub for nEnableBuffer, with a fixme message. This
+	  function does not seem to be implemented in either the linux or
+	  win32 source...  but exists in the java Mouse class. The stub
+	  keeps programs from crashing.
+
+	  ltmain.sh: Fixed a bug in libtool, where it uses gcc vs c++ for
+	  linking librarys built in c++. This fixes a missing symbol issue.
+
+	  configure.in: Made a few small changes.
+
+2002-11-29 07:06  lholden
+
+	* src/native/common/Makefile.am:
+	  callbacks: The start of my callback implementation.
+
+	  Makefile.am: small fix for the CPPFLAGS variable
+
+2002-11-28 23:44  lholden
+
+	* src/native/configure.in:
+	  small update for the X11 path
+
+2002-11-28 23:40  lholden
+
+	* src/native/: AUTHORS, COPYING, ChangeLog, INSTALL, Makefile.am,
+	  NEWS, README, acinclude.m4, aclocal.m4, autogen.sh, config.h.in,
+	  configure.in, dummy.c, stamp-h.in, subdirs, common/Makefile.am,
+	  linux/Makefile.am:
+	  initial autoconf/automake support =)
+
+2002-11-28 23:35  lholden
+
+	* src/native/linux/: Makefile, Makefile.elias_naur:
+	  Renamed... prepping for autoconf =)
+
+2002-11-28 23:06  matzon
+
+	* src/native/common/checkALerror.h: fix: make OpenAL compile, by
+	  not including extal.h in files - somekind of circular dependency
+	  ?
+
+2002-11-28 22:49  elias_naur
+
+	* src/native/linux/: org_lwjgl_Display.cpp,
+	  org_lwjgl_input_Mouse.cpp: Added pointer warping to keep pointer
+	  in center of the display
+
+2002-11-28 21:25  matzon
+
+	* src/native/common/: org_lwjgl_openal_ALC.cpp,
+	  org_lwjgl_openal_ALUT.cpp, org_lwjgl_openal_CoreAL.cpp,
+	  org_lwjgl_openal_eax_CoreEAX.cpp: fix: make OpenAL compile, by
+	  not including extal.h in files, but CoreEAX - somekind of
+	  circular dependency ?
+
+2002-11-28 20:36  lholden
+
+	* src/native/common/extal.h: [no log message]
+
+2002-11-28 20:35  lholden
+
+	* src/native/common/extal.h:
+	  try, try, try again =)
+
+2002-11-28 20:17  lholden
+
+	* src/native/common/extal.h:
+	  second try on getting things working proper on win32
+
+2002-11-28 17:45  lholden
+
+	* src/native/common/extal.h:
+
+	  trying to fix problem with compiling on windows
+
+2002-11-28 10:29  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Mouse.cpp: Mouse.cpp fix
+
+2002-11-27 23:34  matzon
+
+	* src/java/org/lwjgl/opengl/: CoreGL.java, GL.java: fix: removed
+	  not needed imports (makes eclipse bitch less)
+
+2002-11-27 07:28  lholden
+
+	* src/native/common/org_lwjgl_opengl_GLU.h:
+	  generated from the java source =)
+
+2002-11-27 06:54  lholden
+
+	* src/: java/org/lwjgl/opengl/GLU.java,
+	  native/common/org_lwjgl_opengl_GLU.cpp,
+	  native/common/org_lwjgl_opengl_GLU.h:
+	  GLU: Added full quadrics support (except gluQuadricCallback)
+
+	  Quadrics.java: port of NeHe lesson18: Quadrics
+
+2002-11-27 04:01  lholden
+
+	* src/native/common/extal.h:
+	  Modified so openal compiles on linux again
+
+2002-11-27 03:34  lholden
+
+	* src/native/common/extal.c:
+	  fixed missing newline
+
+2002-11-27 03:34  lholden
+
+	* src/native/common/extal.h:
+	  fixed lack of newline
+
+2002-11-27 00:29  cix_foo
+
+	* src/native/common/: org_lwjgl_openal_ALUT.cpp,
+	  org_lwjgl_openal_CoreAL.cpp, org_lwjgl_openal_eax_CoreEAX.cpp:
+	  Fixed include error
+
+2002-11-27 00:26  cix_foo
+
+	* src/native/common/: checkALerror.h, org_lwjgl_openal_ALC.cpp:
+	  Fixed include error
+
+2002-11-27 00:22  cix_foo
+
+	* src/native/: common/org_lwjgl_Math_MatrixOpAdd_MatrixOpSafe.h,
+	  common/org_lwjgl_Math_MatrixOpMultiply_MatrixOpSafe.h,
+	  common/org_lwjgl_Math_MatrixOpNegate_MatrixOpDirect.h,
+	  common/org_lwjgl_Math_MatrixOpSubtract_MatrixOpDirect.h,
+	  common/org_lwjgl_input_Joystick.h,
+	  common/org_lwjgl_Math_MatrixOpAdd_MatrixOpDirect.h,
+	  common/org_lwjgl_Math_MatrixOpCopy_MatrixOpDirect.h,
+	  common/org_lwjgl_Math_MatrixOpCopy_MatrixOpSafe.h,
+	  common/org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.h,
+	  common/org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.h,
+	  common/org_lwjgl_Math_MatrixOpMultiply_MatrixOpDirect.h,
+	  common/org_lwjgl_Math_MatrixOpNegate_MatrixOpSafe.h,
+	  common/org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.h,
+	  common/org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.h,
+	  common/org_lwjgl_Math_MatrixOpSubtract_MatrixOpSafe.h,
+	  common/org_lwjgl_input_GamePad.h,
+	  common/org_lwjgl_opengl_CoreGL.h,
+	  win32/org_lwjgl_input_GamePad.cpp,
+	  win32/org_lwjgl_input_Joystick.cpp: *** keyword substitution
+	  change ***
+
+2002-11-26 21:07  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.cpp: Increased poll
+	  buffer size
+
+2002-11-26 21:07  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.cpp: Added poll() logic
+	  so behavior looks like DX
+
+2002-11-26 18:34  cix_foo
+
+	* src/native/common/checkGLerror.h: *** keyword substitution change
+	  ***
+
+2002-11-26 09:15  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.cpp: Reverted the
+	  Keyboard.poll() change
+
+2002-11-26 05:58  lholden
+
+	* src/native/linux/org_lwjgl_Sys.cpp:
+	  Removed the native time readout from queryTime().  I think
+	  elias_naur was trying to annoy me to death with time updates
+	  every 0.001 seconds =)
+
+2002-11-26 04:30  lholden
+
+	* src/native/linux/org_lwjgl_Display.cpp:
+	  Added a fix for when GLX_ALPHA_SIZE cant be set (I think this
+	  happens when display depth is below 24.)
+
+	  There might be a better way to handle this... but this lets lwjgl
+	  work for me. =)
+
+2002-11-25 23:10  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.cpp: Made Keyboard.poll
+	  behave like win32 version
+
+2002-11-25 22:50  matzon
+
+	* src/native/common/extal.h: fix: <al.h> -> <AL/al.h>
+
+2002-11-25 21:35  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_BaseGL.cpp: Dump extension info
+	  with debug library
+
+2002-11-25 18:04  elias_naur
+
+	* src/: java/org/lwjgl/opengl/BaseGL.java,
+	  native/common/org_lwjgl_opengl_BaseGL.h,
+	  native/linux/org_lwjgl_opengl_BaseGL.cpp: Added releaseContext to
+	  BaseGL.java (and native for linux)
+
+2002-11-25 16:32  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java: Added keycode mapping for
+	  enter and tab in Keyboard.java
+
+2002-11-25 15:57  elias_naur
+
+	* src/native/linux/: Makefile, org_lwjgl_input_Keyboard.cpp:
+	  Remapped some keys
+
+2002-11-25 14:52  elias_naur
+
+	* src/native/: common/org_lwjgl_openal_ALC.cpp,
+	  common/org_lwjgl_openal_ALUT.cpp,
+	  common/org_lwjgl_openal_BaseAL.cpp,
+	  common/org_lwjgl_openal_CoreAL.cpp,
+	  common/org_lwjgl_openal_eax_BaseEAX.cpp,
+	  common/org_lwjgl_openal_eax_CoreEAX.cpp,
+	  common/org_lwjgl_openal_eax_EAXBufferProperties.cpp,
+	  common/org_lwjgl_openal_eax_EAXListenerProperties.cpp,
+	  linux/org_lwjgl_openal_ALC.cpp, linux/org_lwjgl_openal_ALUT.cpp,
+	  linux/org_lwjgl_openal_BaseAL.cpp,
+	  linux/org_lwjgl_openal_CoreAL.cpp,
+	  linux/org_lwjgl_openal_eax_BaseEAX.cpp,
+	  linux/org_lwjgl_openal_eax_CoreEAX.cpp,
+	  linux/org_lwjgl_openal_eax_EAXBufferProperties.cpp,
+	  linux/org_lwjgl_openal_eax_EAXListenerProperties.cpp,
+	  win32/org_lwjgl_openal_ALC.cpp, win32/org_lwjgl_openal_ALUT.cpp,
+	  win32/org_lwjgl_openal_BaseAL.cpp,
+	  win32/org_lwjgl_openal_CoreAL.cpp,
+	  win32/org_lwjgl_openal_eax_BaseEAX.cpp,
+	  win32/org_lwjgl_openal_eax_CoreEAX.cpp,
+	  win32/org_lwjgl_openal_eax_EAXBufferProperties.cpp,
+	  win32/org_lwjgl_openal_eax_EAXListenerProperties.cpp: Moved
+	  OpenAL to common
+
+2002-11-25 14:39  elias_naur
+
+	* src/native/: common/checkALerror.h, common/extal.c,
+	  linux/checkALerror.h, linux/extal.c, win32/extal.c: Moved AL
+	  utility files to common
+
+2002-11-25 14:36  elias_naur
+
+	* src/native/: common/org_lwjgl_opengl_GLU.cpp,
+	  linux/org_lwjgl_opengl_GLU.cpp, win32/org_lwjgl_opengl_GLU.cpp:
+	  Moved GLU.cpp to common
+
+2002-11-25 14:33  elias_naur
+
+	* src/native/common/: org_lwjgl_opengl_CoreGL.cpp,
+	  org_lwjgl_opengl_GL.cpp: Moved org_lwjgl_opengl_GL.cpp to common
+	  (again)
+
+2002-11-25 14:32  elias_naur
+
+	* src/native/: linux/org_lwjgl_opengl_CoreGL.cpp,
+	  linux/org_lwjgl_opengl_GL.cpp, win32/org_lwjgl_opengl_CoreGL.cpp,
+	  win32/org_lwjgl_opengl_GL.cpp: Moved org_lwjgl_opengl_GL.cpp to
+	  common
+
+2002-11-25 14:18  elias_naur
+
+	* src/native/: common/MatrixOpCommon.cpp, common/MatrixOpCommon.h,
+	  common/org_lwjgl_Math.cpp,
+	  common/org_lwjgl_Math_MatrixOpAdd_MatrixOpDirect.cpp,
+	  common/org_lwjgl_Math_MatrixOpAdd_MatrixOpSafe.cpp,
+	  common/org_lwjgl_Math_MatrixOpCopy_MatrixOpDirect.cpp,
+	  common/org_lwjgl_Math_MatrixOpCopy_MatrixOpSafe.cpp,
+	  common/org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  common/org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp,
+	  common/org_lwjgl_Math_MatrixOpMultiply_MatrixOpDirect.cpp,
+	  common/org_lwjgl_Math_MatrixOpMultiply_MatrixOpSafe.cpp,
+	  common/org_lwjgl_Math_MatrixOpNegate_MatrixOpDirect.cpp,
+	  common/org_lwjgl_Math_MatrixOpNegate_MatrixOpSafe.cpp,
+	  common/org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.cpp,
+	  common/org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.cpp,
+	  common/org_lwjgl_Math_MatrixOpSubtract_MatrixOpDirect.cpp,
+	  common/org_lwjgl_Math_MatrixOpSubtract_MatrixOpSafe.cpp,
+	  linux/Makefile, linux/MatrixOpCommon.cpp, linux/MatrixOpCommon.h,
+	  linux/org_lwjgl_Math.cpp,
+	  linux/org_lwjgl_Math_MatrixOpAdd_MatrixOpDirect.cpp,
+	  linux/org_lwjgl_Math_MatrixOpAdd_MatrixOpSafe.cpp,
+	  linux/org_lwjgl_Math_MatrixOpCopy_MatrixOpDirect.cpp,
+	  linux/org_lwjgl_Math_MatrixOpCopy_MatrixOpSafe.cpp,
+	  linux/org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  linux/org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp,
+	  linux/org_lwjgl_Math_MatrixOpMultiply_MatrixOpDirect.cpp,
+	  linux/org_lwjgl_Math_MatrixOpMultiply_MatrixOpSafe.cpp,
+	  linux/org_lwjgl_Math_MatrixOpNegate_MatrixOpDirect.cpp,
+	  linux/org_lwjgl_Math_MatrixOpNegate_MatrixOpSafe.cpp,
+	  linux/org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.cpp,
+	  linux/org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.cpp,
+	  linux/org_lwjgl_Math_MatrixOpSubtract_MatrixOpDirect.cpp,
+	  linux/org_lwjgl_Math_MatrixOpSubtract_MatrixOpSafe.cpp,
+	  win32/MatrixOpCommon.cpp, win32/MatrixOpCommon.h,
+	  win32/org_lwjgl_Math.cpp,
+	  win32/org_lwjgl_Math_MatrixOpAdd_MatrixOpDirect.cpp,
+	  win32/org_lwjgl_Math_MatrixOpAdd_MatrixOpSafe.cpp,
+	  win32/org_lwjgl_Math_MatrixOpCopy_MatrixOpDirect.cpp,
+	  win32/org_lwjgl_Math_MatrixOpCopy_MatrixOpSafe.cpp,
+	  win32/org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  win32/org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp,
+	  win32/org_lwjgl_Math_MatrixOpMultiply_MatrixOpDirect.cpp,
+	  win32/org_lwjgl_Math_MatrixOpMultiply_MatrixOpSafe.cpp,
+	  win32/org_lwjgl_Math_MatrixOpNegate_MatrixOpDirect.cpp,
+	  win32/org_lwjgl_Math_MatrixOpNegate_MatrixOpSafe.cpp,
+	  win32/org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.cpp,
+	  win32/org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.cpp,
+	  win32/org_lwjgl_Math_MatrixOpSubtract_MatrixOpDirect.cpp,
+	  win32/org_lwjgl_Math_MatrixOpSubtract_MatrixOpSafe.cpp: Moved
+	  Math functions to common
+
+2002-11-25 07:55  lholden
+
+	* .cvsignore:
+
+	  put my cvsignore changes here =)
+
+2002-11-25 07:03  lholden
+
+	* CVSROOT/cvsignore:
+
+	  ignore all the stuff that should not exist in cvs =) *.class
+	  *.class~ *.java~ .nbattrs
+
+2002-11-25 06:28  lholden
+
+	* CVSROOT/cvswrappers:
+
+	  C  ignoring *.jar, *.gif, *.png, *.  -
+
+2002-11-25 01:09  elias_naur
+
+	* src/native/linux/:
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.cpp: Synced math
+	  operations with win32
+
+2002-11-24 23:46  cix_foo
+
+	* src/native/win32/:
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.cpp: Fixed array
+	  allocation syntax error and removed std namespace for VC6.0 users
+
+2002-11-24 20:35  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java: Removed PRINTSCREEN,
+	  PAGEUP and PAGEDOWN again - need to remap instead
+
+2002-11-24 20:14  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_CoreGL.cpp: Added more missing
+	  native GL functions
+
+2002-11-24 18:13  cix_foo
+
+	* src/native/win32/org_lwjgl_opengl_BaseGL.cpp: Fixed compile error
+	  since changing to platform independent glext.c
+
+2002-11-24 18:12  cix_foo
+
+	* src/native/win32/org_lwjgl_Display.cpp: Fixed display frequency
+	  problems
+
+2002-11-24 18:08  cix_foo
+
+	* src/java/org/lwjgl/opengl/GL.java: Fixed extension finding code
+
+2002-11-24 15:35  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java: Added
+	  Keyboard.KEY_PRINTSCREEN
+
+2002-11-24 15:27  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_CoreGL.cpp: Added linux support
+	  for additional GL functions
+
+2002-11-24 14:21  elias_naur
+
+	* src/native/common/org_lwjgl_opengl_CoreGL.h: Created new jni
+	  header for CoreGL
+
+2002-11-24 14:17  elias_naur
+
+	* src/java/org/lwjgl/opengl/: CoreGLConstants.java, CoreGL.java:
+	  Added missing GL constants and functions
+
+2002-11-24 13:01  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java: Added Keyboard.KEY_PAGEUP
+	  Keyboard.KEY_PAGEDOWN
+
+2002-11-22 22:49  matzon
+
+	* src/native/win32/org_lwjgl_input_Joystick.cpp: fix: now copies
+	  buttoncount buttons, instead of 4 (doh!)
+
+2002-11-22 12:35  elias_naur
+
+	* src/native/linux/org_lwjgl_Sys.cpp: Using linux soft realtime
+	  priority for Sys.REALTIME_PRIORITY
+
+2002-11-22 12:24  elias_naur
+
+	* src/java/org/lwjgl/test/opengl/Game.java: Dont let Game.java use
+	  realtime priority
+
+2002-11-22 10:40  elias_naur
+
+	* src/native/linux/Makefile: The Makefile now strips the release
+	  library to make it smaller
+
+2002-11-22 10:34  elias_naur
+
+	* src/native/linux/Makefile: make g++ compile with -O3
+
+2002-11-22 00:05  matzon
+
+	* .project: *** keyword substitution change ***
+
+2002-11-21 23:46  matzon
+
+	* .project: fix: made .project file into java project
+
+2002-11-21 23:38  matzon
+
+	* src/java/org/lwjgl/test/openal/ALTest.java: fix: removed unneeded
+	  import fix: removed getSource3f reference
+
+2002-11-21 23:35  matzon
+
+	* src/java/org/lwjgl/: openal/eax/EAXBufferProperties.java,
+	  test/openal/ALCTest.java, test/openal/EAXTest.java: fix: removed
+	  unneeded import
+
+2002-11-21 16:13  elias_naur
+
+	* src/java/org/lwjgl/test/opengl/: Grass.java, cg_grass2.cg,
+	  cg_grass2.vp: Added shader demo Grass.java
+
+2002-11-21 16:05  elias_naur
+
+	* src/native/linux/: org_lwjgl_input_Keyboard.cpp,
+	  org_lwjgl_input_Mouse.cpp: Input fixes
+
+2002-11-21 12:00  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_BaseGL.cpp: Fixed a bug that
+	  made extensions unavailable
+
+2002-11-20 17:11  elias_naur
+
+	* src/native/linux/: org_lwjgl_input_GamePad.cpp,
+	  org_lwjgl_input_Joystick.cpp: Null joystick and gamepad files
+	  added
+
+2002-11-20 14:54  elias_naur
+
+	* src/native/linux/: org_lwjgl_Display.cpp,
+	  org_lwjgl_input_Keyboard.cpp, org_lwjgl_input_Mouse.cpp: Fixed a
+	  viewport placement bug
+
+2002-11-20 11:33  elias_naur
+
+	* src/native/linux/: org_lwjgl_Display.cpp,
+	  org_lwjgl_input_Keyboard.cpp, org_lwjgl_input_Mouse.cpp: Improved
+	  pointer and keyboard handling under windowed mode
+
+2002-11-19 17:48  matzon
+
+	* src/java/org/lwjgl/test/: MathTest.java, input/JoystickTest.java,
+	  openal/ALCTest.java, openal/ALTest.java, openal/ALUTTest.java,
+	  openal/BasicTest.java, openal/EAXTest.java, openal/PlayTest.java,
+	  openal/PlayTestMemory.java, opengl/Game.java: moved tests to
+	  org.lwjgl.test for easier seperation
+
+2002-11-19 17:39  matzon
+
+	* src/native/common/org_lwjgl_openal_CoreAL.h: mod: getSource3f
+	  removed, since it isn't in the specs
+
+2002-11-19 17:35  matzon
+
+	* src/java/org/lwjgl/openal/CoreAL.java: mod: getSource3f removed,
+	  since it isn't in the specs
+
+2002-11-19 16:48  elias_naur
+
+	* src/native/linux/org_lwjgl_openal_CoreAL.cpp: removed
+	  alGetSource3f
+
+2002-11-19 16:47  matzon
+
+	* src/native/win32/: org_lwjgl_openal_eax_BaseEAX.cpp,
+	  org_lwjgl_openal_eax_CoreEAX.cpp,
+	  org_lwjgl_opengl_eax_BaseEAX.cpp,
+	  org_lwjgl_opengl_eax_CoreEAX.cpp: opengl->openal (doh!)
+
+2002-11-19 16:22  elias_naur
+
+	* src/native/linux/: extal.c, org_lwjgl_Math.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  org_lwjgl_openal_ALC.cpp, org_lwjgl_openal_ALUT.cpp,
+	  org_lwjgl_openal_CoreAL.cpp, org_lwjgl_openal_eax_CoreEAX.cpp,
+	  org_lwjgl_opengl_GL.cpp: Corrected author tags
+
+2002-11-19 16:17  elias_naur
+
+	* src/native/linux/extal.c: linux extal.h
+
+2002-11-19 15:58  elias_naur
+
+	* src/native/linux/Makefile: Updated linux Makefile
+
+2002-11-19 15:38  elias_naur
+
+	* src/native/linux/checkALerror.h: Added linux specific
+	  checkALerror.h
+
+2002-11-19 15:33  elias_naur
+
+	* src/native/linux/: org_lwjgl_openal_BaseAL.cpp,
+	  org_lwjgl_openal_eax_BaseEAX.cpp,
+	  org_lwjgl_openal_eax_CoreEAX.cpp: Added EAX linux files
+
+2002-11-19 15:08  elias_naur
+
+	* src/native/linux/: Makefile, org_lwjgl_openal_ALC.cpp,
+	  org_lwjgl_openal_ALUT.cpp, org_lwjgl_openal_BaseAL.cpp,
+	  org_lwjgl_openal_CoreAL.cpp,
+	  org_lwjgl_openal_eax_EAXBufferProperties.cpp,
+	  org_lwjgl_openal_eax_EAXListenerProperties.cpp: Initial OpenAL
+	  linux support
+
+2002-11-19 10:07  elias_naur
+
+	* src/java/org/lwjgl/test/MathTest.java: Added MathTest.java
+
+2002-11-19 09:50  elias_naur
+
+	* src/native/linux/: Makefile, MatrixOpCommon.cpp,
+	  MatrixOpCommon.h, org_lwjgl_Display.c, org_lwjgl_Display.cpp,
+	  org_lwjgl_Math.cpp,
+	  org_lwjgl_Math_MatrixOpAdd_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpAdd_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpCopy_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpCopy_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpMultiply_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpMultiply_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpNegate_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpNegate_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpSubtract_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpSubtract_MatrixOpSafe.cpp,
+	  org_lwjgl_Sys.c, org_lwjgl_Sys.cpp, org_lwjgl_input_Keyboard.c,
+	  org_lwjgl_input_Keyboard.cpp, org_lwjgl_input_Mouse.c,
+	  org_lwjgl_input_Mouse.cpp, org_lwjgl_opengl_BaseGL.c,
+	  org_lwjgl_opengl_BaseGL.cpp, org_lwjgl_opengl_CoreGL.c,
+	  org_lwjgl_opengl_CoreGL.cpp, org_lwjgl_opengl_GL.c,
+	  org_lwjgl_opengl_GL.cpp, org_lwjgl_opengl_GLU.c,
+	  org_lwjgl_opengl_GLU.cpp: Ported to C++. ported Math ops
+
+2002-11-19 08:51  elias_naur
+
+	* src/native/linux/Game.java: Moved Game.java opengl test to
+	  java/org/lwjgl/opengl/test
+
+2002-11-19 08:42  elias_naur
+
+	* src/native/: common/checkGLerror.h, common/extgl.c,
+	  common/extgl.h, linux/Makefile, linux/checkGLerror.h,
+	  linux/extgl.c, linux/extgl.h, linux/org_lwjgl_opengl_BaseGL.c,
+	  win32/extgl.c, win32/extgl.h: Updated extgl.h/c and
+	  checkGLerror.h
+
+2002-11-18 21:29  elias_naur
+
+	* src/native/linux/Game.java: Added small GL extension test to
+	  Game.java
+
+2002-11-18 21:22  elias_naur
+
+	* src/native/linux/: org_lwjgl_opengl_BaseGL.c,
+	  org_lwjgl_opengl_CoreGL.c: GL extensions fixes
+
+2002-11-18 21:07  elias_naur
+
+	* src/native/linux/Makefile: Cleanup makefile
+
+2002-11-18 21:02  elias_naur
+
+	* src/native/linux/: Makefile, extgl.c, extgl.h,
+	  org_lwjgl_opengl_GL.c: Added support for GL extensions
+
+2002-11-18 18:49  matzon
+
+	* src/: native/win32/org_lwjgl_input_Joystick.cpp,
+	  java/org/lwjgl/input/Joystick.java: fix: made joystick static,
+	  according to specs
+
+2002-11-18 17:42  matzon
+
+	* src/native/common/org_lwjgl_input_Joystick.h: fix: made joystick
+	  static, according to specs
+
+2002-11-18 07:16  matzon
+
+	* src/native/common/org_lwjgl_input_Joystick.h: fix: formatting got
+	  fucked
+
+2002-11-18 07:16  matzon
+
+	* src/native/win32/org_lwjgl_input_Joystick.cpp: bulk commit, since
+	  cvs server was down while fixing :/ fix: formatting got fucked
+	  fix: multiple poll fix: removed AquireInput method
+
+2002-11-17 19:14  matzon
+
+	* src/java/org/lwjgl/input/Joystick.java: first stab at the
+	  joystick implementation
+
+2002-11-17 19:13  matzon
+
+	* src/native/win32/org_lwjgl_input_Joystick.cpp: first stab at the
+	  win32 joystick implementation
+
+2002-11-17 19:12  matzon
+
+	* src/native/common/org_lwjgl_input_Joystick.h: new joystick header
+
+2002-11-17 18:09  elias_naur
+
+	* src/native/linux/: Game.java, Makefile, checkGLerror.h: Added
+	  debug support
+
+2002-11-17 17:49  elias_naur
+
+	* src/native/linux/: Game.java, org_lwjgl_input_Mouse.c: Cursor z
+	  movement added
+
+2002-11-17 17:14  elias_naur
+
+	* src/native/linux/: org_lwjgl_Display.c, org_lwjgl_input_Mouse.c:
+	  Cursor blanking added
+
+2002-11-16 21:10  elias_naur
+
+	* src/native/linux/: Game.java, org_lwjgl_Display.c,
+	  org_lwjgl_Sys.c: Added Sys setPriority support
+
+2002-11-16 20:46  elias_naur
+
+	* src/native/linux/: Game.java, org_lwjgl_Sys.c: Added Sys timer
+	  support
+
+2002-11-15 12:10  elias_naur
+
+	* src/native/linux/: Game.java, Makefile, org_lwjgl_Display.c,
+	  org_lwjgl_Sys.c, org_lwjgl_input_Keyboard.c,
+	  org_lwjgl_input_Mouse.c, org_lwjgl_opengl_BaseGL.c,
+	  org_lwjgl_opengl_CoreGL.c, org_lwjgl_opengl_GL.c,
+	  org_lwjgl_opengl_GLU.c: Corrected revision and id tags
+
+2002-11-15 12:00  elias_naur
+
+	* src/native/linux/org_lwjgl_Display.c: corrected id and revisions
+	  tags
+
+2002-11-15 11:58  elias_naur
+
+	* src/native/linux/org_lwjgl_Display.c: corrected revision and id
+
+2002-11-15 11:40  elias_naur
+
+	* src/native/linux/: Game.java, Makefile, org_lwjgl_Display.c,
+	  org_lwjgl_Sys.c, org_lwjgl_input_Keyboard.c,
+	  org_lwjgl_input_Mouse.c, org_lwjgl_opengl_BaseGL.c,
+	  org_lwjgl_opengl_CoreGL.c, org_lwjgl_opengl_GL.c,
+	  org_lwjgl_opengl_GLU.c: Added linux native src files

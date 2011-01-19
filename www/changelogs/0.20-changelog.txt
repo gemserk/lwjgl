@@ -1,0 +1,418 @@
+2002-09-07 21:52  exocet
+
+	* src/native/win32/: MatrixOpCommon.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpMultiply_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpMultiply_MatrixOpSafe.cpp: Recent Testing:
+	  Mul and Inv work for 3x3 matrix, more testing coming check
+	  www.happypedestrian.com/lwjgl/matrixop.html for current status
+
+2002-09-07 01:58  cix_foo
+
+	* src/java/org/lwjgl/input/Keyboard.java: Fixed various bugs
+
+2002-09-07 01:35  matzon
+
+	* src/: java/org/lwjgl/openal/ALC.java,
+	  java/org/lwjgl/openal/CoreAL.java,
+	  native/common/org_lwjgl_openal_ALC.h,
+	  native/common/org_lwjgl_openal_CoreAL.h,
+	  native/win32/org_lwjgl_openal_ALC.cpp,
+	  native/win32/org_lwjgl_openal_CoreAL.cpp: rem: getProcAddress
+	  removed, since it serves no purpose for Java programmers
+
+2002-09-05 17:46  matzon
+
+	* doc/tutorial/: openal_basics.html, OpenAL_Tutoral.html: renamed
+	  OpenAL_Tutoral to openal_basics
+
+2002-09-05 17:43  matzon
+
+	* doc/tutorial/: index.html, intro.html: renamed index.html to
+	  intro.html
+
+2002-09-03 23:25  matzon
+
+	* doc/tutorial/OpenAL_Tutoral.html: initial import of tutorial
+
+2002-09-03 21:58  matzon
+
+	* doc/README: initial import of README
+
+2002-09-03 21:46  matzon
+
+	* doc/openal_c-to-java.txt: initial import of basic OpenAL
+	  conversion from c/c++ to Java
+
+2002-09-03 21:24  matzon
+
+	* src/native/: common/org_lwjgl_openal_ALC.h,
+	  common/org_lwjgl_openal_ALUT.h, common/org_lwjgl_openal_BaseAL.h,
+	  win32/org_lwjgl_openal_ALC.cpp, win32/org_lwjgl_openal_ALUT.cpp,
+	  win32/org_lwjgl_openal_BaseAL.cpp: mod: adopted create/destroy
+	  architecture
+
+2002-09-03 20:54  matzon
+
+	* src/java/org/lwjgl/openal/: ALC.java, ALUT.java, BaseAL.java:
+	  mod: updated to create/destroy architecture
+
+2002-09-03 13:17  matzon
+
+	* src/java/org/lwjgl/openal/eax/: BaseEAXConstants.java,
+	  EAXBufferProperties.java, EAXListenerProperties.java: mod:
+	  refactored some EAX constants to Buffer or Listerner Properties
+	  class
+
+2002-09-03 07:53  gregorypierce
+
+	* src/native/macosx/org_lwjgl_Display.cpp: Updated with GL setup
+	  functions
+
+2002-09-03 06:57  gregorypierce
+
+	* src/native/macosx/org_lwjgl_Display.cpp: Initial revision of the
+	  Mac version of the display class. Just testing CVS script.
+
+2002-09-03 00:08  matzon
+
+	* src/native/: common/org_lwjgl_openal_eax_EAXBufferProperties.h,
+	  common/org_lwjgl_openal_eax_EAXListenerProperties.h,
+	  win32/org_lwjgl_openal_eax_EAXBufferProperties.cpp,
+	  win32/org_lwjgl_openal_eax_EAXListenerProperties.cpp: add:
+	  finished EAX support
+
+2002-09-03 00:06  matzon
+
+	* src/java/org/lwjgl/openal/eax/: BaseEAXConstants.java,
+	  EAXBufferProperties.java, EAXListenerProperties.java: add: EAX
+	  support done - needs some cleaning, and possibly refactoring of
+	  constants...
+
+2002-09-02 20:01  matzon
+
+	* src/java/org/lwjgl/openal/ALConstants.java: mod: AL shouldn't
+	  have EAX constants
+
+2002-09-02 15:21  matzon
+
+	* src/native/: common/org_lwjgl_openal_BaseEAX.h,
+	  common/org_lwjgl_openal_CoreEAX.h,
+	  common/org_lwjgl_openal_eax_BaseEAX.h,
+	  common/org_lwjgl_openal_eax_CoreEAX.h,
+	  win32/org_lwjgl_opengl_BaseEAX.cpp,
+	  win32/org_lwjgl_opengl_CoreEAX.cpp,
+	  win32/org_lwjgl_opengl_eax_BaseEAX.cpp,
+	  win32/org_lwjgl_opengl_eax_CoreEAX.cpp: mod: moving to eax
+	  subpackage
+
+2002-09-02 15:07  matzon
+
+	* src/java/org/lwjgl/openal/: BaseEAX.java, BaseEAXConstants.java,
+	  CoreEAX.java, EAX.java, eax/BaseEAX.java,
+	  eax/BaseEAXConstants.java, eax/CoreEAX.java, eax/EAX.java: mod:
+	  moved to eax subpackage
+
+2002-09-02 11:51  matzon
+
+	* doc/: CREDITS, LICENSE: initial commit
+
+2002-08-30 23:45  matzon
+
+	* src/: java/org/lwjgl/openal/BaseEAX.java,
+	  java/org/lwjgl/openal/CoreEAX.java,
+	  native/common/org_lwjgl_openal_CoreEAX.h,
+	  native/win32/org_lwjgl_opengl_CoreEAX.cpp: fix: actually set
+	  Listener & Buffer GUID's
+
+2002-08-30 23:30  matzon
+
+	* src/java/org/lwjgl/openal/: BaseEAX.java, BaseEAXConstants.java,
+	  CoreEAX.java, EAX.java: add: first stab at EAX support
+
+2002-08-30 23:29  matzon
+
+	* src/java/org/lwjgl/openal/ALConstants.java: fix: constants
+	  cleanup
+
+2002-08-30 23:26  matzon
+
+	* src/native/: common/extal.h, common/org_lwjgl_openal_BaseEAX.h,
+	  common/org_lwjgl_openal_CoreEAX.h, win32/extal.c,
+	  win32/org_lwjgl_opengl_BaseEAX.cpp,
+	  win32/org_lwjgl_opengl_CoreEAX.cpp: add: first stab at EAX
+	  support
+
+2002-08-29 23:40  exocet
+
+	* src/native/win32/:
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.cpp: Safe version
+	  now exists, some testing performed.
+
+2002-08-29 16:06  matzon
+
+	* src/java/org/lwjgl/openal/EAXALConstants.java: mov: renamed to
+	  BaseEAXConstants.java
+
+2002-08-29 03:09  matzon
+
+	* src/: native/win32/org_lwjgl_openal_CoreAL.cpp,
+	  native/common/org_lwjgl_openal_CoreAL.h,
+	  java/org/lwjgl/openal/ALUT.java,
+	  java/org/lwjgl/openal/CoreAL.java: fix: now using ByteBuffer all
+	  the way
+
+2002-08-29 01:41  matzon
+
+	* src/native/win32/org_lwjgl_openal_ALUT.cpp: fix: don't check for
+	  errors after the exit! - will crash since no current context
+
+2002-08-29 00:46  matzon
+
+	* src/native/win32/org_lwjgl_openal_ALUT.cpp: fix: now uses
+	  ByteBuffer address to load buffer when using alutLoadWAVMemory
+	  fix: minor cleanup
+
+2002-08-29 00:45  matzon
+
+	* src/native/common/org_lwjgl_openal_ALUT.h: fix: now uses
+	  ByteBuffer address to load buffer when using alutLoadWAVMemory
+
+2002-08-28 23:58  cix_foo
+
+	* src/java/org/lwjgl/input/: Joystick.java, Keyboard.java,
+	  Mouse.java: Stuff
+
+2002-08-28 18:45  exocet
+
+	* src/native/win32/: MatrixOpCommon.cpp, MatrixOpCommon.h,
+	  org_lwjgl_Math_MatrixOpAdd_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpAdd_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpCopy_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpCopy_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpMultiply_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpMultiply_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpNegate_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpNegate_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpSubtract_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpSubtract_MatrixOpSafe.cpp: First draft of
+	  ANSIC++ Vector code. Needs to be tested.
+
+2002-08-28 14:56  matzon
+
+	* src/java/org/lwjgl/openal/OpenALException.java: initial import
+
+2002-08-28 02:05  cix_foo
+
+	* src/java/org/lwjgl/vector/: Matrix.java, Matrix2f.java,
+	  Matrix3f.java, Matrix4f.java, Vector.java, Vector2f.java,
+	  Vector3f.java: Fixes
+
+2002-08-27 22:44  matzon
+
+	* src/native/common/checkALerror.h: fix: empty defines for !debug
+	  builds
+
+2002-08-27 22:42  matzon
+
+	* src/native/win32/org_lwjgl_input_Keyboard.cpp: fix: made compile
+
+2002-08-27 19:45  matzon
+
+	* src/native/win32/org_lwjgl_openal_ALC.cpp: fix: support
+	  alcMakeContextCurrent - as recommended in specs!
+
+2002-08-27 00:23  cix_foo
+
+	* src/java/org/lwjgl/Math.java: Fixed more stuff
+
+2002-08-27 00:16  matzon
+
+	* src/native/win32/org_lwjgl_openal_ALC.cpp: fix: NULL check in
+	  getString fix: wrong object being used when retrieving fields
+
+2002-08-26 23:28  matzon
+
+	* src/native/win32/org_lwjgl_openal_ALC.cpp: fix: allow null to be
+	  passed to openDevice
+
+2002-08-26 23:17  cix_foo
+
+	* src/java/org/lwjgl/opengl/: GL.java, GLUConstants.java: ***
+	  keyword substitution change ***
+
+2002-08-26 23:05  cix_foo
+
+	* src/java/org/lwjgl/input/: GamePad.java, Joystick.java,
+	  Keyboard.java, Mouse.java: *** keyword substitution change ***
+
+2002-08-26 22:56  matzon
+
+	* src/java/org/lwjgl/opengl/: GL.java, GLUConstants.java: fix:
+	  removed double ;
+
+2002-08-26 22:39  cix_foo
+
+	* src/java/org/lwjgl/Math.java: This n that
+
+2002-08-26 22:24  cix_foo
+
+	* src/java/org/lwjgl/vector/: Matrix.java, Matrix2f.java,
+	  Matrix3f.java, Matrix4f.java, Vector.java, Vector2f.java,
+	  Vector3f.java, Vector4f.java: *** keyword substitution change ***
+
+2002-08-26 20:22  matzon
+
+	* src/native/: common/checkALerror.h,
+	  win32/org_lwjgl_openal_ALC.cpp, win32/org_lwjgl_openal_ALUT.cpp,
+	  win32/org_lwjgl_openal_CoreAL.cpp: add: macro AL error checking
+
+2002-08-26 20:14  matzon
+
+	* src/native/win32/org_lwjgl_Display.cpp: fix: dx version defined,
+	  so that compile errors are removed
+
+2002-08-26 20:12  matzon
+
+	* src/native/win32/org_lwjgl_Math.cpp: rem: don't include math
+	  file, which isn't there
+
+2002-08-26 17:53  cix_foo
+
+	* src/java/org/lwjgl/vector/: Matrix.java, Matrix2f.java,
+	  Matrix3f.java, Matrix4f.java: Fixes
+
+2002-08-26 17:46  cix_foo
+
+	* src/java/org/lwjgl/vector/: Matrix.java, Matrix2f.java,
+	  Matrix3f.java, Matrix4f.java, Vector.java, Vector2f.java,
+	  Vector3f.java, Vector4f.java: New base classes Vector and Matrix
+
+2002-08-26 17:30  matzon
+
+	* src/java/org/lwjgl/openal/ALC.java: rem: removed debug fix:
+	  cleanup
+
+2002-08-26 17:28  matzon
+
+	* src/java/org/lwjgl/openal/ALC.java: add: ALC constants added
+
+2002-08-26 17:07  matzon
+
+	* src/native/win32/org_lwjgl_openal_ALC.cpp: fix: wrong header file
+	  being included (DOH!) fix: using wrong object to retrieve field
+	  values from
+
+2002-08-25 13:02  matzon
+
+	* src/native/win32/org_lwjgl_openal_ALC.cpp: fix: made java impl.
+	  behave like C counterpart, by returning NULL
+
+2002-08-25 12:04  cix_foo
+
+	* doc/tutorial/skeleton_code.html: Tweaks
+
+2002-08-25 10:41  matzon
+
+	* src/java/org/lwjgl/openal/OpenALTest.java: removing from openal
+	  package
+
+2002-08-24 23:35  cix_foo
+
+	* src/java/org/lwjgl/vector/: Matrix3f.java, Matrix4f.java:
+	  Determinants
+
+2002-08-24 23:26  cix_foo
+
+	* src/java/org/lwjgl/vector/: Matrix2f.java, Matrix3f.java,
+	  Matrix4f.java: Load & store into FloatBuffers
+
+2002-08-24 23:18  cix_foo
+
+	* src/native/win32/.cvsignore, .cvsignore: Checkpoint
+
+2002-08-24 23:15  cix_foo
+
+	* src/: java/org/lwjgl/opengl/GL.java, native/win32/LWJGL.cpp,
+	  native/win32/org_lwjgl_Display.cpp,
+	  native/win32/org_lwjgl_Math.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpAdd_MatrixOpDirect.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpAdd_MatrixOpSafe.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpCopy_MatrixOpDirect.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpCopy_MatrixOpSafe.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpMultiply_MatrixOpDirect.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpMultiply_MatrixOpSafe.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpNegate_MatrixOpDirect.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpNegate_MatrixOpSafe.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpSubtract_MatrixOpDirect.cpp,
+	  native/win32/org_lwjgl_Math_MatrixOpSubtract_MatrixOpSafe.cpp,
+	  native/common/.cvsignore,
+	  native/common/org_lwjgl_input_GamePad.h,
+	  native/common/org_lwjgl_input_Joystick.h,
+	  native/common/org_lwjgl_input_Mouse.h: Checkpoint
+
+2002-08-24 23:14  cix_foo
+
+	* src/java/org/lwjgl/input/: GamePad.java, Joystick.java,
+	  Mouse.java: Buffering added
+
+2002-08-24 23:12  cix_foo
+
+	* src/java/org/lwjgl/vector/: Matrix2f.java, Matrix3f.java,
+	  Matrix4f.java, Vector2f.java, Vector3f.java, Vector4f.java: Bunch
+	  of matrix and vector code added
+
+2002-08-24 18:34  cix_foo
+
+	* doc/tutorial/: index.html, skeleton_code.html: Rough incomplete
+	  draft
+
+2002-08-24 11:32  cix_foo
+
+	* src/native/common/: .cvsignore, org_lwjgl_Math.h,
+	  org_lwjgl_Math_MatrixOpAdd_MatrixOpDirect.h,
+	  org_lwjgl_Math_MatrixOpAdd_MatrixOpSafe.h,
+	  org_lwjgl_Math_MatrixOpCopy_MatrixOpDirect.h,
+	  org_lwjgl_Math_MatrixOpCopy_MatrixOpSafe.h,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.h,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.h,
+	  org_lwjgl_Math_MatrixOpMultiply_MatrixOpDirect.h,
+	  org_lwjgl_Math_MatrixOpMultiply_MatrixOpSafe.h,
+	  org_lwjgl_Math_MatrixOpNegate_MatrixOpDirect.h,
+	  org_lwjgl_Math_MatrixOpNegate_MatrixOpSafe.h,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.h,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.h,
+	  org_lwjgl_Math_MatrixOpSubtract_MatrixOpDirect.h,
+	  org_lwjgl_Math_MatrixOpSubtract_MatrixOpSafe.h: New math code
+
+2002-08-23 18:14  cix_foo
+
+	* src/java/org/lwjgl/: opengl/BaseGL.java, Display.java, Math.java,
+	  Sys.java, DisplayMode.java: Mainly Javadoc fixes and Math stuff
+
+2002-08-20 16:55  cix_foo
+
+	* src/java/org/lwjgl/input/: GamePad.java, Joystick.java,
+	  Keyboard.java, Mouse.java: Minor adjustments to Javadoc comments
+
+2002-08-20 16:44  matzon
+
+	* src/: java/org/lwjgl/openal/ALC.java,
+	  java/org/lwjgl/openal/ALCcontext.java,
+	  java/org/lwjgl/openal/ALCdevice.java,
+	  native/common/org_lwjgl_openal_ALC.h,
+	  native/win32/org_lwjgl_openal_ALC.cpp: add: first stab at ALC
+
+2002-08-20 11:29  cix_foo
+
+	* src/java/org/lwjgl/Math.java: Ready for native code

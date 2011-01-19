@@ -1,0 +1,9 @@
+2009-11-15 19:23  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: updating to 2.2.1
+
+2009-11-12 22:12  kappa1
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: FIX: Mouse Grab
+	  should now work on Windows when using Display.setParent()

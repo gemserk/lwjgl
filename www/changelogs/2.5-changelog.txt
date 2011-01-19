@@ -1,0 +1,376 @@
+2010-07-15 21:58  matzon
+
+	* platform_build/build-webstart.xml: Elevate priv for jnlp and
+	  sign/trust
+
+2010-07-15 20:00  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader -
+	  slight tweak to make AppletLoader looks a bit better
+
+2010-07-15 19:43  kappa1
+
+	* applet/appletloader.html: appletloader.html - edit html to
+	  reflect latest changes in the AppletLoader
+
+2010-07-15 19:07  matzon
+
+	* build.xml, libs/lzma.jar, platform_build/build-webstart.xml:
+	  Trusted-Library + Signing changes, blame kappaOne for breakage...
+
+2010-07-14 13:12  matzon
+
+	* src/java/org/lwjgl/openal/ALC11.java,
+	  src/java/org/lwjgl/test/openal/OpenALInfo.java,
+	  src/native/common/org_lwjgl_openal_ALC10.c,
+	  src/templates/org/lwjgl/openal/AL10.java: OAL patches by
+	  Ciardhubh
+
+2010-07-12 20:19  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  slightly more meaningful and friendly error message.
+
+2010-07-12 20:01  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  Remove the boxerrorcolor parameter, there is not much advantage
+	  in having different color error message font, its better to have
+	  a nice consistent error message then to try scare the user. Also
+	  simplifies the AppletLoader api by reducing the number of
+	  parameters.
+
+2010-07-12 12:04  matzon
+
+	* src/native/windows/context.c: fixed issue with single-line if
+
+2010-07-11 20:25  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: fix: Keyboard focus
+	  handling broken when using Display.setParent() applets on Ubunutu
+	  (strangly worked on OpenSuse), hopefully should be fixed now.
+
+2010-07-11 15:26  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  fix issue with caching and lzma/pack200 files
+
+2010-07-11 13:54  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Appletloader:
+	  fix caching issue with native jars
+
+2010-07-11 13:03  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  fix code to compile on java 1.4
+
+2010-07-11 12:13  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Appletloader:
+	  Initial implementation of a proper caching system. Files will
+	  only be downloaded if lastModified time is different from when
+	  files were downloaded previously. al_cache parameter is used to
+	  disable and enable this caching (default: true). This caching
+	  will not be used if al_version parameter is used.
+
+2010-07-10 11:56  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  fixed flicker on animated gifs using ImageObserver. When image is
+	  ready to be drawn it is copied into a buffer image ready to be
+	  drawn. Also now supports variable time animated gifs and not
+	  limited to drawing only every 100ms.
+
+2010-07-09 21:46  spasi
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java:
+
+2010-07-09 19:37  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java: Display sync modified to
+	  allow it to be interrupted.
+	  Thanks to bobjob for this, further thanks to MatthiasM for
+	  pointing out that the interrupt should not be swallowed.
+
+2010-07-09 18:44  spasi
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Compiz LFS
+	  improvements.
+
+2010-07-08 21:12  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  auto centre logo if applet is resized.
+
+2010-07-07 12:37  spasi
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/XRandR.java,
+	  src/templates/org/lwjgl/opengl/EXT_direct_state_access.java:
+	  Added support for Compiz's legacy fullscreen workaround.
+
+2010-07-04 18:24  spasi
+
+	* src/java/org/lwjgl/test/opengl/FullScreenWindowedTest.java:
+
+2010-07-04 17:14  spasi
+
+	* src/java/org/lwjgl/opengl/APIUtils.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/test/opengl/FullScreenWindowedTest.java: Fix
+	  for Linux fullscreen mode problem with Compiz
+	  (http://lwjgl.org/forum/index.php/topic,3335.0.html)
+
+2010-07-04 14:45  kappa1
+
+	* applet/appletloader.html: update appletloader.html to use new
+	  parameters
+
+2010-07-04 14:35  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  Parameters boxbgcolor, boxfgcolor and boxerrorcolor have been
+	  added. Previous parameters al_bgcolor, al_fgcolor and
+	  al_errorcolor have been removed. Unlike the previous color
+	  support now you can specify the color as a string name of any AWT
+	  Color ("red", "blue", "yellow", etc), RGB format (0-255, e.g.
+	  "255,0,0") or html HEX color (must use leading #, previous didn't
+	  need to have the # e.g. "#FF0000"). This is to match the color
+	  support of boxbgcolor and boxfgcolor of the java plugin, so now
+	  the color is set and appears before the appletloader is even
+	  loaded.
+
+2010-07-04 11:03  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Appletloader:
+	  Added parameter support for al_windows32, al_windows64,
+	  al_linux32 and al_linux64 for those that would like to split
+	  their 32/64 bit natives files to provide a smaller download.
+
+2010-06-16 12:33  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_transform_feedback3_lines_triangles.java:
+	  Added AMD_transform_feedback3_lines_triangles.
+
+2010-06-15 23:43  spasi
+
+	* src/templates/org/lwjgl/opengl/GL15.java: Added GL_ prefix on
+	  FOG_COORD_SRC.
+
+2010-06-03 15:49  spasi
+
+	* src/native/linux/org_lwjgl_opengl_LinuxPeerInfo.c,
+	  src/native/linux/org_lwjgl_opengl_Pbuffer.c,
+	  src/native/windows/org_lwjgl_opengl_Pbuffer.c,
+	  src/native/windows/org_lwjgl_opengl_WindowsPeerInfo.c: Touched a
+	  few files to get them to recompile.
+
+2010-06-02 23:35  spasi
+
+	* src/native/linux/context.c, src/native/windows/context.c: Added
+	  missing brackets around COLOR_SAMPLES_NV.
+
+2010-05-28 00:08  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_debug_output.java: Documented
+	  glDebugMessageCallbackAMD.
+
+2010-05-27 22:56  spasi
+
+	* build.xml, platform_build/build-generator.xml,
+	  src/java/org/lwjgl/opengl/AMDDebugOutputCallback.java,
+	  src/java/org/lwjgl/opengl/AMDDebugOutputUtil.java,
+	  src/java/org/lwjgl/opengl/AbstractDrawable.java,
+	  src/java/org/lwjgl/opengl/DrawableLWJGL.java,
+	  src/java/org/lwjgl/opengl/GLContext.java,
+	  src/java/org/lwjgl/opengl/PixelFormat.java,
+	  src/java/org/lwjgl/opengl/SharedDrawable.java,
+	  src/java/org/lwjgl/test/opengl/VersionTest.java,
+	  src/java/org/lwjgl/util/generator/Alias.java,
+	  src/java/org/lwjgl/util/generator/AutoSize.java,
+	  src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/FieldsGenerator.java,
+	  src/java/org/lwjgl/util/generator/GLpointer.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/native/common/extgl.h,
+	  src/native/common/org_lwjgl_opengl_AMDDebugOutputCallback.c,
+	  src/native/linux/context.c, src/native/linux/extgl_glx.c,
+	  src/native/linux/extgl_glx.h, src/native/windows/context.c,
+	  src/native/windows/extgl_wgl.c, src/native/windows/extgl_wgl.h,
+	  src/templates/org/lwjgl/opengl/AMD_debug_output.java,
+	  src/templates/org/lwjgl/opengl/AMD_name_gen_delete.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_buffer_object_rgb32.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_compression_bptc.java,
+	  src/templates/org/lwjgl/opengl/NV_multisample_coverage.java:
+	  Added PixelFormat support for framebuffer CSAA
+	  (NV_multisample_coverage, WGL & GLX only).
+	  Added support for AMD_name_gen_delete and AMD_debug_output. The
+	  AMDDebugOutputCallback class enables query-less message handling.
+	  Added support for extension aliases.
+
+2010-05-25 06:01  matzon
+
+	* src/java/org/lwjgl/test/openal/OpenALInfo.java: "fixed" usage of
+	  generics
+
+2010-05-24 22:39  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: bump version to 2.5
+
+2010-05-24 22:37  matzon
+
+	* platform_build/build-generator.xml: EFX patch by Ciardhubh
+	  (missing generator entry)
+
+2010-05-24 22:36  matzon
+
+	* src/java/org/lwjgl/test/openal/OpenALInfo.java: cleanup
+
+2010-05-24 22:35  matzon
+
+	* src/java/org/lwjgl/test/openal/OpenALInfo.java: updates to info
+	  app to print efx info
+
+2010-05-24 22:34  matzon
+
+	* src/java/org/lwjgl/openal/EFXUtil.java: expose isEfxSupported
+
+2010-05-24 21:54  matzon
+
+	* src/java/org/lwjgl/openal/AL.java: proper resetNativeStubs for
+	  other oal-related classes, probably a NOP atm
+
+2010-05-24 21:50  matzon
+
+	* doc/CREDITS, src/java/org/lwjgl/openal/AL.java,
+	  src/java/org/lwjgl/openal/EFXUtil.java,
+	  src/java/org/lwjgl/test/openal/EFX10Test.java,
+	  src/java/org/lwjgl/util/generator/FieldsGenerator.java,
+	  src/templates/org/lwjgl/openal/EFX10.java: EFX patch by Ciardhubh
+
+2010-05-24 21:32  matzon
+
+	* libs/linux/libopenal.so, libs/linux/libopenal64.so,
+	  libs/solaris/libopenal.so, libs/solaris/libopenal64.so,
+	  libs/windows/OpenAL32.dll, libs/windows/OpenAL64.dll: Upgrading
+	  to latest OpenAL-Soft (1.12+)
+
+2010-05-24 21:09  matzon
+
+	* platform_build/build-webstart.xml: misc uncommitted jnlp stuff...
+
+2010-05-22 16:53  spasi
+
+	* src/java/org/lwjgl/opengl/ContextAttribs.java,
+	  src/java/org/lwjgl/test/opengl/VBOIndexTest.java,
+	  src/java/org/lwjgl/test/opengl/VersionTest.java: Updated
+	  ContextAttribs to not default to the core profile for 3.2+
+	  versions.
+	  Updated VersionTest (version 20 of ARB_create_context).
+
+2010-05-21 22:55  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: small cleanup.
+
+2010-05-21 22:26  kappa1
+
+	* src/java/org/lwjgl/opengl/XRandR.java: XRandr add missing casts
+
+2010-05-21 22:12  kappa1
+
+	* src/java/org/lwjgl/opengl/XRandR.java: Further XRandR fixes, it
+	  now catches throwable in populate(), if there are any problems in
+	  parsing the xrandr output we revert to LWJGL's regular behaviour.
+	  All output now goes to LWJGLUtil.log() instead of the out.println
+	  and err.println. Credit to Ryanm for patch.
+
+2010-05-20 18:11  kappa1
+
+	* src/java/org/lwjgl/opengl/XRandR.java: XrandR fix for parsing
+	  some screen sizes, credit to MatthiasM for providing patch.
+
+2010-05-07 17:03  spasi
+
+	* src/java/org/lwjgl/util/generator/Utils.java,
+	  src/templates/org/lwjgl/opengl/NV_fence.java: Fix for OpenAL
+	  debug builds.
+	  Added alternate methods for NV_fence.
+
+2010-05-01 09:19  spasi
+
+	* src/templates/org/lwjgl/opengl/GL11.java: Fixed PolygonStipple
+	  check.
+
+2010-04-29 17:37  matzon
+
+	* src/java/org/lwjgl/input/Mouse.java: yes, we really should...
+
+2010-04-26 21:52  matzon
+
+	* src/java/org/lwjgl/util/WaveData.java: use context classloader,
+	  since u19+u20 broke the old impl
+
+2010-04-22 23:49  spasi
+
+	* doc/lwjgl_hidden_switches.text: Added org.lwjgl.util.NoChecks
+
+2010-04-22 23:21  spasi
+
+	* src/java/org/lwjgl/BufferChecks.java,
+	  src/java/org/lwjgl/LWJGLUtil.java,
+	  src/java/org/lwjgl/opengl/AWTGLCanvas.java,
+	  src/java/org/lwjgl/opengl/AbstractDrawable.java,
+	  src/java/org/lwjgl/opengl/BaseReferences.java,
+	  src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/Drawable.java,
+	  src/java/org/lwjgl/opengl/DrawableLWJGL.java,
+	  src/java/org/lwjgl/opengl/GLChecks.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/Pbuffer.java,
+	  src/java/org/lwjgl/opengl/SharedDrawable.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/test/opengl/multithread/BackgroundLoader.java,
+	  src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/templates/org/lwjgl/opengl/ATI_vertex_array_object.java:
+	  Fixed ByteOrder of @Return ByteBuffers.
+	  Cleaned up Drawable interface and introduced a reusable base
+	  implementation.
+	  Added support for disabling runtime function checks, buffer
+	  checks and state tracking. Activated with
+	  -Dorg.lwjgl.util.NoChecks=true
+
+2010-04-22 18:32  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/XRandR.java: Remove extra permissions
+	  from XRandR and just allow minimal permissions needed by the
+	  LinuxDisplay.
+
+2010-04-20 18:21  spasi
+
+	* src/java/org/lwjgl/opengl/AWTGLCanvas.java,
+	  src/java/org/lwjgl/opengl/Context.java,
+	  src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/Drawable.java,
+	  src/java/org/lwjgl/opengl/Pbuffer.java,
+	  src/java/org/lwjgl/opengl/SharedDrawable.java,
+	  src/java/org/lwjgl/test/opengl/awt/DemoBox.java,
+	  src/java/org/lwjgl/test/opengl/multithread,
+	  src/java/org/lwjgl/test/opengl/multithread/BackgroundLoadTest.java,
+	  src/java/org/lwjgl/test/opengl/multithread/BackgroundLoader.java:
+	  Added support for a new Drawable type (SharedDrawable) that
+	  shares its context with another Drawable.
+	  Added new methods to the Drawable interface (makeCurrent,
+	  releaseContext, destroy).
+	  Added a background thread texture loading test (using either
+	  Pbuffer or SharedDrawable).
+
+2010-04-16 19:06  kappa1
+
+	* src/java/org/lwjgl/opengl/XRandR.java: minor tweak to XRandR
+	  class to add AccessControllers to remaining methods that need it.

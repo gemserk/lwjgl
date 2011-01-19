@@ -1,0 +1,303 @@
+2006-08-18 08:49  matzon
+
+	* libs/macosx/libIL.dylib, libs/macosx/libILU.dylib,
+	  libs/macosx/libILUT.dylib: using statically linked support libs
+
+2006-08-18 08:41  matzon
+
+	* libs/linux/libIL.so, libs/linux/libILU.so,
+	  libs/linux/libILUT.so: using statically linked support libs
+
+2006-08-16 10:42  spasi
+
+	* src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  src/generated/org/lwjgl/opengl/EXTBlendColor.java,
+	  src/generated/org/lwjgl/opengl/EXTBlendMinmax.java,
+	  src/native/generated/org_lwjgl_opengl_EXTBlendColor.c,
+	  src/native/generated/org_lwjgl_opengl_EXTBlendMinmax.c,
+	  src/templates/org/lwjgl/opengl/EXT_blend_color.java,
+	  src/templates/org/lwjgl/opengl/EXT_blend_minmax.java: Added
+	  EXT_blend_color & EXT_blend_minmax extensions.
+
+2006-08-10 09:05  elias_naur
+
+	* platform_build/macosx_ant/build.xml: Mac OS X: build fixes
+
+2006-08-10 08:45  elias_naur
+
+	* build.xml, src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/devil/ILNative.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java,
+	  src/native/common/devil/extil.c,
+	  src/native/common/fmod3/org_lwjgl_fmod3_FMOD.c: Update to beta3
+
+2006-08-10 08:16  elias_naur
+
+	* libs/win32/jinput-dx8.dll: Windows: Updated jinput-dx8.dll
+
+2006-08-10 08:06  elias_naur
+
+	* libs/jinput.jar: Updated jinput.jar
+
+2006-08-03 10:00  spasi
+
+	* src/java/org/lwjgl/opengl/GLContext.java: Added OpenGL 2.1
+	  support
+
+2006-08-03 09:51  spasi
+
+	* src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  src/generated/org/lwjgl/opengl/GL21.java,
+	  src/native/generated/org_lwjgl_opengl_GL21.c,
+	  src/templates/org/lwjgl/opengl/GL21.java:
+
+2006-08-01 14:10  elias_naur
+
+	* build.xml, platform_build/macosx_ant/build.xml: Mac OS X: Build
+	  fixes
+
+2006-08-01 13:55  elias_naur
+
+	* platform_build/macosx_ant/build.xml: Mac OS X: Native
+	  compilation fix
+
+2006-08-01 10:36  elias_naur
+
+	* src/java/org/lwjgl/test/opengl/FullScreenWindowedTest.java: Make
+	  sure the mode member is never null in FullScreenWindowedTest
+
+2006-07-31 22:54  elias_naur
+
+	* src/java/org/lwjgl/opengl/ReferencesStack.java,
+	  src/java/org/lwjgl/opengl/StateStack.java,
+	  src/java/org/lwjgl/opengl/StateTracker.java: Don't trust
+	  GL_MAX_CLIENT_ATTRIB_STACK_DEPTH since it is 0 on Xgl in linux.
+	  Instead make sure the state trackers are sized according to
+	  demand
+
+2006-07-31 22:37  elias_naur
+
+	* src/generated/org/lwjgl/opengl/References.java,
+	  src/java/org/lwjgl/opengl/ReferencesStack.java,
+	  src/java/org/lwjgl/util/generator/ReferencesGeneratorProcessorFactory.java:
+	  ReferencesStack now clears references when popping to avoid
+	  keeping buffer references around too long
+
+2006-07-31 01:22  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxKeyboard.java: Linux: Don't free
+	  already freed XIC and XIM instances in LinuxKeyboard
+
+2006-07-25 15:31  spasi
+
+	* build.xml,
+	  src/generated/org/lwjgl/opengl/ATITextFragmentShader.java,
+	  src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  src/generated/org/lwjgl/opengl/EXTTimerQuery.java,
+	  src/generated/org/lwjgl/opengl/SGISGenerateMipmap.java,
+	  src/generated/org/lwjgl/opengl/SGISTextureLOD.java,
+	  src/native/generated/org_lwjgl_opengl_EXTTimerQuery.c,
+	  src/templates/org/lwjgl/opengl/SGIS_generate_mipmap.java,
+	  src/templates/org/lwjgl/opengl/SGIS_texture_lod.java: Added
+	  SGIS_generate_mipmap & SGIS_texture_lod extensions
+
+2006-07-22 21:30  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java: Linux: Remove 32x32
+	  icons size check, since other sizes seem to work alright.
+	  Document the fact that Display.setIcon use the icons from the
+	  icon array in order of decreasing preference
+
+2006-07-22 15:05  elias_naur
+
+	* src/java/org/lwjgl/opengl/GLContext.java: Make sure OpenGL
+	  versions with major >= 3 is properly supported. Make sure major
+	  >= 1 in any case
+
+2006-07-22 14:58  elias_naur
+
+	* src/java/org/lwjgl/opengl/GLContext.java: Fix comment
+
+2006-07-21 20:35  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDirectInput.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice.java:
+	  Windows: Ingore DI_POLLEDDEVICE when setting buffer size of a
+	  directinput device
+
+2006-07-17 23:27  elias_naur
+
+	* src/java/org/lwjgl/opengl/Util.java: glu: Remove unused
+	  Util.IntValue inner class
+
+2006-07-17 23:23  elias_naur
+
+	* src/java/org/lwjgl/opengl/glu/PixelStoreState.java: glu: Remove
+	  redundant initialization of PixelStoreState
+
+2006-07-15 23:31  elias_naur
+
+	* platform_build/mingw_ant/build.xml,
+	  platform_build/windows_ant/build.xml: Windows: Use env.MSSdk,
+	  not MSSDK (the capitalization is important in ant). The MSVC
+	  compiler doesn't seem to mind if the PLTSDK is included or not,
+	  though (if it did, we would have noticed the incorrect env.
+	  variable)
+
+2006-07-15 23:20  elias_naur
+
+	* platform_build/mingw_ant/build.xml,
+	  platform_build/mingw_ant/build_devil.xml,
+	  platform_build/mingw_ant/build_fmod3.xml: Windows: Make mingw
+	  build.xml strip the dll after linking. Delete optional build
+	  files from mingw_ant.
+
+2006-07-15 23:04  elias_naur
+
+	* platform_build/mingw_ant/build.xml: Windows: mingw path fixes
+
+2006-07-15 21:44  elias_naur
+
+	* platform_build/mingw_ant, platform_build/mingw_ant/build.xml,
+	  platform_build/mingw_ant/build_devil.xml,
+	  platform_build/mingw_ant/build_fmod3.xml: Windows: added
+	  build.xml for MinGW building of lwjgl.dll. Hopefully this could
+	  enable us to build 64 bit versions of the natives in the future.
+	  It currently works, with some manual removal of double
+	  declarations of symbols in dinput.h(!)
+
+2006-07-15 21:37  elias_naur
+
+	* src/native/windows/org_lwjgl_opengl_WindowsDirectInput8.c:
+	  Windows: Fix warning
+
+2006-07-15 21:01  elias_naur
+
+	* src/native/common/common_tools.c,
+	  src/native/common/common_tools.h,
+	  src/native/windows/org_lwjgl_input_Cursor.c,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Replace
+	  _WIN32 macro with _MSC_VER since the conditionals are really for
+	  the MSVC compiler, not for the windows platform in general. Code
+	  cleanup.
+
+2006-07-15 20:25  elias_naur
+
+	* src/java/org/lwjgl/test/DisplayTest.java,
+	  src/native/windows/context.h,
+	  src/native/windows/org_lwjgl_opengl_Pbuffer.c,
+	  src/native/windows/org_lwjgl_opengl_WindowsAWTGLCanvasPeerInfo.c,
+	  src/native/windows/org_lwjgl_opengl_WindowsDisplayPeerInfo.c:
+	  Windows: Don't use a non-portable anonymous struct in contex.h
+
+2006-07-15 19:55  elias_naur
+
+	* src/native/windows/display.c,
+	  src/native/windows/org_lwjgl_opengl_Pbuffer.c: Windows: Cleanup
+
+2006-07-15 19:45  elias_naur
+
+	* build.xml, src/java/org/lwjgl/NativeSysImplementation.java,
+	  src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/Win32SysImplementation.java,
+	  src/java/org/lwjgl/WindowsSysImplementation.java,
+	  src/java/org/lwjgl/test/DisplayTest.java,
+	  src/native/windows/org_lwjgl_Sys.c: Windows: Moved
+	  NativeSysImplementation.java to WindowsSysImplementation.java
+	  and moved some native code to java.
+
+2006-07-15 19:25  elias_naur
+
+	* src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsFileVersion.java,
+	  src/native/windows/display.c, src/native/windows/display.h,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Move
+	  more of Display.getVersion to java
+
+2006-07-15 18:45  elias_naur
+
+	* src/native/windows/display.c: Windows: Added NULL check to
+	  malloc in display.c
+
+2006-07-15 18:43  elias_naur
+
+	* src/native/windows/display.c: Windows: Forgot display.c in last
+	  commit
+
+2006-07-15 18:36  elias_naur
+
+	* src/java/org/lwjgl/test/SysTest.java: Fixed SysTest.java
+
+2006-07-15 18:31  elias_naur
+
+	* src/native/windows/org_lwjgl_Sys.c: Windows: Don't release
+	  clipboard data before use
+
+2006-07-15 17:44  elias_naur
+
+	* src/native/windows/display.c: Windows: Removed unused variable
+	  from display.c
+
+2006-07-14 16:14  elias_naur
+
+	* src/java/org/lwjgl/DefaultSysImplementation.java,
+	  src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/SysImplementation.java,
+	  src/native/common/common_tools.c: Split the external LWJGL
+	  version from the internal version of the native JNI library. The
+	  internal JNI version is now an integer. This has multiple
+	  advantages over the old way:
+	  
+	  1. The JNI_VERSION field is now included automatically in the
+	  generated JNI headers, relieving us of the burden of updating
+	  the version number in both java and native code.
+	  2. We can update the JNI version with every non-compatible
+	  change of the JNI library API, not just once per release, giving
+	  us extra safety when users download and build LWJGL from SVN.
+	  3. We can now avoid rebuilding natives if a particular release
+	  only
+	  contains java changes. Currently, This is mostly a problem when
+	  Brian bumps the
+	  external version prior a release and I forget to re-build the
+	  natives ;)
+
+2006-07-14 13:07  elias_naur
+
+	* src/templates/org/lwjgl/opengl/ARB_multitexture.java,
+	  src/templates/org/lwjgl/opengl/GL11.java,
+	  src/templates/org/lwjgl/opengl/GL13.java: Added additional
+	  @NoErrorCheck annotations
+
+2006-07-14 12:07  elias_naur
+
+	* src/templates/org/lwjgl/opengl/GL11.java: Added @NoErrorCheck to
+	  GL11.glGetError
+
+2006-07-14 11:54  elias_naur
+
+	* build.xml: Added a commented out generatechecks option to the
+	  opengl stubs generator. It can can be activated to add
+	  Utils.checkGLError everywhere
+
+2006-07-14 10:38  elias_naur
+
+	* src/native/windows/org_lwjgl_opengl_Display.c: Windows: Fixed
+	  setCursorPosition.
+
+2006-07-14 08:32  elias_naur
+
+	* applet/applet.html, build.xml, libs/jinput.jar,
+	  src/java/org/lwjgl/test/applet/ControllersTest.java: Added a
+	  Controllers applet test
+
+2006-07-13 18:56  elias_naur
+
+	* libs/jinput.jar: Refresh Jinput.jar
+
+2006-07-12 21:29  matzon
+
+	* build.xml: no more source dist - get from svn
+	  date fixes
+	  fixed signing and path issue when doing jnlp

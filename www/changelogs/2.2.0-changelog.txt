@@ -1,0 +1,439 @@
+2009-10-12 11:56  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Stop
+	  AppletLoader on download failure, instead of displaying error and
+	  continuing download of files.
+
+2009-10-08 00:03  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader
+	  file download handling improved.
+	  Unknown Caching that was causing problems has been found and
+	  disabled.
+	  The infamous "Fatal Error occured (5): null" bug should really be
+	  dead this time :)
+	  3 attempts are made to download a file if it fails to download.
+	  File size is now verified after a downloaded to make sure it is
+	  the correct size.
+
+2009-09-29 13:51  spasi
+
+	* src/templates/org/lwjgl/opengl/ARB_uniform_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL31.java,
+	  src/templates/org/lwjgl/opengl/GL32.java,
+	  src/templates/org/lwjgl/opengl/NV_texture_barrier.java: Minor
+	  fixes and added support for NV_texture_barrier.
+
+2009-09-27 12:05  spasi
+
+	* src/java/org/lwjgl/opengl/BaseReferences.java: Fixed
+	  TexCoordPointer exception when ARB_multitexture is not available.
+
+2009-09-12 22:20  matzon
+
+	* doc/lwjgl_hidden_switches.text: comment new
+	  allowNegativeMouseCoords property
+
+2009-09-12 22:15  matzon
+
+	* src/java/org/lwjgl/input/Mouse.java,
+	  src/java/org/lwjgl/opengl/InputImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/test/input/MouseTest.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: support for
+	  tracking mouse outside window on drag, new api for checking if
+	  mouse is inside window
+
+2009-09-10 11:15  kappa1
+
+	* applet/appletloader.html: restore defaults to the default lwjgl
+	  applet html template.
+
+2009-09-09 11:24  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Undo fix for
+	  the error 5: null error, since it does not work.
+
+2009-09-08 15:07  spasi
+
+	* src/java/org/lwjgl/opengl/BaseReferences.java,
+	  src/java/org/lwjgl/opengl/GLChecks.java,
+	  src/java/org/lwjgl/opengl/ReferencesStack.java,
+	  src/java/org/lwjgl/opengl/StateTracker.java,
+	  src/java/org/lwjgl/util/generator/ReferencesGeneratorProcessorFactory.java,
+	  src/templates/org/lwjgl/opengl/GL11.java: Added support for
+	  PIXEL_STORE state tracking.
+	  Changed PBO GLChecks to use LWJGL's state tracking instead of
+	  using glGetInteger.
+
+2009-09-08 12:27  spasi
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java:
+	  Fixed Context init when using the debug library.
+	  Removed glGetError call before buffer swapping.
+
+2009-09-03 20:15  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Java caching
+	  properly disabled, this should prevent the AppletLoader from
+	  continuing to load jars from the java cache which have become
+	  corrupt.
+	  
+	  The infamous "Fatal Error occured (5): null" bug should now go
+	  away on refresh as the files are redownloaded.
+
+2009-08-12 14:48  spasi
+
+	* platform_build/build-generator.xml: Fixed GLSync build issue.
+
+2009-08-12 13:13  spasi
+
+	* src/java/org/lwjgl/util/generator/GLsync.java: GLsync annotation
+	  not needed anymore.
+
+2009-08-12 13:06  spasi
+
+	* build.xml, src/java/org/lwjgl/opengl/GLSync.java,
+	  src/java/org/lwjgl/opengl/PointerWrapper.java,
+	  src/java/org/lwjgl/test/opengl/SyncTest.java,
+	  src/java/org/lwjgl/test/opengl/VersionTest.java,
+	  src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  src/java/org/lwjgl/util/generator/GLpointer.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  src/java/org/lwjgl/util/generator/NativeTypeTranslator.java,
+	  src/templates/org/lwjgl/opengl/ARB_sync.java,
+	  src/templates/org/lwjgl/opengl/GL32.java,
+	  src/templates/org/lwjgl/opengl/NV_shader_buffer_load.java:
+	  Completed GL32 support.
+	  Added Generator support for wrapping GL pointers.
+	  Added support for passing command-line arguments to tests.
+	  Added test for ARB_sync functionality.
+	  Temp fix to NV_shader_buffer_load.
+
+2009-08-05 18:54  matzon
+
+	* src/java/org/lwjgl/openal/ALC11.java: missing initialization of
+	  AL11 functions
+
+2009-08-05 07:09  spasi
+
+	* src/java/org/lwjgl/util/generator/GLint64.java,
+	  src/java/org/lwjgl/util/generator/GLsync.java,
+	  src/java/org/lwjgl/util/generator/GLuint64.java: Added missing
+	  annotations.
+
+2009-08-04 18:21  spasi
+
+	* src/java/org/lwjgl/opengl/ContextAttribs.java,
+	  src/java/org/lwjgl/opengl/ContextAttribsImplementation.java,
+	  src/java/org/lwjgl/opengl/GLContext.java,
+	  src/java/org/lwjgl/opengl/LinuxContextAttribs.java,
+	  src/java/org/lwjgl/opengl/MacOSXContextAttribs.java,
+	  src/java/org/lwjgl/opengl/WindowsContextAttribs.java,
+	  src/java/org/lwjgl/util/generator/FieldsGenerator.java,
+	  src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  src/native/common/extgl.h,
+	  src/templates/org/lwjgl/opengl/AMD_draw_buffers_blend.java,
+	  src/templates/org/lwjgl/opengl/ARB_depth_clamp.java,
+	  src/templates/org/lwjgl/opengl/ARB_draw_buffers_blend.java,
+	  src/templates/org/lwjgl/opengl/ARB_draw_elements_base_vertex.java,
+	  src/templates/org/lwjgl/opengl/ARB_fragment_coord_conventions.java,
+	  src/templates/org/lwjgl/opengl/ARB_provoking_vertex.java,
+	  src/templates/org/lwjgl/opengl/ARB_sample_shading.java,
+	  src/templates/org/lwjgl/opengl/ARB_seamless_cube_map.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_texture_lod.java,
+	  src/templates/org/lwjgl/opengl/ARB_sync.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_cube_map_array.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_gather.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_multisample.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_query_lod.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_array_bgra.java,
+	  src/templates/org/lwjgl/opengl/EXT_separate_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/EXT_texture_snorm.java,
+	  src/templates/org/lwjgl/opengl/GL32.java,
+	  src/templates/org/lwjgl/opengl/NV_copy_image.java,
+	  src/templates/org/lwjgl/opengl/NV_parameter_buffer_object2.java:
+	  Added support for OpenGL 3.2 and the following extensions:
+	  AMD_draw_buffers_blend, ARB_depth_clamp, ARB_draw_buffers_blend,
+	  ARB_draw_elements_base_vertex, ARB_fragment_coord_conventions,
+	  ARB_provoking_vertex, ARB_sample_shading, ARB_seamless_cube_map,
+	  ARB_shader_texture_lod, ARB_texture_cube_map_array,
+	  ARB_texture_gather, ARB_texture_multisample,
+	  ARB_texture_query_lod, ARB_vertex_array_bgra,
+	  EXT_separate_shader_objects, EXT_texture_snorm, NV_copy_image,
+	  NV_parameter_buffer_object2.
+
+2009-07-23 20:56  matzon
+
+	* src/templates/org/lwjgl/opengl/GL11.java: missing out on
+	  glReadPixels
+
+2009-07-07 19:47  matzon
+
+	* src/native/windows/Window.h,
+	  src/native/windows/org_lwjgl_opengl_Display.c: support for alpha
+	  blended icons on win32
+
+2009-07-07 12:32  spasi
+
+	* src/templates/org/lwjgl/opengl/GL14.java: Added missing Imaging
+	  tokens.
+
+2009-07-01 18:05  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: fix: Animated
+	  gif's were not working with ImageIO as it only returns a
+	  BufferedImage, so switched to Toolkit with MediaTracker.
+
+2009-06-19 10:32  spasi
+
+	* platform_build/build-definitions.xml,
+	  src/templates/org/lwjgl/opengl/GREMEDY_string_marker.java: Added
+	  support for GREMEDY_string_marker.
+
+2009-06-15 13:08  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Fix: allow
+	  logo's outside the appletloader.jar to be used.
+
+2009-06-11 21:07  matzon
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: print
+	  stacktrace if possible on fatal errors, fixed NPE in paint
+
+2009-06-03 18:29  kappa1
+
+	* src/java/org/lwjgl/test/applet/GearsApplet.java: Added Mouse
+	  Support to Gears Applet, This will allow rotating the view using
+	  the mouse.
+	  
+	  Fixed view ratio to support all sizes.
+
+2009-06-03 11:08  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/test/input/MouseTest.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: fixed windows
+	  click/movement detection if drag started inside display
+
+2009-06-02 12:40  spasi
+
+	* src/templates/org/lwjgl/opengl/ARB_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/GL20.java: Added missing
+	  @OutParameters
+
+2009-05-31 10:12  endolf
+
+	* build.xml: make sure the release target uses new jars, not just
+	  ones lying around from old builds
+
+2009-05-28 18:17  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: dependence on
+	  'sun.net.www.ParseUtil;' removed.
+
+2009-05-27 08:04  matzon
+
+	* src/native/windows/org_lwjgl_opengl_Display.c: add missing
+	  include to get __TrackMouseEvent exported
+
+2009-05-26 20:39  matzon
+
+	* platform_build/windows_ant/build.xml,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: fix windows issue
+	  with mouse down true when released outside window
+
+2009-05-23 09:37  kappa1
+
+	* src/java/org/lwjgl/test/applet/GearsApplet.java: A bit of clean
+	  up, code refactoring and commenting to GearsApplet test.
+
+2009-05-23 09:09  kappa1
+
+	* src/java/org/lwjgl/test/applet/GearsApplet.java: updated
+	  GearsApplet to use addNotify() to start a LWJGL Display, also
+	  prevents a new Display being created each time the start() method
+	  is called.
+
+2009-05-22 09:30  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Special thanks
+	  to Riven in helping find the bug below :)
+
+2009-05-22 09:14  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: BUG FIX:
+	  downloaded jars can now connect to the host they were from.
+
+2009-05-18 13:24  elias_naur
+
+	* src/templates/org/lwjgl/opengl/GL11.java: Added missing datatypes
+	  to glVertexPointer and glTexCoordPointer
+
+2009-05-08 20:29  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Spelling
+	  Mistake fix, oops :)
+
+2009-04-30 18:50  matzon
+
+	* src/java/org/lwjgl/Sys.java: preparing 2.2.0
+
+2009-04-30 18:48  matzon
+
+	* platform_build/build-definitions.xml: preparing 2.2.0
+
+2009-04-30 18:40  matzon
+
+	* doc/README: updated text to match new location for windows. added
+	  solaris.
+
+2009-04-29 16:38  spasi
+
+	* src/templates/org/lwjgl/opengl/NV_shader_buffer_load.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_buffer_unified_memory.java:
+	  Added support for NV_shader_buffer_load and
+	  NV_vertex_buffer_unified_memory.
+
+2009-04-26 19:58  elias_naur
+
+	* src/java/org/lwjgl/examples/spaceinvaders/Game.java: Added init
+	  code to space invaders example
+
+2009-04-24 20:35  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_LinuxContextImplementation.c:
+	  Linux: made legacy context code conditional
+
+2009-04-24 20:30  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_LinuxContextImplementation.c:
+	  Linux: OpenGL 3 attributes support
+
+2009-04-10 15:00  endolf
+
+	* libs/jinput.jar, libs/linux/libjinput-linux.so,
+	  libs/linux/libjinput-linux64.so,
+	  libs/macosx/libjinput-osx.jnilib, libs/windows/jinput-dx8.dll,
+	  libs/windows/jinput-dx8_64.dll, libs/windows/jinput-raw.dll,
+	  libs/windows/jinput-raw_64.dll: Update JInput including 64 bit
+	  windows builds
+
+2009-04-10 14:27  endolf
+
+	* build.xml: Fix the release build not outputting an LWJGL jar
+	  (oops)
+
+2009-04-09 21:18  endolf
+
+	* build.xml, platform_build/build-applet.xml,
+	  platform_build/build-generator.xml: Make the release build also
+	  compile the debug jar
+
+2009-04-09 20:22  endolf
+
+	* build.xml, platform_build/build-applet.xml,
+	  platform_build/build-definitions.xml: Parameterise the signing of
+	  the applet, and don't fail if the debug jar is missing.
+
+2009-04-08 21:53  endolf
+
+	* build.xml, platform_build/linux_ant/build.xml: Updates for
+	  solaris and linux builds.
+
+2009-04-08 20:18  endolf
+
+	* build.xml, platform_build/windows_ant/build.xml: Updates for
+	  building windows 64 bit builds in VC express
+
+2009-04-05 22:07  kevglass
+
+	* src/java/org/lwjgl/test/glu,
+	  src/java/org/lwjgl/test/glu/tessellation,
+	  src/java/org/lwjgl/test/glu/tessellation/TessCallback.java,
+	  src/java/org/lwjgl/test/glu/tessellation/TessellationTest.java,
+	  src/java/org/lwjgl/test/glu/tessellation/VertexData.java,
+	  src/java/org/lwjgl/util/glu/GLU.java,
+	  src/java/org/lwjgl/util/glu/GLUtessellator.java,
+	  src/java/org/lwjgl/util/glu/GLUtessellatorCallback.java,
+	  src/java/org/lwjgl/util/glu/GLUtessellatorCallbackAdapter.java,
+	  src/java/org/lwjgl/util/glu/tessellation,
+	  src/java/org/lwjgl/util/glu/tessellation/ActiveRegion.java,
+	  src/java/org/lwjgl/util/glu/tessellation/CachedVertex.java,
+	  src/java/org/lwjgl/util/glu/tessellation/Dict.java,
+	  src/java/org/lwjgl/util/glu/tessellation/DictNode.java,
+	  src/java/org/lwjgl/util/glu/tessellation/GLUface.java,
+	  src/java/org/lwjgl/util/glu/tessellation/GLUhalfEdge.java,
+	  src/java/org/lwjgl/util/glu/tessellation/GLUmesh.java,
+	  src/java/org/lwjgl/util/glu/tessellation/GLUtessellatorImpl.java,
+	  src/java/org/lwjgl/util/glu/tessellation/GLUvertex.java,
+	  src/java/org/lwjgl/util/glu/tessellation/Geom.java,
+	  src/java/org/lwjgl/util/glu/tessellation/Mesh.java,
+	  src/java/org/lwjgl/util/glu/tessellation/Normal.java,
+	  src/java/org/lwjgl/util/glu/tessellation/PriorityQ.java,
+	  src/java/org/lwjgl/util/glu/tessellation/PriorityQHeap.java,
+	  src/java/org/lwjgl/util/glu/tessellation/PriorityQSort.java,
+	  src/java/org/lwjgl/util/glu/tessellation/Render.java,
+	  src/java/org/lwjgl/util/glu/tessellation/Sweep.java,
+	  src/java/org/lwjgl/util/glu/tessellation/TessMono.java,
+	  src/java/org/lwjgl/util/glu/tessellation/TessState.java: Ported
+	  GLU tessellation code from JOGL to work within LWJGL
+
+2009-04-04 19:19  spasi
+
+	* src/java/org/lwjgl/opengl/ContextAttribs.java,
+	  src/java/org/lwjgl/test/opengl/VersionTest.java: Fixed
+	  ContextAttribs version validation.
+	  Added OpenGL version test.
+
+2009-03-27 12:56  spasi
+
+	* src/templates/org/lwjgl/opengl/ARB_copy_buffer.java,
+	  src/templates/org/lwjgl/opengl/GL31.java: Added support for
+	  ARB_copy_buffer and updated the GL31 copy buffer tokens.
+
+2009-03-26 11:15  spasi
+
+	* src/native/linux/extgl_glx.h: Added GLX_ARB_create_context
+	  tokens.
+
+2009-03-26 11:08  spasi
+
+	* src/java/org/lwjgl/opengl/ContextAttribs.java,
+	  src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/StripPostfix.java, src/native,
+	  src/native/linux/extgl_glx.c, src/native/linux/extgl_glx.h,
+	  src/templates/org/lwjgl/opengl/ARB_framebuffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_uniform_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/NV_explicit_multisample.java:
+	  Force forward compatible mode when we have GL3.1+ but miss
+	  ARB_compatibility.
+	  Added support for ARB_framebuffer_object.
+	  Added support for GLX_ARB_create_context. (WIP)
+	  Improved postfix stripping in the generator.
+
+2009-03-25 17:43  spasi
+
+	* src, src/java/org/lwjgl/opengl/GLContext.java,
+	  src/templates/org/lwjgl/opengl/AMD_performance_monitor.java,
+	  src/templates/org/lwjgl/opengl/AMD_texture_texture4.java,
+	  src/templates/org/lwjgl/opengl/AMD_vertex_shader_tesselator.java,
+	  src/templates/org/lwjgl/opengl/ARB_compatibility.java,
+	  src/templates/org/lwjgl/opengl/ARB_uniform_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ATI_meminfo.java,
+	  src/templates/org/lwjgl/opengl/EXT_cg_shader.java,
+	  src/templates/org/lwjgl/opengl/EXT_provoking_vertex.java,
+	  src/templates/org/lwjgl/opengl/EXT_texture_swizzle.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_array_bgra.java,
+	  src/templates/org/lwjgl/opengl/GL31.java,
+	  src/templates/org/lwjgl/opengl/NV_explicit_multisample.java,
+	  src/templates/org/lwjgl/opengl/NV_transform_feedback2.java: Added
+	  support for OpenGL 3.1
+	  Added support for a bunch of new OpenGL extensions.

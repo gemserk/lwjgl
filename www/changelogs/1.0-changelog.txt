@@ -1,0 +1,89 @@
+2007-02-04 21:46  matzon
+
+	* src/java/org/lwjgl/test/WindowCreationTest.java: fixed test to
+	  use -1 in freq
+
+2007-02-03 12:22  matzon
+
+	* build.xml, src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/devil/ILNative.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java: 1.0 version string
+
+2007-01-31 14:07  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxMouse.java: Linux: Make sure the
+	  first Mouse.poll() return correct absolute X and Y values
+
+2007-01-30 13:08  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsAWTInput.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java: Windows AWTInput:
+	  Make sure the cursor is contained within the window when the
+	  Mouse is grabbed.
+
+2007-01-23 19:55  matzon
+
+	* src/java/org/lwjgl/test/fmod3/NetTest.java: updated streams
+
+2007-01-22 10:14  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Tweaked comment for
+	  Display.getAvailableDisplayModes to make it clear that invalid
+	  modes can be returned and that create() won't always detect such
+	  modes
+
+2007-01-22 09:24  elias_naur
+
+	* src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/devil/ILNative.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java: Changed version to RC2
+
+2007-01-17 12:58  elias_naur
+
+	* src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/opengl/AWTGLCanvas.java,
+	  src/java/org/lwjgl/opengl/Context.java,
+	  src/java/org/lwjgl/opengl/Display.java: Remove the rest of the
+	  implementation reflection
+
+2007-01-17 12:49  elias_naur
+
+	* src/java/org/lwjgl/Sys.java: Sys.java: Don't use reflection to
+	  create platform specific implementations
+
+2007-01-17 08:22  elias_naur
+
+	* src/java/org/lwjgl/Sys.java: Bumped native version because of
+	  internal linux API change
+
+2007-01-17 08:16  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxEvent.java,
+	  src/native/linux/org_lwjgl_opengl_LinuxEvent.c: Linux: Fixed
+	  wrong return type in LinuxEvent.nGetKeyAddress
+
+2007-01-17 08:01  elias_naur
+
+	* src/native/generated/org_lwjgl_opengl_NVFramebufferMultisampleCoverage.c:
+	  Auto generated files update
+
+2007-01-17 08:01  elias_naur
+
+	* src/generated/org/lwjgl/opengl/ContextCapabilities.java,
+	  src/generated/org/lwjgl/opengl/NVFramebufferMultisampleCoverage.java:
+	  Auto generated files update
+
+2007-01-17 08:00  elias_naur
+
+	* src/templates/org/lwjgl/opengl/NV_framebuffer_multisample_coverage.java:
+	  Fixed type in NV_framebuffer_multisample_coverage.java
+
+2007-01-13 19:24  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Display: Fixed a NPE when
+	  create() fails on context creation
+
+2007-01-10 13:55  elias_naur
+
+	* src/java/org/lwjgl/opengl/AbstractAWTInput.java: AWTInput: Don't
+	  create the Robot before it is needed

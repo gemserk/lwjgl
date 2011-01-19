@@ -1,0 +1,443 @@
+2010-04-11 08:27  matzon
+
+	* build.xml: quickie update to build system to output the
+	  JNI_VERSION when building
+
+2010-04-10 18:07  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: fix infinite focus
+	  loop when using Display.setParent() + JWS + Linux.
+
+2010-04-09 23:57  spasi
+
+	* platform_build/build-generator.xml,
+	  src/java/org/lwjgl/opengl/StateTracker.java,
+	  src/java/org/lwjgl/opengl/Util.java,
+	  src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/ContextGeneratorProcessorFactory.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_type_2_10_10_10_rev.java,
+	  src/templates/org/lwjgl/opengl/ATI_vertex_streams.java,
+	  src/templates/org/lwjgl/opengl/EXT_gpu_shader4.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_weighting.java,
+	  src/templates/org/lwjgl/opengl/GL11.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL33.java,
+	  src/templates/org/lwjgl/opengl/NV_half_float.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_program.java: Added
+	  @NoErrorCheck on vertex data methods.
+	  The debug build will now track Begin/End pairs and never call
+	  GetError inside them.
+
+2010-04-08 22:53  kappa1
+
+	* src/java/org/lwjgl/examples/spaceinvaders/Game.java,
+	  src/java/org/lwjgl/examples/spaceinvaders/GameApplet.java:
+	  Example on how to allow Space Invader Test Application to work as
+	  an applet with minimal code change.
+
+2010-04-07 20:06  kappa1
+
+	* libs/lzma.jar: fix corrupt lzma.jar which caused signjar task to
+	  remove entries in the manifest file.
+
+2010-04-07 12:06  spasi
+
+	* src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/GL20.java: More glGetActive
+	  changes.
+
+2010-04-07 11:59  spasi
+
+	* src/templates/org/lwjgl/opengl/ARB_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/NV_transform_feedback.java: More
+	  glGetActive changes.
+
+2010-04-07 10:28  matzon
+
+	* platform_build/build-applet.xml: make sure we overwrite existing
+	  files
+
+2010-04-04 19:48  matzon
+
+	* platform_build/build-applet.xml: trusted and sealed lzma, needed
+	  by Java update 19
+
+2010-04-04 19:46  matzon
+
+	* libs/lzma.jar: trusted and sealed lzma, needed by Java update 19
+
+2010-04-03 19:03  spasi
+
+	* src/java/org/lwjgl/opengl/Display.java: Moved processMessages
+	  call after swapBuffers in Display.update.
+	  Added option to not call processMessages during Display.update.
+
+2010-04-03 13:32  kappa1
+
+	* build.xml: Modified build.xml so that the manifest file in
+	  lwjgl.jar and lwjgl_util_applet.jar is now tagged with
+	  'Trusted-Library: true'.
+	  
+	  This is needed from Java6u19+ when using a mix of signed/unsigned
+	  jars, otherwise an extra super scary dialog box will be shown to
+	  the user when an applet or JWS application is run.
+
+2010-04-02 18:45  spasi
+
+	* build.xml, platform_build/build-generator.xml: Fixed debug
+	  builds.
+
+2010-04-01 21:01  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Allow LWJGL
+	  applets to work when seperate_jvm parameter is not supported
+	  (i.e. java plugin1).
+
+2010-04-01 18:27  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Added better
+	  support for FreeBSD to appletloader. Thx to monty_hall for the
+	  patch.
+
+2010-04-01 15:05  spasi
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Fix for grabbed
+	  mouse deltas.
+
+2010-03-31 23:56  spasi
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Fixed mouse
+	  grabbing on secondary monitors.
+	  Added extra device polling when vsync is enabled, to reduce input
+	  lag.
+
+2010-03-31 21:15  spasi
+
+	* src/templates/org/lwjgl/opengl/GL20.java: Fixed copy/paste error.
+
+2010-03-31 20:56  spasi
+
+	* src/java/org/lwjgl/WindowsSysImplementation.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/GL20.java: Added yet another
+	  glGetActiveUniform alternative.
+
+2010-03-31 15:46  spasi
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/ForceInit.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/Utils.java,
+	  src/templates/org/lwjgl/opengl/ATI_texture_env_combine3.java,
+	  src/templates/org/lwjgl/opengl/EXT_direct_state_access.java,
+	  src/templates/org/lwjgl/opengl/GL32.java,
+	  src/templates/org/lwjgl/opengl/GL40.java,
+	  src/templates/org/lwjgl/opengl/NVX_gpu_memory_info.java,
+	  src/templates/org/lwjgl/opengl/NV_half_float.java,
+	  src/templates/org/lwjgl/opengl/NV_primitive_restart.java: Added
+	  support for NVX_gpu_memory_info (experimental extension).
+	  Added support for initializing extensions that are not exposed in
+	  GL_EXTENSIONS (enables EXT_direct_state_access and
+	  NV_primitive_restart on AMD GPUs, use at your own risk).
+	  Updated @Optional functions for AMD GPUs (driver version: 10.3)
+
+2010-03-28 23:11  matzon
+
+	* src/java/org/lwjgl/LinuxSysImplementation.java,
+	  src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  src/java/org/lwjgl/WindowsSysImplementation.java: bumping native
+	  version
+
+2010-03-27 16:04  kappa1
+
+	* src/java/org/lwjgl/input/Mouse.java: Further improvement to mouse
+	  ungrab position behaviour. Mouse no longer limited to just
+	  ungrabbing at the position it was grabbed, now you can can call
+	  setCursorPosition(x,y) while mouse is grabbed and ungrab the
+	  mouse at any position you like.
+
+2010-03-27 01:12  spasi
+
+	* platform_build/build-definitions.xml,
+	  src/templates/org/lwjgl/opengl/APPLE_aux_depth_stencil.java,
+	  src/templates/org/lwjgl/opengl/APPLE_client_storage.java,
+	  src/templates/org/lwjgl/opengl/APPLE_element_array.java,
+	  src/templates/org/lwjgl/opengl/APPLE_fence.java,
+	  src/templates/org/lwjgl/opengl/APPLE_float_pixels.java,
+	  src/templates/org/lwjgl/opengl/APPLE_flush_buffer_range.java,
+	  src/templates/org/lwjgl/opengl/APPLE_object_purgeable.java,
+	  src/templates/org/lwjgl/opengl/APPLE_packed_pixels.java,
+	  src/templates/org/lwjgl/opengl/APPLE_rgb_422.java,
+	  src/templates/org/lwjgl/opengl/APPLE_row_bytes.java,
+	  src/templates/org/lwjgl/opengl/APPLE_texture_range.java,
+	  src/templates/org/lwjgl/opengl/APPLE_vertex_array_object.java,
+	  src/templates/org/lwjgl/opengl/APPLE_vertex_array_range.java,
+	  src/templates/org/lwjgl/opengl/APPLE_vertex_program_evaluators.java,
+	  src/templates/org/lwjgl/opengl/APPLE_ycbcr_422.java,
+	  src/templates/org/lwjgl/opengl/ATI_element_array.java,
+	  src/templates/org/lwjgl/opengl/GL31.java: Added support for APPLE
+	  extensions.
+
+2010-03-26 19:52  kappa1
+
+	* src/java/org/lwjgl/input/Mouse.java: oops, windows mousegrab
+	  fixed
+
+2010-03-26 19:17  kappa1
+
+	* src/java/org/lwjgl/input/Mouse.java: Consistent mouse grab
+	  behaviour on all platforms. Mouse will now ungrab at the same
+	  place it was grabbed from.
+
+2010-03-23 12:43  spasi
+
+	* src/java/org/lwjgl/util/generator/Alternate.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/Utils.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_uniform_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/GL31.java: Added alternatives for
+	  glGetActiveUniform/Attrib.
+	  Added a javadoc comment to all alternative methods.
+
+2010-03-17 18:58  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: 2.4 release
+
+2010-03-17 18:55  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: patch as per
+	  http://lwjgl.org/forum/index.php/topic,3124.0.html
+
+2010-03-16 19:05  spasi
+
+	* src/java/org/lwjgl/util/generator/GeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  src/native/common, src/native/linux, src/native/macosx,
+	  src/native/windows: Added JNIEXPORT to AL alternate methods.
+	  Now forcing full regen when any class in the Generator changes.
+
+2010-03-16 17:58  spasi
+
+	* src/java/org/lwjgl/test/opengl/shaders/ShaderUNI.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/RegisterStubsGenerator.java,
+	  src/templates/org/lwjgl/openal/AL10.java: Added some alternate AL
+	  functions.
+
+2010-03-14 23:24  spasi
+
+	* src/java/org/lwjgl/opengl/APIUtils.java,
+	  src/java/org/lwjgl/opengl/StringUtils.java,
+	  src/java/org/lwjgl/test/opengl/SyncTest.java,
+	  src/java/org/lwjgl/test/opengl/VBOTest.java,
+	  src/java/org/lwjgl/test/opengl/shaders/Shader.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderFP.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderFSH.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderUNI.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderVP.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderVSH.java,
+	  src/java/org/lwjgl/util/generator/Constant.java,
+	  src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  src/java/org/lwjgl/util/generator/GLreturn.java,
+	  src/java/org/lwjgl/util/generator/GLstring.java,
+	  src/java/org/lwjgl/util/generator/GLstringOffset.java,
+	  src/java/org/lwjgl/util/generator/GeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/JavaTypeTranslator.java,
+	  src/java/org/lwjgl/util/generator/PostfixTranslator.java,
+	  src/java/org/lwjgl/util/generator/Utils.java,
+	  src/templates/org/lwjgl/opengl/AMD_performance_monitor.java,
+	  src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_draw_buffers.java,
+	  src/templates/org/lwjgl/opengl/ARB_framebuffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_occlusion_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_sampler_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_subroutine.java,
+	  src/templates/org/lwjgl/opengl/ARB_shading_language_include.java,
+	  src/templates/org/lwjgl/opengl/ARB_sync.java,
+	  src/templates/org/lwjgl/opengl/ARB_timer_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_transform_feedback2.java,
+	  src/templates/org/lwjgl/opengl/ARB_transform_feedback3.java,
+	  src/templates/org/lwjgl/opengl/ARB_uniform_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_array_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/ATI_draw_buffers.java,
+	  src/templates/org/lwjgl/opengl/EXT_direct_state_access.java,
+	  src/templates/org/lwjgl/opengl/EXT_draw_buffers2.java,
+	  src/templates/org/lwjgl/opengl/EXT_framebuffer_object.java,
+	  src/templates/org/lwjgl/opengl/EXT_multi_draw_arrays.java,
+	  src/templates/org/lwjgl/opengl/EXT_texture_integer.java,
+	  src/templates/org/lwjgl/opengl/EXT_timer_query.java,
+	  src/templates/org/lwjgl/opengl/EXT_transform_feedback.java,
+	  src/templates/org/lwjgl/opengl/GL11.java,
+	  src/templates/org/lwjgl/opengl/GL14.java,
+	  src/templates/org/lwjgl/opengl/GL15.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL31.java,
+	  src/templates/org/lwjgl/opengl/GL32.java,
+	  src/templates/org/lwjgl/opengl/GL33.java,
+	  src/templates/org/lwjgl/opengl/GL40.java,
+	  src/templates/org/lwjgl/opengl/GREMEDY_string_marker.java,
+	  src/templates/org/lwjgl/opengl/NV_explicit_multisample.java,
+	  src/templates/org/lwjgl/opengl/NV_occlusion_query.java,
+	  src/templates/org/lwjgl/opengl/NV_program.java,
+	  src/templates/org/lwjgl/opengl/NV_register_combiners.java,
+	  src/templates/org/lwjgl/opengl/NV_shader_buffer_load.java,
+	  src/templates/org/lwjgl/opengl/NV_transform_feedback.java,
+	  src/templates/org/lwjgl/opengl/NV_transform_feedback2.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_buffer_unified_memory.java:
+	  Added support for single primitive input/output parameters.
+
+2010-03-14 00:19  spasi
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/opengl/StringUtils.java,
+	  src/java/org/lwjgl/test/opengl/shaders/Shader.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderFP.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderFSH.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderUNI.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderVP.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderVSH.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShadersTest.java,
+	  src/java/org/lwjgl/test/opengl/shaders/shaderUNI.vsh,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java:
+	  Added Charset encoding to StringUtils
+	  Changed shader tests to use the String APIs
+	  Finished ARB_uniform_buffer_object shader test
+	  Fixed native code compiler warnings
+	  Made the generator check file timestamps to avoid unnecessary 3+
+	  min builds
+
+2010-03-13 00:45  spasi
+
+	* src/templates/org/lwjgl/opengl/ARB_program.java: String support
+	  for ProgramStringARB.
+
+2010-03-12 23:35  spasi
+
+	* src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java:
+	  Force Indirect for StringLists
+
+2010-03-12 22:20  spasi
+
+	* src/java/org/lwjgl/util/generator/Utils.java: Cleaned imports.
+
+2010-03-12 22:14  spasi
+
+	* src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java:
+	  Address var fix.
+
+2010-03-12 21:55  spasi
+
+	* src/java/org/lwjgl/opengl/StringUtils.java,
+	  src/java/org/lwjgl/util/generator/Alternate.java,
+	  src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  src/java/org/lwjgl/util/generator/GLstring.java,
+	  src/java/org/lwjgl/util/generator/GLstringOffset.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/JNITypeTranslator.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/JavaTypeTranslator.java,
+	  src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  src/java/org/lwjgl/util/generator/NativeTypeTranslator.java,
+	  src/java/org/lwjgl/util/generator/StringList.java,
+	  src/java/org/lwjgl/util/generator/TypedefsGenerator.java,
+	  src/java/org/lwjgl/util/generator/Utils.java,
+	  src/templates/org/lwjgl/opengl/AMD_performance_monitor.java,
+	  src/templates/org/lwjgl/opengl/ARB_blend_func_extended.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_shading_language_include.java,
+	  src/templates/org/lwjgl/opengl/ARB_uniform_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/EXT_gpu_shader4.java,
+	  src/templates/org/lwjgl/opengl/EXT_separate_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/EXT_transform_feedback.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL31.java,
+	  src/templates/org/lwjgl/opengl/GL33.java,
+	  src/templates/org/lwjgl/opengl/NV_transform_feedback.java: Added
+	  support for Strings! (WIP, needs more testing)
+
+2010-03-12 20:15  endolf
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Try and find a
+	  sensible video driver to report on rather than assuming it's
+	  video0.
+
+2010-03-11 21:06  spasi
+
+	* src/java/org/lwjgl/BufferChecks.java,
+	  src/java/org/lwjgl/opengl/BaseReferences.java,
+	  src/java/org/lwjgl/opengl/GLChecks.java,
+	  src/java/org/lwjgl/opengl/GLContext.java,
+	  src/java/org/lwjgl/opengl/StateTracker.java,
+	  src/java/org/lwjgl/util/generator/Alternate.java,
+	  src/java/org/lwjgl/util/generator/BufferKind.java,
+	  src/java/org/lwjgl/util/generator/GLTypeMap.java,
+	  src/java/org/lwjgl/util/generator/GLvoid.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/TypeInfo.java,
+	  src/java/org/lwjgl/util/generator/Utils.java,
+	  src/templates/org/lwjgl/opengl/ARB_blend_func_extended.java,
+	  src/templates/org/lwjgl/opengl/ARB_draw_indirect.java,
+	  src/templates/org/lwjgl/opengl/ARB_explicit_attrib_location.java,
+	  src/templates/org/lwjgl/opengl/ARB_gpu_shader5.java,
+	  src/templates/org/lwjgl/opengl/ARB_gpu_shader_fp64.java,
+	  src/templates/org/lwjgl/opengl/ARB_occlusion_query2.java,
+	  src/templates/org/lwjgl/opengl/ARB_sampler_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_bit_encoding.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_subroutine.java,
+	  src/templates/org/lwjgl/opengl/ARB_shading_language_include.java,
+	  src/templates/org/lwjgl/opengl/ARB_tessellation_shader.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_buffer_object_rgb32.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_compression_bptc.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_rgb10_a2ui.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_swizzle.java,
+	  src/templates/org/lwjgl/opengl/ARB_timer_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_transform_feedback2.java,
+	  src/templates/org/lwjgl/opengl/ARB_transform_feedback3.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_type_2_10_10_10_rev.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/GL33.java,
+	  src/templates/org/lwjgl/opengl/GL40.java: Added support for
+	  OpenGL 3.3 and OpenGL 4.0.
+
+2010-03-08 21:29  matzon
+
+	* doc/CREDITS, src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/XRandR.java: added new XRandR stuff
+	  fixed credits doc a bit
+
+2010-02-21 21:27  matzon
+
+	* src/java/org/lwjgl/test/applet/GearsApplet.java: fixed non-direct
+	  buffer issue
+
+2010-02-21 21:18  matzon
+
+	* src/java/org/lwjgl/test/opengl/Gears.java: fixed non-direct
+	  buffer issue

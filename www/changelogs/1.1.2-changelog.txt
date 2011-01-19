@@ -1,0 +1,76 @@
+2007-08-17 18:41  matzon
+
+	* build.xml, src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/devil/ILNative.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java: 1.1.2
+
+2007-08-17 06:14  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Windows: Don't do
+	  SYSRQ hackery on WM_SYSKEYDOWN
+
+2007-08-17 06:12  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Reverted 2877
+
+2007-08-16 20:29  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: handle alt+space
+	  (windows system menu)
+
+2007-08-16 09:46  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Windows: Handle
+	  WM_SYSCHAR
+
+2007-08-16 08:55  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Don't allow switching to
+	  fullscreen when a custom display mode is in effect. This is a
+	  change from before, where the current mode was simply overwritten
+	  with the initial (desktop) mode
+
+2007-08-16 08:49  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Revert 2872
+
+2007-08-16 08:38  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Windows: Make
+	  cursor visible when grabbed and not focused
+
+2007-08-15 20:14  matzon
+
+	* src/java/org/lwjgl/opengl/Display.java: fix: make sure that we
+	  return to the same display mode that was set in windowed mode
+	  when toggling between fullscreen and windowed mode
+
+2007-08-12 23:33  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Windows: Fixed
+	  cursor clipping when loosing focus
+
+2007-08-05 21:20  matzon
+
+	* www/changelogs/1.0-changelog.txt,
+	  www/changelogs/1.0-rc1-changelog.txt,
+	  www/changelogs/1.0beta4-changelog.txt,
+	  www/changelogs/1.1-changelog.txt,
+	  www/changelogs/1.1.1-changelog.txt,
+	  www/changelogs/full-changelog.txt: added missing changelogs
+
+2007-08-05 21:19  matzon
+
+	* www/projects.php: sync with site
+
+2007-08-05 20:52  matzon
+
+	* build.xml: tagging 1.1.1
+	  added generate-all to release, issues with generated being killed
+	  on clean
+
+2007-08-05 20:51  matzon
+
+	* src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/devil/ILNative.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java: tagging 1.1.1

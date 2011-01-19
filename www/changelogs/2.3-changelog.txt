@@ -1,0 +1,80 @@
+2010-02-20 10:43  matzon
+
+	* src/java/org/lwjgl/test/WaveDataTest.java: added test for
+	  WaveData
+
+2010-02-20 10:43  matzon
+
+	* src/java/org/lwjgl/util/WaveData.java: cleanup and better logging
+	  - no longer prints stacktrace
+	  changed AudioInputStream method to use available() instead of
+	  calculating it.
+
+2010-02-14 17:06  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Complete overhaul of
+	  the linux focus system when using Display.setParent(). This
+	  should fix the input problems with applets (on linux) due to
+	  Display not being able to gain focus.
+	  
+	  Also now works perfectly in all browsers, previously input focus
+	  was not restored to other browser components when requested (like
+	  firefox's address bar).
+
+2010-02-10 11:22  spasi
+
+	* src/java/org/lwjgl/opengl/BaseReferences.java,
+	  src/java/org/lwjgl/opengl/Display.java: Changed BaseReferences to
+	  use GL20.GL_MAX_TEXTURE_IMAGE_UNITS when available
+	  (GL13.GL_MAX_TEXTURE_UNITS is deprecated).
+	  Catch and log OpenGL errors during context creation, instead of
+	  throwing an exception.
+
+2010-02-09 15:22  spasi
+
+	* src/java/org/lwjgl/opengl/GLContext.java: Catch and ignore
+	  INVALID_OPERATION error when retrieving CONTEXT_PROFILE_MASK
+	  (workaround for ATI 9.12).
+
+2010-02-07 18:50  spasi
+
+	* src/templates/org/lwjgl/opengl/GL32.java: Made glGetInteger64i_v
+	  optional (not exposed on NV drivers)
+
+2010-02-07 15:15  spasi
+
+	* src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/Optional.java,
+	  src/templates/org/lwjgl/opengl/GL31.java,
+	  src/templates/org/lwjgl/opengl/GL32.java: Removed
+	  glPrimitiveRestart from GL31 (immediate mode call that never made
+	  it to the core)
+	  Added Optional annotation for functions that miss from incomplete
+	  implementations.
+
+2010-02-03 21:03  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: prepare for 2.3
+
+2010-01-31 16:40  spasi
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/opengl/GLContext.java,
+	  src/java/org/lwjgl/util/generator/ContextCapabilitiesGenerator.java,
+	  src/java/org/lwjgl/util/generator/ContextGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/templates/org/lwjgl/opengl/AMD_seamless_cubemap_per_texture.java,
+	  src/templates/org/lwjgl/opengl/AMD_shader_stencil_export.java,
+	  src/templates/org/lwjgl/opengl/AMD_vertex_shader_tesselator.java,
+	  src/templates/org/lwjgl/opengl/AMD_vertex_shader_tessellator.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL32.java: Improved compatibility
+	  mode detection
+	  Removed support for indirect buffers as arguments to GL functions
+	  Added missing tokens in GL30 & GL32
+	  Added support for AMD_seamless_cubemap_per_texture &
+	  AMD_shader_stencil_export
+	  Fixed AMD_vertex_shader_tessellator typo
+	  Added AMD extensions to the build process >.<

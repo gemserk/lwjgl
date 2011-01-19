@@ -1,0 +1,184 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background: url(_gfx/background.png);
+	background-color: #cccccc;
+	text-align: left;
+	font: 12px/16px Verdana, Arial, Helvetica;
+}
+
+td {
+	font: 12px/16px Verdana, Arial, Helvetica;
+}
+
+a:link    {color: #ff9900; text-decoration: underline;}
+a:active  {color: #ff9900; text-decoration: underline;}
+a:visited {color: #ff9900; text-decoration: underline;}
+a:hover   {color: #cc6600; text-decoration: none;}
+
+div.menu a:link    {color: #000000; text-decoration: none;}
+div.menu a:active  {color: #000000; text-decoration: none;}
+div.menu a:visited {color: #000000; text-decoration: none;}
+div.menu a:hover   {color: #ff9900; text-decoration: underline;}
+
+div.menu a.activeItem:link    {color: #ff9900; text-decoration: none;}
+div.menu a.activeItem:active  {color: #ff9900; text-decoration: none;}
+div.menu a.activeItem:visited {color: #ff9900; text-decoration: none;}
+div.menu a.activeItem:hover   {color: #cc6600; text-decoration: underline;}
+
+h1
+{
+	color: #ff9900;
+	font: bold 14px/16px Verdana, Arial, Helvetica;
+	margin: 0px 0px 6px 0px;
+}
+
+h2
+{
+	font: bold 14px/16px Verdana, Arial, Helvetica;
+	margin: 0px 0px 6px 0px;
+}
+
+span.newsdate
+{
+	font: 11px/16px Verdana, Arial, Helvetica;
+	font-style: italic;
+}
+
+div.mainFrame
+{
+	background: url(_gfx/borderLeft.png) left repeat-y;
+	margin: 20px 20px 20px 20px;
+	padding: 0px;
+	background-color: #ffffff;
+}
+
+div.contentFrame
+{
+	clear: both;
+	background: url(_gfx/borderRight.png) right repeat-y;
+	padding: 0px 0px 0px 0px;
+}
+
+div.header
+{
+	margin: 0px 12px 0px 2px;
+	background: url(_gfx/mesh.png) top right no-repeat;
+	height: 220px;
+}
+
+div.header img
+{
+	margin-left: 50px;
+}
+
+div.content
+{
+	padding-right: 40px;
+	text-align: justify;
+	margin-left: 160px;
+}
+
+div.content p
+{
+	margin: 0px 0px 12px 10px;
+}
+
+div.content pre
+{
+	margin: 0px 0px 12px 10px;
+}
+
+div.content b
+{
+	font: bold 14px/16px Verdana, Arial, Helvetica;
+}
+
+
+div.menu
+{
+	float: left;
+	background: url(_gfx/seperator.png) top right no-repeat;
+	padding-left: 15px;
+	margin-right: 15px;
+	width: 145px;
+	/* box model hack for IE5 */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 130px;
+}
+
+/* be nice to opera 5 and some IE versions*/
+html->menu
+{
+	width: 130px;
+}
+
+div.menu p
+{
+	margin: 0px 0px 12px 10px;
+}
+
+div.borderTop
+{
+	background: url(_gfx/borderTop.png) repeat-x;
+	height: 30px;
+}
+
+div.borderTop span.left
+{
+	background: url(_gfx/cornerTL.png) left top no-repeat;
+	float: left;
+	width: 30px;
+	height: 30px;
+}
+
+div.borderTop span.right
+{
+	background: url(_gfx/cornerTR.png) right top no-repeat;
+	float: right;
+	width: 40px;
+	height: 30px;
+}
+
+div.borderBottom
+{
+	background: url(_gfx/borderBottom.png) repeat-x;
+	height: 40px;
+}
+
+div.borderBottom span.left
+{
+	background: url(_gfx/cornerBL.png) left bottom no-repeat;
+	float: left;
+	width: 40px;
+	height: 40px;
+}
+
+div.borderBottom span.right
+{
+	font: 11px/16px Verdana, Arial, Helvetica;
+	color: #999999;
+	background: url(_gfx/cornerBR.png) right bottom no-repeat;
+	float: right;
+	padding-right: 40px;
+	height: 40px;
+	text-align: right;
+}
+
+div.clear
+{
+	clear: both;
+    font-size: 1px;
+    line-height: 0px;
+}
+
+pre.code
+{
+	border: 1px solid #000000;
+	padding: 10px;
+}
+
+.codeKeyword {font-family: Courier New; color: #0000FF; font-size: 12px;}
+.codeComment {font-family: Courier New; color: #008000; font-size: 12px;}

@@ -1,0 +1,131 @@
+2002-10-28 21:01  exocet
+
+	* src/java/org/lwjgl/vector/: Matrix4f.java, Matrix3f.java: Fixed
+	  inversion error.
+
+2002-10-26 20:54  exocet
+
+	* src/native/win32/:
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp:
+	  Fixed some bugs.
+
+2002-10-19 16:27  cix_foo
+
+	* src/native/win32/: org_lwjgl_input_GamePad.cpp,
+	  org_lwjgl_input_Joystick.cpp: Ready to fill in. Go on, you know
+	  you want to.
+
+2002-10-19 01:28  cix_foo
+
+	* src/java/org/lwjgl/: Display.java, DisplayMode.java, Math.java,
+	  Sys.java, opengl/CoreGL.java, opengl/GLConstants.java: ***
+	  keyword substitution change ***
+
+2002-10-19 01:21  cix_foo
+
+	* src/java/org/lwjgl/opengl/: CoreGL.java, GL.java,
+	  GLConstants.java: New extensions
+
+2002-10-17 00:34  exocet
+
+	* src/java/org/lwjgl/vector/: Matrix2f.java, Matrix3f.java,
+	  Matrix4f.java: added invert/determinant
+
+2002-10-16 23:00  exocet
+
+	* src/native/win32/MatrixOpCommon.cpp: fixed some memory errors
+
+2002-10-15 22:30  cix_foo
+
+	* src/native/: win32/org_lwjgl_opengl_CoreGL.cpp,
+	  win32/MatrixOpCommon.cpp, common/org_lwjgl_opengl_CoreGL.h: Fixed
+	  native matrix code so it compiles. Added EXT_paletted_texture
+	  functions to CoreGL - whoops
+
+2002-10-06 23:34  cix_foo
+
+	* src/java/org/lwjgl/vector/: Vector3f.java, Vector4f.java: Added
+	  load method
+
+2002-09-28 18:53  exocet
+
+	* src/native/win32/: MatrixOpCommon.cpp, MatrixOpCommon.h,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp: Optimised INVERT
+	  cases for Orthogonal Matricies (Rotations)
+
+2002-09-20 19:00  cix_foo
+
+	* src/native/win32/org_lwjgl_opengl_GL.cpp: Fixed
+	  wglGetExtensionsStringARB problem
+
+2002-09-20 18:57  cix_foo
+
+	* src/java/org/lwjgl/opengl/GL.java: Catching up
+
+2002-09-20 18:53  cix_foo
+
+	* doc/tutorial/skeleton_code.html: Catching up
+
+2002-09-12 03:42  matzon
+
+	* src/native/win32/org_lwjgl_opengl_eax_CoreEAX.cpp: fix: don't do
+	  the whole initializing thingy - just assume that OpenAL is
+	  initialized fix:: wrong comment fix: changed ifndef to ifdef DOH!
+
+2002-09-12 03:26  matzon
+
+	* src/java/org/lwjgl/openal/eax/BaseEAX.java: add: added finalizer
+
+2002-09-11 18:57  matzon
+
+	* src/java/org/lwjgl/openal/eax/EAXListenerProperties.java: fix:
+	  now reading ints instead of longs - buffer overflow, since longs
+	  are 64 bit in java
+
+2002-09-11 18:46  matzon
+
+	* src/java/org/lwjgl/openal/eax/EAXBufferProperties.java: fix: now
+	  reading ints instead of longs - buffer overflow, since longs are
+	  64 bit in java
+
+2002-09-10 16:35  matzon
+
+	* doc/CREDITS: add: Added Gregory Pierce to credits list
+
+2002-09-09 18:41  matzon
+
+	* doc/: openal_c-to-java.html, openal_c-to-java.txt: mod: changed
+	  text file to html, so that it can be included on website
+
+2002-09-09 01:57  exocet
+
+	* src/native/win32/: MatrixOpCommon.cpp, MatrixOpCommon.h,
+	  org_lwjgl_Math_MatrixOpAdd_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpAdd_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpCopy_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpCopy_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpInvert_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpMultiply_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpMultiply_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpNegate_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpNegate_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpNormalise_MatrixOpSafe.cpp,
+	  org_lwjgl_Math_MatrixOpSubtract_MatrixOpDirect.cpp,
+	  org_lwjgl_Math_MatrixOpSubtract_MatrixOpSafe.cpp: Cleaned up the
+	  code, all test cases I have sent at it work.	check current
+	  compatibility at:
+	  http://www.happypedestrian.com/lwjgl/matrixop.html
+
+2002-09-08 08:20  gregorypierce
+
+	* src/native/macosx/: RenderingContext.h, RenderingContext.cpp:
+	  RenderingContext - OpenGL context
+
+2002-09-08 08:19  gregorypierce
+
+	* src/native/macosx/org_lwjgl_Display.cpp: Updated to use
+	  RenderingContext

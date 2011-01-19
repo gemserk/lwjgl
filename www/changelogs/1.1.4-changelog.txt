@@ -1,0 +1,130 @@
+2008-01-20 08:20  matzon
+
+	* build.xml, src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/devil/ILNative.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java: 1.1.4 version string
+
+2008-01-19 09:53  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Only let Display.update()
+	  call display_impl.update() once
+
+2008-01-19 08:57  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxKeyboard.java,
+	  src/native/linux/org_lwjgl_opengl_LinuxKeyboard.c: Linux: Fixed
+	  test for XkbSetDetectableAutoRepeat success
+
+2008-01-19 08:49  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java: Removed OS message
+	  polls from mouse and keyboard poll() and read(), since they can
+	  be quite expensive
+
+2008-01-18 10:29  elias_naur
+
+	* src/java/org/lwjgl/test/opengl/awt/AWTGears.java: AWTGears: Make
+	  the canvas the same size as the Gears test
+
+2008-01-07 18:29  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxKeyboard.java,
+	  src/native/linux/org_lwjgl_opengl_LinuxKeyboard.c: Linux: use
+	  XkbSetDetectableAutoRepeat to detect repeated key events more
+	  reliably
+
+2008-01-06 21:33  elias_naur
+
+	* src/templates/org/lwjgl/openal/AL10.java,
+	  src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_occlusion_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_program.java,
+	  src/templates/org/lwjgl/opengl/EXT_framebuffer_object.java,
+	  src/templates/org/lwjgl/opengl/GL11.java,
+	  src/templates/org/lwjgl/opengl/GL15.java,
+	  src/templates/org/lwjgl/opengl/NV_fence.java,
+	  src/templates/org/lwjgl/opengl/NV_occlusion_query.java,
+	  src/templates/org/lwjgl/opengl/NV_program.java: Added missing
+	  @OutParameter annotations to alGen* and glGen* methods
+
+2007-12-13 09:29  elias_naur
+
+	* src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: Pulled
+	  DefWindowProc calling to java side
+
+2007-12-04 11:47  elias_naur
+
+	* platform_build/mingw_ant/build.xml: Windows: Removed unused
+	  library path from mingw build script
+
+2007-12-04 10:58  elias_naur
+
+	* src/native/windows/Window.h,
+	  src/native/windows/org_lwjgl_opengl_Display.c: Windows: 64bit
+	  compilation fixes
+
+2007-12-04 09:27  elias_naur
+
+	* src/native/windows/org_lwjgl_opengl_WindowsContextImplementation.c:
+	  Windows: Removed unused local declarations from
+	  WindowsContextImplementation.c
+
+2007-11-27 07:58  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java: Mouse: Attempt to clarify
+	  Mouse.setNativeCursor javadoc
+
+2007-11-14 11:54  elias_naur
+
+	* build.xml: Improved native path handling in 'runtest' ant target
+
+2007-11-14 11:10  elias_naur
+
+	* src/native/windows/windows_al.c: windows: Use
+	  throwFormattedException, not throwException in tryLoadOpenAL()
+
+2007-11-14 11:07  elias_naur
+
+	* src/native/linux/linux_al.c, src/native/macosx/macosx_al.c,
+	  src/native/windows/windows_al.c: openal: Don't free native path
+	  too early (duh)
+
+2007-11-14 10:45  elias_naur
+
+	* src/native/common/extal.h,
+	  src/native/common/org_lwjgl_openal_AL.c,
+	  src/native/linux/linux_al.c, src/native/macosx/macosx_al.c,
+	  src/native/windows/windows_al.c: openal: Improved error reporting
+	  from native library load
+
+2007-11-12 16:02  matzon
+
+	* src/java/org/lwjgl/openal/ALC11.java: fixed 1.1 detection so that
+	  oal 1.1 stubs are loaded for major > 1
+
+2007-11-09 05:11  elias_naur
+
+	* src/java/org/lwjgl/test/applet/OpenGL.java,
+	  src/java/org/lwjgl/test/applet/Speed.java: Added a Thread.yield()
+	  to applets tests that repaint() last in paintGL() to help input
+	  responsiveness on linux. Thanks to Kappa for debugging and
+	  finding the workaround.
+
+2007-11-07 23:17  matzon
+
+	* src/java/org/lwjgl/util/input,
+	  src/java/org/lwjgl/util/input/ControllerAdapter.java: added aho's
+	  adapter
+
+2007-11-01 13:06  elias_naur
+
+	* src/java/org/lwjgl/Sys.java: Tweaked exception message
+
+2007-10-30 18:34  elias_naur
+
+	* src/native/linux/extgl_glx.c: Linux: use throwFormattedException
+	  in extgl_Open instead of custom message formatting

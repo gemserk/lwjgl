@@ -1,0 +1,1034 @@
+2006-07-12 19:57  matzon
+
+	* src/java/org/lwjgl/LWJGLUtil.java: using constants for names
+
+2006-07-12 19:55  matzon
+
+	* src/java/org/lwjgl/LWJGLUtil.java: win32->windows
+
+2006-07-12 19:38  matzon
+
+	* platform_build/linux_ant/build_fmod3.xml: check for fmod
+	  property when it's actually been imported
+
+2006-07-12 19:36  matzon
+
+	* build.xml: using ant build files for linux
+
+2006-07-12 19:35  matzon
+
+	* platform_build/linux_ant/build_fmod3.xml: check for fmod
+
+2006-07-12 19:32  matzon
+
+	* platform_build/linux_ant/build_devil.xml,
+	  platform_build/linux_ant/build_fmod3.xml: linux ant build files
+
+2006-07-12 19:07  elias_naur
+
+	* platform_build/windows_ant/build.xml: Windows: Fix double
+	  compiler flag
+
+2006-07-12 18:32  elias_naur
+
+	* build.xml, src/java/org/lwjgl/opengl/AWTGLCanvas.java,
+	  src/java/org/lwjgl/opengl/Context.java,
+	  src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/Win32AWTGLCanvasPeerInfo.java,
+	  src/java/org/lwjgl/opengl/Win32CanvasImplementation.java,
+	  src/java/org/lwjgl/opengl/Win32ContextImplementation.java,
+	  src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/java/org/lwjgl/opengl/Win32DisplayPeerInfo.java,
+	  src/java/org/lwjgl/opengl/Win32PbufferPeerInfo.java,
+	  src/java/org/lwjgl/opengl/Win32PeerInfo.java,
+	  src/java/org/lwjgl/opengl/Win32Registry.java,
+	  src/java/org/lwjgl/opengl/WindowsAWTGLCanvasPeerInfo.java,
+	  src/java/org/lwjgl/opengl/WindowsCanvasImplementation.java,
+	  src/java/org/lwjgl/opengl/WindowsContextImplementation.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplayPeerInfo.java,
+	  src/java/org/lwjgl/opengl/WindowsPbufferPeerInfo.java,
+	  src/java/org/lwjgl/opengl/WindowsPeerInfo.java,
+	  src/java/org/lwjgl/opengl/WindowsRegistry.java,
+	  src/native/windows/LWJGL.c, src/native/windows/context.c,
+	  src/native/windows/context.h, src/native/windows/display.c,
+	  src/native/windows/display.h,
+	  src/native/windows/org_lwjgl_Sys.c,
+	  src/native/windows/org_lwjgl_input_Cursor.c,
+	  src/native/windows/org_lwjgl_opengl_Display.c,
+	  src/native/windows/org_lwjgl_opengl_Pbuffer.c,
+	  src/native/windows/org_lwjgl_opengl_Win32AWTGLCanvasPeerInfo.c,
+	  src/native/windows/org_lwjgl_opengl_Win32ContextImplementation.c,
+	  src/native/windows/org_lwjgl_opengl_Win32DisplayPeerInfo.c,
+	  src/native/windows/org_lwjgl_opengl_Win32PeerInfo.c,
+	  src/native/windows/org_lwjgl_opengl_Win32Registry.c,
+	  src/native/windows/org_lwjgl_opengl_WindowsAWTGLCanvasPeerInfo.c,
+	  
+	  src/native/windows/org_lwjgl_opengl_WindowsContextImplementation.c,
+	  src/native/windows/org_lwjgl_opengl_WindowsDisplayPeerInfo.c,
+	  src/native/windows/org_lwjgl_opengl_WindowsPeerInfo.c,
+	  src/native/windows/org_lwjgl_opengl_WindowsRegistry.c,
+	  src/native/windows/win32_al.c, src/native/windows/windows_al.c:
+	  Windows: Rename Win32* files to Windows*
+
+2006-07-12 18:10  elias_naur
+
+	* .cvsignore, src/native/common/.cvsignore,
+	  src/native/common/devil/.cvsignore,
+	  src/native/common/fmod3/.cvsignore, src/native/linux/.cvsignore,
+	  src/native/macosx/.cvsignore, src/native/windows/.cvsignore:
+	  remove .cvsignore files
+
+2006-07-12 18:09  elias_naur
+
+	* build.xml, platform_build/windows_ant/build.xml,
+	  src/native/win32, src/native/windows: Windows: move natives from
+	  src/native/win32 to src/native/windows because the source really
+	  is bitness neutral, not 32 bit specific.
+
+2006-07-12 16:55  elias_naur
+
+	* platform_build/windows_ant/build.xml,
+	  src/native/common/common_tools.c: Windows: Use the standard
+	  _WIN32 macro instead of the LWJGL defined WIN32.
+
+2006-07-11 23:03  elias_naur
+
+	* build.xml: Added runtest ant target for easy execution of tests
+
+2006-07-11 21:55  matzon
+
+	* doc/changelogs, doc/templates: obsolete stuff - all hail svn
+	  remove!
+
+2006-07-11 21:53  matzon
+
+	* platform_build/mac_xcode, platform_build/win32_ms_cmdline:
+	  removing old build file stuff
+
+2006-07-11 21:50  matzon
+
+	* platform_build/win32_vs_net: removing old build file stuff
+
+2006-07-11 21:48  matzon
+
+	* platform_build/sharp_develop: removing old build file stuff
+
+2006-07-11 21:47  matzon
+
+	* platform_build/macosx_ant/build.xml: build natives into
+	  bin/<name>
+
+2006-07-11 21:46  matzon
+
+	* platform_build/linux_ant/build.xml: build natives into bin/<name>
+
+2006-07-11 21:45  matzon
+
+	* platform_build/windows_ant/build_devil.xml,
+	  platform_build/windows_ant/build_fmod3.xml: build natives into
+	  bin/<name>
+
+2006-07-11 21:44  matzon
+
+	* platform_build/windows_ant/build.xml: build natives into
+	  bin/<name>
+
+2006-07-11 21:43  matzon
+
+	* build.xml: removed (some) obsolete targets
+	  build natives into bin/<name>
+	  support for windows optional ant build files
+
+2006-07-11 21:23  matzon
+
+	* platform_build/windows_ant/build_devil.xml,
+	  platform_build/windows_ant/build_fmod3.xml: optional build files
+
+2006-07-11 21:08  elias_naur
+
+	* libs/linux/libjinput-linux64.so: Linux: Added
+	  libjinput-linux64.so 64 bit library
+
+2006-07-11 21:03  elias_naur
+
+	* libs/jinput.jar: Refreshed jinput.jar with 64 bit support
+
+2006-07-11 21:00  elias_naur
+
+	* src/java/org/lwjgl/Sys.java: Linux: more 64 bit stuff
+
+2006-07-11 20:56  elias_naur
+
+	* platform_build/linux_ant/build.xml: Linux: more 64 bit stuff
+
+2006-07-11 20:49  elias_naur
+
+	* build.xml, src/java/org/lwjgl/Sys.java: Linux: more 64 bit stuff
+
+2006-07-11 20:30  elias_naur
+
+	* build.xml, platform_build/linux_ant/build.xml,
+	  src/java/org/lwjgl/DefaultSysImplementation.java,
+	  src/java/org/lwjgl/LWJGLUtil.java,
+	  src/java/org/lwjgl/LinuxSysImplementation.java,
+	  src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/SysImplementation.java,
+	  src/java/org/lwjgl/util/applet/LWJGLInstaller.java: Linux: added
+	  support for 64 bit JVMs
+
+2006-07-11 20:00  elias_naur
+
+	* libs/jinput.jar: Refreshed jinput.jar
+
+2006-07-11 19:54  matzon
+
+	* platform_build/windows_ant/build.xml: flueknepperi
+
+2006-07-11 19:33  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java:
+	  LWJGLInstaller: use constant instead of hardcoded filename
+
+2006-07-11 19:30  matzon
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java: update/fix
+	  comments
+
+2006-07-11 19:06  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java:
+	  LWJGInstaller: Run the uninstaller before installing instead of
+	  at VM exit
+
+2006-07-11 18:55  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java:
+	  LWJGLInstaller: Rename watermark file to .lwjglinuse
+
+2006-07-11 18:52  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java:
+	  LWJGLInstaller: Don't allow applets to decide whether to
+	  uninstall old lwjgl dirs
+
+2006-07-11 18:49  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java: Tightened
+	  access modifiers in LWJGLInstaller
+
+2006-07-11 18:38  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java: Added final
+	  modifier to a constant in LWJGLInstaller
+
+2006-07-11 12:22  elias_naur
+
+	* platform_build/linux_ant/build.xml: Linux: don't use static
+	  linking for 64 bit builds
+
+2006-07-10 22:26  elias_naur
+
+	* platform_build/windows_ant/build.xml: Windows: Use standard
+	  environment variables for build paths
+
+2006-07-10 18:03  elias_naur
+
+	* src/java/org/lwjgl/opengl/Win32CanvasImplementation.java:
+	  Windows: Add System.loadLibrary("jawt") again, since it seems
+	  that Toolkit.getDefaultToolkit() is not always enough.
+
+2006-07-10 15:46  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Windows: Pass
+	  correct class reference to CallStaticVoidMethod JNI
+
+2006-07-10 15:32  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Pbuffer.c,
+	  src/native/win32/org_lwjgl_opengl_Win32PeerInfo.c: Windows:
+	  Fixed fetches of a boolean field with GetIntField JNI
+
+2006-07-10 15:29  elias_naur
+
+	* src/native/linux/context.c: Linux: Fixed fetch of a boolean
+	  field with GetIntField JNI
+
+2006-07-10 00:47  elias_naur
+
+	* src/java/org/lwjgl/util/jinput/LWJGLKeyboard.java,
+	  src/java/org/lwjgl/util/jinput/LWJGLMouse.java: Add correct
+	  timestamps to jinput controller environment for LWJGL input
+	  Mouse and Keyboard
+
+2006-07-10 00:44  elias_naur
+
+	* src/native/common/common_tools.c: Fix compile warning
+
+2006-07-10 00:34  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Windows: Fix issue
+	  when AWT core classes invoke the LWJGL message handler through a
+	  synchronous SendMessage. Bug triggered by
+	  jmetest.awt.swingui.TestJMEDesktop.
+
+2006-07-09 08:31  elias_naur
+
+	* src/native/common/common_tools.c,
+	  src/native/common/common_tools.h,
+	  src/native/win32/org_lwjgl_opengl_Display.c: Windows: don't
+	  cache the JNIEnv pointer in the message handle, but acquire it
+	  through the global JavaVM handle.
+
+2006-07-08 22:17  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/native/linux/org_lwjgl_opengl_Display.c: Linux: Made most
+	  fields in LinuxDisplay non-static
+
+2006-07-08 21:57  elias_naur
+
+	* src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/java/org/lwjgl/test/DisplayTest.java,
+	  src/native/win32/Window.h, src/native/win32/display.c,
+	  src/native/win32/display.h,
+	  src/native/win32/org_lwjgl_opengl_Display.c: Windows: Moved
+	  gamma and display modes settings and more boolean state to java
+	  side.
+
+2006-07-08 17:20  elias_naur
+
+	* build.xml, platform_build/windows_ant,
+	  platform_build/windows_ant/build.xml: Windows: Added ant
+	  build.xml for native core
+
+2006-07-07 14:06  elias_naur
+
+	* src/native/linux/Makefile, src/native/linux/Makefile.amd64:
+	  Linux: Remove Makefiles
+
+2006-07-07 14:05  elias_naur
+
+	* platform_build/linux_ant/build.xml: Linux: Remove debug echos
+	  from build.xml
+
+2006-07-07 14:02  elias_naur
+
+	* platform_build/linux_ant/build.xml: Linux: Support x86_64
+	  building
+
+2006-07-07 12:41  elias_naur
+
+	* build.xml, platform_build/macosx_ant,
+	  platform_build/macosx_ant/build-symbol-list,
+	  platform_build/macosx_ant/build.xml,
+	  src/native/macosx/build-symbol-list,
+	  src/native/macosx/build.xml: Mac OS X: Added support for
+	  compile_native target. Moved optional libraries to
+	  compile_native_optional target
+
+2006-07-07 11:47  elias_naur
+
+	* build.xml: Commented out cvsbuild target - using it will
+	  propbably cause confusion
+
+2006-07-07 11:00  elias_naur
+
+	* build.xml, platform_build/linux_ant,
+	  platform_build/linux_ant/build.xml: Added linux specific
+	  build.xml for building liblwjgl.so. Moved FMOD and Devil native
+	  builds to compile_native_optional ant target
+
+2006-07-07 10:38  elias_naur
+
+	* build.xml: Made build.xml use location in properties where
+	  appropriate
+
+2006-07-07 10:36  elias_naur
+
+	* src/generated/org/lwjgl/opengl/ATITextFragmentShader.java,
+	  src/generated/org/lwjgl/opengl/EXTTimerQuery.java,
+	  src/java/org/lwjgl/util/generator/NativeMethodStubsGenerator.java,
+	  src/native/common/common_tools.c,
+	  src/native/common/common_tools.h,
+	  src/native/generated/org_lwjgl_openal_AL10.c,
+	  src/native/generated/org_lwjgl_opengl_EXTTimerQuery.c,
+	  src/native/generated/org_lwjgl_opengl_GL11.c: Added a native
+	  NewStringNativeUnsigned to avoid compile warnings
+
+2006-07-05 10:47  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: MacOSXDisplay
+	  workaround done properly :)
+
+2006-07-05 09:58  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: Mac OS X:
+	  Workaround a crash with applets and MacOSXDisplay
+
+2006-07-04 17:46  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/opengl/WindowsMouse.java: Windows: Use data
+	  size constant for input devices instead of hard coded size
+
+2006-07-04 17:07  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/input/Mouse.java,
+	  src/java/org/lwjgl/opengl/KeyboardEventQueue.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxKeyboard.java,
+	  src/java/org/lwjgl/opengl/LinuxMouse.java,
+	  src/java/org/lwjgl/opengl/MouseEventQueue.java,
+	  src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice3.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice8.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/opengl/WindowsMouse.java,
+	  src/native/linux/org_lwjgl_opengl_Display.c,
+	  src/native/win32/org_lwjgl_opengl_Display.c,
+	  src/native/win32/org_lwjgl_opengl_WindowsDirectInputDevice3.c,
+	  src/native/win32/org_lwjgl_opengl_WindowsDirectInputDevice8.c:
+	  Added Keyboard.getEventNanoseconds() and
+	  Mouse.getEventNanoseconds()
+
+2006-07-04 13:44  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java:
+	  LWJGLInstaller now uses JarFile instead of JarInputStream to
+	  work around a bug with java 1.5 and jar signing
+
+2006-07-04 12:20  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java:
+	  LWJGLInstaller: Exceptions should propagate to ease debugging
+
+2006-07-04 12:10  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java: Tightened
+	  access modifiers for LWJGLInstaller
+
+2006-07-04 11:07  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java: Collapsed
+	  exception chains in LWJGLInstaller
+
+2006-07-04 10:53  elias_naur
+
+	* applet/applet.html: Added jars to classpath in applet.html test
+
+2006-07-04 10:52  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Linux: Fixed
+	  privileged property access in LinuxDisplay.java
+
+2006-07-04 10:51  elias_naur
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java:
+	  LWJGLInstaller should check for non-existing master directory.
+	  Use exceptions instead of boolean status code in verifyCerts
+
+2006-07-03 23:26  matzon
+
+	* build.xml: reworked installer to expect a jar with the platform
+	  natives inside a jar
+
+2006-07-03 23:23  matzon
+
+	* src/java/org/lwjgl/test/applet/AppletTest.java,
+	  src/java/org/lwjgl/test/applet/OpenAL.java,
+	  src/java/org/lwjgl/test/applet/Optional.java,
+	  src/java/org/lwjgl/test/applet/Speed.java: cleaned up imports
+
+2006-07-03 23:23  matzon
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java: cleaned up
+	  imports
+
+2006-07-03 23:22  matzon
+
+	* src/java/org/lwjgl/util/applet/LWJGLInstaller.java: added
+	  certificate check
+	  reworked installer to expect a jar with the platform natives
+	  inside a jar
+	  now installs into java.io.tmpdir/.lwjglinstall/<timestamp>
+	  uninstaller checks for removed watermark file - tho it never
+	  gets removed *grumble*
+
+2006-07-03 23:16  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/input/Mouse.java,
+	  src/java/org/lwjgl/opengl/DisplayImplementation.java,
+	  src/java/org/lwjgl/opengl/EventQueue.java,
+	  src/java/org/lwjgl/opengl/KeyboardEventQueue.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxKeyboard.java,
+	  src/java/org/lwjgl/opengl/LinuxMouse.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/MouseEventQueue.java,
+	  src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/opengl/WindowsMouse.java: Implemented
+	  variable sized events in preparation of timestamped input events
+
+2006-07-03 21:53  elias_naur
+
+	* src/java/org/lwjgl/opengl/WindowsDirectInput.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInput3.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInput8.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice3.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice8.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDeviceObjectCallback.java,
+	  src/java/org/lwjgl/opengl/WindowsMouse.java: Removed
+	  svn:executable properties on windows java files
+
+2006-07-03 20:10  elias_naur
+
+	* build.xml: Don't delete the generated directories themselves on
+	  ant clean-generated, only the source files
+
+2006-07-03 19:22  elias_naur
+
+	* src/java/org/lwjgl/opengl/EventQueue.java: Fixed comment
+
+2006-07-03 19:09  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/input/Mouse.java,
+	  src/java/org/lwjgl/opengl/DisplayImplementation.java,
+	  src/java/org/lwjgl/opengl/EventQueue.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxKeyboard.java,
+	  src/java/org/lwjgl/opengl/LinuxMouse.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/opengl/WindowsMouse.java: Now that no native
+	  side event_queue_t type is used anymore, convert input read()
+	  semantics to use normal nio Buffer semantics - that is, move the
+	  position when writing events
+
+2006-07-03 18:56  elias_naur
+
+	* src/java/org/lwjgl/opengl/EventQueue.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java: Fixed comment
+
+2006-07-03 18:33  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/native/linux/org_lwjgl_opengl_Display.c: Linux: Moved
+	  Display state booleans to java side
+
+2006-07-03 18:18  elias_naur
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Linux: Fix multiple
+	  calls of setIcon by creating copies of icon data instead of
+	  converting data in-place
+
+2006-07-03 18:07  elias_naur
+
+	* build.xml, src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxKeyboard.java,
+	  src/java/org/lwjgl/opengl/LinuxKeycodes.java,
+	  src/java/org/lwjgl/opengl/LinuxMouse.java,
+	  src/native/common/common_tools.c,
+	  src/native/common/common_tools.h, src/native/linux/Window.h,
+	  src/native/linux/display.c,
+	  src/native/linux/org_lwjgl_input_Keyboard.c,
+	  src/native/linux/org_lwjgl_input_Mouse.c,
+	  src/native/linux/org_lwjgl_opengl_Display.c,
+	  src/native/linux/org_lwjgl_opengl_LinuxKeyboard.c,
+	  src/native/linux/org_lwjgl_opengl_LinuxMouse.c,
+	  src/native/win32/dinputhelper.c,
+	  src/native/win32/dinputhelper.h: Linux: Moved most input related
+	  stuff from native to java
+
+2006-07-03 12:00  elias_naur
+
+	* libs/jinput.jar,
+	  src/java/org/lwjgl/util/applet/LWJGLInstaller.java: Added
+	  support for applets to jinput
+
+2006-07-03 11:44  elias_naur
+
+	* build.xml: Added seal to security sensitive jars
+
+2006-07-03 11:37  elias_naur
+
+	* src/java/org/lwjgl/applet: Moved LWJGLInstaller to
+	  org.lwjgl.util.applet
+
+2006-07-03 11:36  elias_naur
+
+	* src/java/org/lwjgl/test/applet/AppletTest.java: Fixed AppletTest
+
+2006-07-03 11:30  elias_naur
+
+	* build.xml, res/model, src/java/org/lwjgl/util/applet,
+	  src/java/org/lwjgl/util/applet/LWJGLInstaller.java,
+	  src/java/org/lwjgl/util/model: Removed org.lwjgl.util.model
+
+2006-07-03 10:28  elias_naur
+
+	* src/java/org/lwjgl/DefaultSysImplementation.java,
+	  src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/SysImplementation.java,
+	  src/java/org/lwjgl/applet/LWJGLInstaller.java,
+	  src/java/org/lwjgl/test/applet/AppletTest.java: Removed multiple
+	  library names support from Sys.java, it is not needed anymore
+
+2006-07-03 10:21  elias_naur
+
+	* src/java/org/lwjgl/LWJGLUtil.java, src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/applet/LWJGLInstaller.java,
+	  src/java/org/lwjgl/devil/ILNative.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java,
+	  src/java/org/lwjgl/test/applet/AppletTest.java: Made sure no
+	  dependency from core LWJGL to LWJGLInstaller exists
+
+2006-07-02 22:45  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/MacOSXFrame.java: Reverted
+	  Display.getPrivilegedBoolean access modifier change - package
+	  private is alright
+
+2006-07-02 22:41  elias_naur
+
+	* src/java/org/lwjgl/applet/LWJGLInstaller.java,
+	  src/java/org/lwjgl/opengl/AWTSurfaceLock.java: Spelling fixes
+
+2006-07-02 22:01  matzon
+
+	* build.xml: add linux and mac natives to lwjgl applet jar
+
+2006-07-02 21:59  matzon
+
+	* src/native/common/devil/extil.c: support for version
+	  beta2 tag
+
+2006-07-02 21:58  matzon
+
+	* src/native/common/fmod3/org_lwjgl_fmod3_FMOD.c: beta2 tag
+
+2006-07-02 21:58  matzon
+
+	* src/native/common/common_tools.c: beta2 tag
+
+2006-07-02 21:56  matzon
+
+	* src/java/org/lwjgl/Sys.java: preliminary applet support
+
+2006-07-02 21:55  matzon
+
+	* src/java/org/lwjgl/LWJGLUtil.java: preliminary applet support
+
+2006-07-02 21:51  matzon
+
+	* src/java/org/lwjgl/test/applet/AppletTest.java,
+	  src/java/org/lwjgl/test/applet/OpenAL.java,
+	  src/java/org/lwjgl/test/applet/OpenGL.java,
+	  src/java/org/lwjgl/test/applet/Optional.java,
+	  src/java/org/lwjgl/test/applet/Speed.java,
+	  src/java/org/lwjgl/test/applet/Test.java: preliminary applet
+	  support
+
+2006-07-02 21:51  matzon
+
+	* src/java/org/lwjgl/applet,
+	  src/java/org/lwjgl/applet/LWJGLInstaller.java: preliminary
+	  applet support
+
+2006-07-02 21:50  matzon
+
+	* src/java/org/lwjgl/fmod3/FMOD.java: preliminary applet support
+
+2006-07-02 21:47  matzon
+
+	* src/java/org/lwjgl/devil/ILNative.java: added version check
+	  preliminary applet support
+
+2006-07-02 21:44  matzon
+
+	* build.xml: beta2 tag
+	  updated applet tag to build all libs needed
+
+2006-07-02 21:24  matzon
+
+	* applet/applet.html: default to OpenGL test
+
+2006-07-02 20:26  matzon
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/MacOSXFrame.java: made Display
+	  priveledged action private. Fixes a possible security exploit
+	  that would allow anyone to get a boolean from System properties
+	  *gasp*
+
+2006-07-01 05:33  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Windows: Fixed
+	  compile error
+
+2006-06-30 23:37  elias_naur
+
+	* src/java/org/lwjgl/test/input/KeyboardTest.java: Fixed
+	  KeyboardTest
+
+2006-06-30 23:05  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java: Reverted the widening of
+	  Keyboard.getEventCharacter
+
+2006-06-30 19:28  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.c,
+	  src/native/linux/org_lwjgl_opengl_Display.c: Linux: native code
+	  cleanup
+
+2006-06-30 19:08  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Windows: Fixed
+	  Display.setIcon memory leak
+
+2006-06-30 18:56  elias_naur
+
+	* src/java/org/lwjgl/opengl/DisplayImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/test/applet,
+	  src/native/linux/org_lwjgl_opengl_Display.c: Linux: Fixed
+	  Display.setIcon memory leak.
+
+2006-06-30 16:47  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Display.c: Linux: Made the
+	  native destructor my_fini static
+
+2006-06-28 21:16  elias_naur
+
+	* src/java/org/lwjgl/opengl/Win32CanvasImplementation.java:
+	  Windows: replace loadLibrary("jawt") with
+	  Toolkit.getDefaultToolkit() which is better and avoids
+	  classloader issues with multiple loaded natives. Additionally,
+	  getDefaultToolkit is not a privileged action, while loadLibrary
+	  is.
+
+2006-06-28 06:02  elias_naur
+
+	* src/java/org/lwjgl/opengl/Win32CanvasImplementation.java:
+	  Windows: Added missing doPrivileged around loadLibrary("jawt")
+
+2006-06-27 15:41  elias_naur
+
+	* applet, applet/applet.html, applet/lwjglkeystore, build.xml:
+	  Added an applet test (lwjgl from applets doesn't work yet).
+
+2006-06-27 12:57  elias_naur
+
+	* src/java/org/lwjgl/opengl/KeyboardEventQueue.java: Mac OS X:
+	  Made KeyboardEventQueue handle widened char types
+
+2006-06-27 11:11  elias_naur
+
+	* src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/native/win32/org_lwjgl_input_Cursor.c,
+	  src/native/win32/org_lwjgl_opengl_Display.c: Windows: Generalize
+	  getMin/MaxCursorSize to one native GetSystemMetrics
+
+2006-06-26 14:28  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Windows: Moved
+	  isUndecorated from global to local variable
+
+2006-06-26 14:24  elias_naur
+
+	* src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/native/win32/org_lwjgl_opengl_Display.c: Windows: Moved
+	  is_dirty from native to java
+
+2006-06-26 14:13  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java: Widened
+	  Keyboard.getEventCharacter() return type from char to int to
+	  accomodate 32 bit characters.
+
+2006-06-26 14:05  elias_naur
+
+	* src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/native/win32/org_lwjgl_opengl_Display.c: Windows: moved
+	  closerequested from native to java
+
+2006-06-26 13:50  elias_naur
+
+	* build.xml, platform_build/win32_ms_cmdline/build.bat,
+	  src/java/org/lwjgl/BufferUtils.java,
+	  src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/input/Mouse.java,
+	  src/java/org/lwjgl/opengl/DisplayImplementation.java,
+	  src/java/org/lwjgl/opengl/EventQueue.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInput.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInput3.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInput8.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice3.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDevice8.java,
+	  src/java/org/lwjgl/opengl/WindowsDirectInputDeviceObjectCallback.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/opengl/WindowsMouse.java,
+	  src/native/common/common_tools.c,
+	  src/native/common/common_tools.h, src/native/win32/LWJGL.c,
+	  src/native/win32/Window.h, src/native/win32/dinputhelper.c,
+	  src/native/win32/dinputhelper.h,
+	  src/native/win32/org_lwjgl_input_Keyboard.c,
+	  src/native/win32/org_lwjgl_input_Mouse.c,
+	  src/native/win32/org_lwjgl_opengl_Display.c,
+	  src/native/win32/org_lwjgl_opengl_WindowsDirectInput3.c,
+	  src/native/win32/org_lwjgl_opengl_WindowsDirectInput8.c,
+	  src/native/win32/org_lwjgl_opengl_WindowsDirectInputDevice3.c,
+	  src/native/win32/org_lwjgl_opengl_WindowsDirectInputDevice8.c,
+	  src/native/win32/org_lwjgl_opengl_WindowsKeyboard.c: Windows:
+	  LWJGL didn't work well with jinput, but compatibility could be
+	  greatly improved if LWJGL used DirectInput 8 (like jinput). This
+	  can't be done unconditionally, since we need the DX3 support for
+	  older versions of windows. So, I've moved most Mouse and
+	  Keyboard stuff from native to java side and generalized
+	  DirectInput access through an abstract base class, with two
+	  concrete subclasses, one for dx3 and one for dx8.
+
+2006-06-23 16:45  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Keyboard.c,
+	  src/native/win32/org_lwjgl_input_Mouse.c: Windows: Cleanup of
+	  native input code
+
+2006-06-23 08:16  matzon
+
+	* src/native/common/fmod3/org_lwjgl_fmod3_FMusic.c,
+	  src/native/common/fmod3/org_lwjgl_fmod3_FSound.c: fixed
+	  offset/length to use buffer properties
+
+2006-06-23 08:14  matzon
+
+	* src/java/org/lwjgl/fmod3/FMusic.java,
+	  src/java/org/lwjgl/fmod3/FMusicModule.java,
+	  src/java/org/lwjgl/fmod3/FSound.java,
+	  src/java/org/lwjgl/fmod3/FSoundSample.java,
+	  src/java/org/lwjgl/fmod3/FSoundStream.java,
+	  src/java/org/lwjgl/test/fmod3/DSPTest.java,
+	  src/java/org/lwjgl/test/fmod3/MusicPlayer.java,
+	  src/java/org/lwjgl/test/fmod3/MusicPlayerMemory.java,
+	  src/java/org/lwjgl/test/fmod3/StreamPlayer.java,
+	  src/java/org/lwjgl/test/fmod3/StreamPlayerMemory.java,
+	  src/java/org/lwjgl/test/fmod3/SyncTest.java: fixed offset/length
+	  to use buffer properties
+	  keep reference to buffers until free'd
+	  added FMUSIC_LoadSongEx test
+
+2006-06-22 10:42  elias_naur
+
+	* src/java/org/lwjgl/opengl/MouseEventQueue.java: Mac OS X: Fix
+	  ctrl-click right button handling
+
+2006-06-20 14:09  elias_naur
+
+	* src/java/org/lwjgl/opengl/Win32Display.java: Windows:
+	  Display.getVersion should return null when getAdapter() is null
+
+2006-06-18 09:08  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.c: Windows: Make sure the
+	  DirectInput even buffer is properly flushed before switching to
+	  grabbed state.
+
+2006-06-18 08:51  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.c: Windows: Fixed
+	  spurious mouse button events after a Mouse.setGrabbed(true)
+
+2006-06-17 23:46  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.c: Windows: Fix
+	  Windows sometimes marking LWJGL apps as "not responding"
+
+2006-06-16 13:30  elias_naur
+
+	* src/java/org/lwjgl/util/vector/Quaternion.java: Added missing
+	  static methods to Quaternion for consistency. Cleaned up
+	  handling of src == dest aliasing
+
+2006-06-16 12:44  elias_naur
+
+	* src/java/org/lwjgl/util/vector/Matrix2f.java,
+	  src/java/org/lwjgl/util/vector/Matrix3f.java,
+	  src/java/org/lwjgl/util/vector/Matrix4f.java: Added missing
+	  static methods to Matrix4f for consistency. Cleaned up handling
+	  of src == dest aliasing
+
+2006-06-16 08:20  elias_naur
+
+	* src/java/org/lwjgl/util/vector/Matrix2f.java,
+	  src/java/org/lwjgl/util/vector/Matrix3f.java: Added missing
+	  static methods to Matrix3f for consistency. Cleaned up handling
+	  of src == dest aliasing
+
+2006-06-16 07:54  elias_naur
+
+	* src/java/org/lwjgl/util/vector/Matrix2f.java: Added missing
+	  static methods to Matrix2f for consistency. Cleaned up handling
+	  of src == dest aliasing
+
+2006-06-16 07:53  elias_naur
+
+	* src/java/org/lwjgl/util/vector/Matrix2f.java: Added missing
+	  static methods to Matrix2f for consistency. Cleaned up handling
+	  of src == dest aliasing
+
+2006-06-16 07:48  elias_naur
+
+	* src/java/org/lwjgl/util/vector/Matrix2f.java: Added missing
+	  static methods to Matrix2f for consistency. Cleaned up handling
+	  of src == dest aliasing
+
+2006-06-15 15:08  elias_naur
+
+	* src/native/win32/display.c: windows: cleanup
+
+2006-06-15 15:03  elias_naur
+
+	* src/native/win32/context.c, src/native/win32/context.h,
+	  src/native/win32/extgl_wgl.c, src/native/win32/extgl_wgl.h,
+	  src/native/win32/org_lwjgl_opengl_Pbuffer.c,
+	  src/native/win32/org_lwjgl_opengl_Win32PeerInfo.c: windows: Add
+	  support for WGL_ATI_pixel_format_float
+
+2006-06-15 13:42  elias_naur
+
+	* platform_build/win32_ms_cmdline/build.bat: Win32: Minor fix to
+	  build.bat
+
+2006-06-15 13:41  elias_naur
+
+	* src/java/org/lwjgl/test/input/KeyboardTest.java: Removed
+	  isStateKeySet from KeyboardTest
+
+2006-06-15 11:41  elias_naur
+
+	* platform_build/win32_ms_cmdline/build.bat: Win32: Tweaked
+	  build.bat to use the env variables from the newest DX SDK
+
+2006-06-12 14:17  elias_naur
+
+	* src/native/win32/context.c: Win32: Fixed exception message when
+	  the ARB pixel format path is selected, but the dummy pixel
+	  format is -1.
+
+2006-06-12 14:09  elias_naur
+
+	* src/native/win32/context.c: Win32: Make sure the ARB pixel
+	  format path is selected when floating point formats are required
+
+2006-06-12 13:42  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXPeerInfo.java: Mac OS X: Check
+	  for 10.4 when using floating point formats
+
+2006-06-12 13:33  elias_naur
+
+	* src/native/macosx/context.m: Mac OS X implementation of floating
+	  point pixel formats
+
+2006-06-12 13:28  elias_naur
+
+	* src/native/linux/context.c, src/native/win32/context.c,
+	  src/native/win32/extgl_wgl.c, src/native/win32/extgl_wgl.h:
+	  Windows implementation of floating point pixel formats
+
+2006-06-12 13:01  elias_naur
+
+	* src/java/org/lwjgl/opengl/PixelFormat.java,
+	  src/native/linux/context.c, src/native/linux/extgl_glx.c,
+	  src/native/linux/extgl_glx.h,
+	  src/native/linux/org_lwjgl_opengl_LinuxContextImplementation.c:
+	  Added floating point format to PixelFormat. Linux implementation
+
+2006-06-10 20:42  elias_naur
+
+	* src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/opengl/DisplayImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/native/win32/org_lwjgl_input_Keyboard.c: Removed
+	  Keyboard.isStateKeySet() - it is easily replaced by
+	  Toolkit.getLockingKeyState()
+
+2006-06-10 19:46  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: Mac OS X: Catch
+	  exceptions from getLockingKeyState
+
+2006-06-10 19:40  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: Mac OS X:
+	  Implement Display.isStateKeySet()
+
+2006-06-07 06:52  elias_naur
+
+	* src/java/org/lwjgl/opengl/AWTGLCanvas.java: AWT: Support
+	  re-entrant redrawing (by the same AWT thread). This happens when
+	  displaying dialog boxes from paintGL() or initGL()
+
+2006-06-07 06:35  elias_naur
+
+	* src/java/org/lwjgl/opengl/Context.java,
+	  src/java/org/lwjgl/opengl/ContextImplementation.java,
+	  src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/LinuxContextImplementation.java,
+	  src/java/org/lwjgl/opengl/MacOSXContextImplementation.java,
+	  src/java/org/lwjgl/opengl/Win32ContextImplementation.java: Mac
+	  OS X: Fixed flickering caused by the new context handling in
+	  AWTGLCanvas
+
+2006-06-06 20:37  matzon
+
+	* src/java/org/lwjgl/fmod3/FMOD.java: make destroy try its best to
+	  close sound and music
+
+2006-06-06 20:36  matzon
+
+	* src/java/org/lwjgl/fmod3/FMusic.java: make StopAllSongs public
+
+2006-06-03 08:15  matzon
+
+	* libs/win32/DevIL.dll, libs/win32/ILU.dll, libs/win32/ILUT.dll:
+	  devil 1.6.8-RC1
+
+2006-06-03 08:13  matzon
+
+	* www/changelog.php, www/changelogs/1.0beta-changelog.txt,
+	  www/changelogs/full-changelog.txt: 1.0beta released
+
+2006-06-03 08:12  matzon
+
+	* www/index.php: 1.0beta released
+
+2006-06-03 08:06  matzon
+
+	* www/projects.php: added slam soccer
+
+2006-06-03 08:03  matzon
+
+	* www/_gfx/projects/slam_soccer_2006_1.jpg,
+	  www/_gfx/projects/slam_soccer_2006_2.jpg,
+	  www/_gfx/projects/slam_soccer_2006_3.jpg,
+	  www/_gfx/projects/slam_soccer_2006_small_1.jpg,
+	  www/_gfx/projects/slam_soccer_2006_small_2.jpg,
+	  www/_gfx/projects/slam_soccer_2006_small_3.jpg: added slam soccer

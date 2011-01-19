@@ -1,0 +1,1020 @@
+2004-12-14 20:12  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Keyboard.c: Don't close iconv
+	  descriptor if it is opened
+
+2004-12-14 13:59  elias_naur
+
+	* src/native/common/fmod3/Makefile.linux: Linux: Fix missing symbol
+	  in fmod3 lib
+
+2004-12-14 13:54  cix_foo
+
+	* src/java/org/lwjgl/Sys.java: Fixed openURL
+
+2004-12-14 09:11  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Log ignored exception in
+	  Display.destroy()
+
+2004-12-13 18:28  matzon
+
+	* build.xml: include devil
+
+2004-12-13 18:16  matzon
+
+	* build.xml, src/java/org/lwjgl/Sys.java,
+	  src/java/org/lwjgl/fmod3/FMOD.java,
+	  src/native/common/common_tools.c,
+	  src/native/common/fmod3/org_lwjgl_fmod3_FMOD.c: 0.94
+
+2004-12-13 18:11  matzon
+
+	* build.xml: include hidden switches in dist
+
+2004-12-13 18:10  matzon
+
+	* doc/lwjgl_hidden_switches.text: hidden switches
+
+2004-12-13 18:06  matzon
+
+	* src/native/common/common_tools.c: include wtypes.h on win32
+	  platforms
+
+2004-12-13 18:05  matzon
+
+	* platform_build/win32_ms_cmdline/: build-devil.bat,
+	  build-fmod.bat, build.bat: option hell!
+
+2004-12-13 12:11  elias_naur
+
+	* src/native/common/extgl.c: Fixed mac opengl loading bug
+
+2004-12-13 09:06  elias_naur
+
+	* src/java/org/lwjgl/opengl/MouseEventQueue.java: Mac OS X: Emulate
+	  right click on ctrl-left click
+
+2004-12-13 07:26  matzon
+
+	* src/java/org/lwjgl/test/input/HWCursorTest.java: get out if
+	  initialization failed
+
+2004-12-12 20:02  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Display.c: More linux debug
+
+2004-12-12 18:07  elias_naur
+
+	* src/native/linux/display.c: [no log message]
+
+2004-12-12 17:55  elias_naur
+
+	* src/native/linux/display.c: Added more debug output to linux
+
+2004-12-12 17:21  elias_naur
+
+	* src/native/common/: extgl.c, extgl.h,
+	  org_lwjgl_opengl_GLContext.c: let extgl_Open throw the exception
+	  to gain more information about the failure
+
+2004-12-12 11:44  matzon
+
+	* src/native/common/common_tools.c: using vsnprintf for
+	  printfDebugJava *fix*
+
+2004-12-12 11:43  matzon
+
+	* src/native/common/devil/org_lwjgl_devil_IL.c: dont do anything in
+	  nCreate untill dynamic loading is implemented
+
+2004-12-12 11:39  matzon
+
+	* src/native/common/common_tools.c: using vsnprintf for
+	  printfDebugJava
+
+2004-12-12 11:13  elias_naur
+
+	* src/native/common/: devil/Makefile.linux, devil/extil.c,
+	  devil/extil.h, fmod3/Makefile.linux: Fixed up DevIL and added
+	  linux makefiles
+
+2004-12-12 11:12  matzon
+
+	* src/native/common/common_tools.c: make it compile
+
+2004-12-11 21:18  elias_naur
+
+	* src/native/linux/: org_lwjgl_Sys.c, org_lwjgl_input_Mouse.c,
+	  org_lwjgl_opengl_Display.c: Added java debug to all of linux
+	  native code
+
+2004-12-11 21:09  elias_naur
+
+	* src/native/: common/common_tools.c, linux/Window.h,
+	  linux/display.c, linux/display.h,
+	  linux/org_lwjgl_input_Keyboard.c, linux/org_lwjgl_input_Mouse.c,
+	  linux/org_lwjgl_opengl_Display.c: Added java debug output to
+	  linux display.c
+
+2004-12-11 20:44  elias_naur
+
+	* src/native/: common/common_tools.c, common/common_tools.h,
+	  linux/org_lwjgl_opengl_Display.c: Tweaked linux native isActive()
+	  and added printfDebugJava to print debug from native through
+	  Sys.log
+
+2004-12-11 17:44  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Added initial mode debug
+	  output
+
+2004-12-11 12:29  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Mouse.c: More linux fixes
+
+2004-12-11 12:21  elias_naur
+
+	* src/native/linux/: Window.h, org_lwjgl_input_Mouse.c,
+	  org_lwjgl_opengl_Display.c: More linux fixes
+
+2004-12-11 12:11  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Mouse.c: Linux: Fix more mouse
+	  handling bugs
+
+2004-12-11 11:50  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXFrame.java: Mac OS X: Added
+	  support for org.lwjgl.opengl.Window.undecorated
+
+2004-12-11 11:47  elias_naur
+
+	* src/native/macosx/org_lwjgl_opengl_Display.m: Support
+	  org.lwjgl.opengl.Window.allowSoftwareOpenGL on Mac OS X
+
+2004-12-11 09:10  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Mouse.c: Improved fullscreen
+	  pointer handling
+
+2004-12-11 03:14  captainjester
+
+	* src/java/org/lwjgl/test/devil/BasicTest.java: Test for DevIL
+	  library.
+
+2004-12-11 02:55  captainjester
+
+	* src/java/org/lwjgl/devil/IL.java: Added load methods to read from
+	  a stream and URL
+
+2004-12-10 20:49  elias_naur
+
+	* src/native/linux/: Window.h, org_lwjgl_input_Mouse.c,
+	  org_lwjgl_opengl_Display.c: [no log message]
+
+2004-12-10 20:33  captainjester
+
+	* src/native/common/devil/org_lwjgl_devil_IL.c: Dynamic loading
+	  temporarily removed.
+
+2004-12-10 11:01  elias_naur
+
+	* src/java/org/lwjgl/opengl/KeyboardEventQueue.java: MacOSX:
+	  improved key mapping
+
+2004-12-10 02:42  captainjester
+
+	* src/native/common/devil/org_lwjgl_devil_IL.c: Dynamic loading
+
+2004-12-10 02:41  captainjester
+
+	* src/native/common/devil/: extil.c, extil.h: Change to ASCII.
+
+2004-12-09 16:48  elias_naur
+
+	* platform_build/win32_ms_cmdline/build.bat: Fix win32 build script
+
+2004-12-09 16:36  elias_naur
+
+	* src/native/win32/: LWJGL.c, LWJGL.cpp, display.c, display.cpp,
+	  extgl_wgl.c, extgl_wgl.cpp, org_lwjgl_Sys.c, org_lwjgl_Sys.cpp,
+	  org_lwjgl_input_Controller.c, org_lwjgl_input_Controller.cpp,
+	  org_lwjgl_input_Cursor.c, org_lwjgl_input_Cursor.cpp,
+	  org_lwjgl_input_Keyboard.c, org_lwjgl_input_Keyboard.cpp,
+	  org_lwjgl_input_Mouse.c, org_lwjgl_input_Mouse.cpp,
+	  org_lwjgl_opengl_Display.c, org_lwjgl_opengl_Display.cpp,
+	  org_lwjgl_opengl_Pbuffer.c, org_lwjgl_opengl_Pbuffer.cpp:
+	  Converted win32 specific native source from C++->C (removes the
+	  strange debug flag behaviour exhibited by SourceLimitTest.java)
+
+2004-12-08 22:02  elias_naur
+
+	* src/java/org/lwjgl/test/openal/SourceLimitTest.java: Fix small
+	  bugs in SourceLimitTest.java
+
+2004-12-08 20:27  captainjester
+
+	* src/native/common/devil/org_lwjgl_devil_IL.c: Fixed native
+	  exception.
+
+2004-12-08 20:16  captainjester
+
+	* src/java/org/lwjgl/devil/IL.java: Add all functions that can be
+	  called platform independently.
+
+2004-12-08 20:15  captainjester
+
+	* src/native/common/devil/: extil.h, org_lwjgl_devil_IL.c, extil.c:
+	  Add dynamic loading for DevIL routines.  Add all functions that
+	  can be called platform independently.
+
+2004-12-08 00:07  matzon
+
+	* src/native/win32/display.cpp: case insensitive key lookup,
+	  reported by zhuzheng
+
+2004-12-07 23:01  matzon
+
+	* src/java/org/lwjgl/test/openal/PositionTest.java: using grabbed
+	  mode
+
+2004-12-07 22:56  matzon
+
+	* src/java/org/lwjgl/test/input/MouseTest.java: using grabbed mode
+
+2004-12-07 22:54  matzon
+
+	* src/java/org/lwjgl/test/input/MouseCreationTest.java: fixed
+	  displaymode using grabbed mouse mode empty mouse buffer
+
+2004-12-07 22:50  matzon
+
+	* src/java/org/lwjgl/input/Mouse.java: simple optimization
+
+2004-12-07 22:44  matzon
+
+	* src/java/org/lwjgl/test/input/HWCursorTest.java: cleanup and
+	  fixes
+
+2004-12-07 22:34  matzon
+
+	* src/java/org/lwjgl/test/input/ControllerCreationTest.java: fixed
+	  display mode bug
+
+2004-12-07 22:29  matzon
+
+	* src/java/org/lwjgl/test/input/ControllerCreationTest.java: check
+	  that controller is actually created!
+
+2004-12-07 07:38  matzon
+
+	* src/java/org/lwjgl/test/fmod3/StreamPlayerMemory.java: comment
+	  fixing
+
+2004-12-07 01:24  cix_foo
+
+	* src/java/org/lwjgl/util/Timer.java: [no log message]
+
+2004-12-07 01:23  cix_foo
+
+	* src/java/org/lwjgl/util/Timer.java: Shoved resolution down into
+	  ints for better wrap handling
+
+2004-12-05 03:33  captainjester
+
+	* build.xml: Made native win32 compile only run if changes are made
+	  to source.
+
+2004-12-03 01:56  cix_foo
+
+	* src/java/org/lwjgl/util/Timer.java: [no log message]
+
+2004-12-03 01:54  cix_foo
+
+	* src/java/org/lwjgl/util/Timer.java: Fixed timer wrapping problem
+
+2004-12-02 16:57  matzon
+
+	* www/documentation.php: fixed wiki path
+
+2004-11-30 22:05  cix_foo
+
+	* src/java/org/lwjgl/Sys.java: Tweak to trap getClipboard properly
+
+2004-11-29 09:20  elias_naur
+
+	* src/java/org/lwjgl/opengl/PixelFormat.java: Minimum requirements
+	  for PixelFormat is 8 bit depth
+
+2004-11-29 09:16  elias_naur
+
+	* src/native/common/org_lwjgl_opengl_GL11.c: [no log message]
+
+2004-11-27 17:06  matzon
+
+	* www/: documentation_openal_01.php, documentation_openal_02.php,
+	  documentation_openal_03.php, documentation_openal_04.php,
+	  documentation_openal_05.php,
+	  _files/tutorials/openal_devmaster_lesson1.zip,
+	  _files/tutorials/openal_devmaster_lesson2.zip,
+	  _files/tutorials/openal_devmaster_lesson3.zip,
+	  _files/tutorials/openal_devmaster_lesson5.zip: missing openal
+	  tutorial files
+
+2004-11-27 17:02  matzon
+
+	* www/: about.php, changelog.php, contact.php, credits.php,
+	  demos.php, documentation.php, documentation_openal_01.php,
+	  documentation_openal_02.php, documentation_openal_03.php,
+	  documentation_openal_04.php, documentation_openal_05.php,
+	  documentation_openal_06.php, documentation_openal_07.php,
+	  download.php, faq.php, index.php, installation.php, license.php,
+	  links.php, picpopup.php, projects.php, style.css,
+	  _gfx/background.png, _gfx/borderBottom.png, _gfx/borderLeft.png,
+	  _gfx/borderRight.png, _gfx/borderTop.png,
+	  _gfx/button_javanet.png, _gfx/button_openal.png,
+	  _gfx/button_opengl.png, _gfx/button_sourceforge.png,
+	  _gfx/cornerBL.png, _gfx/cornerBR.png, _gfx/cornerTL.png,
+	  _gfx/cornerTR.png, _gfx/logo.png, _gfx/mesh.png,
+	  _gfx/seperator.png, _gfx/installation/eclipse-1.png,
+	  _gfx/installation/eclipse-2.png, _gfx/installation/eclipse-3.png,
+	  _gfx/installation/eclipse-4.png,
+	  _gfx/installation/jcreator-1.jpg,
+	  _gfx/installation/jcreator-2.jpg,
+	  _gfx/installation/jcreator-3.jpg,
+	  _gfx/installation/netbeans-1.png,
+	  _gfx/installation/netbeans-2.png,
+	  _gfx/installation/netbeans-3.png, _gfx/projects/alienflux_1.jpg,
+	  _gfx/projects/alienflux_2.jpg, _gfx/projects/alienflux_3.jpg,
+	  _gfx/projects/alienflux_small_1.jpg,
+	  _gfx/projects/alienflux_small_2.jpg,
+	  _gfx/projects/alienflux_small_3.jpg,
+	  _gfx/projects/extorris_1.jpg, _gfx/projects/extorris_2.jpg,
+	  _gfx/projects/extorris_3.jpg, _gfx/projects/extorris_small_1.jpg,
+	  _gfx/projects/extorris_small_2.jpg,
+	  _gfx/projects/extorris_small_3.jpg,
+	  _gfx/projects/starship2d_1.jpg, _gfx/projects/starship2d_2.jpg,
+	  _gfx/projects/starship2d_3.jpg,
+	  _gfx/projects/starship2d_small_1.jpg,
+	  _gfx/projects/starship2d_small_2.jpg,
+	  _gfx/projects/starship2d_small_3.jpg,
+	  _gfx/projects/tribaltrouble_1.jpg,
+	  _gfx/projects/tribaltrouble_2.jpg,
+	  _gfx/projects/tribaltrouble_3.jpg,
+	  _gfx/projects/tribaltrouble_small_1.jpg,
+	  _gfx/projects/tribaltrouble_small_2.jpg,
+	  _gfx/projects/tribaltrouble_small_3.jpg,
+	  _gfx/projects/vermins_1.jpg, _gfx/projects/vermins_2.jpg,
+	  _gfx/projects/vermins_small_1.jpg,
+	  _gfx/projects/vermins_small_2.jpg,
+	  _gfx/tutorials/openal/devmaster/compress_sin_wave.jpg,
+	  _gfx/tutorials/openal/devmaster/doppler_effect.jpg,
+	  _gfx/tutorials/openal/devmaster/sin_wave.jpg,
+	  _gfx/tutorials/openal/devmaster/sound_waves.jpg,
+	  _include/footer.php, _include/header.php: sync site with online
+
+2004-11-27 16:52  matzon
+
+	* www/: about.php, changelog.php, contact.php, credits.php,
+	  default.css, demos.php, documentation.php, download.php, faq.php,
+	  forum.php, index.php, installation.php, license.php, links.php,
+	  projects.php: removing old files
+
+2004-11-27 11:17  matzon
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: only generate events
+	  if mouse is actually alive
+
+2004-11-25 23:36  spasi
+
+	* src/native/common/: org_lwjgl_opengl_GL11.c,
+	  org_lwjgl_opengl_GL12.c: glTexImageXD now accept null buffers
+
+2004-11-25 23:31  spasi
+
+	* src/java/org/lwjgl/opengl/: Display.java,
+	  DisplayImplementation.java, DisplayMode.java, EventQueue.java,
+	  KeyboardEventQueue.java, LinuxDisplay.java, MacOSXDisplay.java,
+	  MacOSXFrame.java, MacOSXGLCanvas.java, MouseEventQueue.java,
+	  Win32Display.java: Code cleanup
+
+2004-11-25 23:20  spasi
+
+	* src/java/org/lwjgl/opengl/: ARBBufferObject.java,
+	  ARBDepthTexture.java, ARBFragmentProgram.java, ARBImaging.java,
+	  ARBMatrixPalette.java, ARBMultisample.java, ARBMultitexture.java,
+	  ARBOcclusionQuery.java, ARBPointParameters.java, ARBProgram.java,
+	  ARBShaderObjects.java, ARBShadingLanguage100.java,
+	  ARBShadow.java, ARBShadowAmbient.java,
+	  ARBTextureBorderClamp.java, ARBTextureCompression.java,
+	  ARBTextureCubeMap.java, ARBTextureEnvCombine.java,
+	  ARBTextureEnvDot3.java, ARBTextureMirroredRepeat.java,
+	  ARBTransposeMatrix.java, ARBVertexBlend.java,
+	  ARBVertexBufferObject.java, ARBVertexProgram.java,
+	  ARBVertexShader.java, ARBWindowPos.java, ATIElementArray.java,
+	  ATIEnvmapBumpmap.java, ATIFragmentShader.java,
+	  ATIPnTriangles.java, ATISeparateStencil.java,
+	  ATITextureFloat.java, ATITextureMirrorOnce.java,
+	  ATIVertexArrayObject.java, ATIVertexAttribArrayObject.java,
+	  ATIVertexStreams.java, EXTAbgr.java, EXTBgra.java,
+	  EXTBlendEquationSeparate.java, EXTBlendFuncSeparate.java,
+	  EXTBlendSubtract.java, EXTCompiledVertexArray.java,
+	  EXTDepthBoundsTest.java, EXTDrawRangeElements.java,
+	  EXTFogCoord.java, EXTMultiDrawArrays.java, EXTPackedPixels.java,
+	  EXTPixelBufferObject.java, EXTPointParameters.java,
+	  EXTRescaleNormal.java, EXTSecondaryColor.java,
+	  EXTSeparateSpecularColor.java, EXTSharedTexturePalette.java,
+	  EXTStencilTwoSide.java, EXTStencilWrap.java,
+	  EXTTextureCompressionS3TC.java, EXTTextureEnvCombine.java,
+	  EXTTextureEnvDot3.java, EXTTextureFilterAnisotropic.java,
+	  EXTTextureLODBias.java, EXTTextureMirrorClamp.java,
+	  EXTTextureRectangle.java, EXTVertexShader.java,
+	  EXTVertexWeighting.java, GL13.java, GL14.java,
+	  GLBufferChecks.java, GLUConstants.java, NVCopyDepthToColor.java,
+	  NVDepthClamp.java, NVEvaluators.java, NVFence.java,
+	  NVFloatBuffer.java, NVFogDistance.java, NVFragmentProgram.java,
+	  NVFragmentProgram2.java, NVHalfFloat.java,
+	  NVLightMaxExponent.java, NVMultisampleFilterHint.java,
+	  NVOcclusionQuery.java, NVPackedDepthStencil.java,
+	  NVPixelDataRange.java, NVPointSprite.java,
+	  NVPrimitiveRestart.java, NVProgram.java,
+	  NVRegisterCombiners.java, NVRegisterCombiners2.java,
+	  NVTexgenReflection.java, NVTextureCompressionVTC.java,
+	  NVTextureEnvCombine4.java, NVTextureExpandNormal.java,
+	  NVTextureRectangle.java, NVTextureShader.java,
+	  NVTextureShader2.java, NVTextureShader3.java,
+	  NVVertexArrayRange.java, NVVertexArrayRange2.java,
+	  NVVertexProgram.java, NVVertexProgram2Option.java,
+	  NVVertexProgram3.java, OpenGLException.java, RenderTexture.java,
+	  StateStack.java, Util.java, VBOTracker.java: Code cleanup
+
+2004-11-25 23:18  spasi
+
+	* src/java/org/lwjgl/opengl/: GL11.java, GL12.java: glTexImageXD
+	  now accept null buffers
+
+2004-11-25 23:16  spasi
+
+	* src/java/org/lwjgl/: BufferChecks.java, PlatformAdapter.java,
+	  Sys.java, input/Keyboard.java, input/Mouse.java, util/GL.java,
+	  util/GLImpl.java, util/IGL.java: Code cleanup
+
+2004-11-25 23:11  spasi
+
+	* src/native/common/: org_lwjgl_opengl_GL11.c,
+	  org_lwjgl_opengl_GL12.c: glTexImageXD now accept null buffers
+
+2004-11-22 22:54  cix_foo
+
+	* src/java/org/lwjgl/Sys.java: Now added URL encoding
+
+2004-11-22 22:40  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: Mac OS X:
+	  Implemented MacOSXDisplay.openURL()
+
+2004-11-22 22:38  cix_foo
+
+	* src/java/org/lwjgl/Sys.java: Uses Webstart services for
+	  Sys.openURL now
+
+2004-11-22 22:22  elias_naur
+
+	* src/: java/org/lwjgl/Sys.java,
+	  java/org/lwjgl/opengl/DisplayImplementation.java,
+	  java/org/lwjgl/opengl/LinuxDisplay.java,
+	  java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  java/org/lwjgl/opengl/Win32Display.java,
+	  native/macosx/org_lwjgl_Sys.c, native/win32/org_lwjgl_Sys.cpp:
+	  Split up Sys.openURL into the platform specific
+	  DisplayImplementation
+
+2004-11-22 22:12  cix_foo
+
+	* src/java/org/lwjgl/opengl/Display.java: Centres windowed mode
+	  now.
+
+2004-11-22 20:32  elias_naur
+
+	* src/java/org/lwjgl/opengl/: MacOSXDisplay.java,
+	  MouseEventQueue.java: Mac OS X: Fix bogus repeated mouse deltas
+	  when grabbed
+
+2004-11-22 14:42  cix_foo
+
+	* src/java/org/lwjgl/opengl/Display.java: Fixed a
+	  fullscreen/displaymode setting bug
+
+2004-11-22 13:52  elias_naur
+
+	* src/java/org/lwjgl/opengl/KeyboardEventQueue.java: Mac OS X:
+	  Ignore repeating key press events
+
+2004-11-22 10:43  elias_naur
+
+	* src/java/org/lwjgl/openal/AL.java: Fix Mac OS X Webstart OpenAL
+	  by searching for thw lwjgl library in addition to the openal
+	  library
+
+2004-11-21 11:10  matzon
+
+	* src/native/common/devil/org_lwjgl_devil_IL.c: use
+	  safeGetBufferAddress when loading data use correct size of image,
+	  instead of size of pointer (!)
+
+2004-11-21 11:06  matzon
+
+	* src/java/org/lwjgl/devil/IL.java: call correct native method!
+
+2004-11-20 17:46  matzon
+
+	* src/java/org/lwjgl/: opengl/KeyboardEventQueue.java,
+	  opengl/LinuxDisplay.java, opengl/MacOSXDisplay.java,
+	  opengl/MacOSXFrame.java, opengl/MacOSXGLCanvas.java,
+	  opengl/Win32Display.java, input/Cursor.java: import cleanup
+
+2004-11-20 03:48  matzon
+
+	* src/java/org/lwjgl/opengl/glu/Sphere.java: fix sphere bug
+	  reported by Ken Russell
+
+2004-11-19 16:18  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: Mac OS X: Handle
+	  frame == null case
+
+2004-11-19 16:05  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXFrame.java: Mac OS X: Don't
+	  dispose frame if already disposed
+
+2004-11-19 15:40  elias_naur
+
+	* src/native/common/extal.c: Fix a memory leak in extal.c
+
+2004-11-19 14:16  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXFrame.java: Mac OS X: Set
+	  fullscreen window to null before disposing
+
+2004-11-18 13:10  elias_naur
+
+	* src/: java/org/lwjgl/opengl/DisplayImplementation.java,
+	  java/org/lwjgl/opengl/LinuxDisplay.java,
+	  java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  java/org/lwjgl/opengl/Pbuffer.java,
+	  java/org/lwjgl/opengl/Win32Display.java,
+	  native/linux/org_lwjgl_opengl_Pbuffer.c, native/macosx/display.h,
+	  native/macosx/org_lwjgl_opengl_Display.m,
+	  native/macosx/org_lwjgl_opengl_Pbuffer.c,
+	  native/macosx/org_lwjgl_opengl_Pbuffer.m,
+	  native/win32/org_lwjgl_opengl_Pbuffer.cpp: Move getPbufferCaps to
+	  DisplayImplementation. Mac OS X pbuffer support
+
+2004-11-16 21:33  elias_naur
+
+	* src/java/org/lwjgl/opengl/MouseEventQueue.java: Mac OS X: Try
+	  harder to reset mouse deltas
+
+2004-11-16 15:23  elias_naur
+
+	* src/native/macosx/org_lwjgl_opengl_Display.m: Mac OS X: Add error
+	  handling to gamma functions
+
+2004-11-16 15:08  elias_naur
+
+	* src/: java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  native/macosx/org_lwjgl_opengl_Display.m: Mac OS X: Implemented
+	  gamma
+
+2004-11-16 14:21  elias_naur
+
+	* src/: java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  native/macosx/Makefile, native/macosx/org_lwjgl_opengl_Display.m:
+	  Mac OS X: Work around AWT shifting the fullscreen window off the
+	  screen
+
+2004-11-15 16:28  elias_naur
+
+	* src/: java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  native/macosx/org_lwjgl_input_Mouse.c: Mac OS X: Don't hide mouse
+	  mouse when already hidden (because the cursor state is counted)
+
+2004-11-15 15:39  cix_foo
+
+	* src/native/common/.cvsignore: [no log message]
+
+2004-11-15 15:38  elias_naur
+
+	* src/: java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  native/macosx/org_lwjgl_opengl_Display.m: Mac OS X: Add missing
+	  file and disable native cursors because of AWT bugs
+
+2004-11-14 12:39  elias_naur
+
+	* src/native/: common/common_tools.h,
+	  common/arb/org_lwjgl_opengl_ARBColorBufferFloat.c,
+	  common/ext/org_lwjgl_opengl_EXTPalettedTexture.c,
+	  linux/org_lwjgl_Sys.c: Linux: fix compilation
+
+2004-11-14 11:42  matzon
+
+	* src/native/: common/common_tools.c, common/common_tools.h,
+	  common/org_lwjgl_openal_AL10.c, common/org_lwjgl_openal_ALC.c,
+	  common/org_lwjgl_opengl_GL11.c,
+	  common/devil/org_lwjgl_devil_IL.c,
+	  common/fmod3/org_lwjgl_fmod3_FMOD.c,
+	  common/fmod3/org_lwjgl_fmod3_FMusic.c,
+	  common/fmod3/org_lwjgl_fmod3_FSound.c, win32/display.cpp,
+	  win32/org_lwjgl_Sys.cpp: changed String handling to use proper
+	  localizing method
+
+2004-11-14 02:18  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.cpp: Win32: Make
+	  isFocused false at window creation to stop the message loop from
+	  running appActivate(false) when the window is being initially
+	  activated
+
+2004-11-13 23:27  elias_naur
+
+	* src/native/win32/display.cpp: [no log message]
+
+2004-11-13 22:12  matzon
+
+	* src/native/common/devil/org_lwjgl_devil_IL.c: lets use proper
+	  arguments for localizing string call
+
+2004-11-13 22:06  matzon
+
+	* src/native/: common/common_tools.c, common/common_tools.h,
+	  common/extal.c, common/org_lwjgl_openal_AL10.c,
+	  common/org_lwjgl_openal_ALC.c, common/devil/org_lwjgl_devil_IL.c,
+	  common/fmod3/org_lwjgl_fmod3_FMOD.c,
+	  common/fmod3/org_lwjgl_fmod3_FMusic.c,
+	  common/fmod3/org_lwjgl_fmod3_FSound.c, linux/org_lwjgl_Sys.c,
+	  linux/org_lwjgl_opengl_Display.c, macosx/org_lwjgl_Sys.c,
+	  win32/org_lwjgl_Sys.cpp, win32/org_lwjgl_opengl_Display.cpp:
+	  changed String handling to use proper localizing method
+
+2004-11-13 21:55  matzon
+
+	* src/native/common/devil/org_lwjgl_devil_IL.c: fix #ifdef and
+	  miscellaneous compilation issues
+
+2004-11-13 21:52  matzon
+
+	* src/native/common/fmod3/org_lwjgl_fmod3_FSound.c: fix pointer
+
+2004-11-13 14:06  elias_naur
+
+	* src/native/: Makefile.am, acinclude.m4, autogen.sh, dummy.c,
+	  common/ext/Makefile.am, ltmain.sh, subdirs: Remove more autoconf
+	  files
+
+2004-11-13 09:48  elias_naur
+
+	* src/java/org/lwjgl/opengl/KeyboardEventQueue.java: Mac OS X fixed
+	  isKeyDown not working
+
+2004-11-12 16:43  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Mouse.c: Linux fixes to absolute
+	  coordinates
+
+2004-11-12 16:37  elias_naur
+
+	* src/java/org/lwjgl/opengl/MouseEventQueue.java: Mac OS X part of
+	  absolute mouse coords
+
+2004-11-12 16:32  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: Win32 part of
+	  absolute mouse coordinates
+
+2004-11-12 16:11  elias_naur
+
+	* src/: java/org/lwjgl/opengl/MouseEventQueue.java,
+	  native/macosx/Makefile: Mac OS X part of absolute mouse coords
+
+2004-11-12 16:01  elias_naur
+
+	* src/: java/org/lwjgl/input/Mouse.java,
+	  native/linux/org_lwjgl_input_Mouse.c: Make read() and poll()
+	  return absolute coordinates when the mouse is not grabbed
+
+2004-11-12 15:32  elias_naur
+
+	* src/native/: configure.in, common/Makefile.am, common/extal.h,
+	  common/arb/Makefile.am, common/ati/Makefile.am,
+	  common/fmod3/Makefile.am, common/nv/Makefile.am, linux/Makefile,
+	  linux/Makefile.am, macosx/Makefile: Kill off
+	  automake/autoconf/libtool build system and replace by a much
+	  simpler Makefile
+
+2004-11-12 14:23  elias_naur
+
+	* src/java/org/lwjgl/opengl/: MacOSXDisplay.java, MacOSXFrame.java,
+	  MacOSXGLCanvas.java: Mac OS X: Made AWT access thread safe
+
+2004-11-12 11:48  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: Mac OS X default
+	  implementation of gamma and state keys
+
+2004-11-12 11:39  elias_naur
+
+	* src/java/org/lwjgl/opengl/MacOSXDisplay.java: Access Mac OS X
+	  java extensions through relfection to enable compilation on other
+	  platforms
+
+2004-11-12 04:37  captainjester
+
+	* src/java/org/lwjgl/test/devil/BasicTest.java: Added more tests.
+
+2004-11-12 03:54  captainjester
+
+	* src/native/common/devil/org_lwjgl_devil_IL.c: Full functionality
+	  from IL.  Does not include Windows specific calls or anything
+	  that uses function pointers.
+
+2004-11-12 03:40  captainjester
+
+	* src/java/org/lwjgl/devil/IL.java: Full functionality from IL.
+	  Does not include Windows specific calls or anything that uses
+	  function pointers.
+
+2004-11-11 17:58  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Cursor.c: Linux fix
+	  destroyCursor native function typo
+
+2004-11-11 17:04  elias_naur
+
+	* src/java/org/lwjgl/opengl/: EventQueue.java,
+	  MouseEventQueue.java: Added missing files
+
+2004-11-11 17:03  elias_naur
+
+	* build.xml, src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/opengl/KeyboardEventQueue.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXGLCanvas.java,
+	  src/java/org/lwjgl/test/WindowCreationTest.java,
+	  src/native/macosx/Makefile, src/native/macosx/Makefile.am,
+	  src/native/macosx/Window.h, src/native/macosx/hid.cpp,
+	  src/native/macosx/hid.h, src/native/macosx/org_lwjgl_Display.cpp,
+	  src/native/macosx/org_lwjgl_Sys.c,
+	  src/native/macosx/org_lwjgl_input_Controller.cpp,
+	  src/native/macosx/org_lwjgl_input_Cursor.cpp,
+	  src/native/macosx/org_lwjgl_input_Keyboard.cpp,
+	  src/native/macosx/org_lwjgl_input_Mouse.c,
+	  src/native/macosx/org_lwjgl_input_Mouse.cpp,
+	  src/native/macosx/org_lwjgl_opengl_Pbuffer.c,
+	  src/native/macosx/org_lwjgl_opengl_Pbuffer.cpp,
+	  src/native/macosx/org_lwjgl_opengl_Window.cpp,
+	  src/native/macosx/tools.cpp, src/native/macosx/tools.h: Mac OS X
+	  port, second try :)
+
+2004-11-11 15:26  elias_naur
+
+	* src/native/configure.in: Mac OS X automake not supported
+
+2004-11-11 14:54  elias_naur
+
+	* src/java/org/lwjgl/input/Cursor.java: [no log message]
+
+2004-11-11 14:42  elias_naur
+
+	* src/native/: linux/org_lwjgl_input_Cursor.c,
+	  win32/org_lwjgl_input_Cursor.cpp: Cursor fixup
+
+2004-11-11 14:27  elias_naur
+
+	* src/: java/org/lwjgl/input/Cursor.java,
+	  java/org/lwjgl/opengl/DisplayImplementation.java,
+	  java/org/lwjgl/opengl/LinuxDisplay.java,
+	  java/org/lwjgl/opengl/Win32Display.java,
+	  native/linux/org_lwjgl_input_Cursor.c,
+	  native/win32/org_lwjgl_input_Cursor.cpp: Moved native cursors to
+	  DisplayImplementation
+
+2004-11-09 22:27  spasi
+
+	* src/: native/common/ext/Makefile.am,
+	  native/common/ext/org_lwjgl_opengl_EXTPalettedTexture.c,
+	  java/org/lwjgl/opengl/ARBColorBufferFloat.java,
+	  java/org/lwjgl/opengl/EXTPalettedTexture.java,
+	  java/org/lwjgl/opengl/GL11.java,
+	  java/org/lwjgl/opengl/GLBufferChecks.java,
+	  java/org/lwjgl/opengl/GLContext.java,
+	  java/org/lwjgl/opengl/HPOcclusionTest.java,
+	  java/org/lwjgl/opengl/IBMRasterposClip.java,
+	  java/org/lwjgl/opengl/Pbuffer.java,
+	  java/org/lwjgl/opengl/SUNSliceAccum.java: New extensions
+
+2004-11-09 12:17  elias_naur
+
+	* src/native/win32/org_lwjgl_opengl_Display.cpp: Reverted
+	  accidental debug changes
+
+2004-11-09 12:00  elias_naur
+
+	* src/native/win32/: display.cpp, org_lwjgl_opengl_Display.cpp: [no
+	  log message]
+
+2004-11-08 13:11  elias_naur
+
+	* src/native/linux/org_lwjgl_input_Mouse.c: [no log message]
+
+2004-11-08 13:10  elias_naur
+
+	* src/native/win32/org_lwjgl_input_Mouse.cpp: Reset event queue on
+	  mouse grab
+
+2004-11-07 18:26  cix_foo
+
+	* src/java/org/lwjgl/opengl/Display.java: Reverted sync2 change
+
+2004-11-07 17:39  cix_foo
+
+	* src/native/win32/org_lwjgl_opengl_Display.cpp: Removed redundant
+	  code.
+
+2004-11-07 17:38  cix_foo
+
+	* src/java/org/lwjgl/opengl/Display.java: Adjusted sync2() to sync
+	  to FPS - 1, like sync() does. Now runs much smoother in Super
+	  Elvis.
+
+2004-11-07 17:36  cix_foo
+
+	* src/native/win32/org_lwjgl_opengl_Display.cpp: Fixes to focus /
+	  minimize handling. Now should cope with windows popping up
+	  behind.
+
+2004-11-07 17:35  cix_foo
+
+	* src/native/: common/devil/.cvsignore, common/fmod3/.cvsignore,
+	  win32/.cvsignore, common/.cvsignore, linux/.cvsignore: Added the
+	  system generated .h files to .cvsignores
+
+2004-11-06 10:41  elias_naur
+
+	* src/native/linux/org_lwjgl_opengl_Display.c: Linux: don't rely on
+	  focus messages, just ask for the current focus at the end of the
+	  event loop act accordingly
+
+2004-11-05 18:19  elias_naur
+
+	* build.xml: Make build.xml compile LWJGL with debug on, to enable
+	  line numbers in stack traces
+
+2004-11-05 11:29  elias_naur
+
+	* src/native/: common/extal.c, common/extgl.c, common/extgl.h,
+	  common/org_lwjgl_opengl_GL11.c, linux/org_lwjgl_input_Mouse.c:
+	  Linux: removed redundant last_z from Mouse.c. Mac: Compile fixes.
+	  Use NSAddImage for loading GL library
+
+2004-11-03 14:58  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Only initialize
+	  Controller on win32
+
+2004-11-03 14:49  elias_naur
+
+	* src/java/org/lwjgl/input/Mouse.java: Don't set native cursor if
+	  not supported by the platform
+
+2004-11-03 13:31  elias_naur
+
+	* src/native/macosx/org_lwjgl_Sys.cpp: [no log message]
+
+2004-11-03 13:10  elias_naur
+
+	* src/native/common/: extal.c, extal.h, extgl.c,
+	  org_lwjgl_openal_AL10.c, org_lwjgl_openal_ALC.c: Added
+	  initialization to all global symbols, to please MacOSX
+
+2004-11-02 19:15  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Added
+	  Display.processMessages(), providing a hook to only process
+	  native events and not swap buffers or poll input
+
+2004-11-02 16:51  elias_naur
+
+	* src/native/common/: common_tools.h, extal.c, extal.h, extgl.c,
+	  extgl.h, fmod3/org_lwjgl_fmod3_FMOD.c: [no log message]
+
+2004-11-02 16:09  elias_naur
+
+	* src/native/common/common_tools.h: Mac OS X compilation fixes
+
+2004-11-02 15:46  elias_naur
+
+	* src/native/common/common_tools.h: Fixed Mac OS X compilation of
+	  common
+
+2004-11-02 15:43  elias_naur
+
+	* src/native/common/: common_tools.c, common_tools.h,
+	  fmod3/org_lwjgl_fmod3_FMusic.c, fmod3/org_lwjgl_fmod3_FSound.c:
+	  Fixed Mac OS X compilation of common
+
+2004-11-02 14:15  elias_naur
+
+	* src/native/win32/: org_lwjgl_input_Keyboard.cpp,
+	  org_lwjgl_input_Mouse.cpp, org_lwjgl_opengl_Display.cpp:
+	  Win32Display
+
+2004-11-02 13:48  elias_naur
+
+	* build.xml, src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/input/Mouse.java,
+	  src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/DisplayImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/Win32Display.java,
+	  src/native/linux/org_lwjgl_input_Keyboard.c,
+	  src/native/linux/org_lwjgl_input_Mouse.c,
+	  src/native/linux/org_lwjgl_opengl_Display.c: Split out native
+	  implementation of Display/Mouse/Keyboard into implementers of
+	  DisplayImplementation
+
+2004-11-02 12:23  elias_naur
+
+	* src/native/common/: org_lwjgl_Sys.h,
+	  org_lwjgl_input_Controller.h, org_lwjgl_input_Cursor.h,
+	  org_lwjgl_input_Keyboard.h, org_lwjgl_input_Mouse.h,
+	  org_lwjgl_openal_AL.h, org_lwjgl_openal_eax_EAX.h,
+	  org_lwjgl_openal_eax_EAX20.h,
+	  org_lwjgl_openal_eax_EAXBufferProperties.h,
+	  org_lwjgl_openal_eax_EAXListenerProperties.h,
+	  org_lwjgl_opengl_Display.h, org_lwjgl_opengl_GLContext.h,
+	  org_lwjgl_opengl_Pbuffer.h: Remove autogenerated headers
+
+2004-11-02 00:13  elias_naur
+
+	* src/java/org/lwjgl/opengl/Display.java: Don't reset the mode to
+	  the initial mode when a mode switch or window creation goes wrong
+
+2004-10-29 21:48  spasi
+
+	* src/native/common/arb/org_lwjgl_opengl_ARBShaderObjects.c: Fixed
+	  memory leak
+
+2004-10-29 21:43  spasi
+
+	* src/: java/org/lwjgl/opengl/ARBShaderObjects.java,
+	  java/org/lwjgl/opengl/GL20.java,
+	  native/common/org_lwjgl_opengl_GL20.c: Fixed memory leak
+
+2004-10-28 22:01  matzon
+
+	* src/java/org/lwjgl/test/fmod3/TagFieldTest.java: change to
+	  directory scanning thingy
+
+2004-10-28 21:32  matzon
+
+	* src/java/org/lwjgl/fmod3/FSoundTagField.java: default to trimmed
+	  string since most tags include a \0
+
+2004-10-28 19:16  spasi
+
+	* src/java/org/lwjgl/opengl/: ARBColorBufferFloat.java,
+	  ARBHalfFloatPixel.java, ARBTextureFloat.java, GLContext.java:
+	  Added floating point extensions
+
+2004-10-28 19:12  spasi
+
+	* src/native/common/arb/: Makefile.am,
+	  org_lwjgl_opengl_ARBColorBufferFloat.c: Added floating point
+	  extensions
+
+2004-10-28 07:20  matzon
+
+	* www/: demos.php, download.php: oops - fixed links
+
+2004-10-27 19:34  matzon
+
+	* www/jnlp/: logo.png, lwjgl-demo.php, lwjgl.jar, lwjgl_fmod3.jar,
+	  lwjgl_linux.jar, lwjgl_media.jar, lwjgl_test.jar, lwjgl_util.jar,
+	  lwjgl_win32.jar, lwjglaudio_linux.jar, lwjglaudio_win32.jar,
+	  lwjglfmod3_linux.jar, lwjglfmod3_win32.jar: simplified, and
+	  updated to 0.93
+
+2004-10-27 19:32  matzon
+
+	* www/demos.php: added some more tests
+
+2004-10-27 19:00  matzon
+
+	* doc/CREDITS: added Mark Bernard to credits
+
+2004-10-27 17:41  matzon
+
+	* www/: changelogs/0.93-changelog.txt,
+	  changelogs/full-changelog.txt, changelog.php: 0.93
