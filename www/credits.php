@@ -22,6 +22,7 @@
 	<li>Simon Felix</li>
 	<li>Ryan McNally</li>
 	<li>Ciardhubh</li>
+	<li>Pelle Johnsen</li>
 </ul>
 <p>
 	<b>Additional credits goes to</b>
