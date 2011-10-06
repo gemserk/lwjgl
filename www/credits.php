@@ -23,6 +23,7 @@
 	<li>Ryan McNally</li>
 	<li>Ciardhubh</li>
 	<li>Pelle Johnsen</li>
+	<li>Jae Kwon</li>
 </ul>
 <p>
 	<b>Additional credits goes to</b>
