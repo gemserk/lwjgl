@@ -1,0 +1,242 @@
+2011-02-03 22:12  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader -
+	  another attempt to fix the logo. Thx again to arielsan for
+	  spotting issues.
+
+2011-02-03 09:35  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader -
+	  added small bit of missing code (doh), thx to arielsan for
+	  spotting it
+
+2011-02-02 22:29  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader -
+	  tweak image loading to fix cases where it doesn't work
+
+2011-01-28 23:06  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader -
+	  added support for gzip files
+
+2011-01-28 21:55  matzon
+
+	* build.xml, platform_build/build-applet.xml: applying patch to
+	  update lwjgl_util_applet.jar with resources directly
+
+2011-01-28 21:51  matzon
+
+	* build.xml, doc/CREDITS, maven, maven/build.xml,
+	  maven/lwjgl-parent.pom, maven/lwjgl-platform.pom,
+	  maven/lwjgl.pom, maven/lwjgl_util.pom,
+	  maven/lwjgl_util_applet.pom, platform_build/build-maven.xml:
+	  adding initial maven support by Ruben Garat, updating Credits
+	  file in the process
+
+2011-01-28 21:11  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: updating version to 2.7
+
+2011-01-25 06:43  matzon
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: propagate
+	  darwin check to applet loader too
+
+2011-01-25 01:29  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader -
+	  fix progress bar when extracting from multiple native jars
+
+2011-01-24 22:35  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  add support for using multiple native jars
+
+2011-01-23 07:48  matzon
+
+	* src/java/org/lwjgl/LWJGLUtil.java: init util as MACOSX if running
+	  under darwin
+
+2011-01-22 18:08  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader -
+	  Fix for a crash on some platforms before the permissions dialog
+	  appears, this is because the relevant part of the code needed to
+	  be run on the EDT.
+
+2011-01-22 13:26  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  make debug mode a little more useful to debug issues with, it'll
+	  output the AppletLoader state to the java console.
+
+2011-01-19 21:25  matzon
+
+	* platform_build/build-definitions.xml: applied patch by ruben01 to
+	  add finer granularity
+
+2011-01-19 21:15  matzon
+
+	* platform_build/build-applet.xml: dont depend on all for the
+	  applet target
+
+2011-01-19 21:14  matzon
+
+	* platform_build/build-webstart.xml: keystore changes
+
+2011-01-13 10:54  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader -
+	  Fix a threading issue where the cleanUp() method could fail to be
+	  called.
+
+2011-01-12 20:29  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: add missing
+	  final
+
+2011-01-12 20:18  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader
+	  fix, allow non lwjgl natives to be found in the cache directory.
+	  Again thx to NateS for finding and providing a fix.
+
+2011-01-12 20:01  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: Fixed null
+	  pointer exception in AppletLoader caused by cleaning up resources
+	  in the middle of a paint call. Thx to NateS for point this out
+	  and suggesting the fix.
+
+2011-01-11 20:54  matzon
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: fixed issue
+	  with empty java_arguments by switching to lwjgl_arguments param
+	  name instead
+
+2011-01-10 21:50  matzon
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: add support for
+	  passing in lwjgl specific properties via java_arguments applet
+	  parameter
+
+2010-12-15 18:48  kappa1
+
+	* src/java/org/lwjgl/input/Keyboard.java,
+	  src/java/org/lwjgl/util/applet/AppletLoader.java: fix minor typo
+	  in javadoc/comments
+
+2010-12-13 11:35  spasi
+
+	* src/templates/org/lwjgl/opengl/EXT_texture_sRGB_decode.java:
+	  Added EXT_texture_sRGB_decode.
+
+2010-12-06 15:58  spasi
+
+	* src/java/org/lwjgl/opencl/CLKernel.java,
+	  src/java/org/lwjgl/opencl/InfoUtilFactory.java,
+	  src/templates/org/lwjgl/opencl/CL10.java: Added clSetKernelArg
+	  support for CLObject and __local arguments.
+
+2010-11-29 18:25  spasi
+
+	* src/java/org/lwjgl/opengl/BaseReferences.java,
+	  src/java/org/lwjgl/opengl/ReferencesStack.java,
+	  src/java/org/lwjgl/opengl/StateTracker.java,
+	  src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/templates/org/lwjgl/opengl/ARB_matrix_palette.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_attrib_64bit.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_blend.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/EXT_fog_coord.java,
+	  src/templates/org/lwjgl/opengl/EXT_gpu_shader4.java,
+	  src/templates/org/lwjgl/opengl/EXT_secondary_color.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_attrib_64bit.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_weighting.java,
+	  src/templates/org/lwjgl/opengl/GL11.java,
+	  src/templates/org/lwjgl/opengl/GL13.java,
+	  src/templates/org/lwjgl/opengl/GL14.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL41.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_program.java: Reverted
+	  @CachedReference tracking removal.
+
+2010-11-29 17:21  spasi
+
+	* src/java/org/lwjgl/opengl/BaseReferences.java,
+	  src/java/org/lwjgl/opengl/FastIntMap.java,
+	  src/java/org/lwjgl/opengl/GLChecks.java,
+	  src/java/org/lwjgl/opengl/ReferencesStack.java,
+	  src/java/org/lwjgl/opengl/StateTracker.java,
+	  src/templates/org/lwjgl/opengl/ARB_matrix_palette.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_attrib_64bit.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_blend.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/EXT_fog_coord.java,
+	  src/templates/org/lwjgl/opengl/EXT_gpu_shader4.java,
+	  src/templates/org/lwjgl/opengl/EXT_secondary_color.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_attrib_64bit.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/EXT_vertex_weighting.java,
+	  src/templates/org/lwjgl/opengl/GL11.java,
+	  src/templates/org/lwjgl/opengl/GL13.java,
+	  src/templates/org/lwjgl/opengl/GL14.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL41.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_program.java: Fixed
+	  ELEMENT_ARRAY_BUFFER_BINDING tracking when VAOs are used.
+	  Removed CachedReference tracking, we never check those.
+
+2010-11-27 09:38  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_depth_clamp_separate.java:
+	  Added AMD_depth_clamp_separate.
+
+2010-11-26 20:38  kappa1
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: remove debug code
+	  left in WindowsDisplay, thx to MatthiasM.
+
+2010-11-24 21:48  matzon
+
+	* build.xml, src/java/org/lwjgl/BufferUtils.java,
+	  src/native/common/org_lwjgl_BufferUtils.c: adding support for
+	  zeroing buffers - patch'ish by MatthiasM
+
+2010-11-11 21:25  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java: Changed initial alpha
+	  value of glClearColor from 1 to 0 which is set when Initialising
+	  the Display. This now matches expected OpenGL behaviour. Thanks
+	  to Ryanm for spotting this. If you use FBO's make sure your
+	  setting glClearColor properly.
+
+2010-11-05 17:13  spasi
+
+	* src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java:
+	  Fixed @Reuse + @BufferObject generation.
+
+2010-10-28 21:39  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxEvent.java,
+	  src/native/linux/org_lwjgl_opengl_Display.c: Implement
+	  preliminary support for Display.isInsideWindow() on linux
+
+2010-10-28 16:03  spasi
+
+	* src/templates/org/lwjgl/opengl/GL41.java: Added @Optionals for
+	  ATI's 4.1 beta implementation.
+
+2010-10-18 19:24  matzon
+
+	* www/changelog.php, www/changelogs/2.6-changelog.txt,
+	  www/changelogs/full-changelog.txt, www/download.php,
+	  www/index.php: sync with live
