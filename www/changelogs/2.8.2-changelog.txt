@@ -1,0 +1,94 @@
+2011-11-12 21:50  kappa1
+
+	* src/java/org/lwjgl/MacOSXSysImplementation.java: bump native
+	  version number for OS X natives due to recent changes to them
+
+2011-11-12 21:31  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  minor tweak to show better update message when checking cache
+	  files for changes
+
+2011-11-12 21:03  kappa1
+
+	* platform_build/macosx_ant/build.xml: Add the QuartzCore framework
+	  to the list of frameworks available to the linker
+
+2011-11-12 20:45  kappa1
+
+	* src/java/org/lwjgl/opengl/AWTSurfaceLock.java,
+	  src/java/org/lwjgl/opengl/MacOSXCanvasPeerInfo.java: MacOS:
+	  further limit CALayer to only be used when running as an Applet
+
+2011-11-12 19:01  kappa1
+
+	* src/native/macosx/org_lwjgl_opengl_MacOSXCanvasPeerInfo.m: MacOS:
+	  remove the use of 'Blocks' in the Cocoa native code by switching
+	  to 'Selectors', should allow natives to be binary compatible with
+	  OS X 10.5 now.
+
+2011-11-10 18:46  spasi
+
+	* src/java/org/lwjgl/opengl/CallbackUtil.java,
+	  src/java/org/lwjgl/opengl/Context.java,
+	  src/java/org/lwjgl/opengl/GLContext.java: Changed CallbackUtil to
+	  use ContextCapabilities instead of ContextGL.
+
+2011-10-30 14:44  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/native/linux/opengl/org_lwjgl_opengl_Display.c,
+	  src/native/linux/opengles/org_lwjgl_opengl_Display.c: Fix
+	  keyboard handling when running Display.setParent() as an
+	  application on Linux. Thus allowing WM and system hot-keys to
+	  function again when the LWJGL app has focus.
+
+2011-10-26 20:24  kappa1
+
+	* src/native/linux/opengl/org_lwjgl_opengl_Display.c,
+	  src/native/linux/opengles/org_lwjgl_opengl_Display.c: Only set X
+	  window hints on the Linux native display window when not using
+	  Display.setParent()
+
+2011-10-25 17:42  spasi
+
+	* src/java/org/lwjgl/openal/ALC11.java: Changed manual null check
+	  to a MemoryUtil.getAddressSafe call.
+
+2011-10-25 17:14  matzon
+
+	* libs/windows/OpenAL32.dll: upx compressed oal32
+
+2011-10-25 17:13  matzon
+
+	* libs/linux/libopenal.so, libs/linux/libopenal64.so,
+	  libs/solaris/libopenal.so, libs/solaris/libopenal64.so,
+	  libs/windows/OpenAL32.dll, libs/windows/OpenAL64.dll: Updating
+	  OpenAL-Soft to latest (319f404)
+
+2011-10-21 22:50  kappa1
+
+	* src/native/macosx/org_lwjgl_opengl_MacOSXCanvasPeerInfo.m: Fix
+	  crash on Mac OS X when using Display.setParent() and switching
+	  from fullscreen to windowed mode.
+
+2011-10-20 10:36  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  minor change to provided more information for some error
+	  messages.
+
+2011-10-20 07:57  matzon
+
+	* src/java/org/lwjgl/openal/ALC11.java: fixed issue when NULL
+	  (default) was passed in as a deviceName
+
+2011-10-18 17:23  matzon
+
+	* src/java/org/lwjgl/opengl/Display.java: make Display.destroy a
+	  NOP if it hasn't been created yet
+
+2011-10-17 07:45  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: switching to 2.8.2

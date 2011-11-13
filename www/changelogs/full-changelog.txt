@@ -1,8 +1,246 @@
+2011-11-12 21:50  kappa1
+
+	* src/java/org/lwjgl/MacOSXSysImplementation.java: bump native
+	  version number for OS X natives due to recent changes to them
+
+2011-11-12 21:31  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  minor tweak to show better update message when checking cache
+	  files for changes
+
+2011-11-12 21:03  kappa1
+
+	* platform_build/macosx_ant/build.xml: Add the QuartzCore framework
+	  to the list of frameworks available to the linker
+
+2011-11-12 20:45  kappa1
+
+	* src/java/org/lwjgl/opengl/AWTSurfaceLock.java,
+	  src/java/org/lwjgl/opengl/MacOSXCanvasPeerInfo.java: MacOS:
+	  further limit CALayer to only be used when running as an Applet
+
+2011-11-12 19:01  kappa1
+
+	* src/native/macosx/org_lwjgl_opengl_MacOSXCanvasPeerInfo.m: MacOS:
+	  remove the use of 'Blocks' in the Cocoa native code by switching
+	  to 'Selectors', should allow natives to be binary compatible with
+	  OS X 10.5 now.
+
+2011-11-10 18:46  spasi
+
+	* src/java/org/lwjgl/opengl/CallbackUtil.java,
+	  src/java/org/lwjgl/opengl/Context.java,
+	  src/java/org/lwjgl/opengl/GLContext.java: Changed CallbackUtil to
+	  use ContextCapabilities instead of ContextGL.
+
+2011-10-30 14:44  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/native/linux/opengl/org_lwjgl_opengl_Display.c,
+	  src/native/linux/opengles/org_lwjgl_opengl_Display.c: Fix
+	  keyboard handling when running Display.setParent() as an
+	  application on Linux. Thus allowing WM and system hot-keys to
+	  function again when the LWJGL app has focus.
+
+2011-10-26 20:24  kappa1
+
+	* src/native/linux/opengl/org_lwjgl_opengl_Display.c,
+	  src/native/linux/opengles/org_lwjgl_opengl_Display.c: Only set X
+	  window hints on the Linux native display window when not using
+	  Display.setParent()
+
+2011-10-25 17:42  spasi
+
+	* src/java/org/lwjgl/openal/ALC11.java: Changed manual null check
+	  to a MemoryUtil.getAddressSafe call.
+
+2011-10-25 17:14  matzon
+
+	* libs/windows/OpenAL32.dll: upx compressed oal32
+
+2011-10-25 17:13  matzon
+
+	* libs/linux/libopenal.so, libs/linux/libopenal64.so,
+	  libs/solaris/libopenal.so, libs/solaris/libopenal64.so,
+	  libs/windows/OpenAL32.dll, libs/windows/OpenAL64.dll: Updating
+	  OpenAL-Soft to latest (319f404)
+
+2011-10-21 22:50  kappa1
+
+	* src/native/macosx/org_lwjgl_opengl_MacOSXCanvasPeerInfo.m: Fix
+	  crash on Mac OS X when using Display.setParent() and switching
+	  from fullscreen to windowed mode.
+
+2011-10-20 10:36  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  minor change to provided more information for some error
+	  messages.
+
+2011-10-20 07:57  matzon
+
+	* src/java/org/lwjgl/openal/ALC11.java: fixed issue when NULL
+	  (default) was passed in as a deviceName
+
+2011-10-18 17:23  matzon
+
+	* src/java/org/lwjgl/opengl/Display.java: make Display.destroy a
+	  NOP if it hasn't been created yet
+
+2011-10-17 07:45  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: switching to 2.8.2
+
+2011-10-15 21:13  matzon
+
+	* build.xml: add copy-nightly-binaries target to build file
+
+2011-10-15 20:25  matzon
+
+	* doc: adding javadoc to ignore list
+
+2011-10-15 20:24  matzon
+
+	* www/changelogs/2.7-changelog.txt,
+	  www/changelogs/2.7.1-changelog.txt,
+	  www/changelogs/2.8.0-changelog.txt,
+	  www/changelogs/full-changelog.txt: syncing changelogs
+
+2011-10-15 20:22  matzon
+
+	* libs/macosx, libs/windows: adding binaries to ignore list
+
+2011-10-15 20:18  matzon
+
+	* maven/build.xml, maven/lwjgl-platform.pom: applying rubens latest
+	  maven patches
+
+2011-10-14 15:00  spasi
+
+	* src/templates/org/lwjgl/opengles/IMG_multisampled_render_to_texture.java,
+	  src/templates/org/lwjgl/opengles/IMG_multisamples_render_to_texture.java,
+	  src/templates/org/lwjgl/opengles/IMG_read_format.java,
+	  src/templates/org/lwjgl/opengles/OES_EGL_sync.java: GLES
+	  extension updates.
+
+2011-10-14 10:43  spasi
+
+	* src/java/org/lwjgl/opengl/DrawableGLES.java,
+	  src/java/org/lwjgl/opengles/EGLDisplay.java,
+	  src/java/org/lwjgl/test/opengles/FullScreenWindowedTest.java:
+	  Updated GLES FullScreenWindowedTest to destroy/create Display on
+	  mode change.
+
+2011-10-13 22:05  matzon
+
+	* src/native/linux/opengl/org_lwjgl_opengl_Display.c,
+	  src/native/linux/opengles/org_lwjgl_opengl_Display.c: applied
+	  patch by xranby to remove warnings
+
+2011-10-13 16:53  spasi
+
+	* src/java/org/lwjgl/util/generator/JNITypeTranslator.java,
+	  src/java/org/lwjgl/util/generator/RegisterStubsGenerator.java,
+	  src/java/org/lwjgl/util/generator/SignatureTranslator.java: Fixed
+	  signatures: CharSequence[] parameters and ByteBuffer returns.
+
+2011-10-12 22:31  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  create MediaTracker before requesting image in an attempt to fix
+	  a logo loading issue.
+
+2011-10-12 22:15  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  provide a more meaningful error message when certificates do not
+	  match.
+
+2011-10-12 22:07  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  don't output needless lzma.jar is missing message on console
+	  unless a lzma file actually being loaded.
+
+2011-10-12 20:17  kappa1
+
+	* src/java/org/lwjgl/MacOSXSysImplementation.java: bump mac native
+	  version due to recent changes to them
+
+2011-10-12 19:49  matzon
+
+	* src/java/org/lwjgl/test/opengles/MappedIndexedVBOTest.java:
+	  Updated test to be compatible with r3664
+
+2011-10-12 18:54  spasi
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/opengl/ContextType.java,
+	  src/java/org/lwjgl/opengl/Display.java: Removed
+	  org.lwjgl.opengles.PixelFormat dependency from Display.
+
+2011-10-12 18:05  spasi
+
+	* src/templates/org/lwjgl/opengles/NV_platform_binary.java: Added
+	  support for NV_platform_binary.
+
+2011-10-12 17:58  spasi
+
+	* src/java/org/lwjgl/util/generator/RegisterStubsGenerator.java,
+	  src/native/common/common_tools.c,
+	  src/native/common/common_tools.h,
+	  src/native/common/opengles/org_lwjgl_opengles_EGLKHRFenceSync.c,
+	  src/native/common/opengles/org_lwjgl_opengles_EGLKHRReusableSync.c,
+	  src/native/common/opengles/org_lwjgl_opengles_EGLNVSync.c,
+	  src/native/common/org_lwjgl_openal_ALC10.c,
+	  src/native/common/org_lwjgl_openal_ALC11.c: Added @Optional
+	  support for AL and GLES.
+
+2011-10-11 22:39  kappa1
+
+	* src/java/org/lwjgl/opengl/AWTSurfaceLock.java,
+	  src/java/org/lwjgl/opengl/MacOSXCanvasPeerInfo.java: minor tweak
+	  to the order in which CALayer support is detected.
+
+2011-10-11 22:30  kappa1
+
+	* src/java/org/lwjgl/opengl/AWTSurfaceLock.java,
+	  src/java/org/lwjgl/opengl/MacOSXCanvasPeerInfo.java,
+	  src/native/common/org_lwjgl_opengl_AWTSurfaceLock.c,
+	  src/native/macosx/org_lwjgl_opengl_MacOSXCanvasPeerInfo.m: Limit
+	  the use to CALayer only to when using Display.setParent(), an
+	  AWTGLCanvas in non fullscreen mode.
+
+2011-10-11 21:51  kappa1
+
+	* src/native/macosx/org_lwjgl_opengl_MacOSXCanvasPeerInfo.m: Remove
+	  the use of Properties from Objective C code to allow binary
+	  compatibility on OS X < 10.5
+
+2011-10-11 19:24  matzon
+
+	* src/java/org/lwjgl/opengl/Display.java: undoing r3539 to fix
+	  issue with fullscreen
+
+2011-10-11 17:39  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: bumping version to 2.8.1
+
+2011-10-11 16:06  spasi
+
+	* build.xml, platform_build/build-definitions.xml,
+	  platform_build/build-maven.xml: Fixed build to include missing
+	  OpenGL ES classes on which Display depends.
+	  Excluded desktop OpenGL extensions from the OpenGL ES build.
+
 2011-10-08 20:33  kappa1
 
-        * src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
-          add missing JavaDoc for al_lookup_threads, clean up natives if
-          validation on them fails.
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  add missing JavaDoc for al_lookup_threads, clean up natives if
+	  validation on them fails.
 
 2011-10-08 18:33  kappa1
 

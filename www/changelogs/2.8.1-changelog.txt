@@ -1,0 +1,142 @@
+2011-10-15 21:13  matzon
+
+	* build.xml: add copy-nightly-binaries target to build file
+
+2011-10-15 20:25  matzon
+
+	* doc: adding javadoc to ignore list
+
+2011-10-15 20:24  matzon
+
+	* www/changelogs/2.7-changelog.txt,
+	  www/changelogs/2.7.1-changelog.txt,
+	  www/changelogs/2.8.0-changelog.txt,
+	  www/changelogs/full-changelog.txt: syncing changelogs
+
+2011-10-15 20:22  matzon
+
+	* libs/macosx, libs/windows: adding binaries to ignore list
+
+2011-10-15 20:18  matzon
+
+	* maven/build.xml, maven/lwjgl-platform.pom: applying rubens latest
+	  maven patches
+
+2011-10-14 15:00  spasi
+
+	* src/templates/org/lwjgl/opengles/IMG_multisampled_render_to_texture.java,
+	  src/templates/org/lwjgl/opengles/IMG_multisamples_render_to_texture.java,
+	  src/templates/org/lwjgl/opengles/IMG_read_format.java,
+	  src/templates/org/lwjgl/opengles/OES_EGL_sync.java: GLES
+	  extension updates.
+
+2011-10-14 10:43  spasi
+
+	* src/java/org/lwjgl/opengl/DrawableGLES.java,
+	  src/java/org/lwjgl/opengles/EGLDisplay.java,
+	  src/java/org/lwjgl/test/opengles/FullScreenWindowedTest.java:
+	  Updated GLES FullScreenWindowedTest to destroy/create Display on
+	  mode change.
+
+2011-10-13 22:05  matzon
+
+	* src/native/linux/opengl/org_lwjgl_opengl_Display.c,
+	  src/native/linux/opengles/org_lwjgl_opengl_Display.c: applied
+	  patch by xranby to remove warnings
+
+2011-10-13 16:53  spasi
+
+	* src/java/org/lwjgl/util/generator/JNITypeTranslator.java,
+	  src/java/org/lwjgl/util/generator/RegisterStubsGenerator.java,
+	  src/java/org/lwjgl/util/generator/SignatureTranslator.java: Fixed
+	  signatures: CharSequence[] parameters and ByteBuffer returns.
+
+2011-10-12 22:31  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  create MediaTracker before requesting image in an attempt to fix
+	  a logo loading issue.
+
+2011-10-12 22:15  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  provide a more meaningful error message when certificates do not
+	  match.
+
+2011-10-12 22:07  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  don't output needless lzma.jar is missing message on console
+	  unless a lzma file actually being loaded.
+
+2011-10-12 20:17  kappa1
+
+	* src/java/org/lwjgl/MacOSXSysImplementation.java: bump mac native
+	  version due to recent changes to them
+
+2011-10-12 19:49  matzon
+
+	* src/java/org/lwjgl/test/opengles/MappedIndexedVBOTest.java:
+	  Updated test to be compatible with r3664
+
+2011-10-12 18:54  spasi
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/opengl/ContextType.java,
+	  src/java/org/lwjgl/opengl/Display.java: Removed
+	  org.lwjgl.opengles.PixelFormat dependency from Display.
+
+2011-10-12 18:05  spasi
+
+	* src/templates/org/lwjgl/opengles/NV_platform_binary.java: Added
+	  support for NV_platform_binary.
+
+2011-10-12 17:58  spasi
+
+	* src/java/org/lwjgl/util/generator/RegisterStubsGenerator.java,
+	  src/native/common/common_tools.c,
+	  src/native/common/common_tools.h,
+	  src/native/common/opengles/org_lwjgl_opengles_EGLKHRFenceSync.c,
+	  src/native/common/opengles/org_lwjgl_opengles_EGLKHRReusableSync.c,
+	  src/native/common/opengles/org_lwjgl_opengles_EGLNVSync.c,
+	  src/native/common/org_lwjgl_openal_ALC10.c,
+	  src/native/common/org_lwjgl_openal_ALC11.c: Added @Optional
+	  support for AL and GLES.
+
+2011-10-11 22:39  kappa1
+
+	* src/java/org/lwjgl/opengl/AWTSurfaceLock.java,
+	  src/java/org/lwjgl/opengl/MacOSXCanvasPeerInfo.java: minor tweak
+	  to the order in which CALayer support is detected.
+
+2011-10-11 22:30  kappa1
+
+	* src/java/org/lwjgl/opengl/AWTSurfaceLock.java,
+	  src/java/org/lwjgl/opengl/MacOSXCanvasPeerInfo.java,
+	  src/native/common/org_lwjgl_opengl_AWTSurfaceLock.c,
+	  src/native/macosx/org_lwjgl_opengl_MacOSXCanvasPeerInfo.m: Limit
+	  the use to CALayer only to when using Display.setParent(), an
+	  AWTGLCanvas in non fullscreen mode.
+
+2011-10-11 21:51  kappa1
+
+	* src/native/macosx/org_lwjgl_opengl_MacOSXCanvasPeerInfo.m: Remove
+	  the use of Properties from Objective C code to allow binary
+	  compatibility on OS X < 10.5
+
+2011-10-11 19:24  matzon
+
+	* src/java/org/lwjgl/opengl/Display.java: undoing r3539 to fix
+	  issue with fullscreen
+
+2011-10-11 17:39  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: bumping version to 2.8.1
+
+2011-10-11 16:06  spasi
+
+	* build.xml, platform_build/build-definitions.xml,
+	  platform_build/build-maven.xml: Fixed build to include missing
+	  OpenGL ES classes on which Display depends.
+	  Excluded desktop OpenGL extensions from the OpenGL ES build.
