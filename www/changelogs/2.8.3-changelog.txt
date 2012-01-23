@@ -1,0 +1,252 @@
+2012-01-22 20:16  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: Small tweak to the
+	  Linux Display.isActive() fix.
+
+2012-01-22 18:02  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java: fix for
+	  Display.isActive() so that it works as it should on Linux when
+	  using Display.setParent()
+
+2012-01-18 12:19  spasi
+
+	* src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/EXT_direct_state_access.java,
+	  src/templates/org/lwjgl/opengl/GL15.java,
+	  src/templates/org/lwjgl/opengles/GLES20.java: Require at least 1
+	  element remaining in BO data params.
+
+2012-01-17 21:05  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: prod nightly
+	  server to rebuild LWJGL.
+
+2012-01-16 22:18  kappa1
+
+	* src/java/org/lwjgl/MacOSXSysImplementation.java,
+	  src/java/org/lwjgl/opengl/AWTSurfaceLock.java,
+	  src/java/org/lwjgl/opengl/MacOSXCanvasPeerInfo.java: Add extra
+	  checks so CALayer's only run on OS X 10.6+, Bump OS X native
+	  version
+
+2012-01-13 00:53  kappa1
+
+	* platform_build/macosx_ant/build.xml: Weakly link the AppKit
+	  framework in an attempt to allow 10.5 compatibility again.
+
+2012-01-13 00:40  kappa1
+
+	* src/native/macosx/org_lwjgl_opengl_MacOSXCanvasPeerInfo.m: OS X
+	  slight tweak to MacOSXCanvasPeerInfo in prep to make it
+	  compatible for 10.5 again
+
+2012-01-11 20:46  matzon
+
+	* src/java/org/lwjgl/WindowsSysImplementation.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java: adding
+	  WS_MAXIMIZEBOX patch for windows and bumping native version
+
+2012-01-06 11:52  spasi
+
+	* src/templates/org/lwjgl/opencl/INTEL_printf.java: Added
+	  INTEL_printf.
+
+2012-01-05 11:24  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_performance_monitor.java,
+	  src/templates/org/lwjgl/opengl/ARB_separate_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_subroutine.java,
+	  src/templates/org/lwjgl/opengl/ARB_sync.java,
+	  src/templates/org/lwjgl/opengl/ARB_uniform_buffer_object.java,
+	  src/templates/org/lwjgl/opengles/EXT_color_buffer_half_float.java,
+	  src/templates/org/lwjgl/opengles/EXT_debug_label.java,
+	  src/templates/org/lwjgl/opengles/EXT_debug_marker.java,
+	  src/templates/org/lwjgl/opengles/EXT_multisampled_render_to_texture.java,
+	  src/templates/org/lwjgl/opengles/EXT_occlusion_query_boolean.java,
+	  src/templates/org/lwjgl/opengles/EXT_robustness.java,
+	  src/templates/org/lwjgl/opengles/EXT_sRGB.java,
+	  src/templates/org/lwjgl/opengles/EXT_separate_shader_objects.java,
+	  src/templates/org/lwjgl/opengles/EXT_shadow_samplers.java,
+	  src/templates/org/lwjgl/opengles/EXT_texture_rg.java,
+	  src/templates/org/lwjgl/opengles/EXT_texture_storage.java,
+	  src/templates/org/lwjgl/opengles/NV_EGL_stream_consumer_external.java:
+	  Added new OpenGL ES extensions.
+
+2012-01-02 22:06  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Applying
+	  WM_SETCURSOR patch to fix issue with cursor
+
+2012-01-02 22:03  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: undoing commit of
+	  r3717
+
+2012-01-02 21:59  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: Applied
+	  WM_SETCURSOR to fix issue with cursor
+
+2011-12-21 14:34  jpilgrim
+
+	* eclipse-update/org.lwjgl.build/anttasks.jar,
+	  eclipse-update/org.lwjgl.build/src/java/org/lwjgl/ant/StandalonePublisher.java:
+	  Fixed a problem with categories.
+	  
+	  Categories are now extracted from site.xml. A default category is
+	  created if no site.xml is found or if some features are not
+	  mapped to any other category.
+
+2011-12-20 19:06  spasi
+
+	* src/templates/org/lwjgl/opencl/CL12.java: Added @Optional on
+	  clSetPrintfCallback for the AMD CL 1.2 preview driver.
+
+2011-12-20 17:16  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_pinned_memory.java: Updated
+	  AMD_pinned_memory based on official spec.
+
+2011-12-20 11:04  jpilgrim
+
+	* eclipse-update/org.lwjgl.build/anttasks.jar,
+	  eclipse-update/org.lwjgl.build/build-updatesite.xml,
+	  eclipse-update/org.lwjgl.build/src/java/org/lwjgl/ant/StandalonePublisher.java:
+	  StandalonePublisher directly creates jars, no need for additional
+	  "jarring".
+	  
+	  - added main method to StandalonePublisher creating
+	  artifact.xml/jar and content.xml/jar from given (old) Eclise
+	  update site.
+	  - when compressed is set to true, artifact.jar and content.jar
+	  are created directly. Removed jar task in build script, as these
+	  are no longer necessary
+
+2011-12-15 19:00  jpilgrim
+
+	* eclipse-update/org.lwjgl.build/READ.ME,
+	  eclipse-update/org.lwjgl.build/anttasks.jar,
+	  eclipse-update/org.lwjgl.build/build-updatesite.xml,
+	  eclipse-update/org.lwjgl.build/src/java/org/lwjgl/ant/StandalonePublisher.java:
+	  Fixed problems in update site build.
+	  
+	  Update site is now build including Eclipse p2 metadata
+	  (content.jar and artifact.jar). These files are required by some
+	  tools, such as Tycho (a maven plugin making p2 update sites
+	  available as maven repositories, see http://eclipse.org/tycho).
+
+2011-12-15 17:40  jpilgrim
+
+	* eclipse-update/org.lwjgl.build/build-updatesite.xml: fixed typo
+	  in update site build script, added publisher task
+
+2011-12-15 17:32  jpilgrim
+
+	* eclipse-update/org.lwjgl.build/anttasks.jar,
+	  eclipse-update/org.lwjgl.build/src/java/org/lwjgl/ant/StandalonePublisher.java:
+	  Added new ant task creating p2 metadata file for update site.
+
+2011-12-06 22:46  matzon
+
+	* eclipse-update/org.lwjgl.build/build-updatesite.xml: updating
+	  update site build script to use pre-packaged zip file in dist,
+	  updating signjar to not use keypass
+
+2011-12-06 22:42  matzon
+
+	* build.xml: adding eclipse update site to main build file
+
+2011-12-05 21:49  jpilgrim
+
+	* eclipse-update/org.lwjgl.build/build-updatesite.xml: signing
+	  information are interactively retrieved similar to applet build
+
+2011-12-05 12:41  jpilgrim
+
+	* eclipse-update/org.lwjgl.build/READ.ME,
+	  eclipse-update/org.lwjgl.build/anttasks.jar,
+	  eclipse-update/org.lwjgl.build/build-updatesite.xml,
+	  eclipse-update/org.lwjgl.build/build.xml,
+	  eclipse-update/org.lwjgl.build/buildEclipseClasses.xml,
+	  eclipse-update/org.lwjgl.build/lwjgl-archives,
+	  eclipse-update/org.lwjgl.build/plugin-classes,
+	  eclipse-update/org.lwjgl.build/plugin-classes/org.lwjgl.info.zip,
+	  eclipse-update/org.lwjgl.build/plugin-classes/org.lwjgl.tools.zip,
+	  eclipse-update/org.lwjgl.build/plugin-classes/org.lwjgl.zip:
+	  Added new Eclipse update site build script to be imported from
+	  main LWJGL build script.
+	  See org.lwjgl.build/README for details.
+	  
+	  Removed old build script depending on pre-build LWJGL archives.
+
+2011-12-03 11:10  spasi
+
+	* src/templates/org/lwjgl/opengl/NV_transform_feedback.java: Fixed
+	  glTransformFeedbackAttribsNV count argument.
+
+2011-11-28 16:40  jpilgrim
+
+	* eclipse-update/org.lwjgl.build/build.xml: bug fix in Eclipes
+	  update site build:
+	  native libraries are not copied from skeleton (where they are
+	  required for development purposes) anymore
+
+2011-11-28 16:23  jpilgrim
+
+	* eclipse-update/org.lwjgl.build/.classpath,
+	  eclipse-update/org.lwjgl.build/META-INF/MANIFEST.MF,
+	  eclipse-update/org.lwjgl.build/build.xml,
+	  eclipse-update/org.lwjgl.build/src/java/org/lwjgl/ant/NormalizeVersion.java,
+	  eclipse-update/org.lwjgl.build/test/java/org/lwjgl/ant/NormalizeVersionTest.java:
+	  Fixed a bug in the update site build script.
+	  
+	  Wrong class name of LWJGL plugin activator was specified
+	  (org.lwjgl.eclipse.Activator, but correct
+	  is org.lwjgl.Activator).
+	  
+	  Now, the current date/time string is added as a qualifier to the
+	  LWJGL version, e.g., org.lwjgl_2.8.2.v20111128-1653 instead of
+	  org.lwjgl_2.8.2. This simplifies testing and discouples LWJGL
+	  versions from plugin versions.
+
+2011-11-17 21:41  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  fix uncaught null pointer exception
+
+2011-11-16 14:36  spasi
+
+	* platform_build/build-generator.xml,
+	  src/java/org/lwjgl/opencl/CLBuildProgramCallback.java,
+	  src/java/org/lwjgl/opencl/CLChecks.java,
+	  src/java/org/lwjgl/opencl/CLCompileProgramCallback.java,
+	  src/java/org/lwjgl/opencl/CLContext.java,
+	  src/java/org/lwjgl/opencl/CLLinkProgramCallback.java,
+	  src/java/org/lwjgl/opencl/CLPrintfCallback.java,
+	  src/java/org/lwjgl/opencl/CLProgramCallback.java,
+	  src/java/org/lwjgl/opencl/CallbackUtil.java,
+	  src/java/org/lwjgl/opencl/InfoUtilFactory.java,
+	  src/java/org/lwjgl/util/generator/Utils.java,
+	  src/java/org/lwjgl/util/generator/opencl/CLPDCapabilitiesGenerator.java,
+	  src/native/common/extcl.h, src/native/common/extcl_types.h,
+	  src/native/common/org_lwjgl_opencl_CallbackUtil.c,
+	  src/templates/org/lwjgl/opencl/CL10.java,
+	  src/templates/org/lwjgl/opencl/CL11.java,
+	  src/templates/org/lwjgl/opencl/CL12.java,
+	  src/templates/org/lwjgl/opencl/CL12GL.java,
+	  src/templates/org/lwjgl/opencl/EXT_device_fission.java,
+	  src/templates/org/lwjgl/opengl/ARB_separate_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/GL41.java: Added support for
+	  OpenCL 1.2 [UNTESTED]
+
+2011-11-13 21:21  matzon
+
+	* www/changelogs/2.8.1-changelog.txt,
+	  www/changelogs/2.8.2-changelog.txt,
+	  www/changelogs/full-changelog.txt: adding changelogs
+
+2011-11-13 21:20  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java: bumping to 2.8.3
