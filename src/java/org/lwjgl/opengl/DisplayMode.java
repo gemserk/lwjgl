@@ -62,6 +62,10 @@ public final class DisplayMode {
 	public DisplayMode(int width, int height) {
 		this(width, height, 0, 0, false);
 	}
+	
+	public DisplayMode(Dimension display) {
+		this(display.width, display.height);
+	}
 
 	DisplayMode(int width, int height, int bpp, int freq) {
 		this(width, height, bpp, freq, true);
