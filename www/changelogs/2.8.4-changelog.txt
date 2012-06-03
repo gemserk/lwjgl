@@ -1,0 +1,292 @@
+2012-05-21 20:39  kappa1
+
+	* libs/macosx/openal.dylib: Add OpenAL-Soft 1.14 for OS X
+
+2012-05-21 18:30  matzon
+
+	* libs/linux/libopenal.so, libs/linux/libopenal64.so,
+	  libs/solaris/libopenal.so, libs/solaris/libopenal64.so,
+	  libs/windows/OpenAL32.dll, libs/windows/OpenAL64.dll: updating
+	  OpenAL-soft to 1.14+
+
+2012-05-13 18:03  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java: Minor tweak to remove
+	  unused code
+
+2012-05-13 18:01  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java: Display.wasResized()
+	  should now work correctly when using Display.setParent()
+
+2012-05-13 13:50  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  fixed issue with applets on linux with Java 7 where the natives
+	  where LWJGL natives were failing to load.
+
+2012-05-13 12:11  kappa1
+
+	* src/java/org/lwjgl/input/Mouse.java: Fix Mouse.getDX() and
+	  Mouse.getDY() values when mouse moves outside Display window &
+	  clipping is on. Thanks to ra4king for patch.
+
+2012-05-09 12:33  jpilgrim
+
+	* eclipse-update/org.lwjgl.info/plugin.xml: LWJGL info and test
+	  view are now sorted into category "general" (otherwise they are
+	  not visible in Eclipse 4.2)
+
+2012-05-08 19:38  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  fix to ensure a jar file download is attempted 3 times even if it
+	  throws some download exception.
+
+2012-05-04 17:23  spasi
+
+	* src/templates/org/lwjgl/opengl/GL11.java,
+	  src/templates/org/lwjgl/opengl/GL13.java,
+	  src/templates/org/lwjgl/opengl/GL14.java,
+	  src/templates/org/lwjgl/opengl/GL31.java,
+	  src/templates/org/lwjgl/opengl/GL40.java,
+	  src/templates/org/lwjgl/opengl/GL41.java: GL spec 20120427
+	  updates.
+
+2012-04-26 18:08  jpilgrim
+
+	* eclipse-update/org.lwjgl.info/src/java/org/lwjgl/info/LWJGLInfoView.java:
+	  fixed problem with InfoView, also see
+	  https://bugs.eclipse.org/bugs/show_bug.cgi?id=367718
+
+2012-04-26 13:19  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  add further checks to prevent Java default caching
+
+2012-04-22 23:05  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  set all streams that are open to use try/finally blocks to close
+	  the streams
+
+2012-04-22 22:51  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  add try/finally block to ensure file is closed on exception in
+	  the downloadJars(), thx to MatthiasM for pointing it out.
+
+2012-04-22 22:21  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  add extra urlconnections.setUseCaches(false) as an extra
+	  precaution to make sure caching is disabled.
+
+2012-04-18 16:50  spasi
+
+	* src/templates/org/lwjgl/opencl/INTEL_thread_local_exec.java:
+	  Added INTEL_thread_local_exec OpenCL extension.
+
+2012-04-14 18:55  kappa1
+
+	* src/java/org/lwjgl/opengl/MacOSXFrame.java: Fix
+	  Display.getWidth() and Display.getHeight() to return the correct
+	  values on OS X when the window has been resized.
+
+2012-04-10 13:23  kappa1
+
+	* src/java/org/lwjgl/input/Controller.java,
+	  src/java/org/lwjgl/input/JInputController.java,
+	  src/java/org/lwjgl/util/input/ControllerAdapter.java: Update
+	  ControllerAdapter in util package to reflect new changes in the
+	  Controller interface class (should fix broken build)
+
+2012-04-10 11:44  kappa1
+
+	* src/java/org/lwjgl/input/Controller.java,
+	  src/java/org/lwjgl/input/JInputController.java: Apply patch by
+	  OrangyTang to expose JInput's rumble functionality in LWJGL's
+	  Controller class.
+
+2012-03-27 13:12  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_vertex_shader_layer.java,
+	  src/templates/org/lwjgl/opengl/AMD_vertex_shader_viewport_index.java,
+	  src/templates/org/lwjgl/opengl/NV_bindless_texture.java,
+	  src/templates/org/lwjgl/opengl/NV_shader_atomic_float.java: Added
+	  support for: AMD_vertex_shader_viewport_index,
+	  AMD_vertex_shader_layer, NV_bindless_texture,
+	  NV_shader_atomic_float.
+
+2012-03-24 00:39  kappa1
+
+	* src/java/org/lwjgl/opengl/Sync.java: remove non-existing import.
+
+2012-03-24 00:20  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/Sync.java: fix minor javadoc typo's
+
+2012-03-24 00:04  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/Sync.java: Replace Display.sync(int
+	  fps) with an even better implementation, special thanks to Riven.
+
+2012-03-21 19:34  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java: Display.sync() fix
+	  excessive CPU using on windows
+
+2012-03-19 22:12  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: applying white
+	  border fix from dr_evil
+
+2012-03-18 16:25  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java: Fix the new accurate
+	  Display.sync() method to use less CPU on Mac.
+
+2012-03-04 13:41  kappa1
+
+	* src/java/org/lwjgl/opengl/ContextGL.java,
+	  src/java/org/lwjgl/opengl/ContextImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxContextImplementation.java,
+	  src/java/org/lwjgl/opengl/MacOSXContextImplementation.java,
+	  src/java/org/lwjgl/opengl/WindowsContextImplementation.java:
+	  Refactor so that the peer_info variable in ContextGL does not
+	  need to be static
+
+2012-03-04 03:50  kappa1
+
+	* src/native/linux/opengl/extgl_glx.c: add missing
+	  extgl_InitGLXEXTSwapControl()
+
+2012-03-04 03:45  kappa1
+
+	* src/native/linux/opengl/extgl_glx.h: add missing
+	  lwjgl_glXSwapIntervalEXT
+
+2012-03-04 03:40  kappa1
+
+	* src/java/org/lwjgl/opengl/ContextGL.java,
+	  src/java/org/lwjgl/opengl/ContextImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxContextImplementation.java,
+	  src/java/org/lwjgl/opengl/MacOSXContextImplementation.java,
+	  src/java/org/lwjgl/opengl/WindowsContextImplementation.java,
+	  src/native/linux/opengl/extgl_glx.c,
+	  src/native/linux/opengl/extgl_glx.h,
+	  src/native/linux/opengl/org_lwjgl_opengl_LinuxContextImplementation.c:
+	  Implement GLX_EXT_swap_control for Linux
+
+2012-03-01 22:34  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java: Tweak Display.sync()
+	  method a little to reduce the Thread.yield() time even further,
+	  now with a minimum of 0 yield time.
+
+2012-02-29 23:18  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java: Implement a much more
+	  accurate Display.sync() method that auto adapts to the systems
+	  timer resolution and load.
+
+2012-02-28 18:18  spasi
+
+	* src/java/org/lwjgl/MemoryUtil.java,
+	  src/native/common/org_lwjgl_opencl_CallbackUtil.c,
+	  src/templates/org/lwjgl/opencl/CL10.java: Fixed
+	  clEnqueueNativeKernel crash.
+
+2012-02-18 18:38  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: added win32
+	  display get x/y
+
+2012-02-18 16:30  kappa1
+
+	* src/java/org/lwjgl/opengl/Display.java,
+	  src/java/org/lwjgl/opengl/DisplayImplementation.java,
+	  src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/MacOSXDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsDisplay.java: Added the new
+	  public API's Display.getX() and Display.getY(). Currently
+	  implemented for Linux and Mac. Windows implementation pending.
+
+2012-02-18 01:49  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxDisplay.java,
+	  src/java/org/lwjgl/opengl/LinuxEvent.java,
+	  src/native/linux/opengl/org_lwjgl_opengl_Display.c,
+	  src/native/linux/opengles/org_lwjgl_opengl_Display.c: Implement
+	  the ability for the native Display window on Linux to get its x
+	  and y position. In preparation for adding the new Display.getX()
+	  & getY() API's.
+
+2012-02-06 20:35  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: applied dr_evil's
+	  maximized patch
+
+2012-02-06 19:26  spasi
+
+	* src/templates/org/lwjgl/opencl/AMD_media_ops2.java: Added support
+	  for AMD_media_ops2.
+
+2012-02-01 22:50  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: updated fix for
+	  resizable
+
+2012-02-01 21:33  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: applying suggested
+	  fix for resize issue
+
+2012-01-31 23:25  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxMouse.java: removed a tiny bit of
+	  dead debug code
+
+2012-01-31 23:24  kappa1
+
+	* src/java/org/lwjgl/opengl/LinuxMouse.java,
+	  src/native/linux/org_lwjgl_opengl_LinuxMouse.c: Linux Mouse:
+	  added support for using more than 3 buttons on a mouse, supports
+	  mice with upto 256 buttons.
+
+2012-01-29 20:35  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsMouse.java: limit mouse buttons
+	  to 5, since we can't read more at this time
+
+2012-01-29 20:26  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java: support for 5
+	  buttons on windows
+
+2012-01-29 19:06  spasi
+
+	* src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/EXT_direct_state_access.java,
+	  src/templates/org/lwjgl/opengl/GL15.java,
+	  src/templates/org/lwjgl/opengles/GLES20.java: Removed @Check("1")
+	  from BufferData functions.
+
+2012-01-28 19:35  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_stencil_operation_extended.java,
+	  src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/EXT_direct_state_access.java,
+	  src/templates/org/lwjgl/opengl/GL15.java,
+	  src/templates/org/lwjgl/opengles/GLES20.java: Added
+	  AMD_stencil_operation_extended.
+	  Reverted @Check("1") from SubData BO functions.
+
+2012-01-23 21:30  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java, www/changelogs/2.8.3-changelog.txt,
+	  www/changelogs/full-changelog.txt: bumping to 2.8.4 and adding
+	  changelogs
