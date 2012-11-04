@@ -1,0 +1,313 @@
+2012-10-16 14:53  spasi
+
+	* platform_build/build-definitions.xml,
+	  src/templates/org/lwjgl/opengl/AMD_shader_trinary_minmax.java,
+	  src/templates/org/lwjgl/opengl/INTEL_map_texture.java,
+	  src/templates/org/lwjgl/opengl/NV_draw_texture.java,
+	  src/templates/org/lwjgl/opengles/NV_draw_texture.java: Added
+	  support for AMD_shader_trinary_minmax, INTEL_map_texture and
+	  NV_draw_texture.
+
+2012-09-30 09:48  spasi
+
+	* src/templates/org/lwjgl/opengles/EXT_multiview_draw_buffers.java:
+	  Added support for EXT_multiview_draw_buffers. [GLES]
+
+2012-09-29 11:48  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_sparse_texture.java: Added
+	  support for AMD_sparse_texture.
+
+2012-09-21 00:27  spasi
+
+	* src/templates/org/lwjgl/opengles/APPLE_sync.java,
+	  src/templates/org/lwjgl/opengles/EXT_copy_texture_levels.java,
+	  src/templates/org/lwjgl/opengles/EXT_map_buffer_range.java,
+	  src/templates/org/lwjgl/opengles/EXT_shader_framebuffer_fetch.java:
+	  Added new GLES extensions.
+
+2012-09-12 21:00  kappa1
+
+	* src/java/org/lwjgl/opengl/Sync.java: Set a name for LWJGL's Sync
+	  class timer accuracy thread ("LWJGL Timer") for debugging
+	  purposes. RFE by NateS.
+
+2012-09-12 11:29  kappa1
+
+	* src/java/org/lwjgl/util/vector/Matrix2f.java,
+	  src/java/org/lwjgl/util/vector/Matrix3f.java,
+	  src/java/org/lwjgl/util/vector/Matrix4f.java: Fix
+	  Matrix*f.negate(Matrix*f dest) methods in Matrix2f, Matrix3f and
+	  Matrix4f classes. Thx to Jegorex for finding, reporting and
+	  providing fix on forum.
+
+2012-09-10 07:51  spasi
+
+	* src/java/org/lwjgl/input/Keyboard.java: Changed keyName array
+	  size to match KEYBOARD_SIZE.
+
+2012-09-06 07:11  spasi
+
+	* src/java/org/lwjgl/opengl/GLContext.java: Made
+	  GLContext.getCapabilities throw a RuntimeException instead of
+	  returning null when there's no GL context current in the current
+	  thread.
+
+2012-09-05 22:37  kappa1
+
+	* src/java/org/lwjgl/util/applet/AppletLoader.java: AppletLoader:
+	  Fix NumberFormatException when parsing version string on an EA or
+	  beta JVM, thx to UltraMoogleMan for spotting and reporting
+
+2012-09-03 20:44  spasi
+
+	* src/java/org/lwjgl/test/opengl/sprites/SpriteShootout2P.java:
+	  Fixed test.
+
+2012-09-03 20:27  spasi
+
+	* src/templates/org/lwjgl/opengl/GL32.java: Removed GL_BGRA.
+
+2012-09-03 19:47  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_performance_monitor.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_rg.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_shader.java,
+	  src/templates/org/lwjgl/opengl/EXT_gpu_shader4.java,
+	  src/templates/org/lwjgl/opengles/AMD_performance_monitor.java,
+	  src/templates/org/lwjgl/opengles/OES_texture_float.java: Removed
+	  some re-defined GL11 enums.
+
+2012-08-28 09:06  spasi
+
+	* src/java/org/lwjgl/opengl/WindowsKeyboard.java: Translate
+	  extended keys before the state check.
+
+2012-08-23 14:20  spasi
+
+	* src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/java/org/lwjgl/test/input/KeyboardTest.java: Let repeat
+	  events pass the same-state filter.
+
+2012-08-23 12:38  spasi
+
+	* src/java/org/lwjgl/opengl/WindowsKeyboard.java: Filter TAB key up
+	  event when we alt-tab focus the Display.
+
+2012-08-23 10:36  spasi
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/java/org/lwjgl/opengl/WindowsKeyboard.java,
+	  src/native/windows/org_lwjgl_opengl_WindowsKeyboard.c: Attempt to
+	  fix lost key up events when Display is out of focus. (Windows)
+
+2012-08-19 06:56  spasi
+
+	* src/java/org/lwjgl/util/generator/JavaMethodsGenerator.java,
+	  src/java/org/lwjgl/util/generator/Reuse.java,
+	  src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_framebuffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_occlusion_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_sync.java,
+	  src/templates/org/lwjgl/opengl/ARB_uniform_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/EXT_framebuffer_object.java,
+	  src/templates/org/lwjgl/opengl/GL15.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL31.java,
+	  src/templates/org/lwjgl/opengl/GL32.java,
+	  src/templates/org/lwjgl/opengl/GL33.java,
+	  src/templates/org/lwjgl/opengl/GL40.java,
+	  src/templates/org/lwjgl/opengl/NV_program.java,
+	  src/templates/org/lwjgl/opengles/GLES20.java,
+	  src/templates/org/lwjgl/opengles/OES_framebuffer_object.java:
+	  Restored (most of) the removed methods from the previous commit
+	  and added deprecation warnings.
+
+2012-08-18 14:00  spasi
+
+	* src/java/org/lwjgl/opengl/GLChecks.java,
+	  src/java/org/lwjgl/opengles/GLChecks.java,
+	  src/java/org/lwjgl/test/opengl/SyncTest.java,
+	  src/java/org/lwjgl/test/opengl/shaders/ShaderUNI.java,
+	  src/java/org/lwjgl/test/opengl/sprites/SpriteShootout.java,
+	  src/java/org/lwjgl/test/opengl/sprites/SpriteShootout2P.java,
+	  src/java/org/lwjgl/test/opengl/sprites/SpriteShootoutCL.java,
+	  src/java/org/lwjgl/test/opengl/sprites/SpriteShootoutMapped.java,
+	  src/java/org/lwjgl/test/opengles/util/Shader.java,
+	  src/java/org/lwjgl/test/opengles/util/ShaderProgram.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_subroutine.java,
+	  src/templates/org/lwjgl/opengl/ARB_sync.java: Fixes related to
+	  the new alternate signatures.
+
+2012-08-18 11:46  spasi
+
+	* src/templates/org/lwjgl/opengl/APPLE_object_purgeable.java,
+	  src/templates/org/lwjgl/opengl/ARB_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_framebuffer_no_attachments.java,
+	  src/templates/org/lwjgl/opengl/ARB_framebuffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_internalformat_query2.java,
+	  src/templates/org/lwjgl/opengl/ARB_occlusion_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_program.java,
+	  src/templates/org/lwjgl/opengl/ARB_program_interface_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_separate_shader_objects.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_subroutine.java,
+	  src/templates/org/lwjgl/opengl/ARB_sync.java,
+	  src/templates/org/lwjgl/opengl/ARB_timer_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_transform_feedback3.java,
+	  src/templates/org/lwjgl/opengl/ARB_uniform_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ATI_vertex_array_object.java,
+	  src/templates/org/lwjgl/opengl/EXT_framebuffer_object.java,
+	  src/templates/org/lwjgl/opengl/GL15.java,
+	  src/templates/org/lwjgl/opengl/GL20.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL31.java,
+	  src/templates/org/lwjgl/opengl/GL32.java,
+	  src/templates/org/lwjgl/opengl/GL33.java,
+	  src/templates/org/lwjgl/opengl/GL40.java,
+	  src/templates/org/lwjgl/opengl/GL41.java,
+	  src/templates/org/lwjgl/opengl/GL43.java,
+	  src/templates/org/lwjgl/opengl/NV_present_video.java,
+	  src/templates/org/lwjgl/opengl/NV_program.java,
+	  src/templates/org/lwjgl/opengl/NV_shader_buffer_load.java,
+	  src/templates/org/lwjgl/opengl/NV_vertex_buffer_unified_memory.java,
+	  src/templates/org/lwjgl/opengl/NV_video_capture.java,
+	  src/templates/org/lwjgl/opengles/EXT_occlusion_query_boolean.java,
+	  src/templates/org/lwjgl/opengles/EXT_separate_shader_objects.java,
+	  src/templates/org/lwjgl/opengles/GLES20.java,
+	  src/templates/org/lwjgl/opengles/GLES30.java,
+	  src/templates/org/lwjgl/opengles/OES_framebuffer_object.java:
+	  Keep type postfix on alternative functions that return primitive
+	  values.
+
+2012-08-16 18:58  spasi
+
+	* src/java/org/lwjgl/MemoryUtil.java,
+	  src/java/org/lwjgl/openal/ALC10.java,
+	  src/native/common/org_lwjgl_openal_ALC10.c,
+	  src/templates/org/lwjgl/opengl/NV_compute_program5.java,
+	  src/templates/org/lwjgl/opengl/NV_deep_texture3D.java,
+	  src/templates/org/lwjgl/opengl/NV_shader_atomic_counters.java,
+	  src/templates/org/lwjgl/opengl/NV_shader_storage_buffer_object.java,
+	  src/templates/org/lwjgl/opengles/QCOM_binning_control.java:
+	  Changed ALC10's alcGetString and alcOpenDevice to use UTF8
+	  decoding/encoding.
+	  New GL extensions: NV_compute_program5,
+	  NV_shader_storage_buffer_object, NV_shader_atomic_counters,
+	  NV_deep_texture3D
+	  New GLES extension: QCOM_binning_control
+
+2012-08-14 12:53  spasi
+
+	* src/templates/org/lwjgl/opengl/ARB_debug_group.java,
+	  src/templates/org/lwjgl/opengl/ARB_debug_label.java,
+	  src/templates/org/lwjgl/opengl/ARB_debug_output2.java: Removed
+	  ARB_debug_group, ARB_debug_label and ARB_debug_output2. They're
+	  part of KHR_debug and weren't supposed to be posted in the GL
+	  registry.
+
+2012-08-07 15:14  spasi
+
+	* build.xml, platform_build/build-definitions.xml,
+	  platform_build/build-generator.xml,
+	  src/java/org/lwjgl/opengl/CallbackUtil.java,
+	  src/java/org/lwjgl/opengl/ContextAttribs.java,
+	  src/java/org/lwjgl/opengl/KHRDebugCallback.java,
+	  src/java/org/lwjgl/opengles/APIUtil.java,
+	  src/java/org/lwjgl/opengles/CallbackUtil.java,
+	  src/java/org/lwjgl/opengles/ContextAttribs.java,
+	  src/java/org/lwjgl/opengles/FastIntMap.java,
+	  src/java/org/lwjgl/opengles/GLChecks.java,
+	  src/java/org/lwjgl/opengles/GLContext.java,
+	  src/java/org/lwjgl/opengles/GLSync.java,
+	  src/java/org/lwjgl/opengles/KHRDebugCallback.java,
+	  src/java/org/lwjgl/opengles/StateTracker.java,
+	  src/java/org/lwjgl/util/generator/GeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/GeneratorVisitor.java,
+	  src/java/org/lwjgl/util/generator/NativeTypeTranslator.java,
+	  src/java/org/lwjgl/util/generator/SignatureTranslator.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLESGeneratorProcessorFactory.java,
+	  src/java/org/lwjgl/util/generator/opengl/GLESTypeMap.java,
+	  src/native/common/opengl/extgl.h,
+	  src/native/common/opengl/org_lwjgl_opengl_CallbackUtil.c,
+	  src/native/common/opengles/extgl.h,
+	  src/native/common/opengles/extgl_types.h,
+	  src/native/common/opengles/org_lwjgl_opengles_CallbackUtil.c,
+	  src/native/common/org_lwjgl_opencl_CallbackUtil.c,
+	  src/templates/org/lwjgl/opengl/AMD_multi_draw_indirect.java,
+	  src/templates/org/lwjgl/opengl/ARB_ES3_compatibility.java,
+	  src/templates/org/lwjgl/opengl/ARB_arrays_of_arrays.java,
+	  src/templates/org/lwjgl/opengl/ARB_clear_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_compute_shader.java,
+	  src/templates/org/lwjgl/opengl/ARB_copy_image.java,
+	  src/templates/org/lwjgl/opengl/ARB_debug_group.java,
+	  src/templates/org/lwjgl/opengl/ARB_debug_label.java,
+	  src/templates/org/lwjgl/opengl/ARB_debug_output2.java,
+	  src/templates/org/lwjgl/opengl/ARB_draw_indirect.java,
+	  src/templates/org/lwjgl/opengl/ARB_explicit_uniform_location.java,
+	  src/templates/org/lwjgl/opengl/ARB_fragment_layer_viewport.java,
+	  src/templates/org/lwjgl/opengl/ARB_framebuffer_no_attachments.java,
+	  src/templates/org/lwjgl/opengl/ARB_internalformat_query2.java,
+	  src/templates/org/lwjgl/opengl/ARB_invalidate_subdata.java,
+	  src/templates/org/lwjgl/opengl/ARB_multi_draw_indirect.java,
+	  src/templates/org/lwjgl/opengl/ARB_program_interface_query.java,
+	  src/templates/org/lwjgl/opengl/ARB_robust_buffer_access_behavior.java,
+	  src/templates/org/lwjgl/opengl/ARB_robustness_isolation.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_image_size.java,
+	  src/templates/org/lwjgl/opengl/ARB_shader_storage_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/ARB_stencil_texturing.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_buffer_range.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_query_levels.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_storage_multisample.java,
+	  src/templates/org/lwjgl/opengl/ARB_texture_view.java,
+	  src/templates/org/lwjgl/opengl/ARB_vertex_attrib_binding.java,
+	  src/templates/org/lwjgl/opengl/EXT_gpu_shader4.java,
+	  src/templates/org/lwjgl/opengl/GL30.java,
+	  src/templates/org/lwjgl/opengl/GL32.java,
+	  src/templates/org/lwjgl/opengl/GL40.java,
+	  src/templates/org/lwjgl/opengl/GL43.java,
+	  src/templates/org/lwjgl/opengl/KHR_debug.java,
+	  src/templates/org/lwjgl/opengl/KHR_texture_compression_astc_ldr.java,
+	  src/templates/org/lwjgl/opengles/GLES30.java,
+	  src/templates/org/lwjgl/opengles/KHR_debug.java,
+	  src/templates/org/lwjgl/opengles/KHR_texture_compression_astc_ldr.java,
+	  src/templates/org/lwjgl/opengles/OES_required_internalformat.java,
+	  src/templates/org/lwjgl/opengles/OES_surfaceless_context.java:
+	  Added support for OpenGL 4.3 and OpenGL ES 3.0.
+	  Modified the generator process to use relative paths. We were
+	  hitting the command line length limit on Windows.
+	  Some extension improvements, fixes and spec updates.
+
+2012-07-14 23:29  matzon
+
+	* src/java/org/lwjgl/opengl/WindowsDisplay.java,
+	  src/native/windows/org_lwjgl_opengl_Display.c: fixed issue with
+	  win32 get x/y returning client-area coords
+
+2012-06-29 10:25  spasi
+
+	* src/templates/org/lwjgl/opengl/NV_path_rendering.java: Removed
+	  @Constant("0") from pathBase parameters.
+
+2012-06-19 10:44  spasi
+
+	* src/templates/org/lwjgl/opengl/AMD_query_buffer_object.java,
+	  src/templates/org/lwjgl/opengl/GL30.java: Removed unnecessary
+	  GL_RED from GL30.
+	  Added AMD_query_buffer_object.
+
+2012-06-17 20:54  matzon
+
+	* libs/linux/libopenal.so, libs/linux/libopenal64.so,
+	  libs/solaris/libopenal.so, libs/solaris/libopenal64.so,
+	  libs/windows/OpenAL32.dll, libs/windows/OpenAL64.dll: pushing
+	  latest openal (785f52aa29d...) with fix for float32
+
+2012-06-03 19:07  matzon
+
+	* platform_build/build-definitions.xml,
+	  src/java/org/lwjgl/Sys.java, www/changelogs/2.8.4-changelog.txt,
+	  www/changelogs/full-changelog.txt: bumping to 2.8.5, adding
+	  changelogs

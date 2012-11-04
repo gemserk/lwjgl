@@ -110,6 +110,18 @@ $projects[] = array('name'    => 'Cultris',
 												  'big'   => 'cultris_2.jpg'),
 								       2 => array('small' => 'cultris_small_3.jpg',
 												  'big'   => 'cultris_3.jpg')));	
+												  
+$projects[] = array('name'    => 'Cultris II',
+					'url'     => 'http://gewaltig.net',
+					'type'    => 'Free game',
+					'desc'    => 'Cultris II is one of the fastest Tetris&reg;-clones ever! Train your reflexes in the single player challenge modes, enjoy a split-screen match with your friends or play over the Internet with the best of the best. Cultris II not only supports various game modes, but all of them with team-play. The exquisite graphics and stylish jungle music makes other clones strike with awe. This is not your grandmother’s Tetris&reg; anymore...',
+					'screens' => array(0 => array('small' => 'cultris2_small_1.gif',
+											      'big'   => 'cultris2_1.png'),
+								       1 => array('small' => 'cultris2_small_2.gif',
+												  'big'   => 'cultris2_2.png'),
+								       2 => array('small' => 'cultris2_small_3.gif',
+												  'big'   => 'cultris2_3.png')));	
+												  
                           
 $projects[] = array('name'    => 'Keith Goes Painting',
 					'url'     => 'http://www.wolfysgames.com/',
@@ -262,21 +274,21 @@ $projects[] = array(
 								'small' => 'hz_small_3.jpg',
 								'big'   => 'hz_3.jpg')));
 
-$projects[] = array(
-						'name'    => 'Diamond Crush',
-						'url'     => 'http://www.diamondcrush.net/',
-						'type'    => 'Free, open source game',
-						'desc'    => 'Diamond Crush is a classic puzzle game, with both single player and multiplayer game modes. Players will control falling pairs of differently colored and shaped gems, and their purpose will be strategically placing them inside their own grid-based play fields, by matching their colors.',
-						'screens' => array(
-							0 => array(
-								'small' => 'diamond_crush_small_1.jpg',
-								'big'   => 'diamond_crush_1.jpg'),
-							1 => array(
-								'small' => 'diamond_crush_small_2.jpg',
-								'big'   => 'diamond_crush_2.jpg'),
-							2 => array(
-								'small' => 'diamond_crush_small_3.jpg',
-								'big'   => 'diamond_crush_3.jpg')));
+//$projects[] = array(
+//						'name'    => 'Diamond Crush',
+//						'url'     => 'http://www.diamondcrush.net/',
+//						'type'    => 'Free, open source game',
+//						'desc'    => 'Diamond Crush is a classic puzzle game, with both single player and multiplayer game modes. Players will control falling pairs of differently colored and shaped gems, and their purpose will be strategically placing them inside their own grid-based play fields, by matching their colors.',
+//						'screens' => array(
+//							0 => array(
+//								'small' => 'diamond_crush_small_1.jpg',
+//								'big'   => 'diamond_crush_1.jpg'),
+//							1 => array(
+//								'small' => 'diamond_crush_small_2.jpg',
+//								'big'   => 'diamond_crush_2.jpg'),
+//							2 => array(
+//								'small' => 'diamond_crush_small_3.jpg',
+//								'big'   => 'diamond_crush_3.jpg')));
 								
 $projects[] = array(
 						'name'    => 'Slam Soccer 2006',
@@ -629,6 +641,102 @@ $projects[] = array(
 							2 => array(
 								'small' => 'grappling_hook_small_3.jpg',
 								'big'   => 'grappling_hook_3.jpg')));
+								
+$projects[] = array(
+						'name'    => 'TWL',
+						'url'     => 'http://twl.l33tlabs.org/',
+						'type'    => 'OpenGL UI library',
+						'desc'    => 'TWL is a graphical user interface library targeted at games and game editors. It provides a rich set of standard widgets including labels, edit fields, tables, popups, tooltips, frames and a lot more. Different layout container are available to create even the most advanced user interfaces. As games have a high demand on visual identity, TWL provides a very flexible theme manager. The theme manager decouples the visual representation of widgets from the code. Themes are specified in XML and PNG files with full alpha blending for effects such as glow or shadows.',
+						'screens' => array(
+							0 => array(
+								'small' => 'twl_small_1.jpg',
+								'big'   => 'twl_1.png'),
+							1 => array(
+								'small' => 'twl_small_2.jpg',
+								'big'   => 'twl_2.png'),
+							2 => array(
+								'small' => 'twl_small_3.jpg',
+								'big'   => 'twl_3.png')));								
+								
+$projects[] = array(
+						'name'    => 'Starfarer',
+						'url'     => 'http://fractalsoftworks.com',
+						'type'    => 'Commercial game',
+						'desc'    => 'Two hundred years ago, the galaxy was ravaged by war.  The story of Starfarer concerns a sector left largely untouched by the flames. Humanity has been slowly slipping into anarchy, and few outposts of civilization remain - it is a time of frequent conflict, rampant piracy and shifting allegiances. A time of great profit for the few traders able to ply the old trading routes. A time of great danger and greater opportunity.',
+						'screens' => array(
+							0 => array(
+								'small' => 'starfarer_small_1.jpg',
+								'big'   => 'starfarer_1.jpg'),
+							1 => array(
+								'small' => 'starfarer_small_2.jpg',
+								'big'   => 'starfarer_2.jpg'),
+							2 => array(
+								'small' => 'starfarer_small_3.jpg',
+								'big'   => 'starfarer_3.jpg')));					
+								
+$projects[] = array(
+						'name'    => 'Micron',
+						'url'     => 'http://play.minds-eye-games.com/micron/',
+						'type'    => 'Open Source game',
+						'desc'    => 'Micron is a randomly generated, 2D abstract shooter. Enter a world of scintillating shapes and colors as you are attacked on all sides. Fight a variety of enemies in an infinite, deadly universe.',
+						'screens' => array(
+							0 => array(
+								'small' => 'micron_small_1.png',
+								'big'   => 'micron_1.png'),
+							1 => array(
+								'small' => 'micron_small_2.png',
+								'big'   => 'micron_2.png'),
+							2 => array(
+								'small' => 'micron_small_3.png',
+								'big'   => 'micron_3.png')));
+
+$projects[] = array(
+						'name'    => 'Newton Adventure',
+						'url'     => 'http://bci.im',
+						'type'    => 'Open Source',
+						'desc'    => 'Newton Adventure is a free and open source 2D platform game. You play Newton, a very special hero who has the power to change gravity direction.',
+						'screens' => array(
+							0 => array(
+								'small' => 'newton_small_1.jpg',
+								'big'   => 'newton_1.jpg'),
+							1 => array(
+								'small' => 'newton_small_2.jpg',
+								'big'   => 'newton_2.jpg'),
+							2 => array(
+								'small' => 'newton_small_3.jpg',
+								'big'   => 'newton_3.jpg')));
+								
+$projects[] = array(
+						'name'    => 'Tropical Stormfront',
+						'url'     => 'http://www.operationstormfront.com',
+						'type'    => 'Commercial',
+						'desc'    => 'Tropical Stormfront is a real-time strategy (RTS) game played out over lush tropical archipelagos.',
+						'screens' => array(
+							0 => array(
+								'small' => 'tsf_small_1.png',
+								'big'   => 'tsf_1.png'),
+							1 => array(
+								'small' => 'tsf_small_2.png',
+								'big'   => 'tsf_2.png'),
+							2 => array(
+								'small' => 'tsf_small_3.png',
+								'big'   => 'tsf_3.png')));
+								
+$projects[] = array(
+						'name'    => 'ode4j',
+						'url'     => 'http://www.ode4j.org',
+						'type'    => 'Free open source physics engine',
+						'desc'    => 'ode4j is a Java library for 3D game physics. It is a port of the C/C++ Open Dynamics Engine (ODE: www.ode.org). It provides dozens of example applications that use lwjgl for visualizing different features of the library.',
+						'screens' => array(
+							0 => array(
+								'small' => 'ode4j_small_1.png',
+								'big'   => 'ode4j_1.png'),
+							1 => array(
+								'small' => 'ode4j_small_2.png',
+								'big'   => 'ode4j_2.png'),
+							2 => array(
+								'small' => 'ode4j_small_3.png',
+								'big'   => 'ode4j_3.png')));
 												  
 function displayProjects() {
 	

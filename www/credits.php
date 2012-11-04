@@ -22,8 +22,8 @@
 	<li>Simon Felix</li>
 	<li>Ryan McNally</li>
 	<li>Ciardhubh</li>
-	<li>Pelle Johnsen</li>
-	<li>Jae Kwon</li>
+	<li>Jens von Pilgrim</li>
+	<li>Ruben Garat</li>
 </ul>
 <p>
 	<b>Additional credits goes to</b>
@@ -32,6 +32,7 @@
 	<li>Joseph I. Valenzuela [OpenAL stuff]</li>
 	<li>Lev Povalahev [OpenGL extensions]</li>
 	<li>Daniel Leinich [Website design & implementation]</li>
+	<li>Endolf [Nightly builds and JInput]</li>
 </ul>
 
 <? require('_include/footer.php'); ?>
