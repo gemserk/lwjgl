@@ -58,6 +58,7 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.util.Arrays;
 import java.util.HashSet;
+import javax.swing.*;
 
 public final class Display {
 
@@ -121,6 +122,12 @@ public final class Display {
 	private static float r, g, b;
 
 	private static final ComponentListener component_listener = new ComponentAdapter() {
+		public void componentMoved(ComponentEvent e) {
+			synchronized ( GlobalLock.lock ) {
+				parent_resized = true;
+			}
+		}
+
 		public void componentResized(ComponentEvent e) {
 			synchronized ( GlobalLock.lock ) {
 				parent_resized = true;
@@ -298,6 +305,7 @@ public final class Display {
 			throw new LWJGLException("Parent.isDisplayable() must be true");
 		if ( tmp_parent != null ) {
 			tmp_parent.addComponentListener(component_listener);
+			SwingUtilities.windowForComponent(parent).addComponentListener(component_listener);
 		}
 		DisplayMode mode = getEffectiveMode();
 		display_impl.createWindow(drawable, mode, tmp_parent, getWindowX(), getWindowY());
@@ -335,6 +343,7 @@ public final class Display {
 		}
 		if ( parent != null ) {
 			parent.removeComponentListener(component_listener);
+			SwingUtilities.windowForComponent(parent).removeComponentListener(component_listener);
 		}
 		releaseDrawable();
 
